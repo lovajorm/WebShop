@@ -4,47 +4,39 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style type="text/css">
+    .product {
+        margin: 10px 0;
+        background-color: #DCDCDC;
+    }
+    span {
+        display: block;
+    }
+    .btn {
+        padding: 5px 10px;
+        border: 1px solid #000;
+        color: #000000;
+        background-color: #FFF;
+    }
+</style>
 
-<h2>Index</h2>
+<h2>Products</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                <img src="@Url.Content(item.ImageUrl)" width="100px" />
-            </td>
 
-            
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductID">Delete</a>
-            </td>
-        </tr>
+@foreach (var item in Model)
+{
+    <div class="col-sm-4 product">
+        <span>
+            @Html.DisplayFor(modelItem => item.Description)
+            @Html.DisplayFor(modelItem => item.Price)
+        </span>
+        <span>
+            <a asp-action="Buy" asp-route-id="@item.ProductID"><img src="@Url.Content(item.ImageUrl)" height="100px" /></a>
+        </span>
+        <span>
+            <a asp-action="Buy" asp-route-id="@item.ProductID" type="button" class="btn btn-secondary">Buy</a>
+            <a asp-action="Details" asp-route-id="@item.ProductID" type="button" class="btn btn-secondary">Details</a>
+        </span>
+</div>
 }
-    </tbody>
-</table>
+

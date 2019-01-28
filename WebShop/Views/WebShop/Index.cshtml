@@ -4,44 +4,33 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<div class="container">
+    <div class="row">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">@item.Title</div>
+                    <div class="panel-body" style="margin-left: auto; margin-right: auto; width: 50%">
+                        <img src="/images/@Html.DisplayFor(model => item.ImageUrl)" class="img-responsive" alt="Image">
+                    </div>
+                    <div class="panel-footer">
+                        <div class="textinfo">
+                            <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                            <p class="more">
+                                <a href="" class="btn btn-default">Läs mer</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <h2 class="text-right">$@Html.DisplayFor(model => item.Price)</h2>
+                        <button type="button" onclick="" class="btn btn-danger btn-block">Lägg till</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+   

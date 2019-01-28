@@ -1,4 +1,5 @@
-﻿@model IEnumerable<WebShop.Bo.Product>
+﻿@using WebShop.Bo
+@model IEnumerable<WebShop.Bo.Product>
 
 @{
     ViewData["Title"] = "Index";
@@ -34,8 +35,10 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
+                <img src="@Url.Content(item.ImageUrl)" width="100px" />
             </td>
+
+            
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ProductID">Details</a> |

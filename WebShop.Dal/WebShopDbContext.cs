@@ -19,7 +19,7 @@ namespace WebShop.Dal
                     Title = "Produkt 1",
                     Description = "Beskrivning av produkt 1",
                     Price = 10,
-                    ImageUrl = ""
+                    ImageUrl = "~/images/hoodie.jpg"
                 },
                 new Product()
                 {
@@ -27,7 +27,7 @@ namespace WebShop.Dal
                     Title = "Produkt 2",
                     Description = "Beskrivning av objekt 2",
                     Price = 20,
-                    ImageUrl = ""
+                    ImageUrl = "~/images/svart.jpg"
                 },
                 new Product()
                 {
@@ -35,7 +35,7 @@ namespace WebShop.Dal
                     Title = "Produkt 3",
                     Description = "Beskrivning av objekt 3",
                     Price = 30,
-                    ImageUrl = ""
+                    ImageUrl = "~/images/byx.jpg"
                 },
                 new Product()
                 {
@@ -43,7 +43,7 @@ namespace WebShop.Dal
                     Title = "Produkt 4",
                     Description = "Beskrivning av objekt 4",
                     Price = 40,
-                    ImageUrl = ""
+                    ImageUrl = "~/images/byx.jpg"
                 },
                 new Product()
                 {
@@ -51,7 +51,7 @@ namespace WebShop.Dal
                     Title = "Produkt 5",
                     Description = "Beskrivning av objekt 5",
                     Price = 50,
-                    ImageUrl = ""
+                    ImageUrl = "~/images/byx.jpg"
                 },
                 new Product()
                 {
@@ -59,7 +59,7 @@ namespace WebShop.Dal
                     Title = "Produkt 6",
                     Description = "Beskrivning av objekt 6",
                     Price = 60,
-                    ImageUrl = ""
+                    ImageUrl = "~/images/byx.jpg"
                 },
                 new Product()
                 {
@@ -67,7 +67,7 @@ namespace WebShop.Dal
                     Title = "Produkt 7",
                     Description = "Beskrivning av objekt 7",
                     Price = 70,
-                    ImageUrl = ""
+                    ImageUrl = "~/images/byx.jpg"
                 },
                 new Product()
                 {
@@ -75,7 +75,7 @@ namespace WebShop.Dal
                     Title = "Produkt 8",
                     Description = "Beskrivning av objekt 8",
                     Price = 80,
-                    ImageUrl = ""
+                    ImageUrl = "~/images/byx.jpg"
                 },
                 new Product()
                 {
@@ -83,7 +83,7 @@ namespace WebShop.Dal
                     Title = "Produkt 9",
                     Description = "Beskrivning av objekt 9",
                     Price = 90,
-                    ImageUrl = ""
+                    ImageUrl = "~/images/byx.jpg"
                 });
         }
     }

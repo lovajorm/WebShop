@@ -31,11 +31,11 @@
             @Html.DisplayFor(modelItem => item.Price)
         </span>
         <span>
-            <a asp-action="Buy" asp-route-id="@item.ProductID"><img src="@Url.Content(item.ImageUrl)" height="100px" /></a>
+            <a asp-action="Details" asp-route-id="@item.ProductID"><img src="@Url.Content(item.ImageUrl)" height="100px" /></a>
         </span>
         <span>
-            <a asp-action="Buy" asp-route-id="@item.ProductID" type="button" class="btn btn-secondary">Buy</a>
-            <a asp-action="Details" asp-route-id="@item.ProductID" type="button" class="btn btn-secondary">Details</a>
+            <a asp-controller="ShoppingCart" asp-action="Index" asp-route-id="@item.ProductID" type="button" class="btn btn-secondary">Buy</a>
+            <a asp-action="Details" asp-route-id="@item.ProductID" type="button" class="btn btn-secondary">Details</a>        
         </span>
 </div>
 }

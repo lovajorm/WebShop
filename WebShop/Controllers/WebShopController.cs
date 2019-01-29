@@ -20,9 +20,9 @@ namespace WebShop.Web.Controllers
         }
 
         // GET: WebShop
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Products.ToListAsync());
+            return View(_context.Products.ToList());
         }
 
         // GET: WebShop/Details/5

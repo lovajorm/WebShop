@@ -14,4 +14,8 @@
     <ProjectReference Include="..\WebShop.Dal\WebShop.Dal.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\ShoppingCart\" />
+  </ItemGroup>
+
 </Project>

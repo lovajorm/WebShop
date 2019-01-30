@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebShop.Dal;
 
 namespace WebShop.Dal.Migrations
 {
     [DbContext(typeof(WebShopDbContext))]
-    partial class WebShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190130093234_addedCategoryToProductandData")]
+    partial class addedCategoryToProductandData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,60 +39,6 @@ namespace WebShop.Dal.Migrations
                         new { CategoryId = 1, CategoryName = "Clothes", Description = "Clothes" },
                         new { CategoryId = 2, CategoryName = "Furniture", Description = "Furniture" }
                     );
-                });
-
-            modelBuilder.Entity("WebShop.Bo.Order", b =>
-                {
-                    b.Property<int>("OrderId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Adress");
-
-                    b.Property<string>("Country");
-
-                    b.Property<string>("Email");
-
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("LastName");
-
-                    b.Property<DateTime>("OrderPlaced");
-
-                    b.Property<float>("OrderTotal");
-
-                    b.Property<string>("PhoneNumber");
-
-                    b.Property<string>("State");
-
-                    b.Property<string>("ZipCode");
-
-                    b.HasKey("OrderId");
-
-                    b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("WebShop.Bo.OrderDetail", b =>
-                {
-                    b.Property<int>("OrderDetailId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Amount");
-
-                    b.Property<int>("OrderId");
-
-                    b.Property<float>("Price");
-
-                    b.Property<int>("ProductID");
-
-                    b.HasKey("OrderDetailId");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ProductID");
-
-                    b.ToTable("OrderDetails");
                 });
 
             modelBuilder.Entity("WebShop.Bo.Product", b =>
@@ -145,19 +93,6 @@ namespace WebShop.Dal.Migrations
                     b.HasIndex("ProductID");
 
                     b.ToTable("ShoppingCartItems");
-                });
-
-            modelBuilder.Entity("WebShop.Bo.OrderDetail", b =>
-                {
-                    b.HasOne("WebShop.Bo.Order", "Order")
-                        .WithMany("OrderLines")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("WebShop.Bo.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductID")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("WebShop.Bo.Product", b =>

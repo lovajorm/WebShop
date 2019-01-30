@@ -7,8 +7,13 @@ namespace WebShop.Dal
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail > OrderDetails { get; set; }
 
-        public WebShopDbContext(DbContextOptions<WebShopDbContext> context) : base(context) {}
+        public WebShopDbContext(DbContextOptions<WebShopDbContext> context) : base(context)
+        {
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -19,7 +24,8 @@ namespace WebShop.Dal
                     Title = "Produkt 1",
                     Description = "Beskrivning av produkt 1",
                     Price = 10,
-                    ImageUrl = "Apelsin.png"
+                    ImageUrl = "~/images/svart.jpg",
+                    CategoryId = 1
                 },
                 new Product()
                 {
@@ -27,7 +33,8 @@ namespace WebShop.Dal
                     Title = "Produkt 2",
                     Description = "Beskrivning av objekt 2",
                     Price = 20,
-                    ImageUrl = "Apple.png"
+                    ImageUrl = "~/images/byx.jpg",
+                    CategoryId = 1
                 },
                 new Product()
                 {
@@ -35,7 +42,8 @@ namespace WebShop.Dal
                     Title = "Produkt 3",
                     Description = "Beskrivning av objekt 3",
                     Price = 30,
-                    ImageUrl = "Cassis.png"
+                    ImageUrl = "~/images/svart.jpg",
+                    CategoryId = 2
                 },
                 new Product()
                 {
@@ -43,7 +51,8 @@ namespace WebShop.Dal
                     Title = "Produkt 4",
                     Description = "Beskrivning av objekt 4",
                     Price = 40,
-                    ImageUrl = "CitronLine.png"
+                    ImageUrl = "~/images/byx.jpg",
+                    CategoryId = 2
                 },
                 new Product()
                 {
@@ -51,7 +60,8 @@ namespace WebShop.Dal
                     Title = "Produkt 5",
                     Description = "Beskrivning av objekt 5",
                     Price = 50,
-                    ImageUrl = "Hallon.png"
+                    ImageUrl = "~/images/hoodie.jpg",
+                    CategoryId = 1
                 },
                 new Product()
                 {
@@ -59,7 +69,8 @@ namespace WebShop.Dal
                     Title = "Produkt 6",
                     Description = "Beskrivning av objekt 6",
                     Price = 60,
-                    ImageUrl = "Paron.png"
+                    ImageUrl = "~/images/svart.jpg",
+                    CategoryId = 1
                 },
                 new Product()
                 {
@@ -67,7 +78,8 @@ namespace WebShop.Dal
                     Title = "Produkt 7",
                     Description = "Beskrivning av objekt 7",
                     Price = 70,
-                    ImageUrl = "Persika.png"
+                    ImageUrl = "~/images/hoodie.jpg",
+                    CategoryId = 2
                 },
                 new Product()
                 {
@@ -75,7 +87,8 @@ namespace WebShop.Dal
                     Title = "Produkt 8",
                     Description = "Beskrivning av objekt 8",
                     Price = 80,
-                    ImageUrl = "RodaBar.png"
+                    ImageUrl = "~/images/hoodie.jpg",
+                    CategoryId = 1
                 },
                 new Product()
                 {
@@ -83,7 +96,22 @@ namespace WebShop.Dal
                     Title = "Produkt 9",
                     Description = "Beskrivning av objekt 9",
                     Price = 90,
-                    ImageUrl = "Tropical.png"
+                    ImageUrl = "~/images/byx.jpg",
+                    CategoryId = 1
+                });
+
+            modelBuilder.Entity<Category>().HasData(
+                new Category()
+                {
+                    CategoryId = 1,
+                    CategoryName = "Clothes",
+                    Description = "Clothes",
+                },
+                new Category()
+                {
+                    CategoryId = 2,
+                    CategoryName = "Furniture",
+                    Description = "Furniture",
                 });
         }
     }

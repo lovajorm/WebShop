@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Bo;
 using WebShop.Web.Models;
+using WebShop.Web.ViewModels;
 
 namespace WebShop.Web.Components
 {
@@ -19,15 +20,15 @@ namespace WebShop.Web.Components
 
         public IViewComponentResult Invoke()
         {
-            var items = new List<ShoppingCartItem>() {new ShoppingCartItem(), new ShoppingCartItem() };//_shoppingCart.GetShoppingCartItems();
+            var items = _shoppingCart.GetShoppingCartItems();
             _shoppingCart.ShoppingCartItems = items;
 
-            var ShoppingCartViewModel = new ShoppingCartViewModel()
+            var shoppingCartViewModel = new ShoppingCartViewModel()
             {
                 ShoppingCart = _shoppingCart,
                 ShoppingCartTotal = _shoppingCart.GetShopppingCartTotal()
             };
-            return View(ShoppingCartViewModel);
+            return View(shoppingCartViewModel);
         }
     }
 }

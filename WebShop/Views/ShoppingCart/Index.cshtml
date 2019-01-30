@@ -1,4 +1,4 @@
-﻿@model WebShop.Web.Models.ShoppingCartViewModel
+﻿@model WebShop.Web.ViewModels.ShoppingCartViewModel
 
 <div class="row checkoutForm">
     <h2>Your shopping cart</h2>
@@ -36,4 +36,19 @@
         </tr>
         </tfoot>
     </table>
+
+    <div class="text-right">
+        <div class="btn-group ">
+            <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Check out</a>
+            <a class="btn-group">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    Add more products<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a asp-controller="Product" asp-action="List" asp-route-category="Clothes">Clothes</a></li>
+                    <li><a asp-controller="Product" asp-action="List" asp-route-category="Electronics">Electronics</a></li>
+                </ul>
+            </a>
+        </div>
+    </div>
 </div>

@@ -1,0 +1,17 @@
+﻿@using WebShop.Bo
+@model WebShop.Web.ViewModels.ProductListViewModel
+
+@{
+    ViewData["Title"] = "List";
+}
+
+
+@*@await Html.PartialAsync("Carousel")*@
+
+@{
+    foreach (Product product in Model.Products)
+    {
+        @Html.Partial("ProductsSummary", product)
+    }
+}
+

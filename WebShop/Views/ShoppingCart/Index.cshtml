@@ -2,12 +2,12 @@
 
 <div class="row checkoutForm">
     <h2>Your shopping cart</h2>
-    <h4>Here are the drinks in your shopping cart.</h4>
+    <h4>Here are the products in your shopping cart.</h4>
     <table class="table table-bordered table-striped">
         <thead>
         <tr>
             <th>Selected amount</th>
-            <th>Drink</th>
+            <th>Product</th>
             <th class="text-right">Price</th>
             <th class="text-right">Subtotal</th>
             <th></th>
@@ -23,7 +23,7 @@
                 <td>
                     @((line.Amount * line.Product.Price).ToString("c"))
                 </td>
-                <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-drinkId="@line.Product.ProductID"></a></td>
+                <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-productId="@line.Product.ProductID"></a></td>
             </tr>
         }
         </tbody>
@@ -39,14 +39,15 @@
 
     <div class="text-right">
         <div class="btn-group ">
-            <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Check out</a>
+            <a class="btn" asp-controller="Order" asp-action="Checkout">Check out</a>
             <a class="btn-group">
-                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <a class="btn dropdown-toggle" data-toggle="dropdown">
                     Add more products<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a asp-controller="Product" asp-action="List" asp-route-category="Clothes">Clothes</a></li>
                     <li><a asp-controller="Product" asp-action="List" asp-route-category="Electronics">Electronics</a></li>
+                    <li><a asp-controller="Product" asp-action="List" asp-route-category="Furniture">Furniture</a></li>
                 </ul>
             </a>
         </div>

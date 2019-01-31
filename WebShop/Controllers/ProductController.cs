@@ -15,14 +15,14 @@ namespace WebShop.Web.Controllers
     public class ProductController : Controller
     {
         private readonly WebShopDbContext _context;
-
         private readonly ICategoryRepository _categoryRepository;
         private readonly IProductRepository _productRepository;
 
-        public ProductController(ICategoryRepository categoryRepository, IProductRepository productRepository)
+        public ProductController(ICategoryRepository categoryRepository, IProductRepository productRepository, WebShopDbContext context)
         {
             _categoryRepository = categoryRepository;
             _productRepository = productRepository;
+            _context = context;
         }
 
         public ViewResult List(string category)
@@ -40,6 +40,9 @@ namespace WebShop.Web.Controllers
             {
                 if (string.Equals("Clothes", _category, StringComparison.OrdinalIgnoreCase))
                     products = _productRepository.Products.Where(p => p.Category.CategoryName.Equals("Clothes")).OrderBy(p => p.Category);
+                else if 
+                    (string.Equals("Furniture", _category, StringComparison.OrdinalIgnoreCase))
+                    products = _productRepository.Products.Where(p => p.Category.CategoryName.Equals("Furniture")).OrderBy(p => p.Category);
                 else
                     products = _productRepository.Products.Where(p => p.Category.CategoryName.Equals("Electronics")).OrderBy(p => p.Category);
 
@@ -52,6 +55,24 @@ namespace WebShop.Web.Controllers
                 CurrentCategory = currentCategory
             };
             return View(productListViewModel);
+        }
+
+        // GET: WebShop/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Products
+                .FirstOrDefaultAsync(m => m.ProductID == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return View(product);
         }
     }
 }

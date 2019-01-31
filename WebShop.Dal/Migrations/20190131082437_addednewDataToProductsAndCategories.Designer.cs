@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebShop.Dal;
 
 namespace WebShop.Dal.Migrations
 {
     [DbContext(typeof(WebShopDbContext))]
-    partial class WebShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190131082437_addednewDataToProductsAndCategories")]
+    partial class addednewDataToProductsAndCategories
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -132,17 +134,15 @@ namespace WebShop.Dal.Migrations
                     b.ToTable("Products");
 
                     b.HasData(
-                        new { ProductID = 1, CategoryId = 1, Description = "Knitted mens sweater", ImageUrl = "~/images/Clothes/svart.jpg", Price = 100f, Title = "Sweater" },
-                        new { ProductID = 2, CategoryId = 1, Description = "Black womens pants", ImageUrl = "~/images/Clothes/byx.jpg", Price = 200f, Title = "Pants" },
-                        new { ProductID = 3, CategoryId = 1, Description = "Black hoodie", ImageUrl = "~/images/Clothes/hoodie.jpg", Price = 359f, Title = "Hoodie" },
-                        new { ProductID = 4, CategoryId = 1, Description = "Leopard skirt", ImageUrl = "~/images/Clothes/kjol.jpg", Price = 349f, Title = "Skirt" },
-                        new { ProductID = 5, CategoryId = 1, Description = "Grey cardigan", ImageUrl = "~/images/Clothes/kofta.jpg", Price = 500f, Title = "Cardigan" },
-                        new { ProductID = 6, CategoryId = 1, Description = "Blue jeans", ImageUrl = "~/images/Clothes/jeans.jpg", Price = 599f, Title = "Jeans" },
-                        new { ProductID = 7, CategoryId = 1, Description = "Mens T-shirt", ImageUrl = "~/images/Clothes/tshirt.jpg", Price = 99f, Title = "T-shirt" },
-                        new { ProductID = 8, CategoryId = 1, Description = "Womens blouse", ImageUrl = "~/images/Clothes/blus.jpg", Price = 449f, Title = "Blouse" },
-                        new { ProductID = 9, CategoryId = 1, Description = "Blue shorts", ImageUrl = "~/images/Clothes/shorts.jpg", Price = 249f, Title = "Shorts" },
-                        new { ProductID = 10, CategoryId = 3, Description = "Laptop from HP", ImageUrl = "~/images/Electronics/laptop.jfif", Price = 10000f, Title = "Laptop" },
-                        new { ProductID = 11, CategoryId = 2, Description = "Dinner table", ImageUrl = "~/images/Furniture/table.jpg", Price = 2000f, Title = "Table" }
+                        new { ProductID = 1, CategoryId = 1, Description = "Knitted mens sweater", ImageUrl = "~/images/svart.jpg", Price = 100f, Title = "Sweater" },
+                        new { ProductID = 2, CategoryId = 1, Description = "Black womens pants", ImageUrl = "~/images/byx.jpg", Price = 200f, Title = "Pants" },
+                        new { ProductID = 3, CategoryId = 1, Description = "Black hoodie", ImageUrl = "~/images/hoodie.jpg", Price = 359f, Title = "Hoodie" },
+                        new { ProductID = 4, CategoryId = 1, Description = "Leopard skirt", ImageUrl = "~/images/kjol.jpg", Price = 349f, Title = "Skirt" },
+                        new { ProductID = 5, CategoryId = 1, Description = "Grey cardigan", ImageUrl = "~/images/kofta.jpg", Price = 500f, Title = "Cardigan" },
+                        new { ProductID = 6, CategoryId = 1, Description = "Blue jeans", ImageUrl = "~/images/jeans.jpg", Price = 599f, Title = "Jeans" },
+                        new { ProductID = 7, CategoryId = 1, Description = "Mens T-shirt", ImageUrl = "~/images/tshirt.jpg", Price = 99f, Title = "T-shirt" },
+                        new { ProductID = 8, CategoryId = 1, Description = "Womens blouse", ImageUrl = "~/images/blus.jpg", Price = 449f, Title = "Blouse" },
+                        new { ProductID = 9, CategoryId = 1, Description = "Blue shorts", ImageUrl = "~/images/shorts.jpg", Price = 249f, Title = "Shorts" }
                     );
                 });
 

@@ -8,7 +8,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebShop.Dal;
 using WebShop.Web.Interfaces;
-using WebShop.Web.Mocks;
 using WebShop.Web.Models;
 using WebShop.Web.Repositories;
 
@@ -67,8 +66,6 @@ namespace WebShop
             app.UseSession();
             app.UseCookiePolicy();
             app.UseSession();
-
-            DbInitializer.Seed(serviceProvider);
 
             app.UseMvc(routes =>
             {

@@ -1,11 +1,5 @@
 ﻿@model WebShop.Bo.Product
 
-<style type="text/css">
-    img {
-        height: 600px;
-    }
-</style>
-
 @{
     ViewData["Title"] = "Details";
 }
@@ -24,8 +18,15 @@
     </dl>
 </div>
 
-<img src="@Url.Content(Model.ImageUrl)" />
+<img id="details-img" src="@Url.Content(Model.ImageUrl)" />
+
 
 <div>
+    <a class="btn" id="cartButton"
+       asp-controller="ShoppingCart"
+       asp-action="AddToShoppingCart"
+       asp-route-productId="@Model.ProductID">
+        Add to cart
+    </a>
     <a asp-action="List">Back to products</a>
 </div>

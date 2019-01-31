@@ -1,17 +1,5 @@
 ﻿@model WebShop.Bo.Product
 
-<style type="text/css">
-    .btn {
-        padding: 5px 10px;
-        border: 1px solid #000;
-        color: #000000;
-        background-color: #FFF;
-    }
-    .thumbnail a img {
-        height: 300px;
-    }
-</style>
-
 <div class="col-sm-4 col-lg-4 col-md-4">
     <div class="thumbnail">
         <a asp-controller="Product" asp-action="Details" asp-route-id="@Model.ProductID">

@@ -45,7 +45,7 @@ namespace WebShop.Web.Controllers
                 _shoppingCart.AddToCart(selectedProduct, 1);
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("List", "Product", new { area = "" });
         }
 
         public RedirectToActionResult RemoveFromShoppingCart(int productId)

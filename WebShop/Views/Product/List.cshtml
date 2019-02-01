@@ -11,7 +11,7 @@
 @{
     foreach (Product product in Model.Products)
     {
-        @Html.Partial("ProductsSummary", product)
+        @await Html.PartialAsync("ProductsSummary", product)
     }
 }
 

@@ -7,6 +7,6 @@ namespace WebShop.Web.Models.Avarda
 {
     public class InitializePaymentResponse
     {
-        public string PaymentId { get; set; }
+        public string purchaseId { get; set; }
     }
 }

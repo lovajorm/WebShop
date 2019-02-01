@@ -18,8 +18,6 @@ namespace WebShop.Web.Controllers
             Password = "test1",
             Url = "https://stage.avarda.org/Checkout2/CheckOut2Api/InitializePayment"
         };
-        
-        
 
         var requestHandler = new RequestHandler();
         var paymentResponse = requestHandler.GetPaymentResponse(connectionDetails);

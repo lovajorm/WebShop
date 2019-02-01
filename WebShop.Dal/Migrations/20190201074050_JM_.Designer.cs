@@ -10,8 +10,8 @@ using WebShop.Dal;
 namespace WebShop.Dal.Migrations
 {
     [DbContext(typeof(WebShopDbContext))]
-    [Migration("20190131104300_changedCityStringLength")]
-    partial class changedCityStringLength
+    [Migration("20190201074050_JM_")]
+    partial class JM_
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

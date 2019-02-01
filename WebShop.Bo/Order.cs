@@ -9,6 +9,7 @@ namespace WebShop.Bo
     {
         public int OrderId { get; set; }
         public string Ssn { get; set; }
+        public string ssn { get; set; }
         public List<OrderDetail> OrderLines { get; set; }
         [Required(ErrorMessage = "Please enter your first name")]
         [Display(Name = "First name")]

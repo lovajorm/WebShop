@@ -2,7 +2,7 @@
 
 namespace WebShop.Dal.Migrations
 {
-    public partial class changedCityStringLength : Migration
+    public partial class JM_ : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

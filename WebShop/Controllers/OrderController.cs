@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Bo;
@@ -11,6 +14,14 @@ namespace WebShop.Web.Controllers
 {
     public class OrderController : Controller
     {
+
+        public IActionResult GetInformation(Order information)              //Metod som ska ladda uppgifter på ssn
+        {
+
+            
+            return View(information);
+        }
+
         private readonly IOrderRepository _orderRepository;
         private readonly ShoppingCart _shoppingCart;
 
@@ -50,4 +61,8 @@ namespace WebShop.Web.Controllers
             return View();
         }
     }
+
+
+
+    
 }

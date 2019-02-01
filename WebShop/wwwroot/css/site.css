@@ -38,10 +38,14 @@ body {
     color: #000000;
     background-color: #FFF;
 }
+
 .thumbnail a img {
     height: 300px;
 }
 
+.dropdown-menu a {
+    color: #000;
+}
 
 
 

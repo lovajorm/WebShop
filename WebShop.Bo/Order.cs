@@ -8,6 +8,7 @@ namespace WebShop.Bo
     public class Order
     {
         public int OrderId { get; set; }
+        public string Ssn { get; set; }
         public List<OrderDetail> OrderLines { get; set; }
         [Required(ErrorMessage = "Please enter your first name")]
         [Display(Name = "First name")]
@@ -25,8 +26,8 @@ namespace WebShop.Bo
         [Display(Name = "Zip code")]
         [StringLength(10, MinimumLength = 4)]
         public string ZipCode { get; set; }
-        [StringLength(10)]
-        public string State { get; set; }
+        [StringLength(20)]
+        public string City { get; set; }
         [Required(ErrorMessage = "Please enter your country")]
         [StringLength(50)]
         public string Country { get; set; }

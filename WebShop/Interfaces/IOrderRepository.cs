@@ -6,12 +6,9 @@ using WebShop.Bo;
 
 namespace WebShop.Web.Interfaces
 {
-    public class IOrderRepository
+    public interface IOrderRepository
     {
-        public void CreateOrder(Order order)
-        {
-            throw new NotImplementedException();
-        }
+        void CreateOrder(Order order);
     }
 }
  

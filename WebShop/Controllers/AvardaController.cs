@@ -7,6 +7,9 @@ using WebShop.Web.Models.Avarda;
 
 namespace WebShop.Web.Controllers
 { 
+
+    
+
     public class AvardaController : Controller
     {
     // GET: Avarda

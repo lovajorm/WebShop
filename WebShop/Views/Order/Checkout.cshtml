@@ -12,8 +12,10 @@
     <form asp-action="Checkout" method="post" class="form-horizontal" role="form">
         <div class="form-group">
             <label asp-for="Ssn" class="col-md-2 control-label"></label>
+            <a class="btn" asp-controller="GetInformation" asp-action="Get Information">Get Information</a>     @*Knapp som laddar uppgifter efter ssn*@
             <div class="col-md-5">
                 <input asp-for="Ssn" class="form-control" />
+
                 <span asp-validation-for="Ssn" class="text-danger"></span>
             </div>
         </div>

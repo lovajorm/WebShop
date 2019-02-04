@@ -14,12 +14,18 @@ namespace WebShop.Web.Controllers
 {
     public class OrderController : Controller
     {
-
-        public IActionResult GetInformation(Order information)              //Metod som ska ladda uppgifter på ssn
+        [HttpGet]
+        public Order GetInformation(string ssn)              //Metod som ska ladda uppgifter på ssn
         {
+            var information = new Order();
+            information.FirstName = "Daniel";
+            information.LastName = "Jareteg";
+            information.Adress = "123";
+            information.ZipCode = "543 33";
+            information.City = "Borås";
+            information.Country = "Sweden";
 
-            
-            return View(information);
+            return information;
         }
 
         private readonly IOrderRepository _orderRepository;

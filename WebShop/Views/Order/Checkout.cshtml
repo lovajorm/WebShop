@@ -1,4 +1,4 @@
-﻿@model WebShop.Bo.Order 
+﻿@model WebShop.Bo.Order
 
 @{
     ViewData["Title"] = "Checkout";
@@ -12,7 +12,7 @@
     <form asp-action="Checkout" method="post" class="form-horizontal" role="form">
         <div class="form-group">
             <label asp-for="Ssn" class="col-md-2 control-label"></label>
-            <a class="btn" asp-controller="GetInformation" asp-action="Get Information">Get Information</a>     @*Knapp som laddar uppgifter efter ssn*@
+            <a class="btn" id="getCustomer">Get Information</a>     @*Knapp som laddar uppgifter efter ssn*@
             <div class="col-md-5">
                 <input asp-for="Ssn" class="form-control" />
 
@@ -22,14 +22,14 @@
         <div class="form-group">
             <label asp-for="LastName" class="col-md-2 control-label"></label>
             <div class="col-md-5">
-                <input asp-for="LastName" class="form-control"/>
+                <input asp-for="LastName" class="form-control" />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
             <label asp-for="FirstName" class="col-md-2 control-label"></label>
             <div class="col-md-5">
-                <input asp-for="FirstName" class="form-control"/>
+                <input asp-for="FirstName" class="form-control" />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
         </div>
@@ -37,7 +37,7 @@
         <div class="form-group">
             <label asp-for="Adress" class="col-md-2 control-label"></label>
             <div class="col-md-5">
-                <input asp-for="Adress" class="form-control"/>
+                <input asp-for="Adress" class="form-control" />
                 <span asp-validation-for="Adress" class="text-danger"></span>
             </div>
         </div>
@@ -45,7 +45,7 @@
         <div class="form-group">
             <label asp-for="ZipCode" class="col-md-2 control-label"></label>
             <div class="col-md-5">
-                <input asp-for="ZipCode" class="form-control"/>
+                <input asp-for="ZipCode" class="form-control" />
                 <span asp-validation-for="ZipCode" class="text-danger"></span>
             </div>
         </div>
@@ -53,7 +53,7 @@
         <div class="form-group">
             <label asp-for="City" class="col-md-2 control-label"></label>
             <div class="col-md-5">
-                <input asp-for="City" class="form-control"/>
+                <input asp-for="City" class="form-control" />
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
         </div>
@@ -61,7 +61,7 @@
         <div class="form-group">
             <label asp-for="Country" class="col-md-2 control-label"></label>
             <div class="col-md-5">
-                <input asp-for="Country" class="form-control"/>
+                <input asp-for="Country" class="form-control" />
                 <span asp-validation-for="Country" class="text-danger"></span>
             </div>
         </div>
@@ -69,7 +69,7 @@
         <div class="form-group">
             <label asp-for="PhoneNumber" class="col-md-2 control-label"></label>
             <div class="col-md-5">
-                <input asp-for="PhoneNumber" class="form-control"/>
+                <input asp-for="PhoneNumber" class="form-control" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
         </div>
@@ -77,16 +77,45 @@
         <div class="form-group">
             <label asp-for="Email" class="col-md-2 control-label"></label>
             <div class="col-md-5">
-                <input asp-for="Email" class="form-control"/>
+                <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
             <div class="btn-group col-md-offset-2 col-md-8">
-                <input class="btn" type="submit" value="Complete order"/>
+                <input class="btn" type="submit" value="Complete order" />
                 @*<input class="btn btn-default" type="submit" value="Return " />*@
             </div>
         </div>
 
     </form>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#getCustomer').on('click', function (e) {
+            $.ajax({
+                url: '@Url.Action("GetInformation", "Order")',
+                data: { ssn: $('#Ssn')[0].value },
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    $('#LastName').val(data.lastName);
+                    $('#FirstName').val(data.firstName);
+                    $('#Address1').val(data.address1);
+                    $('#Address2').val(data.address2);
+                    $('#ZipCode').val(data.zipCode);
+                    $('#City').val(data.city);
+                    $('#Country').val(data.country);
+                },
+                failure: function (data) {
+                    alert(data.responseText);
+                }, //End of AJAX failure function  
+                error: function (data) {
+                    alert(data.responseText);
+                } //End of AJAX error function  
+            })
+        });
+    });
+</script>

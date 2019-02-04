@@ -23,7 +23,7 @@ namespace WebShop.Web.Models.Avarda
 
                     if (httpRequest.IsSuccessStatusCode)
                     {
-                        return (new InitializePaymentResponse { PaymentId = content });
+                        return (new InitializePaymentResponse { purchaseId = content });
                     }
                 }
                 catch (Exception e)

@@ -10,12 +10,7 @@ namespace WebShop.Dal.Migrations
                 name: "FK_Products_Categories_CategoryId",
                 table: "Products");
 
-            migrationBuilder.AlterColumn<int>(
-                name: "CategoryId",
-                table: "Products",
-                nullable: false,
-                oldClrType: typeof(int),
-                oldNullable: true);
+            
 
             migrationBuilder.UpdateData(
                 table: "Products",
@@ -79,6 +74,13 @@ namespace WebShop.Dal.Migrations
                 keyValue: 9,
                 column: "CategoryId",
                 value: 1);
+
+            migrationBuilder.AlterColumn<int>(
+                name: "CategoryId",
+                table: "Products",
+                nullable: false,
+                oldClrType: typeof(int),
+                oldNullable: true);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Products_Categories_CategoryId",

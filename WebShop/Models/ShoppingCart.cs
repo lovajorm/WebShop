@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,7 +23,7 @@ namespace WebShop.Web.Models
 
 
 
-            public static ShoppingCart GetCart(IServiceProvider services)
+            public static ShoppingCart GetCart(IServiceProvider services)                                       //Loads the shopping cart. Pogram can't run without this, why?
             {
                 ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
 
@@ -36,7 +35,7 @@ namespace WebShop.Web.Models
                 return new ShoppingCart(context) {ShoppingCartId = cartId};
             }
 
-            public void AddToCart(Product product, int amount)
+            public void AddToCart(Product product, int amount)                                                //Method which allows user to add items to cart when in the shop.
             {
                 var shoppingCartItem = _context.ShoppingCartItems.SingleOrDefault(s =>
                     s.Product.ProductID == product.ProductID && s.ShoppingCartId == ShoppingCartId);
@@ -59,7 +58,7 @@ namespace WebShop.Web.Models
                 _context.SaveChanges();
             }
 
-            public int RemoveFromCart(Product product)
+            public int RemoveFromCart(Product product)                                          //Method which allows user to remove items when in shopping cart.
             {
                 var shopppingCartItem = _context.ShoppingCartItems.SingleOrDefault(
                     s => s.Product.ProductID == product.ProductID && s.ShoppingCartId == ShoppingCartId);
@@ -91,7 +90,7 @@ namespace WebShop.Web.Models
                            .ToList());
             }
 
-            public void ClearCart()
+            public void ClearCart()                                                                 //Clears the cart after "Complete Order".
             {
                 var cartItems = _context
                     .ShoppingCartItems
@@ -102,7 +101,7 @@ namespace WebShop.Web.Models
                 _context.SaveChanges();
             }
 
-            public float GetShopppingCartTotal()
+            public float GetShopppingCartTotal()                                                    //Counts the total price of the cart.
             {
                 var total = _context.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
                     .Select(c => c.Product.Price * c.Amount).Sum();

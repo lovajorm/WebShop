@@ -17,6 +17,27 @@ namespace WebShop.Dal
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Category>().HasData(
+                new Category()
+                {
+                    CategoryId = 1,
+                    CategoryName = "Clothes",
+                    Description = "Clothes",
+                },
+                new Category()
+                {
+                    CategoryId = 2,
+                    CategoryName = "Furniture",
+                    Description = "Furniture",
+                },
+                new Category()
+                {
+                    CategoryId = 3,
+                    CategoryName = "Electronics",
+                    Description = "Electronics",
+                });
+
+
             modelBuilder.Entity<Product>().HasData(
                 new Product()
                 {
@@ -117,26 +138,6 @@ namespace WebShop.Dal
                     ImageUrl = "~/images/Furniture/table.jpg",
                     CategoryId = 2
                 });
-
-            modelBuilder.Entity<Category>().HasData(
-                new Category()
-                {
-                    CategoryId = 1,
-                    CategoryName = "Clothes",
-                    Description = "Clothes",
-                },
-                new Category()
-                {
-                    CategoryId = 2,
-                    CategoryName = "Furniture",
-                    Description = "Furniture",
-                },
-            new Category()
-            {
-                CategoryId = 3,
-                CategoryName = "Electronics",
-                Description = "Electronics",
-            });
         }
     }
 }

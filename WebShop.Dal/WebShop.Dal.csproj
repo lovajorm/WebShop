@@ -9,10 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Net.Http.Formatting.Extension" Version="5.2.3" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\WebShop.Bo\WebShop.Bo.csproj" />
   </ItemGroup>
 

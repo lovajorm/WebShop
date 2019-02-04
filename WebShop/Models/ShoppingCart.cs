@@ -46,8 +46,8 @@ namespace WebShop.Web.Models
                     shoppingCartItem = new ShoppingCartItem
                     {
                         ShoppingCartId = ShoppingCartId,
-                            Product = product,
-                                Amount = 1
+                        Product = product,
+                        Amount = 1
                     };
                     _context.ShoppingCartItems.Add(shoppingCartItem);
                 }

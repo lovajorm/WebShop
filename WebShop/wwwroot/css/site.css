@@ -28,6 +28,33 @@ body {
     margin: 15px;
 }
 
+#details-img {
+    height: 600px;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: 1px solid #000;
+    color: #000000;
+    background-color: #FFF;
+}
+
+.thumbnail a img {
+    height: 300px;
+}
+
+.dropdown-menu a {
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */

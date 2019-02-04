@@ -7,8 +7,13 @@ namespace WebShop.Dal
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail > OrderDetails { get; set; }
 
-        public WebShopDbContext(DbContextOptions<WebShopDbContext> context) : base(context) {}
+        public WebShopDbContext(DbContextOptions<WebShopDbContext> context) : base(context)
+        {
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -16,75 +21,122 @@ namespace WebShop.Dal
                 new Product()
                 {
                     ProductID = 1,
-                    Title = "Produkt 1",
-                    Description = "Beskrivning av produkt 1",
-                    Price = 10,
-                    ImageUrl = "Apelsin.png"
+                    Title = "Sweater",
+                    Description = "Knitted mens sweater",
+                    Price = 100,
+                    ImageUrl = "~/images/Clothes/svart.jpg",
+                    CategoryId = 1
                 },
                 new Product()
                 {
                     ProductID = 2,
-                    Title = "Produkt 2",
-                    Description = "Beskrivning av objekt 2",
-                    Price = 20,
-                    ImageUrl = "Apple.png"
+                    Title = "Pants",
+                    Description = "Black womens pants",
+                    Price = 200,
+                    ImageUrl = "~/images/Clothes/byx.jpg",
+                    CategoryId = 1
                 },
                 new Product()
                 {
                     ProductID = 3,
-                    Title = "Produkt 3",
-                    Description = "Beskrivning av objekt 3",
-                    Price = 30,
-                    ImageUrl = "Cassis.png"
+                    Title = "Hoodie",
+                    Description = "Black hoodie",
+                    Price = 359,
+                    ImageUrl = "~/images/Clothes/hoodie.jpg",
+                    CategoryId = 1
                 },
                 new Product()
                 {
                     ProductID = 4,
-                    Title = "Produkt 4",
-                    Description = "Beskrivning av objekt 4",
-                    Price = 40,
-                    ImageUrl = "CitronLine.png"
+                    Title = "Skirt",
+                    Description = "Leopard skirt",
+                    Price = 349,
+                    ImageUrl = "~/images/Clothes/kjol.jpg",
+                    CategoryId = 1
                 },
                 new Product()
                 {
                     ProductID = 5,
-                    Title = "Produkt 5",
-                    Description = "Beskrivning av objekt 5",
-                    Price = 50,
-                    ImageUrl = "Hallon.png"
+                    Title = "Cardigan",
+                    Description = "Grey cardigan",
+                    Price = 500,
+                    ImageUrl = "~/images/Clothes/kofta.jpg",
+                    CategoryId = 1
                 },
                 new Product()
                 {
                     ProductID = 6,
-                    Title = "Produkt 6",
-                    Description = "Beskrivning av objekt 6",
-                    Price = 60,
-                    ImageUrl = "Paron.png"
+                    Title = "Jeans",
+                    Description = "Blue jeans",
+                    Price = 599,
+                    ImageUrl = "~/images/Clothes/jeans.jfif",
+                    CategoryId = 1
                 },
                 new Product()
                 {
                     ProductID = 7,
-                    Title = "Produkt 7",
-                    Description = "Beskrivning av objekt 7",
-                    Price = 70,
-                    ImageUrl = "Persika.png"
+                    Title = "T-shirt",
+                    Description = "Mens T-shirt",
+                    Price = 99,
+                    ImageUrl = "~/images/Clothes/tshirt.jpg",
+                    CategoryId = 1
                 },
                 new Product()
                 {
                     ProductID = 8,
-                    Title = "Produkt 8",
-                    Description = "Beskrivning av objekt 8",
-                    Price = 80,
-                    ImageUrl = "RodaBar.png"
+                    Title = "Blouse",
+                    Description = "Womens blouse",
+                    Price = 449,
+                    ImageUrl = "~/images/Clothes/blus.jpg",
+                    CategoryId = 1
                 },
                 new Product()
                 {
                     ProductID = 9,
-                    Title = "Produkt 9",
-                    Description = "Beskrivning av objekt 9",
-                    Price = 90,
-                    ImageUrl = "Tropical.png"
+                    Title = "Shorts",
+                    Description = "Blue shorts",
+                    Price = 249,
+                    ImageUrl = "~/images/Clothes/shorts.jpg",
+                    CategoryId = 1
+                },
+                new Product()
+                {
+                    ProductID = 10,
+                    Title = "Laptop",
+                    Description = "Laptop from HP",
+                    Price = 10000,
+                    ImageUrl = "~/images/Electronics/laptop.jfif",
+                    CategoryId = 3
+                },
+                new Product()
+                {
+                    ProductID = 11,
+                    Title = "Table",
+                    Description = "Dinner table",
+                    Price = 2000,
+                    ImageUrl = "~/images/Furniture/table.jpg",
+                    CategoryId = 2
                 });
+
+            modelBuilder.Entity<Category>().HasData(
+                new Category()
+                {
+                    CategoryId = 1,
+                    CategoryName = "Clothes",
+                    Description = "Clothes",
+                },
+                new Category()
+                {
+                    CategoryId = 2,
+                    CategoryName = "Furniture",
+                    Description = "Furniture",
+                },
+            new Category()
+            {
+                CategoryId = 3,
+                CategoryName = "Electronics",
+                Description = "Electronics",
+            });
         }
     }
 }

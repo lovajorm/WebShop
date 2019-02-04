@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebShop.Dal;
 
 namespace WebShop.Dal.Migrations
 {
     [DbContext(typeof(WebShopDbContext))]
-    partial class WebShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190130140652_addOrderAndOrderDetail")]
+    partial class addOrderAndOrderDetail
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,8 +37,7 @@ namespace WebShop.Dal.Migrations
 
                     b.HasData(
                         new { CategoryId = 1, CategoryName = "Clothes", Description = "Clothes" },
-                        new { CategoryId = 2, CategoryName = "Furniture", Description = "Furniture" },
-                        new { CategoryId = 3, CategoryName = "Electronics", Description = "Electronics" }
+                        new { CategoryId = 2, CategoryName = "Furniture", Description = "Furniture" }
                     );
                 });
 
@@ -46,42 +47,25 @@ namespace WebShop.Dal.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Adress")
-                        .IsRequired()
-                        .HasMaxLength(100);
+                    b.Property<string>("Adress");
 
-                    b.Property<string>("City")
-                        .HasMaxLength(20);
+                    b.Property<string>("Country");
 
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("Email");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("FirstName");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("LastName");
 
                     b.Property<DateTime>("OrderPlaced");
 
                     b.Property<float>("OrderTotal");
 
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasMaxLength(25);
+                    b.Property<string>("PhoneNumber");
 
-                    b.Property<string>("Ssn");
+                    b.Property<string>("State");
 
-                    b.Property<string>("ZipCode")
-                        .IsRequired()
-                        .HasMaxLength(10);
+                    b.Property<string>("ZipCode");
 
                     b.HasKey("OrderId");
 
@@ -134,17 +118,15 @@ namespace WebShop.Dal.Migrations
                     b.ToTable("Products");
 
                     b.HasData(
-                        new { ProductID = 1, CategoryId = 1, Description = "Knitted mens sweater", ImageUrl = "~/images/Clothes/svart.jpg", Price = 100f, Title = "Sweater" },
-                        new { ProductID = 2, CategoryId = 1, Description = "Black womens pants", ImageUrl = "~/images/Clothes/byx.jpg", Price = 200f, Title = "Pants" },
-                        new { ProductID = 3, CategoryId = 1, Description = "Black hoodie", ImageUrl = "~/images/Clothes/hoodie.jpg", Price = 359f, Title = "Hoodie" },
-                        new { ProductID = 4, CategoryId = 1, Description = "Leopard skirt", ImageUrl = "~/images/Clothes/kjol.jpg", Price = 349f, Title = "Skirt" },
-                        new { ProductID = 5, CategoryId = 1, Description = "Grey cardigan", ImageUrl = "~/images/Clothes/kofta.jpg", Price = 500f, Title = "Cardigan" },
-                        new { ProductID = 6, CategoryId = 1, Description = "Blue jeans", ImageUrl = "~/images/Clothes/jeans.jfif", Price = 599f, Title = "Jeans" },
-                        new { ProductID = 7, CategoryId = 1, Description = "Mens T-shirt", ImageUrl = "~/images/Clothes/tshirt.jpg", Price = 99f, Title = "T-shirt" },
-                        new { ProductID = 8, CategoryId = 1, Description = "Womens blouse", ImageUrl = "~/images/Clothes/blus.jpg", Price = 449f, Title = "Blouse" },
-                        new { ProductID = 9, CategoryId = 1, Description = "Blue shorts", ImageUrl = "~/images/Clothes/shorts.jpg", Price = 249f, Title = "Shorts" },
-                        new { ProductID = 10, CategoryId = 3, Description = "Laptop from HP", ImageUrl = "~/images/Electronics/laptop.jfif", Price = 10000f, Title = "Laptop" },
-                        new { ProductID = 11, CategoryId = 2, Description = "Dinner table", ImageUrl = "~/images/Furniture/table.jpg", Price = 2000f, Title = "Table" }
+                        new { ProductID = 1, CategoryId = 1, Description = "Beskrivning av produkt 1", ImageUrl = "~/images/svart.jpg", Price = 10f, Title = "Produkt 1" },
+                        new { ProductID = 2, CategoryId = 1, Description = "Beskrivning av objekt 2", ImageUrl = "~/images/byx.jpg", Price = 20f, Title = "Produkt 2" },
+                        new { ProductID = 3, CategoryId = 2, Description = "Beskrivning av objekt 3", ImageUrl = "~/images/svart.jpg", Price = 30f, Title = "Produkt 3" },
+                        new { ProductID = 4, CategoryId = 2, Description = "Beskrivning av objekt 4", ImageUrl = "~/images/byx.jpg", Price = 40f, Title = "Produkt 4" },
+                        new { ProductID = 5, CategoryId = 1, Description = "Beskrivning av objekt 5", ImageUrl = "~/images/hoodie.jpg", Price = 50f, Title = "Produkt 5" },
+                        new { ProductID = 6, CategoryId = 1, Description = "Beskrivning av objekt 6", ImageUrl = "~/images/svart.jpg", Price = 60f, Title = "Produkt 6" },
+                        new { ProductID = 7, CategoryId = 2, Description = "Beskrivning av objekt 7", ImageUrl = "~/images/hoodie.jpg", Price = 70f, Title = "Produkt 7" },
+                        new { ProductID = 8, CategoryId = 1, Description = "Beskrivning av objekt 8", ImageUrl = "~/images/hoodie.jpg", Price = 80f, Title = "Produkt 8" },
+                        new { ProductID = 9, CategoryId = 1, Description = "Beskrivning av objekt 9", ImageUrl = "~/images/byx.jpg", Price = 90f, Title = "Produkt 9" }
                     );
                 });
 

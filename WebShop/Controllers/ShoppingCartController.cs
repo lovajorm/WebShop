@@ -7,22 +7,21 @@ using WebShop.Bo;
 using WebShop.Dal;
 using WebShop.Web.Models;
 using Microsoft.EntityFrameworkCore;
+using WebShop.Web.Interfaces;
+using WebShop.Web.ViewModels;
 
 namespace WebShop.Web.Controllers
 {
     public class ShoppingCartController : Controller
     {
-        private readonly Product _product;
+        private readonly IProductRepository _productRepository;
         private readonly ShoppingCart _shoppingCart;
 
-        public ShoppingCartController(Product product, ShoppingCart shoppingCart)
+        public ShoppingCartController(IProductRepository productRepository, ShoppingCart shoppingCart)
         {
-            _product = product;
+            _productRepository = productRepository;
             _shoppingCart = shoppingCart;
         }
-
-        public Product product { get; private set; }
-        public ShoppingCart shoppingCart { get; private set; }
 
         public ViewResult Index()
         {
@@ -37,28 +36,28 @@ namespace WebShop.Web.Controllers
             return View(scvm);
         }
 
-        //public RedirectToActionResult AddToShoppingCart(int productID)
-        //{
-        //    var selectedProduct = _product.Products.FirstOrDefault(p => p.ProductID == productID);
+        public RedirectToActionResult AddToShoppingCart(int productId)
+        {
+            var selectedProduct = _productRepository.Products.FirstOrDefault(p => p.ProductID == productId);
 
-        //    if (selectedProduct != null)
-        //    {
-        //        _shoppingCart.AddToCart(selectedProduct, 1);
-        //    }
+            if (selectedProduct != null)
+            {
+                _shoppingCart.AddToCart(selectedProduct, 1);
+            }
 
-        //    return RedirectToAction("Index");
-        //}
+            return RedirectToAction("List", "Product", new { area = "" });
+        }
 
-        //public RedirectToActionResult RemoveFromShoppingCart(int productID)
-        //{
-        //    var selectedProduct = _product.Products.FirstOrDefault(p => p.ProductID == productID);
+        public RedirectToActionResult RemoveFromShoppingCart(int productId)
+        {
+            var selectedProduct = _productRepository.Products.FirstOrDefault(p => p.ProductID == productId);
 
-        //    if (selectedProduct != null)
-        //    {
-        //        _shoppingCart.RemoveFromCart(selectedProduct);
-        //    }
+            if (selectedProduct != null)
+            {
+                _shoppingCart.RemoveFromCart(selectedProduct);
+            }
 
-        //    return RedirectToAction("Index");
-        //}
+            return RedirectToAction("Index");
+        }
     }
 }

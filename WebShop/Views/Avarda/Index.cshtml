@@ -1,0 +1,31 @@
+﻿@model WebShop.Web.Models.Avarda.InitializePaymentResponse
+@{
+   ViewBag.Title = "Index"; 
+}
+
+<head>
+    <script src="https://stage.avarda.org/CheckOut2/Scripts/CheckOutClient.js" async></script>
+</head>
+
+<h1>Checkout</h1>
+<div id="checkOutDiv"></div>
+
+<script>
+    var options = {
+        // ID of the <div> inside which to render the form
+        divId: "checkOutDiv",
+        // The Purchase ID obtained in the previous step
+        /**/
+        purchaseId: "53d621b6c69741df3371e774293be127",
+    /**/
+    // What to do once the result is available
+    done: function (purchaseId) {
+        window.location.href = "/done.php?purchaseId=" + purchaseId;
+    },
+    // Where to return if we have to redirect the customer out of your website temporarily
+    /**/
+    callbackUrl: "https://my-shop.com/checkout.php?purchaseId=idString&callback=1"
+    /**/
+}
+AvardaCheckOutClient.init(options);
+</script>

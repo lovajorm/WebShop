@@ -16,9 +16,8 @@ namespace WebShop.Web.Controllers
 
         public IActionResult GetInformation(Order ssn)              //Method which gets customer information by using Ssn, see checkout.cshtml.
         {
-            //Initializes request and response.
-            InitializeCustomerRequest request = new InitializeCustomerRequest();
-            InitializeCustomerResponse response = new InitializeCustomerResponse();
+            
+            Customer response = new Customer();                         //Initializes customer
 
             using (var handler = new WebRequestHandler())
             {
@@ -34,8 +33,10 @@ namespace WebShop.Web.Controllers
                     {
                         var result = client.GetStringAsync(new Uri("https://stage.avarda.org/WebShopApi/webshop/ssn/swe/196504192383")).Result;
 
-                        response = Newtonsoft.Json.JsonConvert.DeserializeObject<InitializeCustomerResponse>(result);                  //Converts from json to c# text.
+                        response = Newtonsoft.Json.JsonConvert.DeserializeObject<Customer>(result);                  //Converts from json to c# text.
                     }
+
+
                     catch (WebException e)
                     {
 

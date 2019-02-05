@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using WebShop.Bo;
 using WebShop.Dal;
 using WebShop.Web.Interfaces;
@@ -19,7 +16,9 @@ namespace WebShop.Web.Repositories
             _context = context;
             _shoppingCart = shoppingCart;
         }
-        public void CreateOrder(Order order)
+
+
+        public void CreateOrder(Order order)                        //Method which creates an order on "Check out" when in shopping cart.
         {
             order.OrderPlaced = DateTime.Now;
             _context.Orders.Add(order);

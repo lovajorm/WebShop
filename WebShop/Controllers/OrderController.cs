@@ -33,7 +33,7 @@ namespace WebShop.Web.Controllers
                     try
                     {
                         var result = client.GetStringAsync(new Uri($"https://stage.avarda.org/WebShopApi/webshop/ssn/swe/{ssn}")).Result;
-                        response = JsonConvert.DeserializeObject<InitializeCustomerResponse>(result);                  //Converts from json to c# class.
+                        response = JsonConvert.DeserializeObject<Customer>(result);                  //Converts from json to c# class.
                     }
                     catch (Exception e)
                     {

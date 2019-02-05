@@ -14,6 +14,7 @@ using Microsoft.Extensions.Logging;
 using WebShop.Dal;
 using WebShop.Log;
 using WebShop.Web.Interfaces;
+using WebShop.Web.Middleware;
 using WebShop.Web.Models;
 using WebShop.Web.Repositories;
 
@@ -39,7 +40,7 @@ namespace WebShop
             });
 
             var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
-            XmlConfigurator.Configure(logRepository, new FileInfo("C:\\Development\\Webshoppen\\WebShop\\WebShop.Log\\log4netCustom.config"));
+            XmlConfigurator.Configure(logRepository, new FileInfo("C:\\Development\\Webshoppen\\WebShop\\WebShop.Log\\log4net.config"));
             services.AddSingleton<IMessageLogger, MessageLogger>();
 
             //services.AddSingleton(new LoggerFactory()
@@ -82,6 +83,7 @@ namespace WebShop
             app.UseSession();
             app.UseCookiePolicy();
             app.UseSession();
+            app.UseMiddleware<RestLoggingMiddleware>();
 
             app.UseMvc(routes =>
             {

@@ -1,0 +1,1521 @@
+2019-02-05 15:53:27,488 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/  
+2019-02-05 15:53:28,349 [7] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 15:53:28,349 [7] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 15:53:28,357 [7] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 15:53:28,359 [7] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 15:53:30,345 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200 text/html; charset=utf-8
+2019-02-05 15:54:50,360 [18] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Product/List/Furniture  
+2019-02-05 15:54:50,380 [18] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 15:54:50,380 [18] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 15:54:50,381 [18] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 15:54:50,381 [18] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 15:54:50,432 [18] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200 text/html; charset=utf-8
+2019-02-05 15:55:46,095 [20] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=11 
+2019-02-05 15:58:19,258 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ 
+2019-02-05 15:58:20,004 [9] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 15:58:20,005 [9] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 15:58:20,010 [9] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 15:58:20,011 [9] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 15:58:21,499 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200 text/html; charset=utf-8
+2019-02-05 15:58:23,615 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1
+2019-02-05 16:00:20,743 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ 
+2019-02-05 16:00:21,425 [8] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:00:21,426 [8] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:00:21,435 [8] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:00:21,436 [8] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:00:23,467 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200 text/html; charset=utf-8
+2019-02-05 16:00:27,660 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1 
+2019-02-05 16:00:55,466 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1 
+2019-02-05 16:01:45,201 [17] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1 
+2019-02-05 16:06:26,000 [7] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:06:26,039 [7] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:06:26,044 [7] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:06:26,044 [7] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:06:30,310 [7] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:06:30,310 [7] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:06:30,310 [7] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:06:30,310 [7] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:06:35,687 [10] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:06:35,687 [10] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:06:35,687 [10] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:06:35,687 [10] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:06:44,925 [8] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:06:44,926 [8] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:06:44,926 [8] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:06:44,926 [8] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:06:46,705 [8] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:06:46,705 [8] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:06:46,705 [8] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:06:46,706 [8] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:06:48,236 [8] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:06:48,236 [8] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:06:48,236 [8] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:06:48,236 [8] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:06:49,607 [9] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:06:49,607 [9] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:06:49,607 [9] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:06:49,607 [9] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:06:51,565 [7] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:06:51,565 [7] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:06:51,565 [7] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:06:51,565 [7] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:09:48,869 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-05 16:09:49,757 [7] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:09:49,758 [7] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:09:49,764 [7] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:09:49,765 [7] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:09:51,414 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200 text/html; charset=utf-8
+2019-02-05 16:09:55,007 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-05 16:09:58,944 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-05 16:10:06,261 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart
+2019-02-05 16:15:39,993 [10] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-05 16:15:40,546 [10] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:15:40,547 [10] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:15:40,551 [10] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:15:40,551 [10] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:15:50,477 [10] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200 text/html; charset=utf-8
+2019-02-05 16:15:54,819 [13] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/Index
+2019-02-05 16:16:09,350 [13] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200 text/html; charset=utf-8
+2019-02-05 16:16:26,328 [10] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Product
+2019-02-05 16:16:26,335 [10] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:16:26,336 [10] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:16:26,336 [10] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:16:26,337 [10] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:16:29,643 [10] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200 text/html; charset=utf-8
+2019-02-05 16:16:35,210 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-05 16:20:17,096 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-05 16:20:17,805 [9] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:20:17,806 [9] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:20:17,809 [9] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:20:17,810 [9] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:20:26,100 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200 text/html; charset=utf-8
+2019-02-05 16:20:29,010 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-05 16:21:29,173 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-05 16:21:30,720 [7] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:21:30,723 [7] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:21:30,732 [7] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:21:30,732 [7] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:21:40,413 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200 text/html; charset=utf-8
+2019-02-05 16:21:43,008 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-05 16:23:41,413 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-05 16:23:41,434 [7] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:23:41,434 [7] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:23:41,434 [7] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:23:41,434 [7] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:23:44,753 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200 text/html; charset=utf-8
+2019-02-05 16:23:47,416 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-05 16:24:26,617 [13] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-05 16:24:26,624 [13] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:24:26,624 [13] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:24:26,624 [13] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:24:26,624 [13] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:24:37,063 [13] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200 text/html; charset=utf-8
+2019-02-05 16:24:44,242 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-05 16:32:58,532 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-05 16:32:59,066 [8] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:32:59,067 [8] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:32:59,072 [8] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:32:59,073 [8] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:33:11,249 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-05 16:33:24,823 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Product
+2019-02-05 16:33:24,834 [8] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:33:24,835 [8] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:33:24,835 [8] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:33:24,836 [8] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:35:10,305 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-05 16:35:11,100 [9] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:35:11,101 [9] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:35:11,108 [9] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:35:11,109 [9] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:35:16,921 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-05 16:35:20,634 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-05 16:36:56,257 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-05 16:36:56,814 [8] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:36:56,816 [8] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:36:56,822 [8] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:36:56,823 [8] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:37:01,431 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-05 16:37:07,914 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-05 16:38:12,148 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-05 16:38:13,330 [8] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:38:13,330 [8] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:38:13,337 [8] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:38:13,337 [8] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:38:20,622 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200: <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List - WebShop</title>
+    <link rel="shortcut icon" href="/favicon.png" />
+    
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="/css/site.css" />
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/Product">WebShop</a>
+        </div>
+        <li class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="/Product">Home</a></li>
+            <li><a href="/Product">Webshop</a></li>
+            <li>
+                <a class="btndropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categories
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a href="/Product/List/Clothes">Clothes</a><br/>
+                    <a href="/Product/List/Electronics">Electronics</a><br/>
+                    <a href="/Product/List/Furniture">Furniture</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+    <li>
+        <a href="/ShoppingCart/Index">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            <span id="cart-status">
+                0
+            </span>
+        </a>
+    </li>
+
+</li>
+        </ul>
+    </div>
+
+</nav>
+
+
+
+
+
+<div class="container body-content">
+    
+
+
+
+
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=1">
+            <img src="/images/Clothes/svart.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 100,00 kr</h3>
+                <h3>Sweater</h3>
+                <p>Knitted mens sweater</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=1">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=2">
+            <img src="/images/Clothes/byx.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 200,00 kr</h3>
+                <h3>Pants</h3>
+                <p>Black womens pants</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=2">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=3">
+            <img src="/images/Clothes/hoodie.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 359,00 kr</h3>
+                <h3>Hoodie</h3>
+                <p>Black hoodie</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=3">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=4">
+            <img src="/images/Clothes/kjol.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 349,00 kr</h3>
+                <h3>Skirt</h3>
+                <p>Leopard skirt</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=4">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=5">
+            <img src="/images/Clothes/kofta.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 500,00 kr</h3>
+                <h3>Cardigan</h3>
+                <p>Grey cardigan</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=5">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=6">
+            <img src="/images/Clothes/jeans.jfif" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 599,00 kr</h3>
+                <h3>Jeans</h3>
+                <p>Blue jeans</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=6">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=7">
+            <img src="/images/Clothes/tshirt.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 99,00 kr</h3>
+                <h3>T-shirt</h3>
+                <p>Mens T-shirt</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=7">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=8">
+            <img src="/images/Clothes/blus.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 449,00 kr</h3>
+                <h3>Blouse</h3>
+                <p>Womens blouse</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=8">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=9">
+            <img src="/images/Clothes/shorts.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 249,00 kr</h3>
+                <h3>Shorts</h3>
+                <p>Blue shorts</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=9">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=10">
+            <img src="/images/Electronics/laptop.jfif" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 10&#xA0;000,00 kr</h3>
+                <h3>Laptop</h3>
+                <p>Laptop from HP</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=10">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=11">
+            <img src="/images/Furniture/table.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 2&#xA0;000,00 kr</h3>
+                <h3>Table</h3>
+                <p>Dinner table</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=11">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+
+    <hr/>
+    <footer>
+        <p>&copy; 2019 - WebShop</p>
+    </footer>
+</div>
+
+
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
+
+
+
+
+</body>
+</html>
+
+2019-02-05 16:38:23,106 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-05 16:41:11,923 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-05 16:41:12,804 [8] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:41:12,805 [8] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:41:12,811 [8] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:41:12,812 [8] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:41:21,505 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200: <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List - WebShop</title>
+    <link rel="shortcut icon" href="/favicon.png" />
+    
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="/css/site.css" />
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/Product">WebShop</a>
+        </div>
+        <li class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="/Product">Home</a></li>
+            <li><a href="/Product">Webshop</a></li>
+            <li>
+                <a class="btndropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categories
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a href="/Product/List/Clothes">Clothes</a><br/>
+                    <a href="/Product/List/Electronics">Electronics</a><br/>
+                    <a href="/Product/List/Furniture">Furniture</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+    <li>
+        <a href="/ShoppingCart/Index">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            <span id="cart-status">
+                0
+            </span>
+        </a>
+    </li>
+
+</li>
+        </ul>
+    </div>
+
+</nav>
+
+
+
+
+
+<div class="container body-content">
+    
+
+
+
+
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=1">
+            <img src="/images/Clothes/svart.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 100,00 kr</h3>
+                <h3>Sweater</h3>
+                <p>Knitted mens sweater</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=1">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=2">
+            <img src="/images/Clothes/byx.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 200,00 kr</h3>
+                <h3>Pants</h3>
+                <p>Black womens pants</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=2">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=3">
+            <img src="/images/Clothes/hoodie.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 359,00 kr</h3>
+                <h3>Hoodie</h3>
+                <p>Black hoodie</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=3">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=4">
+            <img src="/images/Clothes/kjol.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 349,00 kr</h3>
+                <h3>Skirt</h3>
+                <p>Leopard skirt</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=4">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=5">
+            <img src="/images/Clothes/kofta.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 500,00 kr</h3>
+                <h3>Cardigan</h3>
+                <p>Grey cardigan</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=5">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=6">
+            <img src="/images/Clothes/jeans.jfif" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 599,00 kr</h3>
+                <h3>Jeans</h3>
+                <p>Blue jeans</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=6">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=7">
+            <img src="/images/Clothes/tshirt.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 99,00 kr</h3>
+                <h3>T-shirt</h3>
+                <p>Mens T-shirt</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=7">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=8">
+            <img src="/images/Clothes/blus.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 449,00 kr</h3>
+                <h3>Blouse</h3>
+                <p>Womens blouse</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=8">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=9">
+            <img src="/images/Clothes/shorts.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 249,00 kr</h3>
+                <h3>Shorts</h3>
+                <p>Blue shorts</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=9">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=10">
+            <img src="/images/Electronics/laptop.jfif" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 10&#xA0;000,00 kr</h3>
+                <h3>Laptop</h3>
+                <p>Laptop from HP</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=10">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=11">
+            <img src="/images/Furniture/table.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 2&#xA0;000,00 kr</h3>
+                <h3>Table</h3>
+                <p>Dinner table</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=11">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+
+    <hr/>
+    <footer>
+        <p>&copy; 2019 - WebShop</p>
+    </footer>
+</div>
+
+
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
+
+
+
+
+</body>
+</html>
+
+2019-02-05 16:41:23,441 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-05 16:43:45,017 [10] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-05 16:43:45,748 [10] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:43:45,749 [10] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:43:45,755 [10] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:43:45,755 [10] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:43:50,172 [10] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200: <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List - WebShop</title>
+    <link rel="shortcut icon" href="/favicon.png" />
+    
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="/css/site.css" />
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/Product">WebShop</a>
+        </div>
+        <li class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="/Product">Home</a></li>
+            <li><a href="/Product">Webshop</a></li>
+            <li>
+                <a class="btndropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categories
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a href="/Product/List/Clothes">Clothes</a><br/>
+                    <a href="/Product/List/Electronics">Electronics</a><br/>
+                    <a href="/Product/List/Furniture">Furniture</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+    <li>
+        <a href="/ShoppingCart/Index">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            <span id="cart-status">
+                0
+            </span>
+        </a>
+    </li>
+
+</li>
+        </ul>
+    </div>
+
+</nav>
+
+
+
+
+
+<div class="container body-content">
+    
+
+
+
+
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=1">
+            <img src="/images/Clothes/svart.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 100,00 kr</h3>
+                <h3>Sweater</h3>
+                <p>Knitted mens sweater</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=1">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=2">
+            <img src="/images/Clothes/byx.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 200,00 kr</h3>
+                <h3>Pants</h3>
+                <p>Black womens pants</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=2">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=3">
+            <img src="/images/Clothes/hoodie.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 359,00 kr</h3>
+                <h3>Hoodie</h3>
+                <p>Black hoodie</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=3">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=4">
+            <img src="/images/Clothes/kjol.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 349,00 kr</h3>
+                <h3>Skirt</h3>
+                <p>Leopard skirt</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=4">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=5">
+            <img src="/images/Clothes/kofta.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 500,00 kr</h3>
+                <h3>Cardigan</h3>
+                <p>Grey cardigan</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=5">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=6">
+            <img src="/images/Clothes/jeans.jfif" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 599,00 kr</h3>
+                <h3>Jeans</h3>
+                <p>Blue jeans</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=6">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=7">
+            <img src="/images/Clothes/tshirt.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 99,00 kr</h3>
+                <h3>T-shirt</h3>
+                <p>Mens T-shirt</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=7">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=8">
+            <img src="/images/Clothes/blus.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 449,00 kr</h3>
+                <h3>Blouse</h3>
+                <p>Womens blouse</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=8">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=9">
+            <img src="/images/Clothes/shorts.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 249,00 kr</h3>
+                <h3>Shorts</h3>
+                <p>Blue shorts</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=9">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=10">
+            <img src="/images/Electronics/laptop.jfif" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 10&#xA0;000,00 kr</h3>
+                <h3>Laptop</h3>
+                <p>Laptop from HP</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=10">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=11">
+            <img src="/images/Furniture/table.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 2&#xA0;000,00 kr</h3>
+                <h3>Table</h3>
+                <p>Dinner table</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=11">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+
+    <hr/>
+    <footer>
+        <p>&copy; 2019 - WebShop</p>
+    </footer>
+</div>
+
+
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
+
+
+
+
+</body>
+</html>
+
+2019-02-05 16:43:52,472 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-05 16:43:54,980 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Product
+2019-02-05 16:43:54,994 [7] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:43:54,994 [7] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:43:54,994 [7] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:43:54,994 [7] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:43:58,462 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200: <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List - WebShop</title>
+    <link rel="shortcut icon" href="/favicon.png" />
+    
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="/css/site.css" />
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/Product">WebShop</a>
+        </div>
+        <li class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="/Product">Home</a></li>
+            <li><a href="/Product">Webshop</a></li>
+            <li>
+                <a class="btndropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categories
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a href="/Product/List/Clothes">Clothes</a><br/>
+                    <a href="/Product/List/Electronics">Electronics</a><br/>
+                    <a href="/Product/List/Furniture">Furniture</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+    <li>
+        <a href="/ShoppingCart/Index">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            <span id="cart-status">
+                1
+            </span>
+        </a>
+    </li>
+
+</li>
+        </ul>
+    </div>
+
+</nav>
+
+
+
+
+
+<div class="container body-content">
+    
+
+
+
+
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=1">
+            <img src="/images/Clothes/svart.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 100,00 kr</h3>
+                <h3>Sweater</h3>
+                <p>Knitted mens sweater</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=1">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=2">
+            <img src="/images/Clothes/byx.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 200,00 kr</h3>
+                <h3>Pants</h3>
+                <p>Black womens pants</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=2">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=3">
+            <img src="/images/Clothes/hoodie.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 359,00 kr</h3>
+                <h3>Hoodie</h3>
+                <p>Black hoodie</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=3">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=4">
+            <img src="/images/Clothes/kjol.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 349,00 kr</h3>
+                <h3>Skirt</h3>
+                <p>Leopard skirt</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=4">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=5">
+            <img src="/images/Clothes/kofta.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 500,00 kr</h3>
+                <h3>Cardigan</h3>
+                <p>Grey cardigan</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=5">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=6">
+            <img src="/images/Clothes/jeans.jfif" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 599,00 kr</h3>
+                <h3>Jeans</h3>
+                <p>Blue jeans</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=6">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=7">
+            <img src="/images/Clothes/tshirt.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 99,00 kr</h3>
+                <h3>T-shirt</h3>
+                <p>Mens T-shirt</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=7">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=8">
+            <img src="/images/Clothes/blus.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 449,00 kr</h3>
+                <h3>Blouse</h3>
+                <p>Womens blouse</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=8">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=9">
+            <img src="/images/Clothes/shorts.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 249,00 kr</h3>
+                <h3>Shorts</h3>
+                <p>Blue shorts</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=9">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=10">
+            <img src="/images/Electronics/laptop.jfif" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 10&#xA0;000,00 kr</h3>
+                <h3>Laptop</h3>
+                <p>Laptop from HP</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=10">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <a href="/Product/Details?id=11">
+            <img src="/images/Furniture/table.jpg" /></a>
+            <div class="caption">
+                <h3 class="pull-right">Price: 2&#xA0;000,00 kr</h3>
+                <h3>Table</h3>
+                <p>Dinner table</p>
+            </div>
+            <div class="addToCart text-right">
+                <p class="button">
+                    <a class="btn" id="cartButton" href="/ShoppingCart/AddToShoppingCart?productId=11">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+</div>
+</div>
+
+    <hr/>
+    <footer>
+        <p>&copy; 2019 - WebShop</p>
+    </footer>
+</div>
+
+
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
+
+
+
+
+</body>
+</html>
+
+2019-02-05 16:44:15,425 [12] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/Index
+2019-02-05 16:44:18,184 [12] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200: <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> - WebShop</title>
+    <link rel="shortcut icon" href="/favicon.png" />
+    
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="/css/site.css" />
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/Product">WebShop</a>
+        </div>
+        <li class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="/Product">Home</a></li>
+            <li><a href="/Product">Webshop</a></li>
+            <li>
+                <a class="btndropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categories
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a href="/Product/List/Clothes">Clothes</a><br/>
+                    <a href="/Product/List/Electronics">Electronics</a><br/>
+                    <a href="/Product/List/Furniture">Furniture</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+    <li>
+        <a href="/ShoppingCart/Index">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            <span id="cart-status">
+                1
+            </span>
+        </a>
+    </li>
+
+</li>
+        </ul>
+    </div>
+
+</nav>
+
+
+
+
+
+<div class="container body-content">
+    
+<div class="row checkoutForm">
+    <h2>Your shopping cart</h2>
+    <h4>Here are the products in your shopping cart.</h4>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Selected amount</th>
+            <th>Product</th>
+            <th class="text-right">Price</th>
+            <th class="text-right">Subtotal</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="text-left">Sweater</td>
+                <td class="text-right">100,00 kr</td>
+                <td>
+                    100,00 kr
+                </td>
+                <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" href="/ShoppingCart/RemoveFromShoppingCart?productId=1"></a></td>
+            </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total:</td>
+            <td class="text-right">
+                100,00 kr
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+
+    <div class="text-right">
+        <div class="btn-group ">
+            <a class="btn" href="/Order/Checkout">Check out</a>
+            <a class="btn-group">
+                <a class="btn dropdown-toggle" data-toggle="dropdown">
+                    Add more products<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="/Product/List/Clothes">Clothes</a></li>
+                    <li><a href="/Product/List/Electronics">Electronics</a></li>
+                    <li><a href="/Product/List/Furniture">Furniture</a></li>
+                </ul>
+            </a>
+        </div>
+    </div>
+</div>
+    <hr/>
+    <footer>
+        <p>&copy; 2019 - WebShop</p>
+    </footer>
+</div>
+
+
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
+
+
+
+
+</body>
+</html>
+
+2019-02-05 16:55:29,234 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-05 16:55:30,035 [9] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:55:30,037 [9] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:55:30,045 [9] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:55:30,046 [9] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:55:31,766 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-05 16:55:39,508 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-05 16:55:39,790 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Product
+2019-02-05 16:55:39,811 [7] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:55:39,812 [7] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:55:39,812 [7] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:55:39,812 [7] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:55:39,880 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-05 16:56:14,210 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/Index
+2019-02-05 16:56:14,271 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-05 16:56:39,611 [21] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Product/List/Electronics
+2019-02-05 16:56:39,627 [21] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:56:39,627 [21] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:56:39,627 [21] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:56:39,627 [21] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:56:39,664 [21] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-05 16:56:41,187 [17] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=10
+2019-02-05 16:56:41,237 [19] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Product
+2019-02-05 16:56:41,246 [19] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 16:56:41,246 [19] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 16:56:41,246 [19] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 16:56:41,246 [19] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 16:56:41,284 [19] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-05 16:56:43,039 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/Index
+2019-02-05 16:56:43,084 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200

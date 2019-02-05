@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using log4net.Config;
 using log4net.Core;
@@ -26,31 +27,29 @@ namespace WebShop.Log
 
         //}
 
-        public void LogInfo(string source)
+        public void LogInfo(string source, string message)
         {
-            CustomAppender ca = new CustomAppender();
-            ca.ClassName = source;
-            Log.Info(ca);
+            Log.Info($"{source} - {message}");
         }
 
-        public void LogWarning()
+        public void LogWarning(string source, Exception ex = null)
         {
-            Log.Warn("");
+            Log.Warn(source, ex);
         }
 
-        public void LogError()
+        public void LogError(string source, Exception ex = null)
         {
-            Log.Error("");
+            Log.Error(source, ex);
         }
 
-        public void LogDebug()
+        public void LogDebug(string source, Exception ex = null)
         {
-            Log.Debug("");
+            Log.Debug(source, ex);
         }
 
-        public void LogFatal()
+        public void LogFatal(string source, Exception ex = null)
         {
-            Log.Fatal("");
+            Log.Fatal(source, ex);
         }
     }
 }

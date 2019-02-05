@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using WebShop.Bo;
 using WebShop.Models;
 using WebShop.Web.Interfaces;
@@ -16,9 +17,8 @@ namespace WebShop.Web.Controllers
         [HttpGet]
         public JsonResult GetInformation(string ssn)              //Method which gets customer information by using Ssn, see checkout.cshtml.
         {
-            //Initializes request and response.
-            InitializeCustomerRequest request = new InitializeCustomerRequest();
-            InitializeCustomerResponse response = new InitializeCustomerResponse();
+            //Initializes response.
+            var response = new InitializeCustomerResponse();
 
             using (var handler = new WebRequestHandler())
             {
@@ -26,19 +26,18 @@ namespace WebShop.Web.Controllers
                 {
                     var bytearray = Encoding.ASCII.GetBytes("Testpartner Sweden:123456");
 
-                    //Sends authentication to client.
+                    //sets authentication header.
                     client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray));
 
                     //Sends a json-object and gets "content" in response.
                     try
                     {
                         var result = client.GetStringAsync(new Uri($"https://stage.avarda.org/WebShopApi/webshop/ssn/swe/{ssn}")).Result;
-
-                        response = Newtonsoft.Json.JsonConvert.DeserializeObject<InitializeCustomerResponse>(result);                  //Converts from json to c# text.
+                        response = JsonConvert.DeserializeObject<InitializeCustomerResponse>(result);                  //Converts from json to c# class.
                     }
-                    catch (WebException e)
+                    catch (Exception e)
                     {
-
+                        throw new Exception($"Failed to get customer data. Error: {e.Message}");
                     }
                 }
 

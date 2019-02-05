@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net;
 using System.Net.Http;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +13,15 @@ namespace WebShop.Web.Controllers
 {
     public class OrderController : Controller
     {
+        private readonly IOrderRepository _orderRepository;
+        private readonly ShoppingCart _shoppingCart; 
+
+        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart)
+        {
+            _orderRepository = orderRepository;
+            _shoppingCart = shoppingCart;
+        }
+
         [HttpGet]
         public JsonResult GetInformation(string ssn)              //Method which gets customer information by using Ssn, see checkout.cshtml.
         {
@@ -40,27 +48,14 @@ namespace WebShop.Web.Controllers
                         return Json(new ErrorViewModel { ErrorMessage = $"Failed to get customer. Error: {ex.Message}" });
                     }
                 }
-
             }
             return Json(response);
-
         }
-
-        private readonly IOrderRepository _orderRepository;
-        private readonly ShoppingCart _shoppingCart;
-
-        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart)
-        {
-            _orderRepository = orderRepository;
-            _shoppingCart = shoppingCart;
-        }
-
 
         public IActionResult Checkout()                         //"Check out" from shopping cart to information form.
         {
             var items = _shoppingCart.GetShoppingCartItems();
             _shoppingCart.ShoppingCartItems = items;
-
 
             if (_shoppingCart.ShoppingCartItems.Count == 0)                     //Check to see if the shoppingc art contains any items.
             {
@@ -68,8 +63,6 @@ namespace WebShop.Web.Controllers
             }
 
             return View();
-
-
         }
 
         [HttpPost]
@@ -94,8 +87,4 @@ namespace WebShop.Web.Controllers
             return View();
         }
     }
-
-
-
-
 }

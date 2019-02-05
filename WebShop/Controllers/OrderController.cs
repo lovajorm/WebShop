@@ -35,9 +35,9 @@ namespace WebShop.Web.Controllers
                         var result = client.GetStringAsync(new Uri($"https://stage.avarda.org/WebShopApi/webshop/ssn/swe/{ssn}")).Result;
                         response = JsonConvert.DeserializeObject<InitializeCustomerResponse>(result);                  //Converts from json to c# class.
                     }
-                    catch (Exception e)
+                    catch (Exception ex)
                     {
-                        throw new Exception($"Failed to get customer data. Error: {e.Message}");
+                        return Json(new ErrorViewModel { ErrorMessage = $"Failed to get customer. Error: {ex.Message}" });
                     }
                 }
 

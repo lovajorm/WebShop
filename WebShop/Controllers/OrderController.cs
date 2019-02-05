@@ -13,8 +13,8 @@ namespace WebShop.Web.Controllers
 {
     public class OrderController : Controller
     {
-
-        public IActionResult GetInformation(Order ssn)              //Method which gets customer information by using Ssn, see checkout.cshtml.
+        [HttpGet]
+        public JsonResult GetInformation(string ssn)              //Method which gets customer information by using Ssn, see checkout.cshtml.
         {
             //Initializes request and response.
             InitializeCustomerRequest request = new InitializeCustomerRequest();
@@ -32,7 +32,7 @@ namespace WebShop.Web.Controllers
                     //Sends a json-object and gets "content" in response.
                     try
                     {
-                        var result = client.GetStringAsync(new Uri("https://stage.avarda.org/WebShopApi/webshop/ssn/swe/196504192383")).Result;
+                        var result = client.GetStringAsync(new Uri($"https://stage.avarda.org/WebShopApi/webshop/ssn/swe/{ssn}")).Result;
 
                         response = Newtonsoft.Json.JsonConvert.DeserializeObject<InitializeCustomerResponse>(result);                  //Converts from json to c# text.
                     }
@@ -43,7 +43,7 @@ namespace WebShop.Web.Controllers
                 }
 
             }
-            return View(ssn);
+            return Json(response);
 
         }
 

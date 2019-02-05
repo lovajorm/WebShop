@@ -26,7 +26,6 @@ namespace WebShop.Bo
         [Display(Name = "Address Line")]
         public string Address1 { get; set; }
 
-        [Required(ErrorMessage = "Please enter your address")]
         [StringLength(100)]
         [Display(Name = "Address Line")]
         public string Address2 { get; set; }

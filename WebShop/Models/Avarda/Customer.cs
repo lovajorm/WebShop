@@ -1,6 +1,6 @@
 ﻿namespace WebShop.Web.Controllers
 {
-    public class InitializeCustomerResponse                 //Class used to get and and sort the response from API.          NOT FINISHED
+    public class Customer                     
     {
 
         public string Ssn { get; set; }
@@ -11,6 +11,8 @@
         public string ZipCode { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
+
+
 
 
     }

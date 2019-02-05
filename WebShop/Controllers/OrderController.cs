@@ -25,8 +25,8 @@ namespace WebShop.Web.Controllers
         [HttpGet]
         public JsonResult GetInformation(string ssn)              //Method which gets customer information by using Ssn, see checkout.cshtml.
         {
-            //Initializes response.
-            var response = new InitializeCustomerResponse();
+            
+            Customer response = new Customer();                         //Initializes customer
 
             using (var handler = new WebRequestHandler())
             {
@@ -41,7 +41,7 @@ namespace WebShop.Web.Controllers
                     try
                     {
                         var result = client.GetStringAsync(new Uri($"https://stage.avarda.org/WebShopApi/webshop/ssn/swe/{ssn}")).Result;
-                        response = JsonConvert.DeserializeObject<InitializeCustomerResponse>(result);                  //Converts from json to c# class.
+                        response = JsonConvert.DeserializeObject<Customer>(result);                  //Converts from json to c# class.
                     }
                     catch (Exception ex)
                     {

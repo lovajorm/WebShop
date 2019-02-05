@@ -1,6 +1,6 @@
 ﻿namespace WebShop.Web.Controllers
 {
-    public class Customer                 //Class used to get and and sort the response from API.          NOT FINISHED
+    public class Customer                     
     {
 
         public string Ssn { get; set; }

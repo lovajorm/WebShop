@@ -1,0 +1,6 @@
+2019-02-04 10:55:12,516 [7] INFO WebShop.Log.MessageLogger - Testlogging..
+2019-02-04 13:09:25,704 [8] INFO WebShop.Log.MessageLogger - ProductController
+2019-02-04 13:09:32,243 [10] INFO WebShop.Log.MessageLogger - ProductController
+2019-02-04 17:27:11,520 [10] INFO WebShop.Log.MessageLogger - WebShop.Log.CustomAppender
+2019-02-04 17:29:47,560 [8] INFO WebShop.Log.MessageLogger ?lassName - WebShop.Log.CustomAppender
+2019-02-04 17:32:43,208 [9] INFO WebShop.Log.MessageLogger - ProductController

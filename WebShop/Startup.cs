@@ -40,7 +40,7 @@ namespace WebShop
             });
 
             var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
-            XmlConfigurator.Configure(logRepository, new FileInfo("C:\\Development\\Webshoppen\\WebShop\\WebShop.Log\\log4net.config"));
+            XmlConfigurator.Configure(logRepository, new FileInfo("..\\WebShop.Log\\log4net.config"));
             services.AddSingleton<IMessageLogger, MessageLogger>();
 
             //services.AddSingleton(new LoggerFactory()

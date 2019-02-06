@@ -39,17 +39,17 @@ namespace WebShop.Web.Middleware
                 }
 
                 var response = await FormatResponse(context.Response);
-                if (context.Response.ContentType != null)
-                {
-                    if (context.Response.ContentType.Contains("application/json"))
-                    {
-                        _logger.LogInfo(this.GetType().FullName, response);
-                    }
-                    else
-                    {
-                        _logger.LogInfo(this.GetType().FullName, $"{context.Response.StatusCode}");
-                    }
-                }
+                //if (context.Response.ContentType != null)
+                //{
+                //    if (context.Response.ContentType.Contains("application/json"))
+                //    {
+                //        _logger.LogInfo(this.GetType().FullName, response);
+                //    }
+                //    else
+                //    {
+                //        _logger.LogInfo(this.GetType().FullName, $"{context.Response.StatusCode}");
+                //    }
+                //}
 
                 await responseBody.CopyToAsync(originalBodyStream);
             }

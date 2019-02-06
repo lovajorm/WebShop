@@ -1519,3 +1519,117 @@ System.NullReferenceException: Warning
 2019-02-05 16:56:41,284 [19] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
 2019-02-05 16:56:43,039 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/Index
 2019-02-05 16:56:43,084 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-05 17:05:24,978 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-05 17:05:26,408 [8] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 17:05:26,409 [8] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 17:05:26,421 [8] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 17:05:26,422 [8] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 17:05:28,241 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-05 17:05:38,056 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=2
+2019-02-05 17:05:38,266 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Product
+2019-02-05 17:05:38,274 [8] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 17:05:38,274 [8] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 17:05:38,274 [8] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 17:05:38,274 [8] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 17:05:38,332 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-05 17:05:41,334 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-05 17:05:41,404 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Product
+2019-02-05 17:05:41,417 [9] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-05 17:05:41,417 [9] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-05 17:05:41,417 [9] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-05 17:05:41,417 [9] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-05 17:05:41,452 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-05 17:05:44,602 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/Index
+2019-02-05 17:05:44,693 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-05 17:05:53,089 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/Checkout
+2019-02-05 17:05:53,686 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-05 17:06:23,017 [15] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/GetInformation?ssn=197901121181
+2019-02-05 17:06:23,593 [15] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200: {"ssn":"197901121181","lastName":"Bodén","firstName":"Gunbritt","address1":"Borgmästarplan 3","address2":null,"zipCode":"80266","city":"Gävle","country":"Sweden"}
+2019-02-05 17:08:33,715 [26] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/CheckoutSsn=197901121181&LastName=Bod%C3%A9n&FirstName=Gunbritt&Address1=Borgm%C3%A4starplan+3&Address2=&ZipCode=80266&City=G%C3%A4vle&Country=Sweden&__RequestVerificationToken=CfDJ8BTmZFpach1HrFxJ2nObHAO04mh8180EVQQwme7nQTrILRfanOVs7BgOkjtO4k8Yt7enyc9sv91N38FDF93FcH5edGdMOzzodybMDIa1XLGKxxU1602_gMDIICQjXMtc14u10xqXFU8eevwOgfbfcDQ
+2019-02-05 17:08:33,791 [26] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-05 17:08:42,510 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/GetInformation?ssn=197901121181
+2019-02-05 17:08:42,682 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200: {"ssn":"197901121181","lastName":"Bodén","firstName":"Gunbritt","address1":"Borgmästarplan 3","address2":null,"zipCode":"80266","city":"Gävle","country":"Sweden"}
+2019-02-05 17:08:50,170 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/CheckoutSsn=197901121181&LastName=Bod%C3%A9n&FirstName=Gunbritt&Address1=Borgm%C3%A4starplan+3&Address2=&ZipCode=80266&City=G%C3%A4vle&Country=Sweden&__RequestVerificationToken=CfDJ8BTmZFpach1HrFxJ2nObHAPyYIgycu_bdSJtuE1tu1A5DZWYBD6MQ6NNp_v7PbpJDEZnqLabsb4lSxZi8ojE7Bz4T40dq4kXJqMErd7lx_reMbvlNhI2kOn8GGH2dN2EEwLfOW2EYRxIU6c1Mcw21Q4
+2019-02-05 17:08:50,259 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-05 17:09:31,574 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/Index
+2019-02-05 17:09:31,612 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-06 08:24:59,119 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-06 08:25:00,636 [7] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-06 08:25:00,637 [7] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-06 08:25:00,642 [7] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-06 08:25:00,642 [7] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-06 08:25:15,271 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-06 08:25:18,580 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=3
+2019-02-06 08:25:21,766 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Product
+2019-02-06 08:25:21,815 [8] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-06 08:25:21,815 [8] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-06 08:25:21,815 [8] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-06 08:25:21,815 [8] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-06 08:25:29,082 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-06 08:26:21,046 [19] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/Index
+2019-02-06 08:26:24,128 [19] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-06 08:26:27,116 [17] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/Checkout
+2019-02-06 08:26:38,160 [17] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-06 08:27:00,560 [20] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/GetInformation?ssn=197901121181
+2019-02-06 08:27:04,231 [20] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200: {"ssn":"197901121181","lastName":"Bodén","firstName":"Gunbritt","address1":"Borgmästarplan 3","address2":null,"zipCode":"80266","city":"Gävle","country":"Sweden"}
+2019-02-06 08:29:37,223 [28] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/CheckoutSsn=197901121181&LastName=Bod%C3%A9n&FirstName=Gunbritt&Address1=Borgm%C3%A4starplan+3&Address2=&ZipCode=80266&City=G%C3%A4vle&Country=Sweden&__RequestVerificationToken=CfDJ8BTmZFpach1HrFxJ2nObHAOKRYysinmCqCND90RCRCCGBU_Yj6gJIVOUW53NnZCFy1rtnOkiox-t5GrXX7i7YgTHTtlFBStrdj6modvHKePEtzfmvLCM16H6dIPuGrQV_djEva0dhAQYV_fm0owwM8c
+2019-02-06 08:29:53,481 [28] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-06 08:31:01,061 [35] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/GetInformation?ssn=197001025555
+2019-02-06 08:31:03,848 [35] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200: {"errorMessage":"Failed to get customer. Error: One or more errors occurred. (Response status code does not indicate success: 400 (Bad Request).)"}
+2019-02-06 08:31:27,316 [31] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/GetInformation?ssn=197901121181
+2019-02-06 08:31:29,843 [31] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200: {"ssn":"197901121181","lastName":"Bodén","firstName":"Gunbritt","address1":"Borgmästarplan 3","address2":null,"zipCode":"80266","city":"Gävle","country":"Sweden"}
+2019-02-06 08:31:41,540 [28] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/CheckoutSsn=197901121181&LastName=Bod%C3%A9n&FirstName=Gunbritt&Address1=Borgm%C3%A4starplan+3&Address2=&ZipCode=80266&City=G%C3%A4vle&Country=Sweden&__RequestVerificationToken=CfDJ8BTmZFpach1HrFxJ2nObHANNvqF-t-re0X-UlzXI3B8KHJeJlnavo-HkI83KJ1QVs64fwMqPTX3itumB7qPEbuvUHQ2qB66RWTd1VfO2vVG8ci4emrodUyfYQVi5JTSYAyiAnT7V9HkuNc5JkYavOCE
+2019-02-06 08:32:13,158 [28] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-06 08:35:08,817 [39] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/CheckoutSsn=&LastName=&FirstName=&Address1=&Address2=&ZipCode=&City=&Country=&__RequestVerificationToken=CfDJ8BTmZFpach1HrFxJ2nObHAM2F8gL1nzZK3w9qB6La2jQqQv1txyH4ijd-C2qfeWpmtcbG9z6Zvs0Y_7-7jyG89498RdlwZwgfURgFdvl89h62wdtislU4hgXfXReHOsOmSfn7uO3Ja8QY3jtVvOW_rQ
+2019-02-06 08:38:06,113 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-06 08:38:06,755 [7] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-06 08:38:06,756 [7] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-06 08:38:06,765 [7] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-06 08:38:06,766 [7] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-06 08:38:15,231 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-06 08:38:17,793 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Product/Details?id=1
+2019-02-06 08:38:21,593 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-06 08:38:36,768 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=1
+2019-02-06 08:38:39,185 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Product
+2019-02-06 08:38:39,189 [8] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-06 08:38:39,189 [8] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-06 08:38:39,189 [8] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-06 08:38:39,189 [8] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-06 08:38:45,177 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-06 08:38:54,653 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/Index
+2019-02-06 08:39:03,289 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-06 08:39:15,378 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/Checkout
+2019-02-06 08:39:17,992 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - 200
+2019-02-06 08:40:16,610 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/
+2019-02-06 08:40:17,128 [9] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-06 08:40:17,129 [9] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-06 08:40:17,134 [9] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-06 08:40:17,135 [9] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-06 08:40:29,864 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/AddToShoppingCart?productId=3
+2019-02-06 08:40:32,433 [8] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Product
+2019-02-06 08:40:32,444 [8] INFO WebShop.Web.Controllers.ProductController - This is init call..
+2019-02-06 08:40:32,444 [8] ERROR WebShop.Web.Controllers.ProductController
+System.Exception: First Exception
+2019-02-06 08:40:32,445 [8] WARN WebShop.Web.Controllers.ProductController
+System.NullReferenceException: Warning
+2019-02-06 08:40:32,445 [8] DEBUG WebShop.Web.Controllers.ProductController
+2019-02-06 08:40:42,027 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/ShoppingCart/Index
+2019-02-06 08:40:46,895 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/Checkout
+2019-02-06 08:40:56,499 [9] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/GetInformation?ssn=197901121181
+2019-02-06 08:41:02,603 [7] INFO WebShop.Web.Middleware.RestLoggingMiddleware - http localhost:64874/Order/CheckoutSsn=197901121181&LastName=Bod%C3%A9n&FirstName=Gunbritt&Address1=Borgm%C3%A4starplan+3&Address2=&ZipCode=80266&City=G%C3%A4vle&Country=Sweden&__RequestVerificationToken=CfDJ8BTmZFpach1HrFxJ2nObHAOp8_eElGP2nsfjDXZqKq_LSyKxKR5bv_XwCernYk013Nq0hvXhSnAYso0r-Cyu2UHSo6IQnzKZiYFOrAkOuWc36Hhuc6Lc7AHjREUqBFHo6S3pJ0p1GmstrtwhjP7bBgA

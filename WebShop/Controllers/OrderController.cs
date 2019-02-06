@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -82,24 +81,31 @@ namespace WebShop.Web.Controllers
                         var body = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
                         var result = await client.PostAsync("WebShopApi/webshop/authorization/invoice", body);                                          //Calling Avarda API and sending the json
 
-                       var response = JsonConvert.DeserializeObject<InvoiceResponse>(result.Content.ReadAsStringAsync().Result);
+                        if (!result.IsSuccessStatusCode)
+                        {
+                            throw new Exception(result.Content.ReadAsStringAsync().Result);
+                        }
+
+                        var response = JsonConvert.DeserializeObject<InvoiceResponse>(result.Content.ReadAsStringAsync().Result);
+
 
                         var items = _shoppingCart.GetShoppingCartItems();
                         _shoppingCart.ShoppingCartItems = items;
 
-                        if (total < response.CreditLimit)
+                        if (total < response.CreditLimit)                                   //In tests the creditLimit is not fixed, which means that the if-statement is unnecessary but we will keep it for fun.
                         {
                             //Save order and take customer to final page
                             _orderRepository.CreateOrder(order);
                             _shoppingCart.ClearCart();                                      //Clears cart after "Complete order"
                             return RedirectToAction("CheckoutComplete");
                         }
-                        else 
-                        {
-                            //Show error message displaying credit score is too low could not place order
+                        else
+                        { 
+                            return View("Error", new ErrorViewModel { ErrorMessage = $"Your credit score is too low" });
                         }
 
-                        
+            
+
                     }
                     catch(Exception ex)
                     {
@@ -123,26 +129,10 @@ namespace WebShop.Web.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public IActionResult Checkout(Order order)                                //Happens when user presses "Complete Order".
-        //{
-        //    var items = _shoppingCart.GetShoppingCartItems();
-        //    _shoppingCart.ShoppingCartItems = items;
-
-        //    if (ModelState.IsValid)                                             //If shopping cart is okay, ....
-        //    {
-        //        _orderRepository.CreateOrder(order);                            //Calls the method CreateOrder in OrderRepository.
-        //        _shoppingCart.ClearCart();                                      //Clears cart after "Complete order"
-        //        return RedirectToAction("CheckoutComplete");
-        //    }
-
-        //    return View(order);
-        //}
-
-        public IActionResult CheckoutComplete()                 //Text shown after you click "Complete Order".
+        public IActionResult CheckoutComplete(Order order)                 //Text shown after you click "Complete Order".
         {
             ViewBag.CheckoutCompleteMessage = "Thanks for your order!";
-            return View();
+            return View(order);
         }
     }
 }

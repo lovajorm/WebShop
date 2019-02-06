@@ -25,7 +25,6 @@ namespace WebShop.Web.Repositories
 
             var total = _shoppingCart.GetShopppingCartTotal();
             order.OrderTotal = total;
-            
 
             _context.Orders.Add(order);
             

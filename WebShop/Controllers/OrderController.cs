@@ -37,13 +37,13 @@ namespace WebShop.Web.Controllers
                     //sets authentication header.
                     client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray));
 
-                    //Sends a json-object and gets "content" in response.
+                    //Sends a json-object and gets back result, converts result from json to c# which is "response"
                     try
                     {
                         var result = client.GetStringAsync(new Uri($"https://stage.avarda.org/WebShopApi/webshop/ssn/swe/{ssn}")).Result;
                         response = JsonConvert.DeserializeObject<Customer>(result);                  //Converts from json to c# class.
                     }
-                    catch (Exception ex)
+                    catch (Exception ex)                    //If exception is caught, will show errormessage
                     {
                         return Json(new ErrorViewModel { ErrorMessage = $"Failed to get customer. Error: {ex.Message}" });
                     }

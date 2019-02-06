@@ -1,4 +1,4 @@
-﻿namespace WebShop.Web.Controllers
+﻿namespace WebShop.Web.Models.Avarda
 {
     public class Customer                     
     {

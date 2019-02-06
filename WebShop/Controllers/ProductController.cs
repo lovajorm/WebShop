@@ -34,14 +34,6 @@ namespace WebShop.Web.Controllers
 
         public ViewResult List(string category)
         {
-            //_logger.TestLog(this.GetType().Name);
-            //_logger.TestLog(this.GetType().Name, LoggingLevel.Info);
-            
-            _logger.LogInfo(this.GetType().FullName,"This is init call..");
-            _logger.LogError(this.GetType().FullName, new Exception("First Exception"));
-            _logger.LogWarning(this.GetType().FullName, new NullReferenceException("Warning"));
-            _logger.LogDebug(this.GetType().FullName,null);
-
             string _category = category;
             IEnumerable<Product> products;
             string currentCategory = string.Empty;

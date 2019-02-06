@@ -81,7 +81,7 @@ namespace WebShop
             app.UseSession();
             app.UseCookiePolicy();
             app.UseSession();
-            app.UseMiddleware<RestLoggingMiddleware>();
+            app.UseMiddleware<LoggingMiddleware>();
 
             app.UseMvc(routes =>
             {

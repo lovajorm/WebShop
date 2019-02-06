@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace WebShop.Bo
+﻿namespace WebShop.Bo
 {
     public class Product
     {

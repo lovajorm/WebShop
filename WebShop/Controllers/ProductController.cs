@@ -7,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 using WebShop.Bo;
 using WebShop.Dal;
 using WebShop.Web.Interfaces;
-using WebShop.Web.Repositories;
 using WebShop.Web.ViewModels;
 
 namespace WebShop.Web.Controllers

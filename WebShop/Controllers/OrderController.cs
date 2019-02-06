@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net;
 using System.Net.Http;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +17,7 @@ namespace WebShop.Web.Controllers
         public JsonResult GetInformation(string ssn)              //Method which gets customer information by using Ssn, see checkout.cshtml.
         {
             
-            Customer response = new Customer();                         //Initializes customer
+            Customer response = new Customer();  //Initializes customer
 
             using (var handler = new WebRequestHandler())
             {
@@ -29,7 +28,7 @@ namespace WebShop.Web.Controllers
                     //sets authentication header.
                     client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray));
 
-                    //Sends a json-object and gets "content" in response.
+                    //Sends a json-object and gets back result, converts result from json to c# which is "response"
                     try
                     {
                         var result = client.GetStringAsync(new Uri($"https://stage.avarda.org/WebShopApi/webshop/ssn/swe/{ssn}")).Result;
@@ -62,7 +61,7 @@ namespace WebShop.Web.Controllers
             _shoppingCart.ShoppingCartItems = items;
 
 
-            if (_shoppingCart.ShoppingCartItems.Count == 0)                     //Check to see if the shoppingc art contains any items.
+            if (_shoppingCart.ShoppingCartItems.Count == 0)                                   //Check to see if the shopping cart contains any items.
             {
                 return View("Error", new ErrorViewModel { ErrorMessage = "Your cart is empty, add some products first" });                  //Error message shown if you try to check out order without any items in the cart.
             }

@@ -13,11 +13,20 @@ namespace WebShop.Web.Controllers
 {
     public class OrderController : Controller
     {
+        private readonly IOrderRepository _orderRepository;
+        private readonly ShoppingCart _shoppingCart; 
+
+        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart)
+        {
+            _orderRepository = orderRepository;
+            _shoppingCart = shoppingCart;
+        }
+
         [HttpGet]
         public JsonResult GetInformation(string ssn)              //Method which gets customer information by using Ssn, see checkout.cshtml.
         {
             
-            Customer response = new Customer();  //Initializes customer
+            Customer response = new Customer();                         //Initializes customer
 
             using (var handler = new WebRequestHandler())
             {
@@ -28,47 +37,32 @@ namespace WebShop.Web.Controllers
                     //sets authentication header.
                     client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray));
 
-                    //Sends a json-object and gets back result, converts result from json to c# which is "response"
+                    //Sends a json-object and gets "content" in response.
                     try
                     {
                         var result = client.GetStringAsync(new Uri($"https://stage.avarda.org/WebShopApi/webshop/ssn/swe/{ssn}")).Result;
                         response = JsonConvert.DeserializeObject<Customer>(result);                  //Converts from json to c# class.
                     }
-                    catch (Exception e)
+                    catch (Exception ex)
                     {
-                        throw new Exception($"Failed to get customer data. Error: {e.Message}");
+                        return Json(new ErrorViewModel { ErrorMessage = $"Failed to get customer. Error: {ex.Message}" });
                     }
                 }
-
             }
             return Json(response);
-
         }
-
-        private readonly IOrderRepository _orderRepository;
-        private readonly ShoppingCart _shoppingCart;
-
-        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart)
-        {
-            _orderRepository = orderRepository;
-            _shoppingCart = shoppingCart;
-        }
-
 
         public IActionResult Checkout()                         //"Check out" from shopping cart to information form.
         {
             var items = _shoppingCart.GetShoppingCartItems();
             _shoppingCart.ShoppingCartItems = items;
 
-
-            if (_shoppingCart.ShoppingCartItems.Count == 0)                                   //Check to see if the shopping cart contains any items.
+            if (_shoppingCart.ShoppingCartItems.Count == 0)                     //Check to see if the shoppingc art contains any items.
             {
                 return View("Error", new ErrorViewModel { ErrorMessage = "Your cart is empty, add some products first" });                  //Error message shown if you try to check out order without any items in the cart.
             }
 
             return View();
-
-
         }
 
         [HttpPost]
@@ -93,8 +87,4 @@ namespace WebShop.Web.Controllers
             return View();
         }
     }
-
-
-
-
 }

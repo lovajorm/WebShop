@@ -73,6 +73,10 @@
                 <span asp-validation-for="Country" class="text-danger"></span>
             </div>
         </div>
+        
+        
+        
+        
 
         <div class="form-group">
             <div class="btn-group col-md-offset-2 col-md-8">
@@ -93,13 +97,17 @@
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (data) {
-                    $('#LastName').val(data.lastName);
-                    $('#FirstName').val(data.firstName);
-                    $('#Address1').val(data.address1);
-                    $('#Address2').val(data.address2);
-                    $('#ZipCode').val(data.zipCode);
-                    $('#City').val(data.city);
-                    $('#Country').val(data.country);
+                    if (data.errorMessage) {
+                        alert(data.errorMessage);
+                    } else {
+                        $('#LastName').val(data.lastName);
+                        $('#FirstName').val(data.firstName);
+                        $('#Address1').val(data.address1);
+                        $('#Address2').val(data.address2);
+                        $('#ZipCode').val(data.zipCode);
+                        $('#City').val(data.city);
+                        $('#Country').val(data.country);
+                    }
                 },
                 failure: function (data) {
                     alert(data.responseText);

@@ -9,10 +9,10 @@
 <div class="row orderForm">
     <h3 class="text-center">You are just one step away from ordering your products.</h3>
 
-    <form asp-action="Checkout" method="post" class="form-horizontal" role="form">
+    <form asp-action="AuthorizeInvoice" method="post" class="form-horizontal" role="form">
         <div class="form-group">
             <label asp-for="Ssn" class="col-md-2 control-label"></label>
-            <a class="btn" id="getCustomer">Get Information</a>     @*Knapp som laddar uppgifter efter ssn*@
+            <a class="btn" id="getCustomer">Get Information</a>     @*button that loads customer info*@
             <div class="col-md-5">
                 <input asp-for="Ssn" class="form-control" />
 
@@ -74,9 +74,7 @@
             </div>
         </div>
         
-        
-        
-        
+             
 
         <div class="form-group">
             <div class="btn-group col-md-offset-2 col-md-8">

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using WebShop.Bo;
@@ -53,8 +55,8 @@ namespace WebShop.Web.Controllers
             return Json(response);
         }
 
-        [HttpPost]//send authorization to web api
-        public IActionResult AuthorizeInvoice(InvoiceRequest request, Order order)
+        [HttpPost] //send authorization to web api
+        public async Task<IActionResult> AuthorizeInvoice(InvoiceRequest request, Order order)
         {;
 
             using (var handler = new WebRequestHandler())
@@ -68,15 +70,23 @@ namespace WebShop.Web.Controllers
 
                     try
                     {
+                        client.BaseAddress =
+                            new Uri($"https://stage.avarda.org/");
+                        
                         var total = _shoppingCart.GetShopppingCartTotal();
                         request.Amount = total;
 
-                        var jsonRequest = JsonConvert.SerializeObject(request);             //Serializes the class to json
-                        var result = client.PostAsJsonAsync(new Uri($"https://stage.avarda.org/WebShopApi/webshop/authorization/invoice"), request).Result;             //Calling Avarda API
+                        var jsonRequest = JsonConvert.SerializeObject(request);
 
-                        var response = JsonConvert.DeserializeObject<InvoiceResponse>(result.Content.ReadAsStringAsync().Result);
+                        //Serializes the class to json
+                        var body = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
+                        var result = await client.PostAsync("WebShopApi/webshop/authorization/invoice", body);                                          //Calling Avarda API and sending the json
 
-                        
+                       var response = JsonConvert.DeserializeObject<InvoiceResponse>(result.Content.ReadAsStringAsync().Result);
+
+                        var items = _shoppingCart.GetShoppingCartItems();
+                        _shoppingCart.ShoppingCartItems = items;
+
                         if (total < response.CreditLimit)
                         {
                             //Save order and take customer to final page
@@ -105,7 +115,7 @@ namespace WebShop.Web.Controllers
             var items = _shoppingCart.GetShoppingCartItems();
             _shoppingCart.ShoppingCartItems = items;
 
-            if (_shoppingCart.ShoppingCartItems.Count == 0)                     //Check to see if the shoppingc art contains any items.
+            if (_shoppingCart.ShoppingCartItems.Count == 0)                     //Check to see if the shopping cart contains any items.
             {
                 return View("Error", new ErrorViewModel { ErrorMessage = "Your cart is empty, add some products first" });                  //Error message shown if you try to check out order without any items in the cart.
             }

@@ -18,17 +18,17 @@ namespace WebShop.Web.Repositories
         }
 
 
-        public void CreateOrder(Order order)                        //Method which creates an order on "Check out" when in shopping cart.
+        public void CreateOrder(Order order)                        //Method which creates and saves order when payment is authorized.
         {
-            order.OrderPlaced = DateTime.Now;                       //TODO remove or change method when auth is done
+            var shoppingCartItems = _shoppingCart.GetShoppingCartItems();
+            order.OrderPlaced = DateTime.Now;
 
-            var total = order.OrderTotal;
-            total = _shoppingCart.GetShopppingCartTotal();
+            var total = _shoppingCart.GetShopppingCartTotal();
+            order.OrderTotal = total;
+            
 
             _context.Orders.Add(order);
-
-            var shoppingCartItems = _shoppingCart.ShoppingCartItems;
-
+            
             foreach (var item in shoppingCartItems)
             {
                 var orderDetail = new OrderDetail()

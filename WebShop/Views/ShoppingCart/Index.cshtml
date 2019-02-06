@@ -1,13 +1,15 @@
 ﻿@model WebShop.Web.ViewModels.ShoppingCartViewModel
 
+
 <div class="row checkoutForm">
     <h2>Your shopping cart</h2>
     <h4>Here are the products in your shopping cart.</h4>
     <table class="table table-bordered table-striped">
         <thead>
         <tr>
-            <th>Selected amount</th>
             <th>Product</th>
+            <th>Selected amount</th>
+            <th>Title</th>
             <th class="text-right">Price</th>
             <th class="text-right">Subtotal</th>
             <th></th>
@@ -17,6 +19,7 @@
         @foreach (var line in Model.ShoppingCart.ShoppingCartItems)
         {
             <tr>
+                <td><img height="100px" src="@Url.Content(@line.Product.ImageUrl)" /></td>
                 <td class="text-center">@line.Amount</td>
                 <td class="text-left">@line.Product.Title</td>
                 <td class="text-right">@line.Product.Price.ToString("c")</td>

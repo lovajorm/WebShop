@@ -23,7 +23,7 @@ namespace WebShop.Web.Models
 
 
 
-            public static ShoppingCart GetCart(IServiceProvider services)                                       //Loads the shopping cart. Pogram can't run without this, why?
+            public static ShoppingCart GetCart(IServiceProvider services)                                       
             {
                 ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
 

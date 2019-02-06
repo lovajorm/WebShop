@@ -13,4 +13,10 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+  	<ProjectReference Include="..\WebShop.Bo\WebShop.Bo.csproj" />
+  	<ProjectReference Include="..\WebShop.Dal\WebShop.Dal.csproj" />
+  	<ProjectReference Include="..\WebShop\WebShop.Web.csproj" />
+  </ItemGroup>
+
 </Project>

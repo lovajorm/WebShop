@@ -10,7 +10,6 @@ using WebShop.Bo;
 using WebShop.Dal;
 using WebShop.Log;
 using WebShop.Web.Interfaces;
-using WebShop.Web.Repositories;
 using WebShop.Web.ViewModels;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 using ILoggerFactory = Microsoft.Extensions.Logging.ILoggerFactory;

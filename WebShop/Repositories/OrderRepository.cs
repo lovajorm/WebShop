@@ -20,7 +20,11 @@ namespace WebShop.Web.Repositories
 
         public void CreateOrder(Order order)                        //Method which creates an order on "Check out" when in shopping cart.
         {
-            order.OrderPlaced = DateTime.Now;
+            order.OrderPlaced = DateTime.Now;                       //TODO remove or change method when auth is done
+
+            var total = order.OrderTotal;
+            total = _shoppingCart.GetShopppingCartTotal();
+
             _context.Orders.Add(order);
 
             var shoppingCartItems = _shoppingCart.ShoppingCartItems;

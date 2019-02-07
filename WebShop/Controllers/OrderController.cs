@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -10,19 +10,23 @@ using WebShop.Models;
 using WebShop.Web.Interfaces;
 using WebShop.Web.Models;
 using WebShop.Web.Models.Avarda;
+using WebShop.Web.ViewModels;
 
 
 namespace WebShop.Web.Controllers
 {
     public class OrderController : Controller
+
     {
         private readonly IOrderRepository _orderRepository;
-        private readonly ShoppingCart _shoppingCart; 
+        private readonly ShoppingCart _shoppingCart;
+
 
         public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart)
         {
             _orderRepository = orderRepository;
             _shoppingCart = shoppingCart;
+
         }
 
         [HttpGet]
@@ -75,6 +79,7 @@ namespace WebShop.Web.Controllers
                         
                         var total = _shoppingCart.GetShopppingCartTotal();
                         request.Amount = total;
+                        request.Country = "Swe";
 
                         var jsonRequest = JsonConvert.SerializeObject(request);
 
@@ -82,24 +87,32 @@ namespace WebShop.Web.Controllers
                         var body = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
                         var result = await client.PostAsync("WebShopApi/webshop/authorization/invoice", body);                                          //Calling Avarda API and sending the json
 
-                       var response = JsonConvert.DeserializeObject<InvoiceResponse>(result.Content.ReadAsStringAsync().Result);
+                        if (!result.IsSuccessStatusCode)
+                        {
+                            throw new Exception(result.Content.ReadAsStringAsync().Result);
+                        }
+
+                        var response = JsonConvert.DeserializeObject<InvoiceResponse>(result.Content.ReadAsStringAsync().Result);
+
 
                         var items = _shoppingCart.GetShoppingCartItems();
                         _shoppingCart.ShoppingCartItems = items;
 
-                        if (total < response.CreditLimit)
+                        if (total < response.CreditLimit)                                   //In tests the creditLimit is not fixed, which means that the if-statement is unnecessary but we will keep it for fun.
                         {
                             //Save order and take customer to final page
-                            _orderRepository.CreateOrder(order);
-                            _shoppingCart.ClearCart();                                      //Clears cart after "Complete order"
-                            return RedirectToAction("CheckoutComplete");
+                            order.OrderDetails = _orderRepository.CreateOrder(order);
+                            _shoppingCart.ClearCart();
+                            //Clears cart after "Complete order"
+                            return View("CheckoutComplete", order);
                         }
-                        else 
-                        {
-                            //Show error message displaying credit score is too low could not place order
+                        else
+                        { 
+                            return View("Error", new ErrorViewModel { ErrorMessage = $"Your credit score is too low" });
                         }
 
-                        
+            
+
                     }
                     catch(Exception ex)
                     {
@@ -107,7 +120,7 @@ namespace WebShop.Web.Controllers
                     }
                 }
             }
-            return View("Checkout");
+            //return View("Checkout");
         }
 
         public IActionResult Checkout()                         //"Check out" from shopping cart to information form.
@@ -120,28 +133,6 @@ namespace WebShop.Web.Controllers
                 return View("Error", new ErrorViewModel { ErrorMessage = "Your cart is empty, add some products first" });                  //Error message shown if you try to check out order without any items in the cart.
             }
 
-            return View();
-        }
-
-        //[HttpPost]
-        //public IActionResult Checkout(Order order)                                //Happens when user presses "Complete Order".
-        //{
-        //    var items = _shoppingCart.GetShoppingCartItems();
-        //    _shoppingCart.ShoppingCartItems = items;
-
-        //    if (ModelState.IsValid)                                             //If shopping cart is okay, ....
-        //    {
-        //        _orderRepository.CreateOrder(order);                            //Calls the method CreateOrder in OrderRepository.
-        //        _shoppingCart.ClearCart();                                      //Clears cart after "Complete order"
-        //        return RedirectToAction("CheckoutComplete");
-        //    }
-
-        //    return View(order);
-        //}
-
-        public IActionResult CheckoutComplete()                 //Text shown after you click "Complete Order".
-        {
-            ViewBag.CheckoutCompleteMessage = "Thanks for your order!";
             return View();
         }
     }

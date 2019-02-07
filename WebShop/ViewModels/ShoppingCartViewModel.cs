@@ -1,4 +1,5 @@
 ﻿using WebShop.Web.Models;
+using WebShop.Bo;
 
 namespace WebShop.Web.ViewModels
 {
@@ -6,5 +7,7 @@ namespace WebShop.Web.ViewModels
     {
             public ShoppingCart ShoppingCart { get; set; }
             public float ShoppingCartTotal { get; set; }       
+
+            public Product Product { get; set; }
     }
 }

@@ -1,4 +1,8 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
+using log4net;
+using log4net.Config;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -6,8 +10,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using WebShop.Dal;
+using WebShop.Log;
 using WebShop.Web.Interfaces;
+using WebShop.Web.Middleware;
 using WebShop.Web.Models;
 using WebShop.Web.Repositories;
 
@@ -31,6 +38,13 @@ namespace WebShop
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            
+            services.AddSingleton<IMessageLogger, MessageLogger>();
+
+            //services.AddSingleton(new LoggerFactory()
+            //    .AddConsole(Configuration.GetSection("Logging"))
+            //    .AddDebug()
+            //    .AddLog4Net(Configuration.GetValue<string>("Log4NetConfigFile:Name")));
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => ShoppingCart.GetCart(sp));                                                         //Loads the shopping cart function.  
@@ -65,6 +79,7 @@ namespace WebShop
             app.UseSession();
             app.UseCookiePolicy();
             app.UseSession();
+            app.UseMiddleware<LoggingMiddleware>();
 
             app.UseMvc(routes =>
             {

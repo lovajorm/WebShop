@@ -7,6 +7,7 @@ using WebShop.Bo;
 using WebShop.Dal;
 using WebShop.Web.Models;
 using Microsoft.EntityFrameworkCore;
+using WebShop.Log;
 using WebShop.Web.Interfaces;
 using WebShop.Web.ViewModels;
 
@@ -27,7 +28,6 @@ namespace WebShop.Web.Controllers
         {
             var items = _shoppingCart.GetShoppingCartItems();
             _shoppingCart.ShoppingCartItems = items;
-
             var scvm = new ShoppingCartViewModel
             {
                 ShoppingCart = _shoppingCart,

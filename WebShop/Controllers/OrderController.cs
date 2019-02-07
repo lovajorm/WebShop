@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,19 +10,23 @@ using WebShop.Models;
 using WebShop.Web.Interfaces;
 using WebShop.Web.Models;
 using WebShop.Web.Models.Avarda;
+using WebShop.Web.ViewModels;
 
 
 namespace WebShop.Web.Controllers
 {
     public class OrderController : Controller
+
     {
         private readonly IOrderRepository _orderRepository;
-        private readonly ShoppingCart _shoppingCart; 
+        private readonly ShoppingCart _shoppingCart;
+
 
         public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart)
         {
             _orderRepository = orderRepository;
             _shoppingCart = shoppingCart;
+
         }
 
         [HttpGet]
@@ -74,6 +79,7 @@ namespace WebShop.Web.Controllers
                         
                         var total = _shoppingCart.GetShopppingCartTotal();
                         request.Amount = total;
+                        request.Country = "Swe";
 
                         var jsonRequest = JsonConvert.SerializeObject(request);
 
@@ -95,9 +101,10 @@ namespace WebShop.Web.Controllers
                         if (total < response.CreditLimit)                                   //In tests the creditLimit is not fixed, which means that the if-statement is unnecessary but we will keep it for fun.
                         {
                             //Save order and take customer to final page
-                            _orderRepository.CreateOrder(order);
-                            _shoppingCart.ClearCart();                                      //Clears cart after "Complete order"
-                            return RedirectToAction("CheckoutComplete");
+                            order.OrderDetails = _orderRepository.CreateOrder(order);
+                            _shoppingCart.ClearCart();
+                            //Clears cart after "Complete order"
+                            return View("CheckoutComplete", order);
                         }
                         else
                         { 
@@ -113,7 +120,7 @@ namespace WebShop.Web.Controllers
                     }
                 }
             }
-            return View("Checkout");
+            //return View("Checkout");
         }
 
         public IActionResult Checkout()                         //"Check out" from shopping cart to information form.
@@ -127,12 +134,6 @@ namespace WebShop.Web.Controllers
             }
 
             return View();
-        }
-
-        public IActionResult CheckoutComplete(Order order)                 //Text shown after you click "Complete Order".
-        {
-            ViewBag.CheckoutCompleteMessage = "Thanks for your order!";
-            return View(order);
         }
     }
 }

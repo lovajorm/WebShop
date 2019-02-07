@@ -1,8 +1,63 @@
-﻿@model WebShop.Bo.Order
+﻿@using WebShop.Bo
+@model WebShop.Bo.Order
 
 @{
     ViewData["Title"] = "CheckoutComplete";
 }
 
-<h1>@ViewBag.CheckoutCompleteMessage</h1>
+<h3>Thank you @Model.FirstName for your order!</h3>
+
+<h4>Here is your review for order @Model.OrderId</h4>
+
+
+@*@foreach (var item in Model.OrderDetails)
+{
+    <tr>
+        <td><img height="100px" src="@Url.Content(@item.Product.ImageUrl)" /></td>
+        <td class="text-center">@item.Product.Title</td>
+        <td class="text-center">@item.Amount</td>
+        <td class="text-center">@item.Price</td>
+    </tr>*@
+
+   
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Product</th>
+            <th>Amount</th>
+            <th>Price</th>
+
+        </tr>
+    </thead>
+
+    @foreach (var item in Model.OrderDetails)
+    {
+        <tbody>
+        <tr>
+            <td><img height="100px" src="@Url.Content(@item.Product.ImageUrl)"/></td>
+            <td class="text-center">@item.Product.Title</td>
+            <td class="text-center">@item.Amount</td>
+            <td class="text-center">@item.Price</td>
+        </tr>
+        </tbody>
+    }
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Total: @Model.OrderTotal</td>
+            </tr>
+        </tfoot>
+    
+
+</table>  
+
+
+
+
+
+
+
 

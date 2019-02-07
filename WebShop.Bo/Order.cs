@@ -9,7 +9,7 @@ namespace WebShop.Bo
         public int OrderId { get; set; }
         public string Ssn { get; set; }
 
-        public List<OrderDetail> OrderLines { get; set; }
+        public List<OrderDetail> OrderDetails { get; set; }
 
         [Required(ErrorMessage = "Please enter your first name")]
         [Display(Name = "First name")]

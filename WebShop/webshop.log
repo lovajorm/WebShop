@@ -1,6 +1,1 @@
-﻿2019-02-07 11:40:30,834 INFO WebShop.Web.Middleware.LoggingMiddleware - b31cc32a-1f09-4de2-8755-ce82b74ef190 Request: http localhost:64874/  
-2019-02-07 11:40:31,529 INFO ehere - and there
-2019-02-07 11:40:34,662 INFO WebShop.Web.Middleware.LoggingMiddleware - b31cc32a-1f09-4de2-8755-ce82b74ef190 ResponseTime: 3851 Response: 200
-2019-02-07 13:11:08,187 INFO WebShop.Web.Middleware.LoggingMiddleware - dc728fef-df7c-4c10-82be-0f02bec8ff33 Request: http localhost:64874/  
-2019-02-07 13:11:08,920 INFO ehere - and there
-2019-02-07 13:11:11,884 INFO WebShop.Web.Middleware.LoggingMiddleware - dc728fef-df7c-4c10-82be-0f02bec8ff33 ResponseTime: 3711 Response: 200
+﻿

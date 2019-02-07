@@ -27,7 +27,8 @@ namespace WebShop.Web.Middleware
             var guid = Guid.NewGuid();
             var stopwatch = Stopwatch.StartNew();
             var request = await FormatRequest(context.Request);
-            _logger.LogInfo(this.GetType().FullName, $"{guid} Request: {request}");
+
+            LogInformation($"{guid} Request: {request}");
 
             var originalBodyStream = context.Response.Body;
 
@@ -52,11 +53,11 @@ namespace WebShop.Web.Middleware
                     
                     if (context.Response.ContentType.Contains("application/json"))
                     {
-                        _logger.LogInfo(this.GetType().FullName, $"{guid} ResponseTime: {stopwatch.ElapsedMilliseconds} Response: {response}");
+                        LogInformation($"{guid} ResponseTime: {stopwatch.ElapsedMilliseconds} Response: {response}");
                     }
                     else
                     {
-                        _logger.LogInfo(this.GetType().FullName, $"{guid} ResponseTime: {stopwatch.ElapsedMilliseconds} Response: {context.Response.StatusCode}");
+                        LogInformation($"{guid} ResponseTime: {stopwatch.ElapsedMilliseconds} Response: {context.Response.StatusCode}");
                     }
                 }
 
@@ -92,5 +93,11 @@ namespace WebShop.Web.Middleware
 
             return $"{response.StatusCode}: {text}";
         }
+
+        private void LogInformation(string message)
+        {
+            _logger.LogInfo(this.GetType().FullName, message);
+        }
+
     }
 }

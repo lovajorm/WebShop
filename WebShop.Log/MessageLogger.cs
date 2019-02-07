@@ -13,20 +13,6 @@ namespace WebShop.Log
             log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
 
-        //public void TestLog(string name, LoggingLevel level, Exception ex = null)      
-        //{
-        //    switch (level)
-        //    {
-        //        case LoggingLevel.Info:
-        //            Log.Info(name, ex);
-        //            break;
-        //        case LoggingLevel.Error:
-        //            Log.Error(name, ex);
-        //            break;
-        //    }
-
-        //}
-
         public void LogInfo(string source, string message)
         {
             Log.Info($"{source} - {message}");

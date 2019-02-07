@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="2.2.10" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="Moq" Version="4.10.1" />
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
   </ItemGroup>
@@ -17,6 +18,12 @@
   	<ProjectReference Include="..\WebShop.Bo\WebShop.Bo.csproj" />
   	<ProjectReference Include="..\WebShop.Dal\WebShop.Dal.csproj" />
   	<ProjectReference Include="..\WebShop\WebShop.Web.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions">
+      <HintPath>..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

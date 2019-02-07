@@ -33,6 +33,7 @@ namespace WebShop.Web.Controllers
 
         public ViewResult List(string category)
         {
+            _logger.LogInfo("ehere", "and there");
             string _category = category;
             IEnumerable<Product> products;
             string currentCategory = string.Empty;

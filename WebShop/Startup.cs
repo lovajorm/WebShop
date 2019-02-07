@@ -38,9 +38,7 @@ namespace WebShop
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-            var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
-            XmlConfigurator.Configure(logRepository, new FileInfo("..\\WebShop.Log\\log4net.config"));
+            
             services.AddSingleton<IMessageLogger, MessageLogger>();
 
             //services.AddSingleton(new LoggerFactory()

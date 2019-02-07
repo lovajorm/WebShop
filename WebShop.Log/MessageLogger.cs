@@ -1,17 +1,21 @@
-﻿using System;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
+﻿using log4net;
 using log4net.Config;
-using log4net.Core;
-using log4net.Repository.Hierarchy;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace WebShop.Log
 {
     public class MessageLogger :  IMessageLogger
     {
-        private static readonly log4net.ILog Log =
-            log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static log4net.ILog Log =
+            LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
+        public MessageLogger()
+        {
+            var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
+            XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
+        }
 
         public void LogInfo(string source, string message)
         {

@@ -12,5 +12,6 @@ namespace WebShop.Log
         void LogError(string source, Exception ex);
         void LogDebug(string source, Exception ex);
         void LogFatal(string source, Exception ex);
+        void CloseLogger();
     }
 }

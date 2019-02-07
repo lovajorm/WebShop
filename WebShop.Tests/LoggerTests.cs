@@ -1,6 +1,7 @@
 using System.IO;
 using System.Net.Http;
 using System.Reflection;
+using System.Text;
 using log4net;
 using log4net.Config;
 using log4net.Repository;
@@ -33,7 +34,9 @@ namespace WebShop.Tests
             var messageLogger = new MessageLogger();
 
             messageLogger.LogInfo("there", "here and not there");
-            
+            messageLogger.CloseLogger();
+            string line = File.ReadAllText(@"webshop.log", Encoding.UTF8);
+            Assert.Contains("INFO", line);
         }
 
         [Fact]

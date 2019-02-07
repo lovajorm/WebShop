@@ -41,5 +41,10 @@ namespace WebShop.Log
         {
             Log.Fatal(source, ex);
         }
+
+        public void CloseLogger()
+        {
+            Log.Logger.Repository.Shutdown();
+        }
     }
 }

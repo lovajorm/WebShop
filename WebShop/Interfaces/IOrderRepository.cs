@@ -8,7 +8,7 @@ namespace WebShop.Web.Interfaces
 {
     public interface IOrderRepository
     {
-        void CreateOrder(Order order);
+        List<OrderDetail> CreateOrder(Order order);
     }
 }
  

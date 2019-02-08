@@ -1,4 +1,4 @@
-﻿namespace WebShop.Web.Models.Avarda
+﻿namespace WebShop.Avarda.Api.Avarda
 {
     public class InvoiceResponse
     {

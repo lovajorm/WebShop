@@ -5,13 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using WebShop.Avarda.Api;
+using WebShop.Avarda.Api.Avarda;
 using WebShop.Bo;
 using WebShop.Models;
 using WebShop.Web.Interfaces;
 using WebShop.Web.Models;
-using WebShop.Web.Models.Avarda;
-using WebShop.Web.ViewModels;
-
 
 namespace WebShop.Web.Controllers
 {
@@ -20,49 +19,34 @@ namespace WebShop.Web.Controllers
     {
         private readonly IOrderRepository _orderRepository;
         private readonly ShoppingCart _shoppingCart;
+        private readonly GetCustomer _getCustomer;
 
-
-        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart)
+        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart, GetCustomer getCustomer)
         {
             _orderRepository = orderRepository;
             _shoppingCart = shoppingCart;
-
+            _getCustomer = getCustomer;
         }
 
         [HttpGet]
         public JsonResult GetInformation(string ssn)              //Method which gets customer information by using Ssn, see checkout.cshtml.
         {
-            
-            Customer response;                         //Initializes customer
-
-            using (var handler = new WebRequestHandler())
+            try
             {
-                using (var client = new HttpClient(handler))
-                {
-                    var bytearray = Encoding.ASCII.GetBytes("Testpartner Sweden:123456");
-
-                    //sets authentication header.
-                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray));
-
-                    //Sends a json-object and gets back result, converts result from json to c# which is "response"
-                    try
-                    {
-                        var result = client.GetStringAsync(new Uri($"https://stage.avarda.org/WebShopApi/webshop/ssn/swe/{ssn}")).Result;
-                        response = JsonConvert.DeserializeObject<Customer>(result);                  //Converts from json to c# class.
-                    }
-                    catch (Exception ex)                    //If exception is caught, will show error message
-                    {
-                        return Json(new ErrorViewModel { ErrorMessage = $"Failed to get customer. Error: {ex.Message}" });
-                    }
-                }
+                var info = _getCustomer.GetCustomerInfo(ssn);
+                return Json(info);
             }
-            return Json(response);
+            catch (Exception ex)
+            //If exception is caught, will show error message
+            {
+                return Json(new ErrorViewModel { ErrorMessage = $"Failed to get customer. Error: {ex.Message}" });
+            }
+
         }
 
         [HttpPost] //send authorization to web api
         public async Task<IActionResult> AuthorizeInvoice(InvoiceRequest request, Order order)
-        {;
-
+        {
             using (var handler = new WebRequestHandler())
             {
                 using (var client = new HttpClient(handler))
@@ -76,7 +60,7 @@ namespace WebShop.Web.Controllers
                     {
                         client.BaseAddress =
                             new Uri($"https://stage.avarda.org/");
-                        
+
                         var total = _shoppingCart.GetShopppingCartTotal();
                         request.Amount = total;
                         request.Country = "Swe";
@@ -107,14 +91,14 @@ namespace WebShop.Web.Controllers
                             return View("CheckoutComplete", order);
                         }
                         else
-                        { 
+                        {
                             return View("Error", new ErrorViewModel { ErrorMessage = $"Your credit score is too low" });
                         }
 
-            
+
 
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         return View("Error", new ErrorViewModel { ErrorMessage = $"Couldn't get credit score. Error Message: {ex.Message}" });
                     }

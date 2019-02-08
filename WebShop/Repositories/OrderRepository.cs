@@ -18,7 +18,6 @@ namespace WebShop.Web.Repositories
             _shoppingCart = shoppingCart;
         }
 
-
         public List<OrderDetail> CreateOrder(Order order)                        //Method which creates and saves order when payment is authorized.
         {
             var shoppingCartItems = _shoppingCart.GetShoppingCartItems();
@@ -43,7 +42,6 @@ namespace WebShop.Web.Repositories
                 _context.OrderDetails.Add(orderDetail);
                 Details.Add(orderDetail);
             }
-
             _context.SaveChanges();
 
             return Details;

@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 
-namespace WebShop.Web.Controllers
+namespace WebShop.Avarda.Api.Avarda
 {
     public class WebRequestHandler : HttpClientHandler
     {

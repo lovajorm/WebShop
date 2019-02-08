@@ -1,1 +1,657 @@
-﻿
+﻿2019-02-08 08:00:24,464 INFO WebShop.Web.Middleware.LoggingMiddleware - 15bbabe5-e0a1-43f4-878b-71ad82a5c012 Request: http localhost:64874/  
+2019-02-08 08:00:26,775 INFO WebShop.Web.Middleware.LoggingMiddleware - 15bbabe5-e0a1-43f4-878b-71ad82a5c012 ResponseTime: 2324 Response: 200
+2019-02-08 08:00:30,682 INFO WebShop.Web.Middleware.LoggingMiddleware - d4bfe329-aecb-4f7e-a10c-e39fe8c550e6 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 08:00:30,816 INFO WebShop.Web.Middleware.LoggingMiddleware - 23254bbb-9e4c-4a67-8a5c-c892de90c112 Request: http localhost:64874/Product  
+2019-02-08 08:00:30,860 INFO WebShop.Web.Middleware.LoggingMiddleware - 23254bbb-9e4c-4a67-8a5c-c892de90c112 ResponseTime: 44 Response: 200
+2019-02-08 08:00:31,523 INFO WebShop.Web.Middleware.LoggingMiddleware - b9c8ddf5-f63e-42e5-b2bc-44f3a78f9e73 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=2 
+2019-02-08 08:00:31,572 INFO WebShop.Web.Middleware.LoggingMiddleware - 24f1db3b-557e-4b1a-b96a-a1c079228d31 Request: http localhost:64874/Product  
+2019-02-08 08:00:31,611 INFO WebShop.Web.Middleware.LoggingMiddleware - 24f1db3b-557e-4b1a-b96a-a1c079228d31 ResponseTime: 39 Response: 200
+2019-02-08 08:00:32,874 INFO WebShop.Web.Middleware.LoggingMiddleware - 75b6fe16-c6c3-47ad-8940-247f6183c6f2 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 08:00:32,916 INFO WebShop.Web.Middleware.LoggingMiddleware - cd5fce70-1d1f-4c3d-900d-682bd18183e8 Request: http localhost:64874/Product  
+2019-02-08 08:00:32,958 INFO WebShop.Web.Middleware.LoggingMiddleware - cd5fce70-1d1f-4c3d-900d-682bd18183e8 ResponseTime: 41 Response: 200
+2019-02-08 08:00:35,003 INFO WebShop.Web.Middleware.LoggingMiddleware - 21f9a498-b865-4933-aed0-e3509cfd0c94 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 08:00:35,053 INFO WebShop.Web.Middleware.LoggingMiddleware - 21f9a498-b865-4933-aed0-e3509cfd0c94 ResponseTime: 50 Response: 200
+2019-02-08 08:00:37,400 INFO WebShop.Web.Middleware.LoggingMiddleware - 399b2b78-7507-487c-bd0d-f81eb7fc299a Request: http localhost:64874/Order/Checkout  
+2019-02-08 08:00:37,523 INFO WebShop.Web.Middleware.LoggingMiddleware - 399b2b78-7507-487c-bd0d-f81eb7fc299a ResponseTime: 122 Response: 200
+2019-02-08 08:00:40,021 INFO WebShop.Web.Middleware.LoggingMiddleware - 4abc1287-1408-45fa-8091-09ecf7b40142 Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 08:00:40,921 INFO WebShop.Web.Middleware.LoggingMiddleware - 4abc1287-1408-45fa-8091-09ecf7b40142 ResponseTime: 899 Response: 200: {"ssn":"197304034569","lastName":"Lastname","firstName":"Firstname","address1":"Sample address","address2":"Sample address","zipCode":"10044","city":"Stockholm","country":"Sweden"}
+2019-02-08 08:00:49,147 INFO WebShop.Web.Middleware.LoggingMiddleware - 9b959deb-ec80-49b5-94ce-42705b3f1cac Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197304034569&LastName=Lastname&FirstName=Firstname&Address1=Sample+address&Address2=Sample+address&ZipCode=10044&City=Stockholm&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eUZl-4FlRpHgxVKdHo16B5Dy6IruQKbNhBJuNA7ufWslNYMFFzCs2q9sQOupQ43Xpky0QLNUTBF0nf-9smUizii7_-mCKv8hauTXXiVjS6GQOLHc-7hFWg8GTjup-l3uOk
+2019-02-08 08:00:50,377 INFO WebShop.Web.Middleware.LoggingMiddleware - 9b959deb-ec80-49b5-94ce-42705b3f1cac ResponseTime: 1244 Response: 200
+2019-02-08 09:00:45,196 INFO WebShop.Web.Middleware.LoggingMiddleware - f39670f0-5baf-4124-ab1d-5d7440fd8454 Request: http localhost:64874/  
+2019-02-08 09:00:47,346 INFO WebShop.Web.Middleware.LoggingMiddleware - f39670f0-5baf-4124-ab1d-5d7440fd8454 ResponseTime: 2162 Response: 200
+2019-02-08 09:00:49,524 INFO WebShop.Web.Middleware.LoggingMiddleware - d21322fa-fbf0-4d41-87ff-f0fa1a794505 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 09:00:49,718 INFO WebShop.Web.Middleware.LoggingMiddleware - 577593e2-3ec0-4493-b2b6-52dfd9992000 Request: http localhost:64874/Product  
+2019-02-08 09:00:49,790 INFO WebShop.Web.Middleware.LoggingMiddleware - 577593e2-3ec0-4493-b2b6-52dfd9992000 ResponseTime: 71 Response: 200
+2019-02-08 09:00:50,666 INFO WebShop.Web.Middleware.LoggingMiddleware - ca6eee89-d3fb-4dc6-ad31-c70c6d7b0d5f Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 09:00:50,725 INFO WebShop.Web.Middleware.LoggingMiddleware - ca6eee89-d3fb-4dc6-ad31-c70c6d7b0d5f ResponseTime: 59 Response: 200
+2019-02-08 09:00:52,381 INFO WebShop.Web.Middleware.LoggingMiddleware - d9e29d2b-0eae-4a31-a04f-71d9981cea8e Request: http localhost:64874/Order/Checkout  
+2019-02-08 09:00:52,569 INFO WebShop.Web.Middleware.LoggingMiddleware - d9e29d2b-0eae-4a31-a04f-71d9981cea8e ResponseTime: 187 Response: 200
+2019-02-08 09:00:57,072 INFO WebShop.Web.Middleware.LoggingMiddleware - 90912415-2d83-4471-bb77-97be3f0e99d3 Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 09:00:57,789 INFO WebShop.Web.Middleware.LoggingMiddleware - 90912415-2d83-4471-bb77-97be3f0e99d3 ResponseTime: 717 Response: 200: {"ssn":"197304034569","lastName":"Lastname","firstName":"Firstname","address1":"Sample address","address2":"Sample address","zipCode":"10044","city":"Stockholm","country":"Sweden"}
+2019-02-08 09:01:04,749 INFO WebShop.Web.Middleware.LoggingMiddleware - 0f4edb1c-1fec-42c9-bbfb-995a4eb177b2 Request: http localhost:64874/Order/GetInformation ?ssn=196504192383 
+2019-02-08 09:01:04,873 INFO WebShop.Web.Middleware.LoggingMiddleware - 0f4edb1c-1fec-42c9-bbfb-995a4eb177b2 ResponseTime: 123 Response: 200: {"ssn":"196504192383","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":null,"zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 09:01:24,907 INFO WebShop.Web.Middleware.LoggingMiddleware - 82212b61-8936-426f-a2ce-adccd0038166 Request: http localhost:64874/  
+2019-02-08 09:01:26,945 INFO WebShop.Web.Middleware.LoggingMiddleware - 82212b61-8936-426f-a2ce-adccd0038166 ResponseTime: 2055 Response: 200
+2019-02-08 10:11:11,722 INFO WebShop.Web.Middleware.LoggingMiddleware - 5140d292-4360-471c-98b0-fbfa73c35f54 Request: http localhost:64874/  
+2019-02-08 10:11:13,659 INFO WebShop.Web.Middleware.LoggingMiddleware - 5140d292-4360-471c-98b0-fbfa73c35f54 ResponseTime: 1951 Response: 200
+2019-02-08 10:11:15,273 INFO WebShop.Web.Middleware.LoggingMiddleware - 9f8f7c81-8c0d-438e-9492-43003b2ca5d4 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 10:11:15,411 INFO WebShop.Web.Middleware.LoggingMiddleware - 9ea539c5-0ea2-4a82-a518-65c7947d8a81 Request: http localhost:64874/Product  
+2019-02-08 10:11:15,449 INFO WebShop.Web.Middleware.LoggingMiddleware - 9ea539c5-0ea2-4a82-a518-65c7947d8a81 ResponseTime: 37 Response: 200
+2019-02-08 10:11:16,795 INFO WebShop.Web.Middleware.LoggingMiddleware - 4b9b6c97-d033-4b93-aa4b-63b4302d5dbd Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 10:11:16,850 INFO WebShop.Web.Middleware.LoggingMiddleware - 4b9b6c97-d033-4b93-aa4b-63b4302d5dbd ResponseTime: 55 Response: 200
+2019-02-08 10:11:40,440 INFO WebShop.Web.Middleware.LoggingMiddleware - 07af129d-e86f-45ba-b86e-2fcaccdc382b Request: http localhost:64874/Order/Checkout  
+2019-02-08 10:11:40,567 INFO WebShop.Web.Middleware.LoggingMiddleware - 07af129d-e86f-45ba-b86e-2fcaccdc382b ResponseTime: 127 Response: 200
+2019-02-08 10:11:42,588 INFO WebShop.Web.Middleware.LoggingMiddleware - c1ed70aa-5789-4d51-8262-28ef5256353a Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 10:11:43,042 INFO WebShop.Web.Middleware.LoggingMiddleware - c1ed70aa-5789-4d51-8262-28ef5256353a ResponseTime: 453 Response: 200: {"ssn":"197304034569","lastName":"Lastname","firstName":"Firstname","address1":"Sample address","address2":"Sample address","zipCode":"10044","city":"Stockholm","country":"Sweden"}
+2019-02-08 10:11:48,368 INFO WebShop.Web.Middleware.LoggingMiddleware - eca5dc7d-1da5-4099-a135-59e01fc3dd16 Request: http localhost:64874/Order/GetInformation ?ssn=196504192383 
+2019-02-08 10:11:48,546 INFO WebShop.Web.Middleware.LoggingMiddleware - eca5dc7d-1da5-4099-a135-59e01fc3dd16 ResponseTime: 178 Response: 200: {"ssn":"196504192383","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":null,"zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 10:12:00,037 INFO WebShop.Web.Middleware.LoggingMiddleware - 3f89c5a2-7f6d-446e-8a44-7051dae1e8d8 Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=196504192383&LastName=Andersen&FirstName=Julie-Ann&Email=jehona.murati%40tfbank.se&Address1=Stationsgatan+42&Address2=&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eW2jlUqcEC5VysUM0OHmAnETsbfv_vrsWU_oSbMj8AMuH1QK0jOkpP4mKoGTZI3dckakp22hxu_AmpZ7s_wNBNfQan3FKf2dbxry1Hg-UcYG0kfU8Yx8RiyPM3LbsejJOg
+2019-02-08 10:12:01,097 INFO WebShop.Web.Middleware.LoggingMiddleware - 3f89c5a2-7f6d-446e-8a44-7051dae1e8d8 ResponseTime: 1082 Response: 200
+2019-02-08 10:12:10,840 INFO WebShop.Web.Middleware.LoggingMiddleware - 81fcdfe9-62ac-412e-9fe0-99c2ac3ad8f4 Request: http localhost:64874/Order/Checkout  
+2019-02-08 10:12:10,881 INFO WebShop.Web.Middleware.LoggingMiddleware - 81fcdfe9-62ac-412e-9fe0-99c2ac3ad8f4 ResponseTime: 40 Response: 200
+2019-02-08 12:46:22,727 INFO WebShop.Web.Middleware.LoggingMiddleware - ed9df3cf-ba87-44ee-a124-846fbea38dc0 Request: http localhost:64874/  
+2019-02-08 12:46:25,022 INFO WebShop.Web.Middleware.LoggingMiddleware - ed9df3cf-ba87-44ee-a124-846fbea38dc0 ResponseTime: 2314 Response: 200
+2019-02-08 12:46:26,884 INFO WebShop.Web.Middleware.LoggingMiddleware - 0f947598-4b83-4aff-bd73-a8144224ad20 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 12:46:27,092 INFO WebShop.Web.Middleware.LoggingMiddleware - 7551a68d-7cac-48c7-b6e7-cbdb8fd8c0e9 Request: http localhost:64874/Product  
+2019-02-08 12:46:27,143 INFO WebShop.Web.Middleware.LoggingMiddleware - 7551a68d-7cac-48c7-b6e7-cbdb8fd8c0e9 ResponseTime: 51 Response: 200
+2019-02-08 12:46:28,476 INFO WebShop.Web.Middleware.LoggingMiddleware - 521c838c-5d0a-4c47-a466-45d07c27bfb2 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 12:46:28,526 INFO WebShop.Web.Middleware.LoggingMiddleware - 521c838c-5d0a-4c47-a466-45d07c27bfb2 ResponseTime: 50 Response: 200
+2019-02-08 12:46:29,913 INFO WebShop.Web.Middleware.LoggingMiddleware - 836906cd-b880-4f2c-bb9a-6e89546f360f Request: http localhost:64874/Order/Checkout  
+2019-02-08 12:46:30,413 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 12:46:45,872 INFO WebShop.Web.Middleware.LoggingMiddleware - 58ab5b5c-faae-44d9-b9e6-b3e686d4167b Request: http localhost:64874/Order/Checkout  
+2019-02-08 12:46:45,911 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 12:46:45,939 INFO WebShop.Web.Middleware.LoggingMiddleware - 0a02dba6-5417-4dc4-8398-3842e32c97dd Request: http localhost:64874/favicon.ico  
+2019-02-08 12:46:50,193 INFO WebShop.Web.Middleware.LoggingMiddleware - 0e6c7646-4913-4645-a57c-09f25e3ecc7d Request: http localhost:64874/Order/Checkout  
+2019-02-08 12:46:50,224 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 12:47:01,113 INFO WebShop.Web.Middleware.LoggingMiddleware - 4727cb0f-ccd6-4c7e-88b4-605dccfec43f Request: http localhost:64874/  
+2019-02-08 12:47:03,067 INFO WebShop.Web.Middleware.LoggingMiddleware - 4727cb0f-ccd6-4c7e-88b4-605dccfec43f ResponseTime: 1968 Response: 200
+2019-02-08 12:47:05,805 INFO WebShop.Web.Middleware.LoggingMiddleware - b562f812-28a6-4ae0-b78c-f82eb3de4b42 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=2 
+2019-02-08 12:47:05,936 INFO WebShop.Web.Middleware.LoggingMiddleware - 04011ccf-bd4c-43c5-9a39-a8222adffee7 Request: http localhost:64874/Product  
+2019-02-08 12:47:05,973 INFO WebShop.Web.Middleware.LoggingMiddleware - 04011ccf-bd4c-43c5-9a39-a8222adffee7 ResponseTime: 37 Response: 200
+2019-02-08 12:47:06,864 INFO WebShop.Web.Middleware.LoggingMiddleware - 23358a7a-23b0-4f96-bf9e-08f35e96bc1a Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 12:47:06,920 INFO WebShop.Web.Middleware.LoggingMiddleware - 23358a7a-23b0-4f96-bf9e-08f35e96bc1a ResponseTime: 55 Response: 200
+2019-02-08 12:47:08,035 INFO WebShop.Web.Middleware.LoggingMiddleware - 9e752540-dc46-449b-803c-9a68bf460579 Request: http localhost:64874/Order/Checkout  
+2019-02-08 12:47:08,099 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 12:47:36,177 INFO WebShop.Web.Middleware.LoggingMiddleware - 029d4c4c-30fc-4661-8e14-f80c1aaf03cd Request: http localhost:64874/  
+2019-02-08 12:47:38,257 INFO WebShop.Web.Middleware.LoggingMiddleware - 029d4c4c-30fc-4661-8e14-f80c1aaf03cd ResponseTime: 2098 Response: 200
+2019-02-08 12:47:39,764 INFO WebShop.Web.Middleware.LoggingMiddleware - 922b2720-28c6-448c-a60d-f8afb4f289c3 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 12:47:39,925 INFO WebShop.Web.Middleware.LoggingMiddleware - 08af9cd8-a04b-4d4f-8b87-064d935be6d8 Request: http localhost:64874/Product  
+2019-02-08 12:47:39,969 INFO WebShop.Web.Middleware.LoggingMiddleware - 08af9cd8-a04b-4d4f-8b87-064d935be6d8 ResponseTime: 44 Response: 200
+2019-02-08 12:47:40,813 INFO WebShop.Web.Middleware.LoggingMiddleware - fcb9feec-dc99-4d76-90e5-00fb27c623ad Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 12:47:40,878 INFO WebShop.Web.Middleware.LoggingMiddleware - fcb9feec-dc99-4d76-90e5-00fb27c623ad ResponseTime: 64 Response: 200
+2019-02-08 12:47:41,888 INFO WebShop.Web.Middleware.LoggingMiddleware - 5660d957-3bb9-435c-9c0b-3732333fe228 Request: http localhost:64874/Order/Checkout  
+2019-02-08 12:47:41,948 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 12:47:50,914 INFO WebShop.Web.Middleware.LoggingMiddleware - 8a6f09e4-3c13-43d0-b2c3-18c427f14d2b Request: http localhost:64874/Product/List/Clothes  
+2019-02-08 12:47:50,955 INFO WebShop.Web.Middleware.LoggingMiddleware - 8a6f09e4-3c13-43d0-b2c3-18c427f14d2b ResponseTime: 41 Response: 200
+2019-02-08 12:47:52,309 INFO WebShop.Web.Middleware.LoggingMiddleware - 417bc8db-bb17-4e22-b83a-652ea119a6fa Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 12:47:52,354 INFO WebShop.Web.Middleware.LoggingMiddleware - 58658551-fb02-4380-b7a7-f8e427c2843b Request: http localhost:64874/Product  
+2019-02-08 12:47:52,402 INFO WebShop.Web.Middleware.LoggingMiddleware - 58658551-fb02-4380-b7a7-f8e427c2843b ResponseTime: 48 Response: 200
+2019-02-08 12:47:53,833 INFO WebShop.Web.Middleware.LoggingMiddleware - 19437f98-0e76-4fb6-9364-948509f77180 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 12:47:53,865 INFO WebShop.Web.Middleware.LoggingMiddleware - 19437f98-0e76-4fb6-9364-948509f77180 ResponseTime: 31 Response: 200
+2019-02-08 12:47:55,210 INFO WebShop.Web.Middleware.LoggingMiddleware - e0b716ec-7d1f-4236-9637-64f1555ea15c Request: http localhost:64874/Order/Checkout  
+2019-02-08 12:47:55,239 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 12:48:20,983 INFO WebShop.Web.Middleware.LoggingMiddleware - 8bdd9a4d-5bee-40a8-bd00-c1803934dd2e Request: http localhost:64874/  
+2019-02-08 12:48:23,214 INFO WebShop.Web.Middleware.LoggingMiddleware - 8bdd9a4d-5bee-40a8-bd00-c1803934dd2e ResponseTime: 2243 Response: 200
+2019-02-08 12:48:24,569 INFO WebShop.Web.Middleware.LoggingMiddleware - 8c40546a-ceb1-45d4-bc4b-118a6292fdfa Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 12:48:24,706 INFO WebShop.Web.Middleware.LoggingMiddleware - 0b531e7e-e8cc-4049-8c87-2e3ab2668b61 Request: http localhost:64874/Product  
+2019-02-08 12:48:24,747 INFO WebShop.Web.Middleware.LoggingMiddleware - 0b531e7e-e8cc-4049-8c87-2e3ab2668b61 ResponseTime: 41 Response: 200
+2019-02-08 12:48:25,638 INFO WebShop.Web.Middleware.LoggingMiddleware - 73b2cbd1-5e34-4d49-8d8d-ffba33004f0a Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 12:48:25,700 INFO WebShop.Web.Middleware.LoggingMiddleware - 73b2cbd1-5e34-4d49-8d8d-ffba33004f0a ResponseTime: 62 Response: 200
+2019-02-08 12:48:26,603 INFO WebShop.Web.Middleware.LoggingMiddleware - a5afabec-9db5-4ac9-888d-866d131a9f4a Request: http localhost:64874/Order/Checkout  
+2019-02-08 12:48:26,661 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 12:49:21,089 INFO WebShop.Web.Middleware.LoggingMiddleware - 034c9892-9677-4c4f-bc27-b76627936478 Request: http localhost:64874/  
+2019-02-08 12:49:23,095 INFO WebShop.Web.Middleware.LoggingMiddleware - 034c9892-9677-4c4f-bc27-b76627936478 ResponseTime: 2022 Response: 200
+2019-02-08 12:49:25,249 INFO WebShop.Web.Middleware.LoggingMiddleware - e10fcccb-6f5c-48ff-9b0c-76fe5bf6c0ba Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 12:49:25,397 INFO WebShop.Web.Middleware.LoggingMiddleware - ab2583a3-4678-455d-bb68-b367c35bd6d8 Request: http localhost:64874/Product  
+2019-02-08 12:49:25,442 INFO WebShop.Web.Middleware.LoggingMiddleware - ab2583a3-4678-455d-bb68-b367c35bd6d8 ResponseTime: 44 Response: 200
+2019-02-08 12:49:26,612 INFO WebShop.Web.Middleware.LoggingMiddleware - ea77ad63-39dc-4c82-8ca5-df8a2cfad59d Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 12:49:26,661 INFO WebShop.Web.Middleware.LoggingMiddleware - ea77ad63-39dc-4c82-8ca5-df8a2cfad59d ResponseTime: 48 Response: 200
+2019-02-08 12:49:27,684 INFO WebShop.Web.Middleware.LoggingMiddleware - 7c223ebc-a1ac-4165-929e-5ed45a1ed2e3 Request: http localhost:64874/Order/Checkout  
+2019-02-08 12:49:27,751 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 12:51:12,585 INFO WebShop.Web.Middleware.LoggingMiddleware - a8dee189-2ce4-47cd-8799-95275371dbcb Request: http localhost:64874/  
+2019-02-08 12:51:14,401 INFO WebShop.Web.Middleware.LoggingMiddleware - a8dee189-2ce4-47cd-8799-95275371dbcb ResponseTime: 1830 Response: 200
+2019-02-08 12:51:15,557 INFO WebShop.Web.Middleware.LoggingMiddleware - 46fcad64-9002-4870-9a48-a605cc16c661 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 12:51:15,711 INFO WebShop.Web.Middleware.LoggingMiddleware - 497a458b-301f-4b27-a07a-c29bd5f37128 Request: http localhost:64874/Product  
+2019-02-08 12:51:15,753 INFO WebShop.Web.Middleware.LoggingMiddleware - 497a458b-301f-4b27-a07a-c29bd5f37128 ResponseTime: 42 Response: 200
+2019-02-08 12:51:16,321 INFO WebShop.Web.Middleware.LoggingMiddleware - b15f7e25-035a-4f4e-a804-eea7c925fffc Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=2 
+2019-02-08 12:51:16,366 INFO WebShop.Web.Middleware.LoggingMiddleware - a88ddb76-228c-48a7-acfa-67b9fa7afeef Request: http localhost:64874/Product  
+2019-02-08 12:51:16,404 INFO WebShop.Web.Middleware.LoggingMiddleware - a88ddb76-228c-48a7-acfa-67b9fa7afeef ResponseTime: 38 Response: 200
+2019-02-08 12:51:17,304 INFO WebShop.Web.Middleware.LoggingMiddleware - c5e4eb7a-f553-4aba-9b81-3d3069beb94f Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 12:51:17,352 INFO WebShop.Web.Middleware.LoggingMiddleware - c5e4eb7a-f553-4aba-9b81-3d3069beb94f ResponseTime: 48 Response: 200
+2019-02-08 12:51:18,458 INFO WebShop.Web.Middleware.LoggingMiddleware - 7b44dec6-3bc8-43f7-ba00-a2553798f9ab Request: http localhost:64874/Order/Checkout  
+2019-02-08 12:51:18,528 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 12:52:18,894 INFO WebShop.Web.Middleware.LoggingMiddleware - ec433c82-1de2-4583-a253-c83605747306 Request: http localhost:64874/  
+2019-02-08 12:52:20,816 INFO WebShop.Web.Middleware.LoggingMiddleware - ec433c82-1de2-4583-a253-c83605747306 ResponseTime: 1933 Response: 200
+2019-02-08 12:52:22,139 INFO WebShop.Web.Middleware.LoggingMiddleware - 6b609ae9-0f65-4114-8c78-a032808655f6 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 12:52:22,291 INFO WebShop.Web.Middleware.LoggingMiddleware - 0b255515-4283-424e-8e61-b996889c6fd0 Request: http localhost:64874/Product  
+2019-02-08 12:52:22,327 INFO WebShop.Web.Middleware.LoggingMiddleware - 0b255515-4283-424e-8e61-b996889c6fd0 ResponseTime: 35 Response: 200
+2019-02-08 12:52:23,604 INFO WebShop.Web.Middleware.LoggingMiddleware - 900f0850-82a4-497c-92e6-f8f6715b08d3 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 12:52:23,664 INFO WebShop.Web.Middleware.LoggingMiddleware - 900f0850-82a4-497c-92e6-f8f6715b08d3 ResponseTime: 57 Response: 200
+2019-02-08 12:52:25,153 INFO WebShop.Web.Middleware.LoggingMiddleware - 6837be4a-cad9-4e37-a5f2-22cdc635e2b0 Request: http localhost:64874/Order/Checkout  
+2019-02-08 12:52:25,208 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 14:13:45,377 INFO WebShop.Web.Middleware.LoggingMiddleware - b0d33d59-1d3a-4716-b59f-ee8977f52c38 Request: http localhost:64874/  
+2019-02-08 14:13:47,511 INFO WebShop.Web.Middleware.LoggingMiddleware - b0d33d59-1d3a-4716-b59f-ee8977f52c38 ResponseTime: 2148 Response: 200
+2019-02-08 14:13:49,400 INFO WebShop.Web.Middleware.LoggingMiddleware - 18c40dfd-a3cd-4e54-a4b2-d4ede5aa6561 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 14:13:49,645 INFO WebShop.Web.Middleware.LoggingMiddleware - f6b0178e-20b3-414b-a813-0d7087ec5d17 Request: http localhost:64874/Product  
+2019-02-08 14:13:49,685 INFO WebShop.Web.Middleware.LoggingMiddleware - f6b0178e-20b3-414b-a813-0d7087ec5d17 ResponseTime: 39 Response: 200
+2019-02-08 14:13:50,426 INFO WebShop.Web.Middleware.LoggingMiddleware - a1dc635b-0fa5-42ad-a1fd-1f86ab0c47b2 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 14:13:50,490 INFO WebShop.Web.Middleware.LoggingMiddleware - a1dc635b-0fa5-42ad-a1fd-1f86ab0c47b2 ResponseTime: 64 Response: 200
+2019-02-08 14:13:51,304 INFO WebShop.Web.Middleware.LoggingMiddleware - d659d82c-9569-41ca-8144-014c78186997 Request: http localhost:64874/Order/Checkout  
+2019-02-08 14:13:51,366 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 14:14:32,435 INFO WebShop.Web.Middleware.LoggingMiddleware - fc5c654e-7832-4490-a440-7166781a458f Request: http localhost:64874/  
+2019-02-08 14:14:34,384 INFO WebShop.Web.Middleware.LoggingMiddleware - fc5c654e-7832-4490-a440-7166781a458f ResponseTime: 1959 Response: 200
+2019-02-08 14:14:53,791 INFO WebShop.Web.Middleware.LoggingMiddleware - 67b5502a-50b2-4348-82d0-0f2d3b4fb8dd Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 14:14:53,938 INFO WebShop.Web.Middleware.LoggingMiddleware - 81b31344-da71-4a76-9b01-1d5c87bb6785 Request: http localhost:64874/Product  
+2019-02-08 14:14:53,977 INFO WebShop.Web.Middleware.LoggingMiddleware - 81b31344-da71-4a76-9b01-1d5c87bb6785 ResponseTime: 39 Response: 200
+2019-02-08 14:14:54,959 INFO WebShop.Web.Middleware.LoggingMiddleware - dac03592-c5a2-42d9-8632-95a405535d6c Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 14:14:55,014 INFO WebShop.Web.Middleware.LoggingMiddleware - dac03592-c5a2-42d9-8632-95a405535d6c ResponseTime: 54 Response: 200
+2019-02-08 14:14:56,176 INFO WebShop.Web.Middleware.LoggingMiddleware - 730634ff-2652-48c2-af47-096fec338381 Request: http localhost:64874/Order/Checkout  
+2019-02-08 14:14:57,553 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 15:11:38,687 INFO WebShop.Web.Middleware.LoggingMiddleware - 0782de4c-af82-496c-bd71-f507c8442099 Request: http localhost:64874/  
+2019-02-08 15:11:40,751 INFO WebShop.Web.Middleware.LoggingMiddleware - 0782de4c-af82-496c-bd71-f507c8442099 ResponseTime: 2073 Response: 200
+2019-02-08 15:11:53,748 INFO WebShop.Web.Middleware.LoggingMiddleware - 536da710-a007-459e-972e-2820adc46284 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:11:53,902 INFO WebShop.Web.Middleware.LoggingMiddleware - c018f0c7-d51c-49c5-b826-53fa8c692e8a Request: http localhost:64874/Product  
+2019-02-08 15:11:53,941 INFO WebShop.Web.Middleware.LoggingMiddleware - c018f0c7-d51c-49c5-b826-53fa8c692e8a ResponseTime: 38 Response: 200
+2019-02-08 15:11:54,587 INFO WebShop.Web.Middleware.LoggingMiddleware - 9ac5a477-b249-4d3d-af9e-cab364a64975 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:11:54,641 INFO WebShop.Web.Middleware.LoggingMiddleware - 9ac5a477-b249-4d3d-af9e-cab364a64975 ResponseTime: 53 Response: 200
+2019-02-08 15:11:55,682 INFO WebShop.Web.Middleware.LoggingMiddleware - 6188ce0d-beba-42b5-bb74-68cbaf626a77 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:11:55,727 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 15:12:09,575 INFO WebShop.Web.Middleware.LoggingMiddleware - dbbd9872-2295-4b6b-96f9-e14b423ebcb2 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:12:09,607 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 15:15:02,571 INFO WebShop.Web.Middleware.LoggingMiddleware - 59afec01-dfd5-47b1-b30d-02edbeffc565 Request: http localhost:64874/  
+2019-02-08 15:15:04,608 INFO WebShop.Web.Middleware.LoggingMiddleware - 59afec01-dfd5-47b1-b30d-02edbeffc565 ResponseTime: 2052 Response: 200
+2019-02-08 15:15:08,080 INFO WebShop.Web.Middleware.LoggingMiddleware - 78d82f75-eec7-437f-a562-ddfe838cb2a5 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:15:08,221 INFO WebShop.Web.Middleware.LoggingMiddleware - 26015120-a728-4bc8-afc5-adc9bbd0ce48 Request: http localhost:64874/Product  
+2019-02-08 15:15:08,260 INFO WebShop.Web.Middleware.LoggingMiddleware - 26015120-a728-4bc8-afc5-adc9bbd0ce48 ResponseTime: 38 Response: 200
+2019-02-08 15:15:09,128 INFO WebShop.Web.Middleware.LoggingMiddleware - 52c0f9dd-0ebc-434b-a8ad-4ed3df5ca28b Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:15:09,199 INFO WebShop.Web.Middleware.LoggingMiddleware - 52c0f9dd-0ebc-434b-a8ad-4ed3df5ca28b ResponseTime: 70 Response: 200
+2019-02-08 15:15:10,357 INFO WebShop.Web.Middleware.LoggingMiddleware - 7598c0b8-e38c-457f-8b2d-08dbca783c51 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:15:10,417 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 15:16:47,831 INFO WebShop.Web.Middleware.LoggingMiddleware - abeaedb1-2990-44f1-99fa-bb9df1964b83 Request: http localhost:64874/  
+2019-02-08 15:16:49,824 INFO WebShop.Web.Middleware.LoggingMiddleware - abeaedb1-2990-44f1-99fa-bb9df1964b83 ResponseTime: 2006 Response: 200
+2019-02-08 15:16:51,746 INFO WebShop.Web.Middleware.LoggingMiddleware - 3502946c-1bd3-4465-91fc-992851e2f1df Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:16:51,879 INFO WebShop.Web.Middleware.LoggingMiddleware - 89bb0774-be0f-41a3-9758-43ad89d2e743 Request: http localhost:64874/Product  
+2019-02-08 15:16:51,920 INFO WebShop.Web.Middleware.LoggingMiddleware - 89bb0774-be0f-41a3-9758-43ad89d2e743 ResponseTime: 41 Response: 200
+2019-02-08 15:16:52,880 INFO WebShop.Web.Middleware.LoggingMiddleware - 06ad2b93-d6f8-4d7d-9260-c518bd54f5e0 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:16:52,944 INFO WebShop.Web.Middleware.LoggingMiddleware - 06ad2b93-d6f8-4d7d-9260-c518bd54f5e0 ResponseTime: 63 Response: 200
+2019-02-08 15:16:54,492 INFO WebShop.Web.Middleware.LoggingMiddleware - 9e4393cc-877b-405e-85c6-aa62158451b2 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:16:54,554 ERROR LoggingMiddleware
+System.InvalidOperationException: Unable to resolve service for type 'WebShop.Common.EmailHandler' while attempting to activate 'WebShop.Web.Controllers.OrderController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebShop.Web.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\jemu\Documents\Övningar\WebShop\WebShop\Middleware\LoggingMiddleware.cs:line 41
+2019-02-08 15:19:06,977 INFO WebShop.Web.Middleware.LoggingMiddleware - bc2f495f-12e5-4885-bd83-5f6152f10a6f Request: http localhost:64874/  
+2019-02-08 15:19:08,964 INFO WebShop.Web.Middleware.LoggingMiddleware - bc2f495f-12e5-4885-bd83-5f6152f10a6f ResponseTime: 2000 Response: 200
+2019-02-08 15:19:10,251 INFO WebShop.Web.Middleware.LoggingMiddleware - 736fce35-e48e-4ccd-9182-16ac585fcfab Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:19:10,393 INFO WebShop.Web.Middleware.LoggingMiddleware - 31a02b36-471e-4bf2-9449-e9d603081909 Request: http localhost:64874/Product  
+2019-02-08 15:19:10,482 INFO WebShop.Web.Middleware.LoggingMiddleware - 31a02b36-471e-4bf2-9449-e9d603081909 ResponseTime: 88 Response: 200
+2019-02-08 15:19:11,604 INFO WebShop.Web.Middleware.LoggingMiddleware - 2eebdfd3-b909-4c4d-9805-263e620ce8cb Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:19:11,667 INFO WebShop.Web.Middleware.LoggingMiddleware - 2eebdfd3-b909-4c4d-9805-263e620ce8cb ResponseTime: 62 Response: 200
+2019-02-08 15:19:13,281 INFO WebShop.Web.Middleware.LoggingMiddleware - ce922632-dfa0-49d5-93e4-301c5dc64e27 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:19:17,455 INFO WebShop.Web.Middleware.LoggingMiddleware - ce922632-dfa0-49d5-93e4-301c5dc64e27 ResponseTime: 4174 Response: 200
+2019-02-08 15:19:21,455 INFO WebShop.Web.Middleware.LoggingMiddleware - 1317fb33-52f2-4abd-b50a-c5a0fa089981 Request: http localhost:64874/Order/GetInformation ?ssn=196504192383 
+2019-02-08 15:19:21,959 INFO WebShop.Web.Middleware.LoggingMiddleware - 1317fb33-52f2-4abd-b50a-c5a0fa089981 ResponseTime: 503 Response: 200: {"ssn":"196504192383","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":null,"zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 15:19:27,957 INFO WebShop.Web.Middleware.LoggingMiddleware - 39d312de-01ab-48ee-ac88-db16482cada5 Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=196504192383&LastName=Andersen&FirstName=Julie-Ann&Email=jehona.murati%40tfbank.se&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eVP7WvJiCBXMRG3SRZD_j8C8Z_NIW9vQFAbhwko7NAjTgZ4LdmZTHDva3-GULAzLn6zNlNE9G6o9F0Z23rg-r9tZ6xifo490ADlOxjy6QKWW8MEM_GiPxrUPtQAtuFSsb4
+2019-02-08 15:19:33,200 INFO WebShop.Web.Middleware.LoggingMiddleware - 39d312de-01ab-48ee-ac88-db16482cada5 ResponseTime: 5266 Response: 200
+2019-02-08 15:19:50,066 INFO WebShop.Web.Middleware.LoggingMiddleware - 1ab25811-6899-46c8-bdfb-1a16b2d549c0 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:20:47,614 INFO WebShop.Web.Middleware.LoggingMiddleware - 606bf566-ae80-450b-b382-8b01bdc08a70 Request: http localhost:64874/  
+2019-02-08 15:20:49,808 INFO WebShop.Web.Middleware.LoggingMiddleware - 606bf566-ae80-450b-b382-8b01bdc08a70 ResponseTime: 2216 Response: 200
+2019-02-08 15:20:59,786 INFO WebShop.Web.Middleware.LoggingMiddleware - 1aea9c3a-3daa-45d5-bcb6-cd182564bde7 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:21:01,136 INFO WebShop.Web.Middleware.LoggingMiddleware - 6250b237-60a3-4fb3-aa03-777a6202aed4 Request: http localhost:64874/Product  
+2019-02-08 15:21:01,327 INFO WebShop.Web.Middleware.LoggingMiddleware - 6250b237-60a3-4fb3-aa03-777a6202aed4 ResponseTime: 191 Response: 200
+2019-02-08 15:21:09,262 INFO WebShop.Web.Middleware.LoggingMiddleware - ac7931bd-75fa-4c43-878b-5353034bd3c7 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:21:09,294 INFO WebShop.Web.Middleware.LoggingMiddleware - ac7931bd-75fa-4c43-878b-5353034bd3c7 ResponseTime: 32 Response: 200
+2019-02-08 15:21:10,487 INFO WebShop.Web.Middleware.LoggingMiddleware - 0e6d8e67-4554-4bcc-b9c2-d0b81ceab987 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:21:10,577 INFO WebShop.Web.Middleware.LoggingMiddleware - 0e6d8e67-4554-4bcc-b9c2-d0b81ceab987 ResponseTime: 90 Response: 200
+2019-02-08 15:21:12,690 INFO WebShop.Web.Middleware.LoggingMiddleware - 2bbe6622-1467-4763-a8bb-285dcb9850e8 Request: http localhost:64874/Order/GetInformation ?ssn=197111114760 
+2019-02-08 15:21:13,083 INFO WebShop.Web.Middleware.LoggingMiddleware - 2bbe6622-1467-4763-a8bb-285dcb9850e8 ResponseTime: 392 Response: 200: {"ssn":"197111114760","lastName":"Kungsgädda","firstName":"Bodil","address1":"Skarpskyttegatan 8","address2":null,"zipCode":"72338","city":"Västerås","country":"Sweden"}
+2019-02-08 15:22:12,881 INFO WebShop.Web.Middleware.LoggingMiddleware - 071e961a-4233-4c6a-a49d-0b47e6a3a897 Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197111114760&LastName=Kungsg%C3%A4dda&FirstName=Bodil&Email=jehona.murati%40tfbank.se&Address1=Skarpskyttegatan+8&Address2=00&ZipCode=72338&City=V%C3%A4ster%C3%A5s&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eUDN5Wj3oEk-fFBVD_SpL2iZQDIILv5lWoOHRrsVwCkpGn_fK163-jk1HSh_gFtq_1mDKyLlJW_upW1ptM7zXFMOouYOJmAdaXtWmZCXz7rTWqcv5WvCf53XY4AooR1zVA
+2019-02-08 15:22:14,156 INFO WebShop.Web.Middleware.LoggingMiddleware - 071e961a-4233-4c6a-a49d-0b47e6a3a897 ResponseTime: 1290 Response: 200
+2019-02-08 15:23:13,084 INFO WebShop.Web.Middleware.LoggingMiddleware - 1b84bb9d-9acd-43e6-a40f-b9c41e701899 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:23:13,095 INFO WebShop.Web.Middleware.LoggingMiddleware - 1b84bb9d-9acd-43e6-a40f-b9c41e701899 ResponseTime: 11 Response: 200
+2019-02-08 15:23:14,710 INFO WebShop.Web.Middleware.LoggingMiddleware - 4614bc71-b5d6-4bbc-979d-52369b9fd62f Request: http localhost:64874/Product  
+2019-02-08 15:23:14,720 INFO WebShop.Web.Middleware.LoggingMiddleware - 4614bc71-b5d6-4bbc-979d-52369b9fd62f ResponseTime: 10 Response: 200
+2019-02-08 15:23:16,079 INFO WebShop.Web.Middleware.LoggingMiddleware - 0cdae20a-1dbe-43c7-a722-bd17581ec364 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:23:16,102 INFO WebShop.Web.Middleware.LoggingMiddleware - a1405389-3cf0-451f-a501-dd0c0ffcee13 Request: http localhost:64874/Product  
+2019-02-08 15:23:16,112 INFO WebShop.Web.Middleware.LoggingMiddleware - a1405389-3cf0-451f-a501-dd0c0ffcee13 ResponseTime: 10 Response: 200
+2019-02-08 15:23:17,091 INFO WebShop.Web.Middleware.LoggingMiddleware - de1f15d9-0531-4278-9021-cedd0e94b2b0 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:23:17,100 INFO WebShop.Web.Middleware.LoggingMiddleware - de1f15d9-0531-4278-9021-cedd0e94b2b0 ResponseTime: 9 Response: 200
+2019-02-08 15:23:18,018 INFO WebShop.Web.Middleware.LoggingMiddleware - 8660b5c5-5e2c-4b19-b6de-c6396957b18e Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:23:18,027 INFO WebShop.Web.Middleware.LoggingMiddleware - 8660b5c5-5e2c-4b19-b6de-c6396957b18e ResponseTime: 8 Response: 200
+2019-02-08 15:23:22,123 INFO WebShop.Web.Middleware.LoggingMiddleware - 0e1a2de6-5f55-4ee4-9dd0-746e5f9220cf Request: http localhost:64874/Order/GetInformation ?ssn=196504192383 
+2019-02-08 15:23:22,237 INFO WebShop.Web.Middleware.LoggingMiddleware - 0e1a2de6-5f55-4ee4-9dd0-746e5f9220cf ResponseTime: 114 Response: 200: {"ssn":"196504192383","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":"0","zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 15:23:33,422 INFO WebShop.Web.Middleware.LoggingMiddleware - 4be10509-774c-4798-9f0c-8b24e85f3831 Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=196504192383&LastName=Andersen&FirstName=Julie-Ann&Email=jehona.murati%40tfbank.se&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eX6sgBEaPH4F9ewh8hTwtPccbllDKQ316749p6y11mgsxzgGhGEiDYhFjf8s2n-poNfuM7t0-ngAf3tr-1pupVl8taZHTPQ0nVNIzYEly9dhwfQNBUYYjlW2Qvei4H0FTY
+2019-02-08 15:23:34,371 INFO WebShop.Web.Middleware.LoggingMiddleware - 4be10509-774c-4798-9f0c-8b24e85f3831 ResponseTime: 949 Response: 200
+2019-02-08 15:23:44,408 INFO WebShop.Web.Middleware.LoggingMiddleware - 197e0cf8-1d00-4f1e-9f54-d27aa3764a23 Request: http localhost:64874/Product  
+2019-02-08 15:23:44,417 INFO WebShop.Web.Middleware.LoggingMiddleware - 197e0cf8-1d00-4f1e-9f54-d27aa3764a23 ResponseTime: 9 Response: 200
+2019-02-08 15:23:50,823 INFO WebShop.Web.Middleware.LoggingMiddleware - 93ecdc9d-7b96-4f11-b77c-578b2469c3fc Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:23:52,153 INFO WebShop.Web.Middleware.LoggingMiddleware - 86594f88-7c5b-471f-a542-38ae0d897291 Request: http localhost:64874/Product  
+2019-02-08 15:23:52,279 INFO WebShop.Web.Middleware.LoggingMiddleware - 93ecdc9d-7b96-4f11-b77c-578b2469c3fc ResponseTime: 1466 Response: 200
+2019-02-08 15:23:52,301 INFO WebShop.Web.Middleware.LoggingMiddleware - 86594f88-7c5b-471f-a542-38ae0d897291 ResponseTime: 147 Response: 200
+2019-02-08 15:23:53,866 INFO WebShop.Web.Middleware.LoggingMiddleware - c7f881b9-18c8-4b64-9393-fa31c65f061e Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:23:53,958 INFO WebShop.Web.Middleware.LoggingMiddleware - b46c5147-1f74-4d60-8e43-14b4002fcc84 Request: http localhost:64874/Product  
+2019-02-08 15:23:53,971 INFO WebShop.Web.Middleware.LoggingMiddleware - b46c5147-1f74-4d60-8e43-14b4002fcc84 ResponseTime: 12 Response: 200
+2019-02-08 15:23:54,873 INFO WebShop.Web.Middleware.LoggingMiddleware - 862a76e2-7607-4f0b-8334-d384de688c91 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:23:54,885 INFO WebShop.Web.Middleware.LoggingMiddleware - 862a76e2-7607-4f0b-8334-d384de688c91 ResponseTime: 12 Response: 200
+2019-02-08 15:23:56,266 INFO WebShop.Web.Middleware.LoggingMiddleware - 1c6f0669-d986-4d74-9be9-a7f70c43a6f9 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:23:56,343 INFO WebShop.Web.Middleware.LoggingMiddleware - 1c6f0669-d986-4d74-9be9-a7f70c43a6f9 ResponseTime: 77 Response: 200
+2019-02-08 15:23:58,808 INFO WebShop.Web.Middleware.LoggingMiddleware - a9140b42-bfd4-4d82-99c9-6357ed474980 Request: http localhost:64874/Order/GetInformation ?ssn=196504192383 
+2019-02-08 15:23:59,226 INFO WebShop.Web.Middleware.LoggingMiddleware - a9140b42-bfd4-4d82-99c9-6357ed474980 ResponseTime: 418 Response: 200: {"ssn":"196504192383","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":"0","zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 15:24:06,348 INFO WebShop.Web.Middleware.LoggingMiddleware - 1b5230fc-1a78-492d-baa7-952475494dac Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=196504192383&LastName=Andersen&FirstName=Julie-Ann&Email=jehona.murati%40tfbank.se&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eUAnGHkeF6nqiAsA-1lMkiAVaGxIiDlYTidR08PXp9BDUcyjsik9yf-R2R5zNHar-4aWBurM4uCEfgJ2s-peWR2lLAfagYY6Uvf4P_e5c7-Rky0ArDDUKY44YWdmr3_StU
+2019-02-08 15:24:07,468 INFO WebShop.Web.Middleware.LoggingMiddleware - 1b5230fc-1a78-492d-baa7-952475494dac ResponseTime: 1145 Response: 200
+2019-02-08 15:24:11,980 INFO WebShop.Web.Middleware.LoggingMiddleware - 2d5d40ec-e968-4b15-8ed1-9ba1f4be7645 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:24:11,993 INFO WebShop.Web.Middleware.LoggingMiddleware - 2d5d40ec-e968-4b15-8ed1-9ba1f4be7645 ResponseTime: 12 Response: 200
+2019-02-08 15:24:19,635 INFO WebShop.Web.Middleware.LoggingMiddleware - ed0a7d11-9e1a-4936-8e82-1408decb2065 Request: http localhost:64874/  
+2019-02-08 15:24:21,685 INFO WebShop.Web.Middleware.LoggingMiddleware - ed0a7d11-9e1a-4936-8e82-1408decb2065 ResponseTime: 2066 Response: 200
+2019-02-08 15:32:52,461 INFO WebShop.Web.Middleware.LoggingMiddleware - 25a1d4b6-bd08-4cbc-a13e-e0aaae83e27a Request: http localhost:64874/  
+2019-02-08 15:32:54,271 INFO WebShop.Web.Middleware.LoggingMiddleware - 25a1d4b6-bd08-4cbc-a13e-e0aaae83e27a ResponseTime: 1824 Response: 200
+2019-02-08 15:32:55,923 INFO WebShop.Web.Middleware.LoggingMiddleware - 30a6cb07-96f8-404b-8499-de07ac9f49cf Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:32:56,078 INFO WebShop.Web.Middleware.LoggingMiddleware - 74f8bb0b-b1b5-472a-81dd-1a656d191bcb Request: http localhost:64874/Product  
+2019-02-08 15:32:56,122 INFO WebShop.Web.Middleware.LoggingMiddleware - 74f8bb0b-b1b5-472a-81dd-1a656d191bcb ResponseTime: 44 Response: 200
+2019-02-08 15:32:58,400 INFO WebShop.Web.Middleware.LoggingMiddleware - 50699527-878f-4efa-a118-bd39a5a62eca Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:32:58,467 INFO WebShop.Web.Middleware.LoggingMiddleware - 50699527-878f-4efa-a118-bd39a5a62eca ResponseTime: 66 Response: 200
+2019-02-08 15:32:59,791 INFO WebShop.Web.Middleware.LoggingMiddleware - c13146d9-d3ac-46de-a942-b9afc48c951c Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:33:04,073 INFO WebShop.Web.Middleware.LoggingMiddleware - c13146d9-d3ac-46de-a942-b9afc48c951c ResponseTime: 4281 Response: 200
+2019-02-08 15:33:07,419 INFO WebShop.Web.Middleware.LoggingMiddleware - 3f80ac11-6d03-457f-87e1-26d894ae52ff Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 15:33:07,866 INFO WebShop.Web.Middleware.LoggingMiddleware - 3f80ac11-6d03-457f-87e1-26d894ae52ff ResponseTime: 446 Response: 200: {"ssn":"197304034569","lastName":"Lastname","firstName":"Firstname","address1":"Sample address","address2":"Sample address","zipCode":"10044","city":"Stockholm","country":"Sweden"}
+2019-02-08 15:33:14,521 INFO WebShop.Web.Middleware.LoggingMiddleware - 938506eb-06c7-46be-a632-5296d2c0c051 Request: http localhost:64874/Order/GetInformation ?ssn=197901121181 
+2019-02-08 15:33:14,675 INFO WebShop.Web.Middleware.LoggingMiddleware - 938506eb-06c7-46be-a632-5296d2c0c051 ResponseTime: 153 Response: 200: {"ssn":"197901121181","lastName":"Bodén","firstName":"Gunbritt","address1":"Borgmästarplan 3","address2":null,"zipCode":"80266","city":"Gävle","country":"Sweden"}
+2019-02-08 15:33:17,081 INFO WebShop.Web.Middleware.LoggingMiddleware - 701fee4b-0093-4687-93ca-a8f2e714ebf0 Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197901121181&LastName=Bod%C3%A9n&FirstName=Gunbritt&Email=&Address1=Borgm%C3%A4starplan+3&Address2=&ZipCode=80266&City=G%C3%A4vle&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eWvY4aNjzps91R3KdHALu_HJbIhvppOwcpELSVu_upO_WG_rgTz6g4gdmpKcHsuPTryYzPhW9m2aIkIpBSzvfmCvuLlPUxVXPOSPYb47RadaIhH87sDKAV6ny8XAY4NYDc
+2019-02-08 15:33:25,587 INFO WebShop.Web.Middleware.LoggingMiddleware - 701fee4b-0093-4687-93ca-a8f2e714ebf0 ResponseTime: 8525 Response: 200
+2019-02-08 15:33:42,766 INFO WebShop.Web.Middleware.LoggingMiddleware - 39f1e6be-e6f2-4c18-aed4-6765ed6b2f2b Request: http localhost:64874/  
+2019-02-08 15:33:44,717 INFO WebShop.Web.Middleware.LoggingMiddleware - 39f1e6be-e6f2-4c18-aed4-6765ed6b2f2b ResponseTime: 1967 Response: 200
+2019-02-08 15:33:48,752 INFO WebShop.Web.Middleware.LoggingMiddleware - 4e3135da-f193-458c-be56-ce7d62f1f31c Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:33:48,886 INFO WebShop.Web.Middleware.LoggingMiddleware - 0c4c87ae-8151-4710-9cb4-66d06c7610dd Request: http localhost:64874/Product  
+2019-02-08 15:33:48,925 INFO WebShop.Web.Middleware.LoggingMiddleware - 0c4c87ae-8151-4710-9cb4-66d06c7610dd ResponseTime: 38 Response: 200
+2019-02-08 15:33:49,741 INFO WebShop.Web.Middleware.LoggingMiddleware - 3a5d4b64-cf02-404d-b140-7cec56b02688 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:33:49,793 INFO WebShop.Web.Middleware.LoggingMiddleware - 3a5d4b64-cf02-404d-b140-7cec56b02688 ResponseTime: 52 Response: 200
+2019-02-08 15:33:50,561 INFO WebShop.Web.Middleware.LoggingMiddleware - 44eba100-b32d-4ebc-ac84-346b30a92a31 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:33:52,152 INFO WebShop.Web.Middleware.LoggingMiddleware - 44eba100-b32d-4ebc-ac84-346b30a92a31 ResponseTime: 1589 Response: 200
+2019-02-08 15:33:55,816 INFO WebShop.Web.Middleware.LoggingMiddleware - 4d492d95-107a-46ce-a756-e4f15c9ff571 Request: http localhost:64874/Order/GetInformation ?ssn=197901121181 
+2019-02-08 15:33:56,332 INFO WebShop.Web.Middleware.LoggingMiddleware - 4d492d95-107a-46ce-a756-e4f15c9ff571 ResponseTime: 515 Response: 200: {"ssn":"197901121181","lastName":"Bodén","firstName":"Gunbritt","address1":"Borgmästarplan 3","address2":null,"zipCode":"80266","city":"Gävle","country":"Sweden"}
+2019-02-08 15:34:00,815 INFO WebShop.Web.Middleware.LoggingMiddleware - de3cc7cb-d169-4da7-b967-6215962737c2 Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197901121181&LastName=Andersen&FirstName=Julie-Ann&Email=jehona.murati%40tfbank.se&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eW-9JpJY4a9mVT_vwhvm-pTPIjnGX0FOYMrlIaBCU_n-GU3VfysxFOE__nUf3t8eYh-e5t1AYt5CunASOMR2ACvF-eBWqoTw3tQGXoDURFxF3-cLcWoi-0yyerCZc0tn7s
+2019-02-08 15:42:29,159 INFO WebShop.Web.Middleware.LoggingMiddleware - 0e4abf41-d0a2-4ea3-8084-cb3402e57a64 Request: http localhost:64874/  
+2019-02-08 15:42:31,158 INFO WebShop.Web.Middleware.LoggingMiddleware - 0e4abf41-d0a2-4ea3-8084-cb3402e57a64 ResponseTime: 2010 Response: 200
+2019-02-08 15:42:42,445 INFO WebShop.Web.Middleware.LoggingMiddleware - afbe680a-fa51-4b74-9b15-f5ecb6cf11e0 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:42:42,603 INFO WebShop.Web.Middleware.LoggingMiddleware - cbdd1974-309d-401b-bd6f-6dbdc4d4a536 Request: http localhost:64874/Product  
+2019-02-08 15:42:42,641 INFO WebShop.Web.Middleware.LoggingMiddleware - cbdd1974-309d-401b-bd6f-6dbdc4d4a536 ResponseTime: 37 Response: 200
+2019-02-08 15:42:43,369 INFO WebShop.Web.Middleware.LoggingMiddleware - ba171bf5-f05e-444d-87d4-f19b5a36d0ee Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:42:43,431 INFO WebShop.Web.Middleware.LoggingMiddleware - ba171bf5-f05e-444d-87d4-f19b5a36d0ee ResponseTime: 61 Response: 200
+2019-02-08 15:42:44,532 INFO WebShop.Web.Middleware.LoggingMiddleware - 80051546-d774-428b-be06-3ca2eca2a458 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:42:44,641 INFO WebShop.Web.Middleware.LoggingMiddleware - 80051546-d774-428b-be06-3ca2eca2a458 ResponseTime: 108 Response: 200
+2019-02-08 15:42:47,520 INFO WebShop.Web.Middleware.LoggingMiddleware - e29752d5-be08-4dfb-8a63-fbf5eda7fa9d Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 15:42:47,997 INFO WebShop.Web.Middleware.LoggingMiddleware - e29752d5-be08-4dfb-8a63-fbf5eda7fa9d ResponseTime: 477 Response: 200: {"ssn":"197304034569","lastName":"Lastname","firstName":"Firstname","address1":"Sample address","address2":"Sample address","zipCode":"10044","city":"Stockholm","country":"Sweden"}
+2019-02-08 15:42:51,998 INFO WebShop.Web.Middleware.LoggingMiddleware - 9e1242e8-936b-41c5-8913-6f3c92807bdb Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197304034569&LastName=Andersen&FirstName=Julie-Ann&Email=jehona.murati%40tfbank.se&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eVFUBdpodHng7rlK0mdI75xdstzg6VoOqovK1Ab9dC5NG6MChLG7xNkVcWsmn5MQWdzw8RKvX9k7MNZhuquo6rbjrmR95cG7cezuVQzE5ErTcO4PgiN8Wh_y_tJJHCkN-c
+2019-02-08 15:42:53,133 INFO WebShop.Web.Middleware.LoggingMiddleware - 9e1242e8-936b-41c5-8913-6f3c92807bdb ResponseTime: 1152 Response: 200
+2019-02-08 15:45:38,995 INFO WebShop.Web.Middleware.LoggingMiddleware - 315a3271-80b2-43d6-9a1c-7997162f160f Request: http localhost:64874/  
+2019-02-08 15:45:40,842 INFO WebShop.Web.Middleware.LoggingMiddleware - 315a3271-80b2-43d6-9a1c-7997162f160f ResponseTime: 1865 Response: 200
+2019-02-08 15:46:00,506 INFO WebShop.Web.Middleware.LoggingMiddleware - ab27ade7-81cd-4488-84ff-d4bb36597e5a Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:46:00,662 INFO WebShop.Web.Middleware.LoggingMiddleware - 24b27f3e-f87c-4652-921e-2025c4bbdf8f Request: http localhost:64874/Product  
+2019-02-08 15:46:00,698 INFO WebShop.Web.Middleware.LoggingMiddleware - 24b27f3e-f87c-4652-921e-2025c4bbdf8f ResponseTime: 35 Response: 200
+2019-02-08 15:46:03,081 INFO WebShop.Web.Middleware.LoggingMiddleware - 3f184fb5-b23f-48a9-8d32-6ddac298ba7b Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:46:03,132 INFO WebShop.Web.Middleware.LoggingMiddleware - 3f184fb5-b23f-48a9-8d32-6ddac298ba7b ResponseTime: 51 Response: 200
+2019-02-08 15:46:04,428 INFO WebShop.Web.Middleware.LoggingMiddleware - fe7af7a9-e901-4d6b-824d-8ff5ab38cac2 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:46:04,547 INFO WebShop.Web.Middleware.LoggingMiddleware - fe7af7a9-e901-4d6b-824d-8ff5ab38cac2 ResponseTime: 118 Response: 200
+2019-02-08 15:46:08,087 INFO WebShop.Web.Middleware.LoggingMiddleware - 71bf5535-917d-4c1f-8dd8-3ea647470622 Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 15:46:08,591 INFO WebShop.Web.Middleware.LoggingMiddleware - 71bf5535-917d-4c1f-8dd8-3ea647470622 ResponseTime: 504 Response: 200: {"ssn":"197304034569","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":"0","zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 15:46:35,857 INFO WebShop.Web.Middleware.LoggingMiddleware - 26b58d39-1e92-4643-9e7e-8d56c78615f7 Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197304034569&LastName=Andersen&FirstName=Julie-Ann&Email=jehona.murati%40tfbank.se&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eUVi4fyxDzuSryqzSQ0WE3m4Cav8DsbTz1rwwa6OmdT3iE8qzvcr398d_w3cmlpOK2lcb1XOc8Y3moHcYmz0VdVyxhIaNkI61J93rEqzismL1bFiWFojDzkVSyzMeZtQpE
+2019-02-08 15:46:37,090 INFO WebShop.Web.Middleware.LoggingMiddleware - 26b58d39-1e92-4643-9e7e-8d56c78615f7 ResponseTime: 1258 Response: 200
+2019-02-08 15:46:39,813 INFO WebShop.Web.Middleware.LoggingMiddleware - 62f1939c-df32-4633-aa27-4fd1ee15acac Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:46:39,860 INFO WebShop.Web.Middleware.LoggingMiddleware - 62f1939c-df32-4633-aa27-4fd1ee15acac ResponseTime: 46 Response: 200
+2019-02-08 15:46:44,964 INFO WebShop.Web.Middleware.LoggingMiddleware - a4c1af53-b238-48c5-8edb-66b39383d27b Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197304034569&LastName=Andersen&FirstName=Julie-Ann&Email=&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eWndWRvtAhBIxRUytvDfYnOKA51ijA8c_dB5_M3ZcEcPRswyyQud2DZYNtABQVmXftD_AVnWK4EfIJWW-f5mvTiNTZb87HYDbpGCuVaxr-DyOOMvfcBzbVJRgKOY4YtBRY
+2019-02-08 15:46:45,936 INFO WebShop.Web.Middleware.LoggingMiddleware - a4c1af53-b238-48c5-8edb-66b39383d27b ResponseTime: 972 Response: 200
+2019-02-08 15:46:47,139 INFO WebShop.Web.Middleware.LoggingMiddleware - 79c79b02-577f-48bf-a792-0a0cbe85d5de Request: http localhost:64874/Product  
+2019-02-08 15:46:47,185 INFO WebShop.Web.Middleware.LoggingMiddleware - 79c79b02-577f-48bf-a792-0a0cbe85d5de ResponseTime: 46 Response: 200
+2019-02-08 15:46:55,042 INFO WebShop.Web.Middleware.LoggingMiddleware - 4f7e10b8-314e-4110-b1c7-86f40772d0f5 Request: http localhost:64874/  
+2019-02-08 15:46:57,015 INFO WebShop.Web.Middleware.LoggingMiddleware - 4f7e10b8-314e-4110-b1c7-86f40772d0f5 ResponseTime: 1986 Response: 200
+2019-02-08 15:46:59,765 INFO WebShop.Web.Middleware.LoggingMiddleware - 038ecca3-0b49-4ca5-8c5d-782b7de7c076 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:46:59,890 INFO WebShop.Web.Middleware.LoggingMiddleware - 83639d45-e58e-4083-b012-541c7b6708d8 Request: http localhost:64874/Product  
+2019-02-08 15:46:59,952 INFO WebShop.Web.Middleware.LoggingMiddleware - 83639d45-e58e-4083-b012-541c7b6708d8 ResponseTime: 61 Response: 200
+2019-02-08 15:47:00,681 INFO WebShop.Web.Middleware.LoggingMiddleware - 342d6f6e-213c-4a05-918c-98c441d327bc Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:47:00,729 INFO WebShop.Web.Middleware.LoggingMiddleware - 342d6f6e-213c-4a05-918c-98c441d327bc ResponseTime: 48 Response: 200
+2019-02-08 15:47:01,997 INFO WebShop.Web.Middleware.LoggingMiddleware - 8dbe8cce-0a5f-4a24-b6e3-996b74550206 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:47:02,115 INFO WebShop.Web.Middleware.LoggingMiddleware - 8dbe8cce-0a5f-4a24-b6e3-996b74550206 ResponseTime: 117 Response: 200
+2019-02-08 15:47:05,602 INFO WebShop.Web.Middleware.LoggingMiddleware - ff2914c2-27d3-4deb-a452-49fb88337bfa Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 15:47:06,060 INFO WebShop.Web.Middleware.LoggingMiddleware - ff2914c2-27d3-4deb-a452-49fb88337bfa ResponseTime: 458 Response: 200: {"ssn":"197304034569","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":"0","zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 15:47:07,509 INFO WebShop.Web.Middleware.LoggingMiddleware - e371443a-ae98-492c-8ba4-c0c34def1c55 Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197304034569&LastName=Andersen&FirstName=Julie-Ann&Email=&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eV3y2HKAgxArmpPO3l5LRiwYqJyEQERt9Zg6FVkVaU1fNcinsKf1VqllU5lGJ2MsJ7bj9-MHkGA5uZf90VALDFjl5oVZ1kkE3Darvdn9WfIqo4MgdZ-fO_KuF7S-0Qqd2w
+2019-02-08 15:47:08,882 INFO WebShop.Web.Middleware.LoggingMiddleware - e371443a-ae98-492c-8ba4-c0c34def1c55 ResponseTime: 1402 Response: 200
+2019-02-08 15:49:23,324 INFO WebShop.Web.Middleware.LoggingMiddleware - 360ef043-43d5-4080-bf1d-4d07fe1634b0 Request: http localhost:64874/  
+2019-02-08 15:49:25,335 INFO WebShop.Web.Middleware.LoggingMiddleware - 360ef043-43d5-4080-bf1d-4d07fe1634b0 ResponseTime: 2023 Response: 200
+2019-02-08 15:49:27,895 INFO WebShop.Web.Middleware.LoggingMiddleware - adf7eada-013f-4c49-a1bf-de8f60f2d0d3 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:49:28,049 INFO WebShop.Web.Middleware.LoggingMiddleware - 8b7a4a28-f181-4694-8be4-f0951cd3b6d7 Request: http localhost:64874/Product  
+2019-02-08 15:49:28,091 INFO WebShop.Web.Middleware.LoggingMiddleware - 8b7a4a28-f181-4694-8be4-f0951cd3b6d7 ResponseTime: 41 Response: 200
+2019-02-08 15:49:28,908 INFO WebShop.Web.Middleware.LoggingMiddleware - e38ebd36-719b-43f0-925c-a6d527310dfb Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:49:28,957 INFO WebShop.Web.Middleware.LoggingMiddleware - e38ebd36-719b-43f0-925c-a6d527310dfb ResponseTime: 48 Response: 200
+2019-02-08 15:49:30,796 INFO WebShop.Web.Middleware.LoggingMiddleware - e92c52e9-85b0-42a4-8c80-a47f5baade2a Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:49:30,899 INFO WebShop.Web.Middleware.LoggingMiddleware - e92c52e9-85b0-42a4-8c80-a47f5baade2a ResponseTime: 102 Response: 200
+2019-02-08 15:49:34,550 INFO WebShop.Web.Middleware.LoggingMiddleware - 0267a16b-f4e3-4ae0-a560-2720b8f3d881 Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 15:49:35,036 INFO WebShop.Web.Middleware.LoggingMiddleware - 0267a16b-f4e3-4ae0-a560-2720b8f3d881 ResponseTime: 486 Response: 200: {"ssn":"197304034569","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":"0","zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 15:49:41,859 INFO WebShop.Web.Middleware.LoggingMiddleware - 2ead2a2c-9c44-4a89-abd9-a5ae3e93dcdd Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197304034569&LastName=Andersen&FirstName=Julie-Ann&Email=&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eXF7x1O5DanNdJ3ntXggK8WzIdJF9tQsH10E7fFG6n4B0QMe29jd1-KdPLw286C0r27uA0mWmYizRWR-TGGt0xnrslHLwIFOdJnb7KX4H5m15cvvwfAV-gL2Y-o326BuWI
+2019-02-08 15:49:43,072 INFO WebShop.Web.Middleware.LoggingMiddleware - 2ead2a2c-9c44-4a89-abd9-a5ae3e93dcdd ResponseTime: 1247 Response: 200
+2019-02-08 15:54:41,216 INFO WebShop.Web.Middleware.LoggingMiddleware - 2498a103-1436-4a9e-b68f-f85d5e93f8f2 Request: http localhost:64874/  
+2019-02-08 15:54:42,578 INFO WebShop.Web.Middleware.LoggingMiddleware - 2498a103-1436-4a9e-b68f-f85d5e93f8f2 ResponseTime: 1376 Response: 200
+2019-02-08 15:54:45,967 INFO WebShop.Web.Middleware.LoggingMiddleware - 35f19d82-eaad-41e5-bb4e-fa919c8ed87f Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:54:46,110 INFO WebShop.Web.Middleware.LoggingMiddleware - 949c1c1d-e377-41c0-8f78-c83232052797 Request: http localhost:64874/Product  
+2019-02-08 15:54:46,153 INFO WebShop.Web.Middleware.LoggingMiddleware - 949c1c1d-e377-41c0-8f78-c83232052797 ResponseTime: 42 Response: 200
+2019-02-08 15:54:48,164 INFO WebShop.Web.Middleware.LoggingMiddleware - a60b7365-5f8c-4226-8f03-bf4d08cfb0ea Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:54:48,226 INFO WebShop.Web.Middleware.LoggingMiddleware - a60b7365-5f8c-4226-8f03-bf4d08cfb0ea ResponseTime: 62 Response: 200
+2019-02-08 15:54:49,416 INFO WebShop.Web.Middleware.LoggingMiddleware - e31628ed-11da-4359-887d-42db9e274deb Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:54:49,540 INFO WebShop.Web.Middleware.LoggingMiddleware - e31628ed-11da-4359-887d-42db9e274deb ResponseTime: 122 Response: 200
+2019-02-08 15:54:51,273 INFO WebShop.Web.Middleware.LoggingMiddleware - 2f7a7f0e-6c7f-4141-ab56-4aa07f9a4f91 Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 15:54:51,720 INFO WebShop.Web.Middleware.LoggingMiddleware - 2f7a7f0e-6c7f-4141-ab56-4aa07f9a4f91 ResponseTime: 447 Response: 200: {"ssn":"197304034569","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":"0","zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 15:54:52,769 INFO WebShop.Web.Middleware.LoggingMiddleware - 6ff98703-f8b8-4025-9be3-b24281fb0a4a Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197304034569&LastName=Andersen&FirstName=Julie-Ann&Email=&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eWOqGj5FT_aTeounbbESGq03vQaFGdUEyF4SziUFUu56QxKSKNQQuLJo5hG2eFBhRXnpUScTjCgi6s22EPuNn6G9u7lzNI5yRBs_AhUN_SwMrwdjli3WBJWOzCmpbATurs
+2019-02-08 15:54:53,908 INFO WebShop.Web.Middleware.LoggingMiddleware - 6ff98703-f8b8-4025-9be3-b24281fb0a4a ResponseTime: 1159 Response: 200
+2019-02-08 15:54:56,971 INFO WebShop.Web.Middleware.LoggingMiddleware - 753a170c-eed5-45b9-a02c-8558bac3db83 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:54:57,009 INFO WebShop.Web.Middleware.LoggingMiddleware - 753a170c-eed5-45b9-a02c-8558bac3db83 ResponseTime: 37 Response: 200
+2019-02-08 15:57:56,411 INFO WebShop.Web.Middleware.LoggingMiddleware - ddc250b5-30fc-451d-bb95-73254d6de4b7 Request: http localhost:64874/  
+2019-02-08 15:57:57,644 INFO WebShop.Web.Middleware.LoggingMiddleware - ddc250b5-30fc-451d-bb95-73254d6de4b7 ResponseTime: 1245 Response: 200
+2019-02-08 15:57:59,312 INFO WebShop.Web.Middleware.LoggingMiddleware - 17f9b76c-5fc1-4645-a71a-1ae7f2c5e139 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:57:59,489 INFO WebShop.Web.Middleware.LoggingMiddleware - b2e2dfa0-68a1-42f3-8627-60509d875b68 Request: http localhost:64874/Product  
+2019-02-08 15:57:59,537 INFO WebShop.Web.Middleware.LoggingMiddleware - b2e2dfa0-68a1-42f3-8627-60509d875b68 ResponseTime: 48 Response: 200
+2019-02-08 15:58:01,682 INFO WebShop.Web.Middleware.LoggingMiddleware - 3562173f-8c79-413f-9ca1-35c8b3a9cb11 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:58:01,736 INFO WebShop.Web.Middleware.LoggingMiddleware - 3562173f-8c79-413f-9ca1-35c8b3a9cb11 ResponseTime: 54 Response: 200
+2019-02-08 15:58:02,852 INFO WebShop.Web.Middleware.LoggingMiddleware - 7e1b281f-c984-4fce-b683-07a9082cebd8 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:58:02,973 INFO WebShop.Web.Middleware.LoggingMiddleware - 7e1b281f-c984-4fce-b683-07a9082cebd8 ResponseTime: 120 Response: 200
+2019-02-08 15:58:04,965 INFO WebShop.Web.Middleware.LoggingMiddleware - 31aaa0fc-1c47-4993-b202-3786dfd63a98 Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 15:58:05,468 INFO WebShop.Web.Middleware.LoggingMiddleware - 31aaa0fc-1c47-4993-b202-3786dfd63a98 ResponseTime: 502 Response: 200: {"ssn":"197304034569","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":"0","zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 15:58:08,642 INFO WebShop.Web.Middleware.LoggingMiddleware - b5072463-92e0-4ec8-8b67-0a0f8212c795 Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197304034569&LastName=Andersen&FirstName=Julie-Ann&Email=&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eVGddXW3T0cUQMu5dzWHiJMCCbCaQdkhvjDzH2GKlZWAwSjU7iHaWcrWrHa0Tfa8fWCbgOaYeLTgo4-Xu0vGusvabe2uAfsSGWBCwny7PdFjo1ADKcIyQcYgTLWw_4Dyxc
+2019-02-08 15:58:12,544 INFO WebShop.Web.Middleware.LoggingMiddleware - b5072463-92e0-4ec8-8b67-0a0f8212c795 ResponseTime: 3933 Response: 200
+2019-02-08 15:59:19,482 INFO WebShop.Web.Middleware.LoggingMiddleware - 8af7c564-0314-41bf-92f9-ea42d4758570 Request: http localhost:64874/  
+2019-02-08 15:59:20,764 INFO WebShop.Web.Middleware.LoggingMiddleware - 8af7c564-0314-41bf-92f9-ea42d4758570 ResponseTime: 1291 Response: 200
+2019-02-08 15:59:23,949 INFO WebShop.Web.Middleware.LoggingMiddleware - 4392bc3e-71c6-4fba-909f-7c6d191b28d4 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 15:59:24,079 INFO WebShop.Web.Middleware.LoggingMiddleware - 253de9a1-5ac6-45ec-8060-745b0a9ed737 Request: http localhost:64874/Product  
+2019-02-08 15:59:24,122 INFO WebShop.Web.Middleware.LoggingMiddleware - 253de9a1-5ac6-45ec-8060-745b0a9ed737 ResponseTime: 42 Response: 200
+2019-02-08 15:59:27,724 INFO WebShop.Web.Middleware.LoggingMiddleware - 4d1cb7bc-0200-4659-85d2-3b421888ade7 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 15:59:27,785 INFO WebShop.Web.Middleware.LoggingMiddleware - 4d1cb7bc-0200-4659-85d2-3b421888ade7 ResponseTime: 60 Response: 200
+2019-02-08 15:59:28,854 INFO WebShop.Web.Middleware.LoggingMiddleware - 10ad06d1-ee7b-46bf-9243-d7c5155a0561 Request: http localhost:64874/Order/Checkout  
+2019-02-08 15:59:28,972 INFO WebShop.Web.Middleware.LoggingMiddleware - 10ad06d1-ee7b-46bf-9243-d7c5155a0561 ResponseTime: 117 Response: 200
+2019-02-08 15:59:31,445 INFO WebShop.Web.Middleware.LoggingMiddleware - 06ab6a73-a0a9-480c-9513-16665d9cae3d Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 15:59:31,893 INFO WebShop.Web.Middleware.LoggingMiddleware - 06ab6a73-a0a9-480c-9513-16665d9cae3d ResponseTime: 448 Response: 200: {"ssn":"197304034569","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":"0","zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 15:59:37,679 INFO WebShop.Web.Middleware.LoggingMiddleware - b07566b0-6663-4588-aa5b-ddeda5212cdf Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197304034569&LastName=Andersen&FirstName=Julie-Ann&Email=jehona.murati%40tfbank.se&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eWam0sjP40wcejWCROt-RFD3lrBiJ4NzVN9PGwMWR5mZ_rNP6Hfe-WVA4J1WX-v89aZeR560uWtL4s1SwenzdhPF546YP1yDhiQaN5WjhYCs96x0TI69GYIZG_Qjw1Q_do
+2019-02-08 15:59:38,861 INFO WebShop.Web.Middleware.LoggingMiddleware - b07566b0-6663-4588-aa5b-ddeda5212cdf ResponseTime: 1199 Response: 200
+2019-02-08 16:00:08,617 INFO WebShop.Web.Middleware.LoggingMiddleware - 1286345f-ba1c-486f-bb4a-65e7f8a97c03 Request: http localhost:64874/  
+2019-02-08 16:00:09,987 INFO WebShop.Web.Middleware.LoggingMiddleware - 1286345f-ba1c-486f-bb4a-65e7f8a97c03 ResponseTime: 1383 Response: 200
+2019-02-08 16:00:11,951 INFO WebShop.Web.Middleware.LoggingMiddleware - 01983056-2f41-4e34-9cd4-7e971853b768 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 16:00:12,118 INFO WebShop.Web.Middleware.LoggingMiddleware - 7ae939e3-6b5c-442f-9f24-c627560cf730 Request: http localhost:64874/Product  
+2019-02-08 16:00:12,155 INFO WebShop.Web.Middleware.LoggingMiddleware - 7ae939e3-6b5c-442f-9f24-c627560cf730 ResponseTime: 36 Response: 200
+2019-02-08 16:00:13,966 INFO WebShop.Web.Middleware.LoggingMiddleware - 2ec16928-5179-4381-8972-7bb67635c7c7 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 16:00:14,022 INFO WebShop.Web.Middleware.LoggingMiddleware - 2ec16928-5179-4381-8972-7bb67635c7c7 ResponseTime: 56 Response: 200
+2019-02-08 16:00:15,383 INFO WebShop.Web.Middleware.LoggingMiddleware - b57bc01a-bd02-4d74-aec9-ea5b4e8de072 Request: http localhost:64874/Order/Checkout  
+2019-02-08 16:00:15,492 INFO WebShop.Web.Middleware.LoggingMiddleware - b57bc01a-bd02-4d74-aec9-ea5b4e8de072 ResponseTime: 109 Response: 200
+2019-02-08 16:00:17,673 INFO WebShop.Web.Middleware.LoggingMiddleware - fc6dc423-2428-49fe-867b-c02c39152571 Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 16:00:18,375 INFO WebShop.Web.Middleware.LoggingMiddleware - fc6dc423-2428-49fe-867b-c02c39152571 ResponseTime: 701 Response: 200: {"ssn":"197304034569","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":"0","zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 16:00:19,054 INFO WebShop.Web.Middleware.LoggingMiddleware - d63eb776-ca98-40e3-bdc2-3e1ab7dfaafc Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 16:00:19,200 INFO WebShop.Web.Middleware.LoggingMiddleware - d63eb776-ca98-40e3-bdc2-3e1ab7dfaafc ResponseTime: 145 Response: 200: {"ssn":"197304034569","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":"0","zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 16:00:23,054 INFO WebShop.Web.Middleware.LoggingMiddleware - f8611899-632e-40bf-b03c-e8ea25a8827b Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197304034569&LastName=Andersen&FirstName=Julie-Ann&Email=jehona.murati%40tfbank.se&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eXZcXlVS1YEBx1n7-3rz10E56rhPxYbrY8dkm_IwLS0WlfjE9Q-T9kqF83ash1MqIv3Hg7BS9O8AI6a_F7yg_G6T_kyGzyxypW-lab_MzyKut7915VsJ7rPY4IBE8jaNEA
+2019-02-08 16:01:07,101 INFO WebShop.Web.Middleware.LoggingMiddleware - f8611899-632e-40bf-b03c-e8ea25a8827b ResponseTime: 44070 Response: 200
+2019-02-08 16:02:37,963 INFO WebShop.Web.Middleware.LoggingMiddleware - 7ee24795-dab3-4beb-87cf-2a92a7f5c1da Request: http localhost:64874/  
+2019-02-08 16:02:39,930 INFO WebShop.Web.Middleware.LoggingMiddleware - 7ee24795-dab3-4beb-87cf-2a92a7f5c1da ResponseTime: 1986 Response: 200
+2019-02-08 16:02:42,012 INFO WebShop.Web.Middleware.LoggingMiddleware - 3abaa769-7322-4af6-8225-6167ce7a7fa2 Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 16:02:42,303 INFO WebShop.Web.Middleware.LoggingMiddleware - 8b61a88e-777e-417b-9945-3bcd90030986 Request: http localhost:64874/Product  
+2019-02-08 16:02:42,360 INFO WebShop.Web.Middleware.LoggingMiddleware - 8b61a88e-777e-417b-9945-3bcd90030986 ResponseTime: 56 Response: 200
+2019-02-08 16:02:43,036 INFO WebShop.Web.Middleware.LoggingMiddleware - 0e9015c7-ca95-454f-941a-6f8503227e72 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 16:02:43,106 INFO WebShop.Web.Middleware.LoggingMiddleware - 0e9015c7-ca95-454f-941a-6f8503227e72 ResponseTime: 69 Response: 200
+2019-02-08 16:02:44,554 INFO WebShop.Web.Middleware.LoggingMiddleware - cff29f49-758c-4725-8e30-eb50672ad569 Request: http localhost:64874/Order/Checkout  
+2019-02-08 16:02:44,655 INFO WebShop.Web.Middleware.LoggingMiddleware - cff29f49-758c-4725-8e30-eb50672ad569 ResponseTime: 100 Response: 200
+2019-02-08 16:02:50,643 INFO WebShop.Web.Middleware.LoggingMiddleware - fd6f2947-ab06-41c1-86eb-5761ee401b40 Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 16:02:51,122 INFO WebShop.Web.Middleware.LoggingMiddleware - fd6f2947-ab06-41c1-86eb-5761ee401b40 ResponseTime: 478 Response: 200: {"ssn":"197304034569","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":"0","zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 16:02:53,871 INFO WebShop.Web.Middleware.LoggingMiddleware - c717d3fa-c4a9-4d76-9a28-97686ddf12dc Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197304034569&LastName=Andersen&FirstName=Julie-Ann&Email=jehona.murati%40tfbank.se&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eX1k0mR0jDvjETUPJUj2-uHuG7e-XR64Pbji7BqlyvB3OKhSm0W_zGOml5DZXeTLqNFq4kkUvBCOB10ElSoVuei6oWIqhJOuU-dajUbPP4vkHEfmn-GRpumITb5fVtbJsc
+2019-02-08 16:03:22,451 INFO WebShop.Web.Middleware.LoggingMiddleware - da51aedd-9425-48b8-9c49-61b10542c915 Request: http localhost:64874/  
+2019-02-08 16:03:23,766 INFO WebShop.Web.Middleware.LoggingMiddleware - da51aedd-9425-48b8-9c49-61b10542c915 ResponseTime: 1327 Response: 200
+2019-02-08 16:03:34,247 INFO WebShop.Web.Middleware.LoggingMiddleware - 7c83bb07-4609-49ac-966d-01a087892f4d Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 16:03:34,414 INFO WebShop.Web.Middleware.LoggingMiddleware - 655802cb-f32d-4d6a-b240-0407c4a5df98 Request: http localhost:64874/Product  
+2019-02-08 16:03:34,454 INFO WebShop.Web.Middleware.LoggingMiddleware - 655802cb-f32d-4d6a-b240-0407c4a5df98 ResponseTime: 40 Response: 200
+2019-02-08 16:03:35,093 INFO WebShop.Web.Middleware.LoggingMiddleware - d3197338-99be-4b2e-bb32-bb87c4f46e8b Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 16:03:35,144 INFO WebShop.Web.Middleware.LoggingMiddleware - d3197338-99be-4b2e-bb32-bb87c4f46e8b ResponseTime: 50 Response: 200
+2019-02-08 16:03:36,515 INFO WebShop.Web.Middleware.LoggingMiddleware - 6d04e1a7-73d4-49fd-9b47-a163880504cf Request: http localhost:64874/Order/Checkout  
+2019-02-08 16:03:36,627 INFO WebShop.Web.Middleware.LoggingMiddleware - 6d04e1a7-73d4-49fd-9b47-a163880504cf ResponseTime: 111 Response: 200
+2019-02-08 16:03:39,056 INFO WebShop.Web.Middleware.LoggingMiddleware - df75f093-b735-485a-a45c-f1d27a50fe88 Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 16:03:39,553 INFO WebShop.Web.Middleware.LoggingMiddleware - df75f093-b735-485a-a45c-f1d27a50fe88 ResponseTime: 496 Response: 200: {"ssn":"197304034569","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":"0","zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 16:03:42,750 INFO WebShop.Web.Middleware.LoggingMiddleware - 33b66eee-08b0-429d-a66b-e41c2961523d Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197304034569&LastName=Andersen&FirstName=Julie-Ann&Email=jehona.murati%40tfbank.se&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eW6ntPQ-BkQof3qfCx4Zpdv9xk0DLjGVaT09136vvt-QQf0nqVweixloxaURgp4xhJXPu3a5cjiTHy4h88m94g9MdkbN68o_jGeY6bTUZJGejKfp_cRBvIes375WiwAkbw
+2019-02-08 16:04:26,080 INFO WebShop.Web.Middleware.LoggingMiddleware - 33b66eee-08b0-429d-a66b-e41c2961523d ResponseTime: 43357 Response: 200
+2019-02-08 16:34:19,715 INFO WebShop.Web.Middleware.LoggingMiddleware - 6b22f881-bb87-49c0-a825-f65c8733299b Request: http localhost:64874/  
+2019-02-08 16:34:20,916 INFO WebShop.Web.Middleware.LoggingMiddleware - 6b22f881-bb87-49c0-a825-f65c8733299b ResponseTime: 1222 Response: 200
+2019-02-08 16:34:23,509 INFO WebShop.Web.Middleware.LoggingMiddleware - 5b115ae0-e7f4-4aca-8c21-572dcfbee51b Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 16:34:23,649 INFO WebShop.Web.Middleware.LoggingMiddleware - f5e7b388-dddb-49f1-86f4-1b6e3355fab5 Request: http localhost:64874/Product  
+2019-02-08 16:34:23,689 INFO WebShop.Web.Middleware.LoggingMiddleware - f5e7b388-dddb-49f1-86f4-1b6e3355fab5 ResponseTime: 39 Response: 200
+2019-02-08 16:34:24,828 INFO WebShop.Web.Middleware.LoggingMiddleware - 6f3387fd-dc1d-482a-a0c4-63525ac6add0 Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 16:34:24,882 INFO WebShop.Web.Middleware.LoggingMiddleware - 6f3387fd-dc1d-482a-a0c4-63525ac6add0 ResponseTime: 54 Response: 200
+2019-02-08 16:34:25,828 INFO WebShop.Web.Middleware.LoggingMiddleware - c6ba2498-f37f-41f0-9808-fdcfb534be7c Request: http localhost:64874/Order/Checkout  
+2019-02-08 16:34:25,941 INFO WebShop.Web.Middleware.LoggingMiddleware - c6ba2498-f37f-41f0-9808-fdcfb534be7c ResponseTime: 113 Response: 200
+2019-02-08 16:34:28,169 INFO WebShop.Web.Middleware.LoggingMiddleware - c498a9ef-a933-42d4-8d84-ddb981c8718e Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 16:34:28,727 INFO WebShop.Web.Middleware.LoggingMiddleware - c498a9ef-a933-42d4-8d84-ddb981c8718e ResponseTime: 558 Response: 200: {"ssn":"197304034569","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":"0","zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 16:34:30,630 INFO WebShop.Web.Middleware.LoggingMiddleware - 0d83eb54-10b8-4b4c-ad74-3600d9dd6875 Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197304034569&LastName=Andersen&FirstName=Julie-Ann&Email=jehona.murati%40tfbank.se&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eVs55FnXeBIDHtPHTvXPQig66s9z2ArzPgrAyKbTXHYuyX3b203B-jA_JNkzAI83H4-tb42wInk7U5dVtt3hBQ7oxu2tud6JrpYtWtrpzP7ubmAFSMdZRdLT-nS_SlXPUo
+2019-02-08 16:34:34,529 INFO WebShop.Web.Middleware.LoggingMiddleware - 0d83eb54-10b8-4b4c-ad74-3600d9dd6875 ResponseTime: 3917 Response: 200
+2019-02-08 16:36:59,979 INFO WebShop.Web.Middleware.LoggingMiddleware - cbee4748-3474-49a9-94d6-c27232f75288 Request: http localhost:64874/  
+2019-02-08 16:37:01,087 INFO WebShop.Web.Middleware.LoggingMiddleware - cbee4748-3474-49a9-94d6-c27232f75288 ResponseTime: 1121 Response: 200
+2019-02-08 16:37:03,549 INFO WebShop.Web.Middleware.LoggingMiddleware - b86668e8-cb14-4ab8-997f-d3ed778b9bbc Request: http localhost:64874/ShoppingCart/AddToShoppingCart ?productId=1 
+2019-02-08 16:37:03,702 INFO WebShop.Web.Middleware.LoggingMiddleware - 4ddb7466-8206-424c-8c2a-bcc333ae6c01 Request: http localhost:64874/Product  
+2019-02-08 16:37:03,743 INFO WebShop.Web.Middleware.LoggingMiddleware - 4ddb7466-8206-424c-8c2a-bcc333ae6c01 ResponseTime: 41 Response: 200
+2019-02-08 16:37:04,766 INFO WebShop.Web.Middleware.LoggingMiddleware - 2d4513e1-3e13-413d-9b01-74eb9b5c1daf Request: http localhost:64874/ShoppingCart/Index  
+2019-02-08 16:37:04,815 INFO WebShop.Web.Middleware.LoggingMiddleware - 2d4513e1-3e13-413d-9b01-74eb9b5c1daf ResponseTime: 48 Response: 200
+2019-02-08 16:37:06,497 INFO WebShop.Web.Middleware.LoggingMiddleware - 703de57e-c244-4e65-984d-f6d2cbc7d196 Request: http localhost:64874/Order/Checkout  
+2019-02-08 16:37:06,601 INFO WebShop.Web.Middleware.LoggingMiddleware - 703de57e-c244-4e65-984d-f6d2cbc7d196 ResponseTime: 104 Response: 200
+2019-02-08 16:37:08,999 INFO WebShop.Web.Middleware.LoggingMiddleware - 1b14b66b-dd52-40ff-946d-c8944f6863b3 Request: http localhost:64874/Order/GetInformation ?ssn=197304034569 
+2019-02-08 16:37:09,502 INFO WebShop.Web.Middleware.LoggingMiddleware - 1b14b66b-dd52-40ff-946d-c8944f6863b3 ResponseTime: 503 Response: 200: {"ssn":"197304034569","lastName":"Andersen","firstName":"Julie-Ann","address1":"Stationsgatan 42","address2":"0","zipCode":"30245","city":"Halmstad","country":"Sweden"}
+2019-02-08 16:37:11,176 INFO WebShop.Web.Middleware.LoggingMiddleware - e6ccc308-a664-4913-981d-0f6c32b97967 Request: http localhost:64874/Order/AuthorizeInvoice  Ssn=197304034569&LastName=Andersen&FirstName=Julie-Ann&Email=jehona.murati%40tfbank.se&Address1=Stationsgatan+42&Address2=0&ZipCode=30245&City=Halmstad&Country=Sweden&__RequestVerificationToken=CfDJ8DAiXR46D69Nqt-NEV_H7eWcR1UkgGMg_yTehxZrdPVG1na70ceQYdxjh-h02QGu6IKzJGZNandRo9YRPoxkPTNn_hl2tIgHK_X03rQ-bgBB2iG06TNDXJXeowcBLV_wEtZW_gCUnSWt9fYT0xf_utw
+2019-02-08 16:37:13,905 INFO WebShop.Web.Middleware.LoggingMiddleware - e6ccc308-a664-4913-981d-0f6c32b97967 ResponseTime: 2748 Response: 200

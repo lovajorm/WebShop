@@ -1,8 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Reflection;
-using log4net;
-using log4net.Config;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -10,13 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using WebShop.Common;
 using WebShop.Dal;
 using WebShop.Log;
 using WebShop.Web.Interfaces;
 using WebShop.Web.Middleware;
 using WebShop.Web.Models;
 using WebShop.Web.Repositories;
+
 
 namespace WebShop
 {
@@ -52,6 +49,7 @@ namespace WebShop
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IEmailHandler, EmailHandler>();
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

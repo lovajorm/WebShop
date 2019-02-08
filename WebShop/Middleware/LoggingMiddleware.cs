@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -50,7 +48,7 @@ namespace WebShop.Web.Middleware
 
                 if (context.Response.ContentType != null)
                 {
-                    
+
                     if (context.Response.ContentType.Contains("application/json"))
                     {
                         LogInformation($"{guid} ResponseTime: {stopwatch.ElapsedMilliseconds} Response: {response}");

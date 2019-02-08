@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +9,7 @@ using WebShop.Models;
 using WebShop.Web.Interfaces;
 using WebShop.Web.Models;
 using WebShop.Web.Models.Avarda;
-using WebShop.Web.ViewModels;
+using WebShop.Common;
 
 
 namespace WebShop.Web.Controllers
@@ -20,12 +19,15 @@ namespace WebShop.Web.Controllers
     {
         private readonly IOrderRepository _orderRepository;
         private readonly ShoppingCart _shoppingCart;
+        private readonly IEmailHandler _emailHandler;
 
 
-        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart)
+        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart, IEmailHandler emailHandler)
         {
             _orderRepository = orderRepository;
             _shoppingCart = shoppingCart;
+            _emailHandler = emailHandler;
+            
 
         }
 
@@ -83,9 +85,9 @@ namespace WebShop.Web.Controllers
 
                         var jsonRequest = JsonConvert.SerializeObject(request);
 
-                        //Serializes the class to json
+                        //Serializes the class to json.
                         var body = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
-                        var result = await client.PostAsync("WebShopApi/webshop/authorization/invoice", body);                                          //Calling Avarda API and sending the json
+                        var result = await client.PostAsync("WebShopApi/webshop/authorization/invoice", body);                                          //Calling Avarda API and sending the json.
 
                         if (!result.IsSuccessStatusCode)
                         {
@@ -98,13 +100,12 @@ namespace WebShop.Web.Controllers
                         var items = _shoppingCart.GetShoppingCartItems();
                         _shoppingCart.ShoppingCartItems = items;
 
-                        if (total < response.CreditLimit)                                   //In tests the creditLimit is not fixed, which means that the if-statement is unnecessary but we will keep it for fun.
+                        if (total < response.CreditLimit)                                 //In tests, the creditLimit is not fixed, which means that the if-statement is unnecessary but we will keep it for fun.
                         {
-                            //Save order and take customer to final page
-                            order.OrderDetails = _orderRepository.CreateOrder(order);
-                            _shoppingCart.ClearCart();
-                            //Clears cart after "Complete order"
-                            return View("CheckoutComplete", order);
+                          order.OrderDetails = _orderRepository.CreateOrder(order);       //Save order and take customer to final page.
+                          _shoppingCart.ClearCart();                                      //Clears cart after "Complete order".
+                         _emailHandler.SendEmail();                                       //Sends confirmation email to customer.
+                          return View("CheckoutComplete", order);
                         }
                         else
                         { 
@@ -116,14 +117,14 @@ namespace WebShop.Web.Controllers
                     }
                     catch(Exception ex)
                     {
-                        return View("Error", new ErrorViewModel { ErrorMessage = $"Couldn't get credit score. Error Message: {ex.Message}" });
+                        return View("Error", new ErrorViewModel { ErrorMessage = $"Couldn't get credit score. Error Message: {ex.StackTrace}" });
                     }
                 }
             }
             //return View("Checkout");
         }
 
-        public IActionResult Checkout()                         //"Check out" from shopping cart to information form.
+        public IActionResult Checkout()                                          //"Check out" from shopping cart to information form.
         {
             var items = _shoppingCart.GetShoppingCartItems();
             _shoppingCart.ShoppingCartItems = items;

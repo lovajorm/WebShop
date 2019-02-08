@@ -19,13 +19,13 @@ namespace WebShop.Web.Controllers
     {
         private readonly IOrderRepository _orderRepository;
         private readonly ShoppingCart _shoppingCart;
-        private readonly GetCustomer _getCustomer;
+        private GetCustomer _getCustomer;
 
-        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart, GetCustomer getCustomer)
+        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart)
         {
             _orderRepository = orderRepository;
             _shoppingCart = shoppingCart;
-            _getCustomer = getCustomer;
+            _getCustomer = new GetCustomer();
         }
 
         [HttpGet]
@@ -47,64 +47,14 @@ namespace WebShop.Web.Controllers
         [HttpPost] //send authorization to web api
         public async Task<IActionResult> AuthorizeInvoice(InvoiceRequest request, Order order)
         {
-            using (var handler = new WebRequestHandler())
+            try
             {
-                using (var client = new HttpClient(handler))
-                {
-                    var bytearray = Encoding.ASCII.GetBytes("Testpartner Sweden:123456");
-
-                    //sets authentication header.
-                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray));
-
-                    try
-                    {
-                        client.BaseAddress =
-                            new Uri($"https://stage.avarda.org/");
-
-                        var total = _shoppingCart.GetShopppingCartTotal();
-                        request.Amount = total;
-                        request.Country = "Swe";
-
-                        var jsonRequest = JsonConvert.SerializeObject(request);
-
-                        //Serializes the class to json
-                        var body = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
-                        var result = await client.PostAsync("WebShopApi/webshop/authorization/invoice", body);                                          //Calling Avarda API and sending the json
-
-                        if (!result.IsSuccessStatusCode)
-                        {
-                            throw new Exception(result.Content.ReadAsStringAsync().Result);
-                        }
-
-                        var response = JsonConvert.DeserializeObject<InvoiceResponse>(result.Content.ReadAsStringAsync().Result);
-
-
-                        var items = _shoppingCart.GetShoppingCartItems();
-                        _shoppingCart.ShoppingCartItems = items;
-
-                        if (total < response.CreditLimit)                                   //In tests the creditLimit is not fixed, which means that the if-statement is unnecessary but we will keep it for fun.
-                        {
-                            //Save order and take customer to final page
-                            order.OrderDetails = _orderRepository.CreateOrder(order);
-                            _shoppingCart.ClearCart();
-                            //Clears cart after "Complete order"
-                            return View("CheckoutComplete", order);
-                        }
-                        else
-                        {
-                            return View("Error", new ErrorViewModel { ErrorMessage = $"Your credit score is too low" });
-                        }
-
-
-
-                    }
-                    catch (Exception ex)
-                    {
-                        return View("Error", new ErrorViewModel { ErrorMessage = $"Couldn't get credit score. Error Message: {ex.Message}" });
-                    }
-                }
+                var invoice = _getCustomer.Au
             }
-            //return View("Checkout");
+            catch (Exception ex)
+            {
+                return View("Error", new ErrorViewModel { ErrorMessage = $"Couldn't get credit score. Error Message: {ex.Message}" });
+            }
         }
 
         public IActionResult Checkout()                         //"Check out" from shopping cart to information form.

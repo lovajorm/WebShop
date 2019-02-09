@@ -21,7 +21,7 @@ namespace WebShop.Web.Components
             var shoppingCartViewModel = new ShoppingCartViewModel()
             {
                 ShoppingCart = _shoppingCart,
-                ShoppingCartTotal = _shoppingCart.GetShopppingCartTotal()
+                ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
             };
             return View(shoppingCartViewModel);
         }

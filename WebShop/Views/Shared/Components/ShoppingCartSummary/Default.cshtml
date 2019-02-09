@@ -5,7 +5,7 @@
             <span class="glyphicon glyphicon-shopping-cart"></span>
             <span id="cart-status">
                 @Model.ShoppingCart.ShoppingCartItems.Sum(item => item.Amount)
-                Total: @Model.ShoppingCart.GetShopppingCartTotal()
+                Total: @Model.ShoppingCart.GetShoppingCartTotal()
             </span>
         </a>
     </li>

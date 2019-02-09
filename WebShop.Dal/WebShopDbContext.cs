@@ -5,15 +5,13 @@ namespace WebShop.Dal
 {
     public class WebShopDbContext : DbContext
     {
-        public DbSet<Product> Products { get; set; }
+        public virtual DbSet<Product> Products { get; set; }   //virtual can be overridden in derived class eg. overridden by any class that inherits it.
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail > OrderDetails { get; set; }
 
-        public WebShopDbContext(DbContextOptions<WebShopDbContext> context) : base(context)
-        {
-        }
+        public WebShopDbContext(DbContextOptions<WebShopDbContext> context) : base(context) {}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

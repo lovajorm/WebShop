@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebShop.Avarda.Api;
 using WebShop.Avarda.Api.Avarda;
 using WebShop.Bo;
+using WebShop.Dal;
 using WebShop.Models;
 using WebShop.Web.Interfaces;
 using WebShop.Web.Models;
@@ -13,12 +14,14 @@ namespace WebShop.Web.Controllers
     {
         private readonly IOrderRepository _orderRepository;
         private readonly ShoppingCart _shoppingCart;
+        private readonly WebShopDbContext _context;
         private ConnectionHandler _getCustomer;
 
-        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart)
+        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart, WebShopDbContext context)
         {
-            _orderRepository = orderRepository;
-            _shoppingCart = shoppingCart;
+            //_orderRepository = orderRepository;
+            //_shoppingCart = shoppingCart;
+            _context = context;
             _getCustomer = new ConnectionHandler();
         }
 

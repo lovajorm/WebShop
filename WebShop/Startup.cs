@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using AutoMapper;
 using log4net;
 using log4net.Config;
 using Microsoft.AspNetCore.Builder;
@@ -53,6 +54,7 @@ namespace WebShop
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IOrderRepository, OrderRepository>();
 
+            services.AddAutoMapper();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             var connection =

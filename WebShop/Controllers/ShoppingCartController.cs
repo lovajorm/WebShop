@@ -31,14 +31,15 @@ namespace WebShop.Web.Controllers
             var scvm = new ShoppingCartViewModel
             {
                 ShoppingCart = _shoppingCart,
-                ShoppingCartTotal = _shoppingCart.GetShopppingCartTotal()
+                ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
             };
             return View(scvm);
         }
 
         public RedirectToActionResult AddToShoppingCart(int productId)
         {
-            var selectedProduct = _productRepository.Products.FirstOrDefault(p => p.ProductID == productId);
+            //var selectedProduct = _productRepository.Products.FirstOrDefault(p => p.ProductID == productId);
+            var selectedProduct = _productRepository.GetProducts().FirstOrDefault(p => p.ProductID == productId);
 
             if (selectedProduct != null)
             {
@@ -50,7 +51,8 @@ namespace WebShop.Web.Controllers
 
         public RedirectToActionResult RemoveFromShoppingCart(int productId)
         {
-            var selectedProduct = _productRepository.Products.FirstOrDefault(p => p.ProductID == productId);
+            //var selectedProduct = _productRepository.Products.FirstOrDefault(p => p.ProductID == productId);
+            var selectedProduct = _productRepository.GetProducts().FirstOrDefault(p => p.ProductID == productId);
 
             if (selectedProduct != null)
             {

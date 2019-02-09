@@ -3,26 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 using WebShop.Bo;
 using WebShop.Dal;
+using WebShop.Dal.Repositories;
 using WebShop.Web.Interfaces;
+using WebShop.Web.ViewModels;
 
 namespace WebShop.Web.Repositories
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : Repository<Product>, IProductRepository
     {
-        private readonly WebShopDbContext _context;
 
-        public ProductRepository(WebShopDbContext context)
+        public ProductRepository(WebShopDbContext context) : base(context) {}
+
+        //public IIncludableQueryable<Product, Category> Products => context.Products.Include(c => c.Category);
+
+        public WebShopDbContext WebShopDbContext => Context as WebShopDbContext;
+
+        public IIncludableQueryable<Product, Category> GetProducts()
         {
-            _context = context;
+            return WebShopDbContext.Products.Include(c => c.Category);
         }
-
-        public IEnumerable<Product> Products
-        {
-            get => _context.Products.Include(c => c.Category);
-        }
-
-        public Product GetProductById(int productId) => _context.Products.FirstOrDefault(p => p.ProductID == productId);
     }
 }

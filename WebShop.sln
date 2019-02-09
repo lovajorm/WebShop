@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.Tests", "WebShop.Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.Log", "WebShop.Log\WebShop.Log.csproj", "{3E5C83C8-8B17-47C3-BFD5-C7521CE35BAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShop.Avarda.Api", "WebShop.Avarda.Api\WebShop.Avarda.Api.csproj", "{5D2AC197-A4B6-486B-81D9-00B225FB68F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.Avarda.Api", "WebShop.Avarda.Api\WebShop.Avarda.Api.csproj", "{5D2AC197-A4B6-486B-81D9-00B225FB68F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

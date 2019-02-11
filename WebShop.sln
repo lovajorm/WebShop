@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.Log", "WebShop.Log\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShop.Common", "WebShop.Common\WebShop.Common.csproj", "{95D5A634-276D-4FC8-8F1E-1857A312BAAA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShop.Avarda.Api", "WebShop.Avarda.Api\WebShop.Avarda.Api.csproj", "{5D2AC197-A4B6-486B-81D9-00B225FB68F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{95D5A634-276D-4FC8-8F1E-1857A312BAAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95D5A634-276D-4FC8-8F1E-1857A312BAAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95D5A634-276D-4FC8-8F1E-1857A312BAAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D2AC197-A4B6-486B-81D9-00B225FB68F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D2AC197-A4B6-486B-81D9-00B225FB68F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D2AC197-A4B6-486B-81D9-00B225FB68F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D2AC197-A4B6-486B-81D9-00B225FB68F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

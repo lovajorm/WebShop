@@ -20,9 +20,7 @@ namespace WebShop.Web.Models
 
             public string ShoppingCartId { get; set; }
             public List<ShoppingCartItem> ShoppingCartItems { get; set; }
-
-
-
+        
             public static ShoppingCart GetCart(IServiceProvider services)                                       
             {
                 ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
@@ -54,27 +52,26 @@ namespace WebShop.Web.Models
                 {
                     shoppingCartItem.Amount++;
                 }
-
                 _context.SaveChanges();
             }
 
             public int RemoveFromCart(Product product)                                          //Method which allows user to remove items when in shopping cart.
             {
-                var shopppingCartItem = _context.ShoppingCartItems.SingleOrDefault(
+                var shoppingCartItem = _context.ShoppingCartItems.SingleOrDefault(
                     s => s.Product.ProductID == product.ProductID && s.ShoppingCartId == ShoppingCartId);
 
                 var localAmount = 0;
 
-                if (shopppingCartItem != null)
+                if (shoppingCartItem != null)
                 {
-                    if (shopppingCartItem.Amount > 1)
+                    if (shoppingCartItem.Amount > 1)
                     {
-                        shopppingCartItem.Amount--;
-                        localAmount = shopppingCartItem.Amount;
+                        shoppingCartItem.Amount--;
+                        localAmount = shoppingCartItem.Amount;
                     }
                     else
                     {
-                        _context.ShoppingCartItems.Remove(shopppingCartItem);
+                        _context.ShoppingCartItems.Remove(shoppingCartItem);
                     }
                 }
                 _context.SaveChanges();
@@ -101,7 +98,7 @@ namespace WebShop.Web.Models
                 _context.SaveChanges();
             }
 
-            public float GetShopppingCartTotal()                                                    //Counts the total price of the cart.
+            public float GetShoppingCartTotal()                                                    //Counts the total price of the cart.
             {
                 var total = _context.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
                     .Select(c => c.Product.Price * c.Amount).Sum();

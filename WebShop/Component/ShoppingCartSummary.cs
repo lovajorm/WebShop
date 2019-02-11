@@ -1,18 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebShop.Web.Models;
+using WebShop.Dal;
+using WebShop.Web.Interfaces;
+using WebShop.Web.Repositories;
+using WebShop.Web.UoW;
 using WebShop.Web.ViewModels;
 
 namespace WebShop.Web.Components
 {
     public class ShoppingCartSummary : ViewComponent
     {
-        private readonly ShoppingCart _shoppingCart;
+        private readonly ShoppingCartRepository _shoppingCart;
+        private WebShopDbContext _context;
 
-        public ShoppingCartSummary(ShoppingCart shoppingCart)
+        public ShoppingCartSummary(ShoppingCartRepository shoppingCart)
         {
             _shoppingCart = shoppingCart;
+            //_context = new UnitOfWork(context);
         }
-
+        
         public IViewComponentResult Invoke()
         {
             var items = _shoppingCart.GetShoppingCartItems();

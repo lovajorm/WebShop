@@ -5,33 +5,36 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Bo;
 using WebShop.Dal;
-using WebShop.Web.Models;
+using WebShop.Web.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using WebShop.Log;
-using WebShop.Web.Interfaces;
 using WebShop.Web.ViewModels;
+using WebShop.Web.Repositories;
+using WebShop.Web.UoW;
 
 namespace WebShop.Web.Controllers
 {
     public class ShoppingCartController : Controller
     {
         private readonly IProductRepository _productRepository;
-        private readonly ShoppingCart _shoppingCart;
+        //private readonly ShoppingCartRepository _shoppingCart;
+        private UnitOfWork _context;
 
-        public ShoppingCartController(IProductRepository productRepository, ShoppingCart shoppingCart)
+        public ShoppingCartController(IProductRepository productRepository, ShoppingCartRepository shoppingCart, WebShopDbContext context)
         {
             _productRepository = productRepository;
-            _shoppingCart = shoppingCart;
+            //_shoppingCart = shoppingCart;
+            _context = new UnitOfWork(context);
         }
 
         public ViewResult Index()
         {
-            var items = _shoppingCart.GetShoppingCartItems();
-            _shoppingCart.ShoppingCartItems = items;
+            var items = _context.ShoppingCart.GetShoppingCartItems();
+            _context.ShoppingCart.ShoppingCartItems = items;
             var scvm = new ShoppingCartViewModel
             {
-                ShoppingCart = _shoppingCart,
-                ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
+                ShoppingCart = (ShoppingCartRepository)_context.ShoppingCart,//(ShoppingCartRepository)_context.ShoppingCart,//_shoppingCart,
+                ShoppingCartTotal = _context.ShoppingCart.GetShoppingCartTotal()
             };
             return View(scvm);
         }
@@ -43,7 +46,7 @@ namespace WebShop.Web.Controllers
 
             if (selectedProduct != null)
             {
-                _shoppingCart.AddToCart(selectedProduct, 1);
+                _context.ShoppingCart.AddToCart(selectedProduct, 1);
             }
 
             return RedirectToAction("List", "Product", new { area = "" });
@@ -56,7 +59,7 @@ namespace WebShop.Web.Controllers
 
             if (selectedProduct != null)
             {
-                _shoppingCart.RemoveFromCart(selectedProduct);
+                _context.ShoppingCart.RemoveFromCart(selectedProduct);
             }
 
             return RedirectToAction("Index");

@@ -4,7 +4,6 @@ using WebShop.Bo;
 using WebShop.Dal;
 using WebShop.Dal.Repositories;
 using WebShop.Web.Interfaces;
-using WebShop.Web.Models;
 using WebShop.Web.UoW;
 
 namespace WebShop.Web.Repositories
@@ -12,7 +11,9 @@ namespace WebShop.Web.Repositories
     public class OrderRepository : Repository<Order>, IOrderRepository
     {
         private readonly WebShopDbContext _context;
-        private readonly ShoppingCart _shoppingCart;
+        private readonly ShoppingCartRepository _shoppingCart;
+
+        public WebShopDbContext WebShopDbContext => Context as WebShopDbContext;
 
         public OrderRepository(WebShopDbContext context) : base(context)
         {
@@ -31,7 +32,7 @@ namespace WebShop.Web.Repositories
             //_context.Orders.Add(order);
 
             //List<OrderDetail> Details = new List<OrderDetail>(); 
-            
+
             //foreach (var item in shoppingCartItems)
             //{
             //    var orderDetail = new OrderDetail()
@@ -47,6 +48,14 @@ namespace WebShop.Web.Repositories
             //_context.SaveChanges();
 
             //return Details;
+
+
+            //order.OrderPlaced = DateTime.Now;
+            //order.OrderTotal = WebShopDbContext.ShoppingCart.GetShoppingCartTotal();
+            WebShopDbContext.Orders.Add(order);
+            
+            
+
             return null;
         }
     }

@@ -6,22 +6,25 @@ using WebShop.Bo;
 using WebShop.Dal;
 using WebShop.Models;
 using WebShop.Web.Interfaces;
-using WebShop.Web.Models;
+using WebShop.Web.Repositories;
+using WebShop.Web.UoW;
 
 namespace WebShop.Web.Controllers
 {
     public class OrderController : Controller
     {
-        private readonly IOrderRepository _orderRepository;
-        private readonly ShoppingCart _shoppingCart;
-        private readonly WebShopDbContext _context;
+        //private readonly IOrderRepository _orderRepository;
+        private readonly ShoppingCartRepository _shoppingCart;
+        //private readonly WebShopDbContext _context;
+        private UnitOfWork _context;
         private ConnectionHandler _getCustomer;
 
-        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart, WebShopDbContext context)
+        public OrderController(IOrderRepository orderRepository, ShoppingCartRepository shoppingCart, WebShopDbContext context)
         {
             //_orderRepository = orderRepository;
             //_shoppingCart = shoppingCart;
-            _context = context;
+            //_context = context;
+            _context = new UnitOfWork(context);
             _getCustomer = new ConnectionHandler();
         }
 
@@ -43,24 +46,45 @@ namespace WebShop.Web.Controllers
         [HttpPost] //send authorization to web api
         public IActionResult AuthorizeInvoice(InvoiceRequest request, Order order)
         {
-            var total = _shoppingCart.GetShoppingCartTotal();
-            order.OrderTotal = total;
+            //var total = _shoppingCart.GetShoppingCartTotal();
+            //order.OrderTotal = total;
 
+            //try
+            //{
+            //    var response = _getCustomer.AuthorizeInvoice(request, order);
+
+            //    if (total < response.Result.CreditLimit)//In tests the creditLimit is not fixed, which means that the if-statement is unnecessary but we will keep it for fun.
+            //    {
+            //        //Save order and take customer to final page
+            //        order.OrderDetails = _context.Order.CreateOrder(order);
+            //        _shoppingCart.ClearCart();//Clears cart after "Complete order"
+            //        return View("CheckoutComplete", order);
+            //    }
+            //    else
+            //    {
+            //        return View("Error", new ErrorViewModel { ErrorMessage = $"Your credit score is too low" });
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    return View("Error", new ErrorViewModel { ErrorMessage = $"Couldn't get credit score. Error Message: {ex.Message}" });
+            //}
+            order.OrderPlaced = DateTime.Now;
+            order.OrderTotal = _context.ShoppingCart.GetShoppingCartTotal();
+            order.OrderDetails = _context.ShoppingCart.GetOrderDetailList(order.OrderId);
             try
             {
                 var response = _getCustomer.AuthorizeInvoice(request, order);
 
-                if (total < response.Result.CreditLimit)//In tests the creditLimit is not fixed, which means that the if-statement is unnecessary but we will keep it for fun.
+
+                if (order.OrderTotal < response.Result.CreditLimit)
                 {
-                    //Save order and take customer to final page
-                    order.OrderDetails = _orderRepository.CreateOrder(order);
-                    _shoppingCart.ClearCart();//Clears cart after "Complete order"
+                    _context.Order.Add(order);
+                    _context.ShoppingCart.ClearCart();
+                    _context.Complete();
                     return View("CheckoutComplete", order);
                 }
-                else
-                {
-                    return View("Error", new ErrorViewModel { ErrorMessage = $"Your credit score is too low" });
-                }
+                return View("Error", new ErrorViewModel { ErrorMessage = $"Your credit score is too low" });
             }
             catch (Exception ex)
             {
@@ -70,8 +94,10 @@ namespace WebShop.Web.Controllers
 
         public IActionResult Checkout()//"Check out" from shopping cart to information form.
         {
-            var items = _shoppingCart.GetShoppingCartItems();
-            _shoppingCart.ShoppingCartItems = items;
+            //var items = _shoppingCart.GetShoppingCartItems();
+            //_shoppingCart.ShoppingCartItems = items;
+
+            _context.ShoppingCart.ShoppingCartItems = _context.ShoppingCart.GetShoppingCartItems();
             
             if (_shoppingCart.ShoppingCartItems.Count == 0)//Check to see if the shopping cart contains any items.
             {

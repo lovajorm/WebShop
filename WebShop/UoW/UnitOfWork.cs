@@ -13,12 +13,14 @@ namespace WebShop.Web.UoW
         private readonly WebShopDbContext _context;
         public IProductRepository Product { get; }
         public IOrderRepository Order { get; }
+        public IShoppingCartRepository ShoppingCart { get; set; }
 
         public UnitOfWork(WebShopDbContext context)
         {
             _context = context;
             Product = new ProductRepository(context);
             Order = new OrderRepository(context);
+            ShoppingCart = new ShoppingCartRepository(context);
         }
         
         public int Complete()

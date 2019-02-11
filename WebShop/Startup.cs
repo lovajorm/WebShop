@@ -16,7 +16,6 @@ using WebShop.Dal;
 using WebShop.Log;
 using WebShop.Web.Interfaces;
 using WebShop.Web.Middleware;
-using WebShop.Web.Models;
 using WebShop.Web.Repositories;
 
 namespace WebShop
@@ -48,7 +47,7 @@ namespace WebShop
             //    .AddLog4Net(Configuration.GetValue<string>("Log4NetConfigFile:Name")));
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped(sp => ShoppingCart.GetCart(sp));                                                         //Loads the shopping cart function.  
+            services.AddScoped(sp => ShoppingCartRepository.GetCart(sp));                                                         //Loads the shopping cart function.  
 
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();

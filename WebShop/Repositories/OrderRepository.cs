@@ -23,7 +23,7 @@ namespace WebShop.Web.Repositories
             var shoppingCartItems = _shoppingCart.GetShoppingCartItems();
             order.OrderPlaced = DateTime.Now;
 
-            var total = _shoppingCart.GetShopppingCartTotal();
+            var total = _shoppingCart.GetShoppingCartTotal();
             order.OrderTotal = total;
 
             _context.Orders.Add(order);

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using WebShop.Bo;
 
+
 namespace WebShop.Avarda.Api
 
 {
@@ -16,12 +17,16 @@ namespace WebShop.Avarda.Api
         public ConnectionHandler()
         {
             _connectionDetails = new ConnectionDetails()
-            { 
+            {
                 Password = "123456",
                 UserName = "Testpartner Sweden"
             };
         }
-    
+
+
+
+
+
         public Customer GetCustomerInfo(string ssn)              //Method which gets customer information by using Ssn, see checkout.cshtml.
         {
             Customer response;                         //Initializes customer
@@ -61,7 +66,7 @@ namespace WebShop.Avarda.Api
                     request.Amount = total;
                     request.Country = "Swe";
 
-                    var jsonRequest = JsonConvert.SerializeObject(request);
+                    //var jsonRequest = JsonConvert.SerializeObject(request);
 
                     //Serializes the class to json
                     var body = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
@@ -72,7 +77,7 @@ namespace WebShop.Avarda.Api
                         throw new Exception(result.Content.ReadAsStringAsync().Result);
                     }
                     var response = JsonConvert.DeserializeObject<InvoiceResponse>(result.Content.ReadAsStringAsync().Result);
-                    
+
                     return response;
                 }
             }

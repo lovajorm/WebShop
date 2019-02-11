@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Avarda.Api;
 using WebShop.Avarda.Api.Avarda;
@@ -9,8 +6,12 @@ using WebShop.Bo;
 using WebShop.Models;
 using WebShop.Web.Interfaces;
 using WebShop.Web.Models;
-using WebShop.Web.Models.Avarda;
 using WebShop.Common;
+using System.Threading.Tasks;
+using System.Net.Http;
+using System.Text;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace WebShop.Web.Controllers
 {
@@ -26,10 +27,65 @@ namespace WebShop.Web.Controllers
         {
             _orderRepository = orderRepository;
             _shoppingCart = shoppingCart;
-            _emailHandler = emailHandler;
-            
+            _emailHandler = emailHandler;            
        
             _getCustomer = new ConnectionHandler();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> InitializePayment()
+        {
+            var request = new PaymentRequest();
+            using (var handler = new WebRequestHandler())
+            {
+                using (var client = new HttpClient(handler))
+                {
+                    var bytearray = Encoding.ASCII.GetBytes("TestSweden1:test1");               //Authentication
+
+                    //sets authentication header.
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray));
+
+                    client.BaseAddress = new Uri($"https://stage.avarda.org/");
+
+                    request.Price = _shoppingCart.GetShoppingCartTotal();
+                    request.Items = ConvertShoppingCartItemToItem();
+
+                    //var jsonRequest = JsonConvert.SerializeObject(request);
+
+                    //Serializes the class to json
+                    var body = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
+                    var result = await client.PostAsync("CheckOut2/CheckOut2Api/InitializePayment", body);                                          //Calling Avarda API and sending the json
+
+                    if (!result.IsSuccessStatusCode)
+                    {
+                        throw new Exception(result.Content.ReadAsStringAsync().Result);
+                    }
+
+                    var response = JsonConvert.DeserializeObject<PaymentResponse>(result.Content.ReadAsStringAsync().Result);
+
+                    if (result.IsSuccessStatusCode)
+                    {
+                        //response.PaymentID = .Replace("\"", "");
+                        return View("Avarda", response);
+                    }                        
+                }
+            }
+        return null;
+        }
+ 
+
+        private List<Item> ConvertShoppingCartItemToItem()
+        {
+            var itemList = new List<Item>();
+
+            foreach (var item in _shoppingCart.GetShoppingCartItems())
+            {
+                itemList.Add(new Item {
+                    Amount = (int)item.Product.Price,
+                    Description = item.Product.Title
+                });
+            }
+            return itemList;
         }
 
         [HttpGet]

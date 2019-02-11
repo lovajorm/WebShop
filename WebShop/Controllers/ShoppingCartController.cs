@@ -24,7 +24,7 @@ namespace WebShop.Web.Controllers
             var scvm = new ShoppingCartViewModel
             {
                 ShoppingCart = _shoppingCart,
-                ShoppingCartTotal = _shoppingCart.GetShopppingCartTotal()
+                ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
             };
             return View(scvm);
         }

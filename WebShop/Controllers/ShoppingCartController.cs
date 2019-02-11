@@ -8,6 +8,7 @@ using WebShop.Dal;
 using WebShop.Web.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using WebShop.Log;
+using WebShop.Web.Models;
 using WebShop.Web.ViewModels;
 using WebShop.Web.Repositories;
 using WebShop.Web.UoW;
@@ -20,7 +21,7 @@ namespace WebShop.Web.Controllers
         //private readonly ShoppingCartRepository _shoppingCart;
         private UnitOfWork _context;
 
-        public ShoppingCartController(IProductRepository productRepository, ShoppingCartRepository shoppingCart, WebShopDbContext context)
+        public ShoppingCartController(IProductRepository productRepository, ShoppingCart shoppingCart, WebShopDbContext context)
         {
             _productRepository = productRepository;
             //_shoppingCart = shoppingCart;
@@ -33,7 +34,7 @@ namespace WebShop.Web.Controllers
             _context.ShoppingCart.ShoppingCartItems = items;
             var scvm = new ShoppingCartViewModel
             {
-                ShoppingCart = (ShoppingCartRepository)_context.ShoppingCart,//(ShoppingCartRepository)_context.ShoppingCart,//_shoppingCart,
+                ShoppingCart = (ShoppingCart)_context.ShoppingCart,//(ShoppingCartRepository)_context.ShoppingCart,//_shoppingCart,
                 ShoppingCartTotal = _context.ShoppingCart.GetShoppingCartTotal()
             };
             return View(scvm);

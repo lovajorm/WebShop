@@ -4,6 +4,7 @@ using WebShop.Bo;
 using WebShop.Dal;
 using WebShop.Dal.Repositories;
 using WebShop.Web.Interfaces;
+using WebShop.Web.Models;
 using WebShop.Web.UoW;
 
 namespace WebShop.Web.Repositories
@@ -11,7 +12,7 @@ namespace WebShop.Web.Repositories
     public class OrderRepository : Repository<Order>, IOrderRepository
     {
         private readonly WebShopDbContext _context;
-        private readonly ShoppingCartRepository _shoppingCart;
+        private readonly ShoppingCart _shoppingCart;
 
         public WebShopDbContext WebShopDbContext => Context as WebShopDbContext;
 

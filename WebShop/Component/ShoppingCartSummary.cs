@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebShop.Dal;
 using WebShop.Web.Interfaces;
+using WebShop.Web.Models;
 using WebShop.Web.Repositories;
 using WebShop.Web.UoW;
 using WebShop.Web.ViewModels;
@@ -9,10 +10,10 @@ namespace WebShop.Web.Components
 {
     public class ShoppingCartSummary : ViewComponent
     {
-        private readonly ShoppingCartRepository _shoppingCart;
+        private readonly ShoppingCart _shoppingCart;
         private WebShopDbContext _context;
 
-        public ShoppingCartSummary(ShoppingCartRepository shoppingCart)
+        public ShoppingCartSummary(ShoppingCart shoppingCart)
         {
             _shoppingCart = shoppingCart;
             //_context = new UnitOfWork(context);

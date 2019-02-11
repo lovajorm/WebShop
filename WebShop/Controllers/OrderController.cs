@@ -6,6 +6,7 @@ using WebShop.Bo;
 using WebShop.Dal;
 using WebShop.Models;
 using WebShop.Web.Interfaces;
+using WebShop.Web.Models;
 using WebShop.Web.Repositories;
 using WebShop.Web.UoW;
 
@@ -14,12 +15,12 @@ namespace WebShop.Web.Controllers
     public class OrderController : Controller
     {
         //private readonly IOrderRepository _orderRepository;
-        private readonly ShoppingCartRepository _shoppingCart;
+        private readonly ShoppingCart _shoppingCart;
         //private readonly WebShopDbContext _context;
         private UnitOfWork _context;
         private ConnectionHandler _getCustomer;
 
-        public OrderController(IOrderRepository orderRepository, ShoppingCartRepository shoppingCart, WebShopDbContext context)
+        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart, WebShopDbContext context)
         {
             //_orderRepository = orderRepository;
             //_shoppingCart = shoppingCart;

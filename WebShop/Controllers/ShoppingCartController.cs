@@ -18,24 +18,24 @@ namespace WebShop.Web.Controllers
     public class ShoppingCartController : Controller
     {
         private readonly IProductRepository _productRepository;
-        //private readonly ShoppingCartRepository _shoppingCart;
+        private readonly ShoppingCart _shoppingCart;
         private UnitOfWork _context;
 
         public ShoppingCartController(IProductRepository productRepository, ShoppingCart shoppingCart, WebShopDbContext context)
         {
             _productRepository = productRepository;
-            //_shoppingCart = shoppingCart;
+            _shoppingCart = shoppingCart;
             _context = new UnitOfWork(context);
         }
 
         public ViewResult Index()
         {
-            var items = _context.ShoppingCart.GetShoppingCartItems();
-            _context.ShoppingCart.ShoppingCartItems = items;
+            var items = _shoppingCart.GetShoppingCartItems();
+            _shoppingCart.ShoppingCartItems = items;
             var scvm = new ShoppingCartViewModel
             {
-                ShoppingCart = (ShoppingCart)_context.ShoppingCart,//(ShoppingCartRepository)_context.ShoppingCart,//_shoppingCart,
-                ShoppingCartTotal = _context.ShoppingCart.GetShoppingCartTotal()
+                ShoppingCart = _shoppingCart,//(ShoppingCart)_context.ShoppingCart,//(ShoppingCartRepository)_context.ShoppingCart,//_shoppingCart,
+                ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
             };
             return View(scvm);
         }

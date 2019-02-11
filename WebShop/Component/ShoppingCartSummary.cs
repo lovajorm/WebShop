@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebShop.Dal;
-using WebShop.Web.Interfaces;
 using WebShop.Web.Models;
-using WebShop.Web.Repositories;
-using WebShop.Web.UoW;
 using WebShop.Web.ViewModels;
 
-namespace WebShop.Web.Components
+namespace WebShop.Web.Component
 {
     public class ShoppingCartSummary : ViewComponent
     {

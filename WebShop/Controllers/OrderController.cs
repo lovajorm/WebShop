@@ -23,7 +23,7 @@ namespace WebShop.Web.Controllers
         public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart, WebShopDbContext context)
         {
             //_orderRepository = orderRepository;
-            //_shoppingCart = shoppingCart;
+            _shoppingCart = shoppingCart;
             //_context = context;
             _context = new UnitOfWork(context);
             _getCustomer = new ConnectionHandler();
@@ -95,10 +95,10 @@ namespace WebShop.Web.Controllers
 
         public IActionResult Checkout()//"Check out" from shopping cart to information form.
         {
-            //var items = _shoppingCart.GetShoppingCartItems();
-            //_shoppingCart.ShoppingCartItems = items;
+            var items = _shoppingCart.GetShoppingCartItems();
+            _shoppingCart.ShoppingCartItems = items;
 
-            _context.ShoppingCart.ShoppingCartItems = _context.ShoppingCart.GetShoppingCartItems();
+            //_context.ShoppingCart.ShoppingCartItems = _context.ShoppingCart.GetShoppingCartItems();
             
             if (_shoppingCart.ShoppingCartItems.Count == 0)//Check to see if the shopping cart contains any items.
             {

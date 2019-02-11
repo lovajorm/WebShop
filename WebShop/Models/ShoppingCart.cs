@@ -151,8 +151,14 @@ namespace WebShop.Web.Models
                     OrderId = id,
                     Price = item.Product.Price
                 });
-                //WebShopDbContext.OrderDetails.Add();  //is it necessary to save orderdetails?
             }
+
+            //foreach (var orderDetail in details)
+            //{
+            //    _context.OrderDetails.Add(orderDetail);  //is it necessary to save orderdetails?
+            //}
+
+            //_context.SaveChanges();
 
             return details;
         }

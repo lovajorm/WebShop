@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WebShop.Avarda.Api\WebShop.Avarda.Api.csproj" />
+    <ProjectReference Include="..\WebShop.Common\WebShop.Common.csproj" />
     <ProjectReference Include="..\WebShop.Dal\WebShop.Dal.csproj" />
     <ProjectReference Include="..\WebShop.Log\WebShop.Log.csproj" />
   </ItemGroup>

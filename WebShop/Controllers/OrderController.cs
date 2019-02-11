@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Avarda.Api;
 using WebShop.Avarda.Api.Avarda;
@@ -6,6 +9,8 @@ using WebShop.Bo;
 using WebShop.Models;
 using WebShop.Web.Interfaces;
 using WebShop.Web.Models;
+using WebShop.Web.Models.Avarda;
+using WebShop.Common;
 
 namespace WebShop.Web.Controllers
 {
@@ -13,12 +18,17 @@ namespace WebShop.Web.Controllers
     {
         private readonly IOrderRepository _orderRepository;
         private readonly ShoppingCart _shoppingCart;
+        private readonly IEmailHandler _emailHandler;
         private ConnectionHandler _getCustomer;
 
-        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart)
+
+        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart, IEmailHandler emailHandler)
         {
             _orderRepository = orderRepository;
             _shoppingCart = shoppingCart;
+            _emailHandler = emailHandler;
+            
+       
             _getCustomer = new ConnectionHandler();
         }
 
@@ -49,9 +59,10 @@ namespace WebShop.Web.Controllers
 
                 if (total < response.Result.CreditLimit)//In tests the creditLimit is not fixed, which means that the if-statement is unnecessary but we will keep it for fun.
                 {
-                    //Save order and take customer to final page
+                                                                                            //Save order and take customer to final page
                     order.OrderDetails = _orderRepository.CreateOrder(order);
-                    _shoppingCart.ClearCart();//Clears cart after "Complete order"
+                    _shoppingCart.ClearCart();                                              //Clears cart after "Complete order"
+                    _emailHandler.SendEmail();                                              //Sends email to customer
                     return View("CheckoutComplete", order);
                 }
                 else
@@ -65,12 +76,12 @@ namespace WebShop.Web.Controllers
             }
         }
 
-        public IActionResult Checkout()//"Check out" from shopping cart to information form.
+        public IActionResult Checkout()                                                                                 //"Check out" from shopping cart to information form.
         {
             var items = _shoppingCart.GetShoppingCartItems();
             _shoppingCart.ShoppingCartItems = items;
             
-            if (_shoppingCart.ShoppingCartItems.Count == 0)//Check to see if the shopping cart contains any items.
+            if (_shoppingCart.ShoppingCartItems.Count == 0)                                                                 //Check to see if the shopping cart contains any items.
             {
                 return View("Error", new ErrorViewModel { ErrorMessage = "Your cart is empty, add some products first" }); //Error message shown if you try to check out order without any items in the cart.
             }

@@ -21,6 +21,11 @@ namespace WebShop.Bo
         [StringLength(50)]
         public string LastName { get; set; }
 
+        [Required(ErrorMessage = "Please enter your email")]
+        [StringLength(100)]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
         [Required(ErrorMessage = "Please enter your address")]
         [StringLength(100)]
         [Display(Name = "Address Line")]

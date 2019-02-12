@@ -19,11 +19,10 @@ namespace WebShop.Web.Repositories
         }
 
         
-        //Happens on "Complete checkout"
+        //TODO: The create order methoed needs to be changed so it fits with the changes made since avarda integration, order is saved on different action.
         public List<OrderDetail> CreateOrder(Order order)                        //Method which creates and saves order when payment is authorized.
         {
-
-
+         
             var shoppingCartItems = _shoppingCart.GetShoppingCartItems();
             order.OrderPlaced = DateTime.Now;
 

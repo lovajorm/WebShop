@@ -8,7 +8,6 @@ using Microsoft.Extensions.DependencyInjection;
 using WebShop.Bo;
 using WebShop.Dal;
 using WebShop.Dal.Repositories;
-using WebShop.Web.Interfaces;
 
 namespace WebShop.Web.Models
 {

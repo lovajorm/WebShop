@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore.Query;
+﻿using Microsoft.EntityFrameworkCore.Query;
 using WebShop.Bo;
-using WebShop.Dal.Repositories;
 
-namespace WebShop.Web.Interfaces
+namespace WebShop.Dal.Interfaces
 {
     public interface IProductRepository : IRepository<Product>
     {

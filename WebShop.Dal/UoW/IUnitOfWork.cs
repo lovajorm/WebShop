@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebShop.Dal;
-using WebShop.Web.Interfaces;
-using WebShop.Web.Models;
+using WebShop.Dal.Interfaces;
 
-namespace WebShop.Web.UoW
+namespace WebShop.Dal.UoW
 {
     public interface IUnitOfWork : IDisposable
     {

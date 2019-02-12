@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using WebShop.Dal.Interfaces;
 
 namespace WebShop.Dal.Repositories
 {
@@ -17,17 +18,17 @@ namespace WebShop.Dal.Repositories
         }
         public T Get(int id)
         {
-            return Context.Set<T>().Find(id);
+            return Context.Get<T>(id);
         }
 
         public IEnumerable<T> GetAll()
         {
-            return Context.Set<T>().ToList();
+            return Context.GetAll<T>();
         }
 
         public IEnumerable<T> Find(Expression<Func<T, bool>> expression)
         {
-            return Context.Set<T>().Where(expression);
+            return Context.Find(expression);
         }
 
         public void Add(T entity)

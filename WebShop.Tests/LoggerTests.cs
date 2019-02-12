@@ -8,9 +8,9 @@ using log4net.Repository;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Logging;
 using Moq;
 using WebShop.Dal;
+using WebShop.Dal.Interfaces;
 using WebShop.Log;
 using WebShop.Web.Controllers;
-using WebShop.Web.Interfaces;
 using Xunit;
 
 namespace WebShop.Tests

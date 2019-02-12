@@ -4,11 +4,9 @@ using WebShop.Avarda.Api;
 using WebShop.Avarda.Api.Avarda;
 using WebShop.Bo;
 using WebShop.Dal;
+using WebShop.Dal.UoW;
 using WebShop.Models;
-using WebShop.Web.Interfaces;
 using WebShop.Web.Models;
-using WebShop.Web.Repositories;
-using WebShop.Web.UoW;
 
 namespace WebShop.Web.Controllers
 {

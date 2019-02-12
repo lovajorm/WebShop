@@ -1,7 +1,5 @@
-﻿using WebShop.Web.Interfaces;
-using WebShop.Bo;
+﻿using WebShop.Bo;
 using WebShop.Web.Models;
-using WebShop.Web.Repositories;
 
 namespace WebShop.Web.ViewModels
 {

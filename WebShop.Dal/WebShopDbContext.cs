@@ -1,4 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 using WebShop.Bo;
 
 namespace WebShop.Dal
@@ -139,24 +143,39 @@ namespace WebShop.Dal
                 });
         }
 
-        public int SaveChanges()
+        public override int SaveChanges()
         {
             return base.SaveChanges();
         }
 
-        public void Dispose()
+        public override void Dispose()
         {
             base.Dispose();
         }
 
-        object IWebShopDbContext.Set<T>()
+        void IWebShopDbContext.Add<T>(T entity)
         {
-            throw new System.NotImplementedException();
+            base.Add<T>(entity);
         }
 
         void IWebShopDbContext.Remove<T>(T entity)
         {
             base.Remove<T>(entity);
+        }
+
+        IEnumerable<T> IWebShopDbContext.Find<T>(Expression<Func<T, bool>> expression)
+        {
+            yield return base.Find<T>(expression);
+        }
+
+        IEnumerable<T> IWebShopDbContext.GetAll<T>()
+        {
+            return base.Set<T>().ToList();
+        }
+
+        T IWebShopDbContext.Get<T>(int id)
+        {
+            return base.Find<T>(id);
         }
     }
 }

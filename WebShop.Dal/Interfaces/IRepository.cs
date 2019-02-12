@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
 
-namespace WebShop.Dal.Repositories
+namespace WebShop.Dal.Interfaces
 {
     public interface IRepository<T> where T : class
     {

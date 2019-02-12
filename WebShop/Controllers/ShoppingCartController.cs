@@ -5,13 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Bo;
 using WebShop.Dal;
-using WebShop.Web.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using WebShop.Dal.Interfaces;
+using WebShop.Dal.UoW;
 using WebShop.Log;
 using WebShop.Web.Models;
 using WebShop.Web.ViewModels;
-using WebShop.Web.Repositories;
-using WebShop.Web.UoW;
 
 namespace WebShop.Web.Controllers
 {
@@ -19,13 +18,13 @@ namespace WebShop.Web.Controllers
     {
         private readonly IProductRepository _productRepository;
         private readonly ShoppingCart _shoppingCart;
-        private UnitOfWork _context;
+        private IUnitOfWork _context;
 
-        public ShoppingCartController(IProductRepository productRepository, ShoppingCart shoppingCart, WebShopDbContext context)
+        public ShoppingCartController(IProductRepository productRepository, ShoppingCart shoppingCart, IUnitOfWork context)
         {
             _productRepository = productRepository;
             _shoppingCart = shoppingCart;
-            _context = new UnitOfWork(context);
+            _context = context;
         }
 
         public ViewResult Index()

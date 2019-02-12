@@ -13,12 +13,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using WebShop.Dal;
+using WebShop.Dal.Interfaces;
+using WebShop.Dal.Repositories;
+using WebShop.Dal.UoW;
 using WebShop.Log;
-using WebShop.Web.Interfaces;
 using WebShop.Web.Middleware;
 using WebShop.Web.Models;
-using WebShop.Web.Repositories;
-using WebShop.Web.UoW;
 
 namespace WebShop
 {

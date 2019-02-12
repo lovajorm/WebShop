@@ -12,17 +12,14 @@ namespace WebShop.Web.Controllers
 {
     public class OrderController : Controller
     {
-        //private readonly IOrderRepository _orderRepository;
         private readonly ShoppingCart _shoppingCart;
-        //private readonly WebShopDbContext _context;
-        private IUnitOfWork _context;
+        private IUnitOfWork _unitOfWork;
         private ConnectionHandler _getCustomer;
 
         public OrderController(ShoppingCart shoppingCart, IUnitOfWork unitOfWork)
         {
             _shoppingCart = shoppingCart;
-            //_context = context;
-            _context = unitOfWork;
+            _unitOfWork = unitOfWork;
             _getCustomer = new ConnectionHandler();
         }
 
@@ -68,17 +65,17 @@ namespace WebShop.Web.Controllers
             //    return View("Error", new ErrorViewModel { ErrorMessage = $"Couldn't get credit score. Error Message: {ex.Message}" });
             //}
             order.OrderPlaced = DateTime.Now;
-            order.OrderTotal = _context.ShoppingCart.GetShoppingCartTotal();
-            order.OrderDetails = _context.ShoppingCart.GetOrderDetailList(order.OrderId);
+            order.OrderTotal = _unitOfWork.ShoppingCart.GetShoppingCartTotal();
+            order.OrderDetails = _unitOfWork.ShoppingCart.GetOrderDetailList(order.OrderId);
             try
             {
                 var response = _getCustomer.AuthorizeInvoice(request, order);
 
                 if (order.OrderTotal < response.Result.CreditLimit)
                 {
-                    _context.Order.Add(order);
-                    _context.ShoppingCart.ClearCart();
-                    _context.Complete();
+                    _unitOfWork.Order.Add(order);
+                    _unitOfWork.ShoppingCart.ClearCart();
+                    _unitOfWork.Complete();
                     return View("CheckoutComplete", order);
                 }
                 return View("Error", new ErrorViewModel { ErrorMessage = $"Your credit score is too low" });

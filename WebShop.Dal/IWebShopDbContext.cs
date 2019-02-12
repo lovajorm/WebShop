@@ -15,7 +15,7 @@ namespace WebShop.Dal
         DbSet<ShoppingCartItem> ShoppingCart { get; set; }
         DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
-        int SaveChanges();
+        int Complete();
         void Dispose();
         void Remove<T>(T entity) where T : class;
         void Add<T>(T entity) where T : class;

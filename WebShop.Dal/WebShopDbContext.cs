@@ -143,7 +143,7 @@ namespace WebShop.Dal
                 });
         }
 
-        public override int SaveChanges()
+        public int Complete()
         {
             return base.SaveChanges();
         }

@@ -1,22 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
-using log4net.Core;
-using log4net.Repository.Hierarchy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
-using Microsoft.EntityFrameworkCore.Query.ExpressionTranslators.Internal;
 using WebShop.Bo;
 using WebShop.Dal;
 using WebShop.Dal.Interfaces;
 using WebShop.Dal.UoW;
 using WebShop.Log;
 using WebShop.Web.ViewModels;
-using ILogger = Microsoft.Extensions.Logging.ILogger;
-using ILoggerFactory = Microsoft.Extensions.Logging.ILoggerFactory;
 
 namespace WebShop.Web.Controllers
 {

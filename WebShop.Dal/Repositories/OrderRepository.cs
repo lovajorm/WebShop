@@ -10,19 +10,22 @@ namespace WebShop.Dal.Repositories
 {
     public class OrderRepository : Repository<Order>, IOrderRepository
     {
+
         public OrderRepository(IWebShopDbContext context) : base(context)
         {
-            List<Order> GetOrders()
-            {
-                return context.Orders.ToList();
-            }
 
-            List<Order> GetOrder(int id)
-            {
-                return context.Orders.Where(x => x.OrderId == id).ToList();
-            }
+            //List<Order> GetOrders()
+            //{
+            //    return context.Orders.ToList();
+            //}
+
+            //List<Order> GetOrder(int id)
+            //{
+            //    return context.Orders.Where(x => x.OrderId == id).ToList();
+            //}
         }
         public IWebShopDbContext WebShopDbContext => Context as IWebShopDbContext;
+
 
     }
 }

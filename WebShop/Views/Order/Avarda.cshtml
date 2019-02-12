@@ -5,14 +5,14 @@
 }
 
 <h2>Avarda</h2>
+<div id="checkOutDiv"></div>
 
-<script src="https://stage.avarda.org/CheckOut2/Scripts/CheckOutClient.js"></script>
-<script>
+<script type="text/javascript">
         var options = {
             // ID of the <div> inside which to render the form
             divId: "checkOutDiv",
             // The Purchase ID obtained in the previous step
-            purchaseId: @Html.Raw(value: @Model.PaymentID),
+            purchaseId: "@Html.Raw(Model.PaymentID)",
             // What to do once the result is available
             done: function (purchaseId) {
                 window.location.href = "/done.php?purchaseId=" + purchaseId;
@@ -23,5 +23,5 @@
         AvardaCheckOutClient.init(options);
 </script>
 
-<div id="checkOutDiv"></div>
+
 

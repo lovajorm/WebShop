@@ -9,7 +9,6 @@ namespace WebShop.Common
     {
         public void SendEmail()
         {
-
             try
             {
                 MailMessage mail = new MailMessage();

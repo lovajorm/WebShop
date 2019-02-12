@@ -5,7 +5,7 @@ namespace WebShop.Dal
 {
     public class WebShopDbContext : DbContext
     {
-        public virtual DbSet<Product> Products { get; set; }   //virtual can be overridden in derived class eg. overridden by any class that inherits it.
+        public virtual DbSet<Product> Products { get; set; }   //virtual can be overridden in derived class eg. overridden by any class that inherits from it.
         public virtual DbSet<ShoppingCartItem> ShoppingCart { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
         public DbSet<Category> Categories { get; set; }

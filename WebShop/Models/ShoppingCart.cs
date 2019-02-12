@@ -38,8 +38,7 @@ namespace WebShop.Web.Models
             return new ShoppingCart(context) {ShoppingCartId = cartId};
         }
 
-        public void
-            AddToCart(Product product, int amount) //Method which allows user to add items to cart when in the shop.
+        public void AddToCart(Product product, int amount) //Method which allows user to add items to cart when in the shop.
         {
             var shoppingCartItem = ShoppingCartItems.SingleOrDefault(s =>
                 s.Product.ProductID == product.ProductID && s.ShoppingCartId == ShoppingCartId);

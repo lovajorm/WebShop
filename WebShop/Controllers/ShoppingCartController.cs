@@ -47,7 +47,8 @@ namespace WebShop.Web.Controllers
 
             if (selectedProduct != null)
             {
-                _context.ShoppingCart.AddToCart(selectedProduct, 1);
+                //_context.ShoppingCart.AddToCart(selectedProduct, 1);
+                _shoppingCart.AddToCart(selectedProduct, 1);
             }
 
             return RedirectToAction("List", "Product", new { area = "" });
@@ -60,7 +61,8 @@ namespace WebShop.Web.Controllers
 
             if (selectedProduct != null)
             {
-                _context.ShoppingCart.RemoveFromCart(selectedProduct);
+                //_context.ShoppingCart.RemoveFromCart(selectedProduct);
+                _shoppingCart.RemoveFromCart(selectedProduct);
             }
 
             return RedirectToAction("Index");

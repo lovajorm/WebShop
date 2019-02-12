@@ -11,17 +11,15 @@ namespace WebShop.Web.UoW
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly WebShopDbContext _context;
+        private readonly IWebShopDbContext _context;
         public IProductRepository Product { get; }
-        public IOrderRepository Order { get; }
         public ShoppingCart ShoppingCart { get; set; }
 
-        public UnitOfWork(WebShopDbContext context)
+        public UnitOfWork(IWebShopDbContext context, IProductRepository productRepository, ShoppingCart shoppingCart)
         {
             _context = context;
-            Product = new ProductRepository(context);
-            Order = new OrderRepository(context);
-            ShoppingCart = new ShoppingCart(context);
+            Product = productRepository;
+            ShoppingCart = shoppingCart;
         }
         
         public int Complete()

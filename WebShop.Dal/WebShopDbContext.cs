@@ -3,7 +3,7 @@ using WebShop.Bo;
 
 namespace WebShop.Dal
 {
-    public class WebShopDbContext : DbContext
+    public class WebShopDbContext : DbContext, IWebShopDbContext
     {
         public virtual DbSet<Product> Products { get; set; }   //virtual can be overridden in derived class eg. overridden by any class that inherits from it.
         public virtual DbSet<ShoppingCartItem> ShoppingCart { get; set; }
@@ -137,6 +137,26 @@ namespace WebShop.Dal
                     ImageUrl = "~/images/Furniture/table.jpg",
                     CategoryId = 2
                 });
+        }
+
+        public int SaveChanges()
+        {
+            return base.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            base.Dispose();
+        }
+
+        object IWebShopDbContext.Set<T>()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        void IWebShopDbContext.Remove<T>(T entity)
+        {
+            base.Remove<T>(entity);
         }
     }
 }

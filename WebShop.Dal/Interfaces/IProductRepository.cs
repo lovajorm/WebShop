@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Query;
 using WebShop.Bo;
 using WebShop.Dal.Repositories;
-using WebShop.Web.ViewModels;
 
 namespace WebShop.Web.Interfaces
 {

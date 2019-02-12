@@ -9,7 +9,7 @@ using WebShop.Dal;
 
 namespace WebShop.Dal.Migrations
 {
-    [DbContext(typeof(WebShopDbContext))]
+    [DbContext(typeof(IWebShopDbContext))]
     [Migration("20190130093234_addedCategoryToProductandData")]
     partial class addedCategoryToProductandData
     {

@@ -18,6 +18,7 @@ using WebShop.Web.Interfaces;
 using WebShop.Web.Middleware;
 using WebShop.Web.Models;
 using WebShop.Web.Repositories;
+using WebShop.Web.UoW;
 
 namespace WebShop
 {
@@ -51,8 +52,8 @@ namespace WebShop
             services.AddScoped(sp => ShoppingCart.GetCart(sp));                                                         //Loads the shopping cart function.  
 
             services.AddTransient<IProductRepository, ProductRepository>();
-            services.AddTransient<ICategoryRepository, CategoryRepository>();
-            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IProductRepository, ProductRepository>();
 
             services.AddAutoMapper();
 

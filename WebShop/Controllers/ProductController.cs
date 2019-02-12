@@ -22,21 +22,13 @@ namespace WebShop.Web.Controllers
 {
     public class ProductController : Controller
     {
-        //private readonly WebShopDbContext _context;
-        private UnitOfWork _context;
+        private IUnitOfWork _unitOfWork;
         private readonly IMessageLogger _logger;
         private readonly IMapper _mapper;
-        //private readonly ICategoryRepository _categoryRepository;
-        //private readonly IProductRepository _productRepository;
 
-        public ProductController(ICategoryRepository categoryRepository, IProductRepository productRepository, WebShopDbContext context, IMessageLogger logger, IMapper mapper)
+        public ProductController(IProductRepository productRepository, WebShopDbContext context, IMessageLogger logger, IMapper mapper, IUnitOfWork unitOfWork)
         {
-            //_categoryRepository = categoryRepository;
-            //_productRepository = productRepository;
-            //_context = context;
-            _context = new UnitOfWork(context);
-
-
+            _unitOfWork = unitOfWork;
             _logger = logger;
             _mapper = mapper;
         }
@@ -74,20 +66,20 @@ namespace WebShop.Web.Controllers
             IEnumerable<Product> products = null;
             if (string.IsNullOrEmpty(category))
             {
-                products = _context.Product.GetProducts();
+                products = _unitOfWork.Product.GetProducts();
             }
             else
             {
                 switch (category)
                 {
                     case "Clothes":
-                        products = _context.Product.Find(p => p.Category.CategoryName == category);
+                        products = _unitOfWork.Product.Find(p => p.Category.CategoryName == category);
                         break;
                     case "Furniture":
-                        products = _context.Product.Find(p => p.Category.CategoryName == category);
+                        products = _unitOfWork.Product.Find(p => p.Category.CategoryName == category);
                         break;
                     case "Electronics":
-                        products = _context.Product.Find(p => p.Category.CategoryName == category);
+                        products = _unitOfWork.Product.Find(p => p.Category.CategoryName == category);
                         break;
                 }
             }
@@ -108,7 +100,7 @@ namespace WebShop.Web.Controllers
                 return NotFound();
             }
 
-            var product = _context.Product.Find(p => p.ProductID == id).FirstOrDefault();
+            var product = _unitOfWork.Product.Find(p => p.ProductID == id).FirstOrDefault();
                 //.FirstOrDefaultAsync(m => m.ProductID == id);
             if (product == null)
             {

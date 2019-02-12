@@ -17,15 +17,14 @@ namespace WebShop.Web.Controllers
         //private readonly IOrderRepository _orderRepository;
         private readonly ShoppingCart _shoppingCart;
         //private readonly WebShopDbContext _context;
-        private UnitOfWork _context;
+        private IUnitOfWork _context;
         private ConnectionHandler _getCustomer;
 
-        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart, WebShopDbContext context)
+        public OrderController(ShoppingCart shoppingCart, IUnitOfWork unitOfWork)
         {
-            //_orderRepository = orderRepository;
             _shoppingCart = shoppingCart;
             //_context = context;
-            _context = new UnitOfWork(context);
+            _context = unitOfWork;
             _getCustomer = new ConnectionHandler();
         }
 

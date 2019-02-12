@@ -8,7 +8,7 @@ using WebShop.Dal;
 
 namespace WebShop.Dal.Migrations
 {
-    [DbContext(typeof(WebShopDbContext))]
+    [DbContext(typeof(IWebShopDbContext))]
     partial class WebShopDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

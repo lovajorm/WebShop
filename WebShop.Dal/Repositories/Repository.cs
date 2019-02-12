@@ -9,9 +9,9 @@ namespace WebShop.Dal.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        protected readonly DbContext Context;  //derived class access because inheritance
+        protected readonly IWebShopDbContext Context;  //derived class access because inheritance
 
-        public Repository(DbContext context)
+        public Repository(IWebShopDbContext context)
         {
             Context = context;
         }
@@ -32,12 +32,12 @@ namespace WebShop.Dal.Repositories
 
         public void Add(T entity)
         {
-            Context.Set<T>().Add(entity);
+            Context.Add(entity);
         }
 
         public void Remove(T entity)
         {
-            Context.Set<T>().Remove(entity);
+            Context.Remove(entity);
         }
     }
 }

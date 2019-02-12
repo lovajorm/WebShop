@@ -19,11 +19,9 @@ namespace WebShop.Tests
     {
         private readonly WebShopDbContext _context;
         private readonly Log.IMessageLogger _logger;
-        private readonly Mock<ICategoryRepository> _categoryRepository;
         private readonly Mock<IProductRepository> _productRepository;
         public LoggerTests()
         {
-            _categoryRepository = new Mock<ICategoryRepository>();
             _productRepository = new Mock<IProductRepository>();
         }
 

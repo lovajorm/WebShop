@@ -36,7 +36,7 @@ namespace WebShop.Web.Controllers
             try
             {
                 var response = _connectionHandler.InitializePayment(request);
-                              
+
                 return View("Avarda", response);
             }
             catch (Exception ex)
@@ -60,59 +60,23 @@ namespace WebShop.Web.Controllers
             return itemList;
         }
 
-        [HttpGet]
-        public JsonResult GetInformation(string ssn)                             //Method which gets customer information by using Ssn, see checkout.cshtml.
+        public IActionResult Done(string purchaseId)
         {
-            try
-            {
-                var info = _connectionHandler.GetCustomerInfo(ssn);
-                return Json(info);
-            }
-            catch (Exception ex)
-            
-            {
-                return Json(new ErrorViewModel { ErrorMessage = $"Failed to get customer. Error: {ex.Message}" });      //If exception is caught, will show error message
-            }
-        }
+            var response = _connectionHandler.GetPaymentStatus(purchaseId);
 
-        [HttpPost]                                                                          //send authorization to web api
-        public IActionResult AuthorizeInvoice(InvoiceRequest request, Order order)
-        {
-            var total = _shoppingCart.GetShoppingCartTotal();
-            order.OrderTotal = total;
-
-            try
+            if (response.State == 2)
             {
-                var response = _connectionHandler.AuthorizeInvoice(request, order);
-
-                if (total < response.Result.CreditLimit)                                                //In tests the creditLimit is not fixed, which means that the if-statement is unnecessary but we will keep it for fun.
+                switch (response.PaymentMethod)
                 {
-                    order.OrderDetails = _orderRepository.CreateOrder(order);                           //Save order and take customer to final page
-                    _shoppingCart.ClearCart();                                                          //Clears cart after "Complete order"
-                    _emailHandler.SendEmail();                                                          //Sends email to customer
-                    return View("CheckoutComplete", order);
-                }
-                else
-                {
-                    return View("Error", new ErrorViewModel { ErrorMessage = $"Your credit score is too low" });
+                    case PaymentMethodEnum.Invocie:
+                    case PaymentMethodEnum.Loan:
+                        ViewData["description"] = purchaseId;
+                        return View();
+                    default:
+                        return View("CheckoutComplete");
                 }
             }
-            catch (Exception ex)
-            {
-                return View("Error", new ErrorViewModel { ErrorMessage = $"Couldn't get credit score. Error Message: {ex.Message}" });
-            }
-        }
-
-        public IActionResult Checkout()                                                                                 //"Check out" from shopping cart to information form.
-        {
-            var items = _shoppingCart.GetShoppingCartItems();
-            _shoppingCart.ShoppingCartItems = items;
-
-            if (_shoppingCart.ShoppingCartItems.Count == 0)                                                                 //Check to see if the shopping cart contains any items.
-            {
-                return View("Error", new ErrorViewModel { ErrorMessage = "Your cart is empty, add some products first" }); //Error message shown if you try to check out order without any items in the cart.
-            }
-            return View();
+            return View("Error", new ErrorViewModel { ErrorMessage = $"Payment failed." });
         }
     }
 }

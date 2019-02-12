@@ -2,6 +2,6 @@
 {
     public class PaymentResponse
     {
-        public string PaymentID { get; set; }
+        public string PurchaseId { get; set; }
     }
 }

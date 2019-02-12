@@ -18,7 +18,6 @@ namespace WebShop.Web.Controllers
         private readonly IEmailHandler _emailHandler;
         private ConnectionHandler _connectionHandler;
 
-
         public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart, IEmailHandler emailHandler)
         {
             _orderRepository = orderRepository;
@@ -44,11 +43,7 @@ namespace WebShop.Web.Controllers
             {
                 return View("Error", new ErrorViewModel { ErrorMessage = $"Something went wrong: {ex.Message}" });
             }
-
         }
-
-
-    
 
         private List<Item> ConvertShoppingCartItemToItem()
         {

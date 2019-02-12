@@ -5,10 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using WebShop.Bo;
-using Microsoft.AspNetCore.Mvc;
 
 namespace WebShop.Avarda.Api
-
 {
     public class ConnectionHandler
     {
@@ -22,9 +20,6 @@ namespace WebShop.Avarda.Api
                 UserName = "Testpartner Sweden"
             };
         }
-
-
-
 
         public PaymentResponse InitializePayment(PaymentRequest request)
         {
@@ -62,8 +57,6 @@ namespace WebShop.Avarda.Api
             }
             return response;
         }
-
-
 
         public Customer GetCustomerInfo(string ssn)              //Method which gets customer information by using Ssn, see checkout.cshtml.
         {

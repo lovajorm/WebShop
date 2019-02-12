@@ -77,7 +77,6 @@ namespace WebShop.Web.Controllers
             {
                 var response = _getCustomer.AuthorizeInvoice(request, order);
 
-
                 if (order.OrderTotal < response.Result.CreditLimit)
                 {
                     _context.Order.Add(order);

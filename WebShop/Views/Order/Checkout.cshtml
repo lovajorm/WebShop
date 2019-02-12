@@ -35,6 +35,14 @@
         </div>
 
         <div class="form-group">
+            <label asp-for="Email" class="col-md-2 control-label"></label>
+            <div class="col-md-5">
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
             <label asp-for="Address1" class="col-md-2 control-label"></label>
             <div class="col-md-5">
                 <input asp-for="Address1" class="form-control" />
@@ -73,8 +81,8 @@
                 <span asp-validation-for="Country" class="text-danger"></span>
             </div>
         </div>
-        
-             
+
+
 
         <div class="form-group">
             <div class="btn-group col-md-offset-2 col-md-8">
@@ -100,6 +108,7 @@
                     } else {
                         $('#LastName').val(data.lastName);
                         $('#FirstName').val(data.firstName);
+                        $('#Email').val(data.email);
                         $('#Address1').val(data.address1);
                         $('#Address2').val(data.address2);
                         $('#ZipCode').val(data.zipCode);

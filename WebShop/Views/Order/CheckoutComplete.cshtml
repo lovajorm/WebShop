@@ -9,16 +9,6 @@
 
 <h4>Here is your review for order @Model.OrderId</h4>
 
-
-@*@foreach (var item in Model.OrderDetails)
-{
-    <tr>
-        <td><img height="100px" src="@Url.Content(@item.Product.ImageUrl)" /></td>
-        <td class="text-center">@item.Product.Title</td>
-        <td class="text-center">@item.Amount</td>
-        <td class="text-center">@item.Price</td>
-    </tr>*@
-
    
 <table class="table table-bordered table-responsive table-hover">
     <thead>

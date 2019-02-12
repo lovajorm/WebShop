@@ -7,7 +7,6 @@ using Newtonsoft.Json;
 using WebShop.Bo;
 
 namespace WebShop.Avarda.Api
-
 {
     public class ConnectionHandler
     {
@@ -16,12 +15,49 @@ namespace WebShop.Avarda.Api
         public ConnectionHandler()
         {
             _connectionDetails = new ConnectionDetails()
-            { 
+            {
                 Password = "123456",
                 UserName = "Testpartner Sweden"
             };
         }
-    
+
+        public PaymentResponse InitializePayment(PaymentRequest request)
+        {
+            //var request = new PaymentRequest();
+            var response = new PaymentResponse();
+
+            using (var handler = new WebRequestHandler())
+            {
+                using (var client = new HttpClient(handler))
+                {
+                    var bytearray = Encoding.ASCII.GetBytes("TestSweden1:test1");               //Authentication
+
+                    //sets authentication header.
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray));
+
+                    client.BaseAddress = new Uri($"https://stage.avarda.org/");
+                    
+                    //Serializes the class to json
+                    var body = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
+                    var result = client.PostAsync("CheckOut2/CheckOut2Api/InitializePayment", body).Result;                                          //Calling Avarda API and sending the json
+
+                    if (!result.IsSuccessStatusCode)
+                    {
+                        throw new Exception(result.Content.ReadAsStringAsync().Result);
+                    }
+
+                    response.PaymentID = result.Content.ReadAsStringAsync().Result;
+
+                    if (result.IsSuccessStatusCode)
+                    {
+                        response.PaymentID = response.PaymentID.Replace("\"", string.Empty);
+                        //return View("Avarda", response);
+                    }
+                }
+            }
+            return response;
+        }
+
         public Customer GetCustomerInfo(string ssn)              //Method which gets customer information by using Ssn, see checkout.cshtml.
         {
             Customer response;                         //Initializes customer
@@ -60,9 +96,7 @@ namespace WebShop.Avarda.Api
                     var total = order.OrderTotal;
                     request.Amount = total;
                     request.Country = "Swe";
-
-                    var jsonRequest = JsonConvert.SerializeObject(request);
-
+                    
                     //Serializes the class to json
                     var body = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
                     var result = await client.PostAsync("WebShopApi/webshop/authorization/invoice", body);                                          //Calling Avarda API and sending the json
@@ -72,7 +106,7 @@ namespace WebShop.Avarda.Api
                         throw new Exception(result.Content.ReadAsStringAsync().Result);
                     }
                     var response = JsonConvert.DeserializeObject<InvoiceResponse>(result.Content.ReadAsStringAsync().Result);
-                    
+
                     return response;
                 }
             }

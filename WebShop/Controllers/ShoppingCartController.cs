@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using WebShop.Bo;
-using WebShop.Dal;
 using WebShop.Web.Models;
-using Microsoft.EntityFrameworkCore;
-using WebShop.Log;
 using WebShop.Web.Interfaces;
 using WebShop.Web.ViewModels;
 

@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace WebShop.Log
 {
-    public class MessageLogger :  IMessageLogger
+    public class MessageLogger : IMessageLogger
     {
         private static log4net.ILog Log =
             LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);

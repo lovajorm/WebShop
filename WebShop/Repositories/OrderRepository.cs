@@ -28,6 +28,7 @@ namespace WebShop.Web.Repositories
 
             var total = _shoppingCart.GetShoppingCartTotal();
             order.OrderTotal = total;
+             
 
             _context.Orders.Add(order);
 

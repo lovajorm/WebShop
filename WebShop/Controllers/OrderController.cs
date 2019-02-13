@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Avarda.Api;
 using WebShop.Avarda.Api.Avarda;
-using WebShop.Bo;
 using WebShop.Models;
 using WebShop.Web.Interfaces;
 using WebShop.Web.Models;

@@ -2,10 +2,11 @@
 using WebShop.Avarda.Api.Avarda;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
+using WebShop.Bo;
 
 namespace WebShop.Avarda.Api
-
 {
     public class ConnectionHandler
     {
@@ -20,10 +21,50 @@ namespace WebShop.Avarda.Api
             };
         }
 
-        
+        public PaymentStatus GetPaymentStatus(string paymentId)
+        {
+            PaymentStatus response = null;
+            var request = new PaymentResponse()
+            {
+                PurchaseId = paymentId
+            };
+            using (var handler = new WebRequestHandler())
+            {
+                using (var client = new HttpClient(handler))
+                {
+                    var bytearray = Encoding.ASCII.GetBytes("TestSweden1:test1");               //Authentication
+
+                    //sets authentication header.
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray));
+
+                    client.BaseAddress = new Uri($"https://stage.avarda.org/");
+
+                    //Serializes the class to json
+                    
+                    var body = JsonConvert.SerializeObject(request);
+                    var requestBody = new StringContent(body, Encoding.UTF8, "application/json");
+                    var result = client.PostAsync("CheckOut2/CheckOut2Api/GetPaymentStatus", requestBody).Result;                                          //Calling Avarda API and sending the json
+
+                    if (!result.IsSuccessStatusCode)
+                    {
+                        throw new Exception(result.Content.ReadAsStringAsync().Result);
+                    }
+
+                    //response.PurchaseId = result.Content.ReadAsStringAsync().Result;
+
+                    if (result.IsSuccessStatusCode)
+                    {
+                        response = JsonConvert.DeserializeObject<PaymentStatus>(result.Content.ReadAsStringAsync().Result);
+                        
+                    }
+                }
+            }
+            return response;
+        }
 
         public PaymentResponse InitializePayment(PaymentRequest request)
         {
+            //var request = new PaymentRequest();
             var response = new PaymentResponse();
 
             using (var handler = new WebRequestHandler())
@@ -46,19 +87,17 @@ namespace WebShop.Avarda.Api
                         throw new Exception(result.Content.ReadAsStringAsync().Result);
                     }
 
-                    response.PaymentID = result.Content.ReadAsStringAsync().Result;
+                    response.PurchaseId = result.Content.ReadAsStringAsync().Result;
 
                     if (result.IsSuccessStatusCode)
                     {
-                        response.PaymentID = response.PaymentID.Replace("\"", string.Empty);
+                        response.PurchaseId = response.PurchaseId.Replace("\"", string.Empty);
                         //return View("Avarda", response);
                     }
                 }
             }
             return response;
         }
-
-
     }
 }
 

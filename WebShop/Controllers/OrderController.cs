@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Avarda.Api;
 using WebShop.Avarda.Api.Avarda;
+using WebShop.Bo;
 using WebShop.Models;
 using WebShop.Web.Interfaces;
 using WebShop.Web.Models;
@@ -17,7 +18,6 @@ namespace WebShop.Web.Controllers
         private readonly IEmailHandler _emailHandler;
         private ConnectionHandler _connectionHandler;
 
-
         public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart, IEmailHandler emailHandler)
         {
             _orderRepository = orderRepository;
@@ -26,7 +26,6 @@ namespace WebShop.Web.Controllers
 
             _connectionHandler = new ConnectionHandler();
         }
-   
 
         [HttpGet]
         public IActionResult InitializePayment(PaymentRequest request)
@@ -37,16 +36,14 @@ namespace WebShop.Web.Controllers
             try
             {
                 var response = _connectionHandler.InitializePayment(request);
-                              
+
                 return View("Avarda", response);
             }
             catch (Exception ex)
             {
                 return View("Error", new ErrorViewModel { ErrorMessage = $"Something went wrong: {ex.Message}" });
             }
-
         }
-                    
 
         private List<Item> ConvertShoppingCartItemToItem()
         {
@@ -62,18 +59,24 @@ namespace WebShop.Web.Controllers
             }
             return itemList;
         }
-        
 
-        public IActionResult Checkout()                                                                                 //"Check out" from shopping cart to information form.
+        public IActionResult Done(string purchaseId)
         {
-            var items = _shoppingCart.GetShoppingCartItems();
-            _shoppingCart.ShoppingCartItems = items;
+            var response = _connectionHandler.GetPaymentStatus(purchaseId);
 
-            if (_shoppingCart.ShoppingCartItems.Count == 0)                                                                 //Check to see if the shopping cart contains any items.
+            if (response.State == 2)
             {
-                return View("Error", new ErrorViewModel { ErrorMessage = "Your cart is empty, add some products first" }); //Error message shown if you try to check out order without any items in the cart.
+                switch (response.PaymentMethod)
+                {
+                    case PaymentMethodEnum.Invocie:
+                    case PaymentMethodEnum.Loan:
+                        ViewData["description"] = purchaseId;
+                        return View();
+                    default:
+                        return View("CheckoutComplete");
+                }
             }
-            return View();
+            return View("Error", new ErrorViewModel { ErrorMessage = $"Payment failed." });
         }
     }
 }

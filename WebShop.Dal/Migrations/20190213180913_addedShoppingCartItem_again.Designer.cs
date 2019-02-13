@@ -10,8 +10,8 @@ using WebShop.Dal;
 namespace WebShop.Dal.Migrations
 {
     [DbContext(typeof(WebShopDbContext))]
-    [Migration("20190213145345_refreshing")]
-    partial class refreshing
+    [Migration("20190213180913_addedShoppingCartItem_again")]
+    partial class addedShoppingCartItem_again
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

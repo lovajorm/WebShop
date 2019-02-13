@@ -12,7 +12,6 @@ namespace WebShop.Dal
         DbSet<OrderDetail> OrderDetails { get; set; }
         DbSet<Order> Orders { get; set; }
         DbSet<Product> Products { get; set; }
-        //DbSet<ShoppingCartItem> ShoppingCart { get; set; }
         DbSet<ShoppingCartItem> ShoppingCartItem { get; set; }
 
         int Complete();

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebShop.Dal.Migrations
 {
-    public partial class refreshing : Migration
+    public partial class addedShoppingCartItem_again : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

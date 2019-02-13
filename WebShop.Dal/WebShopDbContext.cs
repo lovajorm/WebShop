@@ -140,6 +140,7 @@ namespace WebShop.Dal
                     ImageUrl = "~/images/Furniture/table.jpg",
                     CategoryId = 2
                 });
+            modelBuilder.Entity<ShoppingCartItem>().ToTable("ShoppingCartItem");
         }
 
         public int Complete()

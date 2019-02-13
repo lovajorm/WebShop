@@ -1,29 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using WebShop.Bo;
-using WebShop.Dal;
-using WebShop.Dal.Repositories;
 using WebShop.Dal.UoW;
 
 namespace WebShop.Web.Models
 {
     public class ShoppingCart
     {
-        private readonly IUnitOfWork _UnitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
-        //private readonly WebShopDbContext _context;
-
-        public WebShopDbContext _context;
-
-        public ShoppingCart(IUnitOfWork _unitOfWork)//, WebShopDbContext context)
+        public ShoppingCart(IUnitOfWork unitOfWork)
         {
-            _UnitOfWork = _unitOfWork;
-            //_context = context;
+            _unitOfWork = unitOfWork;
         }
 
         public string ShoppingCartId { get; set; }
@@ -43,7 +35,7 @@ namespace WebShop.Web.Models
 
         public void AddToCart(Product product, int amount) //Method which allows user to add items to cart when in the shop.
         {
-            var shoppingCartItem = _UnitOfWork.ShoppingCart.SingleOrDefault(s =>
+            var shoppingCartItem = _unitOfWork.ShoppingCart.SingleOrDefault(s =>
                 s.Product.ProductID == product.ProductID && s.ShoppingCartId == ShoppingCartId);
 
             if (shoppingCartItem == null)
@@ -54,19 +46,19 @@ namespace WebShop.Web.Models
                     Product = product,
                     Amount = 1
                 };
-                _UnitOfWork.ShoppingCart.Add(shoppingCartItem);
+                _unitOfWork.ShoppingCart.Add(shoppingCartItem);
             }
             else
             {
                 shoppingCartItem.Amount++;
             }
 
-            _UnitOfWork.Complete();
+            _unitOfWork.Complete();
         }
 
         public int RemoveFromCart(Product product) //Method which allows user to remove items when in shopping cart.
         {
-            var shoppingCartItem = _UnitOfWork.ShoppingCart.SingleOrDefault(
+            var shoppingCartItem = _unitOfWork.ShoppingCart.SingleOrDefault(
                 s => s.Product.ProductID == product.ProductID && s.ShoppingCartId == ShoppingCartId);
 
             var localAmount = 0;
@@ -80,11 +72,11 @@ namespace WebShop.Web.Models
                 }
                 else
                 {
-                    _UnitOfWork.ShoppingCart.Remove(shoppingCartItem);
+                    _unitOfWork.ShoppingCart.Remove(shoppingCartItem);
                 }
             }
 
-            _UnitOfWork.Complete();
+            _unitOfWork.Complete();
 
             return localAmount;
         }
@@ -93,24 +85,24 @@ namespace WebShop.Web.Models
         {
 
             return ShoppingCartItems ??
-                   (ShoppingCartItems = _UnitOfWork.ShoppingCart.Where(c => c.ShoppingCartId == ShoppingCartId)
+                   (ShoppingCartItems = _unitOfWork.ShoppingCart.Where(c => c.ShoppingCartId == ShoppingCartId)
                        .Include(s => s.Product)
                        .ToList());
         }
 
         public void ClearCart() //Clears the cart after "Complete Order".
         {
-            var cartItems = _UnitOfWork.ShoppingCart
+            var cartItems = _unitOfWork.ShoppingCart
                 .Where(cart => cart.ShoppingCartId == ShoppingCartId);
 
-            _UnitOfWork.ShoppingCart.RemoveRange(cartItems);
+            _unitOfWork.ShoppingCart.RemoveRange(cartItems);
 
-            _UnitOfWork.Complete();
+            _unitOfWork.Complete();
         }
 
         public float GetShoppingCartTotal() //Counts the total price of the cart.
         {
-            var total = _UnitOfWork.ShoppingCart.Where(c => c.ShoppingCartId == ShoppingCartId)
+            var total = _unitOfWork.ShoppingCart.Where(c => c.ShoppingCartId == ShoppingCartId)
                 .Select(c => c.Product.Price * c.Amount).Sum();
 
             return total;

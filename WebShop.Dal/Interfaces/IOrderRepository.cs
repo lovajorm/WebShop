@@ -5,7 +5,5 @@ using WebShop.Bo;
 
 namespace WebShop.Dal.Interfaces
 {
-    public interface IOrderRepository : IRepository<Order>
-    {
-    }
+    public interface IOrderRepository : IRepository<Order> {}
 }

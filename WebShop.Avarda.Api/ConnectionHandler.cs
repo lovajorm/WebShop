@@ -16,8 +16,8 @@ namespace WebShop.Avarda.Api
         {
             _connectionDetails = new ConnectionDetails()
             {
-                Password = "123456",
-                UserName = "Testpartner Sweden"
+                Password = "test1",
+                UserName = "TestSweden1"
             };
         }
 
@@ -32,7 +32,7 @@ namespace WebShop.Avarda.Api
             {
                 using (var client = new HttpClient(handler))
                 {
-                    var bytearray = Encoding.ASCII.GetBytes("TestSweden1:test1");               //Authentication
+                    var bytearray = Encoding.ASCII.GetBytes(_connectionDetails.ToString());               //Authentication
 
                     //sets authentication header.
                     client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray));
@@ -55,7 +55,6 @@ namespace WebShop.Avarda.Api
                     if (result.IsSuccessStatusCode)
                     {
                         response = JsonConvert.DeserializeObject<PaymentStatus>(result.Content.ReadAsStringAsync().Result);
-                        
                     }
                 }
             }
@@ -71,7 +70,7 @@ namespace WebShop.Avarda.Api
             {
                 using (var client = new HttpClient(handler))
                 {
-                    var bytearray = Encoding.ASCII.GetBytes("TestSweden1:test1");               //Authentication
+                    var bytearray = Encoding.ASCII.GetBytes(_connectionDetails.ToString());               //Authentication
 
                     //sets authentication header.
                     client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray));

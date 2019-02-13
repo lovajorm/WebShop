@@ -10,8 +10,7 @@ namespace WebShop.Dal
     public class WebShopDbContext : DbContext, IWebShopDbContext
     {
         public virtual DbSet<Product> Products { get; set; }   //virtual can be overridden in derived class eg. overridden by any class that inherits from it.
-        public virtual DbSet<ShoppingCartItem> ShoppingCart { get; set; }
-        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItem { get; set; }
         public DbSet<Category> Categories { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail > OrderDetails { get; set; }
@@ -165,7 +164,8 @@ namespace WebShop.Dal
 
         IEnumerable<T> IWebShopDbContext.Find<T>(Expression<Func<T, bool>> expression)
         {
-            yield return base.Find<T>(expression);
+            //yield return base.Find<T>(expression);
+            return base.Set<T>().Where(expression);
         }
 
         IEnumerable<T> IWebShopDbContext.GetAll<T>()

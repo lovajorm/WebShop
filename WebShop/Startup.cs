@@ -43,17 +43,12 @@ namespace WebShop
             
             services.AddSingleton<IMessageLogger, MessageLogger>();
 
-            //services.AddSingleton(new LoggerFactory()
-            //    .AddConsole(Configuration.GetSection("Logging"))
-            //    .AddDebug()
-            //    .AddLog4Net(Configuration.GetValue<string>("Log4NetConfigFile:Name")));
-
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => ShoppingCart.GetCart(sp));                                                         //Loads the shopping cart function.  
 
-            services.AddTransient<IProductRepository, ProductRepository>();
+            //services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-            services.AddTransient<IProductRepository, ProductRepository>();
+            //services.AddTransient<IProductRepository, ProductRepository>();
 
             services.AddAutoMapper();
 

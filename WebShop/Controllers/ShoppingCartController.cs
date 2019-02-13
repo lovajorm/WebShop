@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using WebShop.Bo;
-using WebShop.Dal;
-using Microsoft.EntityFrameworkCore;
-using WebShop.Dal.Interfaces;
 using WebShop.Dal.UoW;
-using WebShop.Log;
 using WebShop.Web.Models;
 using WebShop.Web.ViewModels;
 
@@ -16,15 +8,13 @@ namespace WebShop.Web.Controllers
 {
     public class ShoppingCartController : Controller
     {
-        private readonly IProductRepository _productRepository;
         private readonly ShoppingCart _shoppingCart;
-        private IUnitOfWork _context;
+        private IUnitOfWork _unitOfWork;
 
-        public ShoppingCartController(IProductRepository productRepository, ShoppingCart shoppingCart, IUnitOfWork context)
+        public ShoppingCartController(IUnitOfWork unitOfWork, ShoppingCart shoppingCart)
         {
-            _productRepository = productRepository;
             _shoppingCart = shoppingCart;
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
 
         public ViewResult Index()
@@ -33,7 +23,7 @@ namespace WebShop.Web.Controllers
             _shoppingCart.ShoppingCartItems = items;
             var scvm = new ShoppingCartViewModel
             {
-                ShoppingCart = _shoppingCart,//(ShoppingCart)_context.ShoppingCart,//(ShoppingCartRepository)_context.ShoppingCart,//_shoppingCart,
+                ShoppingCart = _shoppingCart,
                 ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
             };
             return View(scvm);
@@ -41,12 +31,11 @@ namespace WebShop.Web.Controllers
 
         public RedirectToActionResult AddToShoppingCart(int productId)
         {
-            //var selectedProduct = _productRepository.Products.FirstOrDefault(p => p.ProductID == productId);
-            var selectedProduct = _productRepository.GetProducts().FirstOrDefault(p => p.ProductID == productId);
+            var selectedProduct = _unitOfWork.Product.GetProducts().FirstOrDefault(p => p.ProductID == productId);
 
             if (selectedProduct != null)
             {
-                //_context.ShoppingCart.AddToCart(selectedProduct, 1);
+                //_unitOfWork.ShoppingCartItem.AddToCart(selectedProduct, 1);
                 _shoppingCart.AddToCart(selectedProduct, 1);
             }
 
@@ -55,8 +44,7 @@ namespace WebShop.Web.Controllers
 
         public RedirectToActionResult RemoveFromShoppingCart(int productId)
         {
-            //var selectedProduct = _productRepository.Products.FirstOrDefault(p => p.ProductID == productId);
-            var selectedProduct = _productRepository.GetProducts().FirstOrDefault(p => p.ProductID == productId);
+            var selectedProduct = _unitOfWork.Product.GetProducts().FirstOrDefault(p => p.ProductID == productId);
 
             if (selectedProduct != null)
             {

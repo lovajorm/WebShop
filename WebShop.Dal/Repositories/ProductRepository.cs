@@ -8,11 +8,11 @@ namespace WebShop.Dal.Repositories
     public class ProductRepository : Repository<Product>, IProductRepository
     {
 
-        public ProductRepository(IWebShopDbContext context) : base(context) {}
+        public ProductRepository(WebShopDbContext context) : base(context) {}
 
         //public IIncludableQueryable<Product, Category> Products => context.Products.Include(c => c.Category);
 
-        public IWebShopDbContext WebShopDbContext => Context as IWebShopDbContext;
+        public WebShopDbContext WebShopDbContext => Context as WebShopDbContext;
 
         public IIncludableQueryable<Product, Category> GetProducts()
         {

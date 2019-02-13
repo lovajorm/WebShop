@@ -3,7 +3,6 @@ using System.Linq;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Bo;
-using WebShop.Dal;
 using WebShop.Dal.Interfaces;
 using WebShop.Dal.UoW;
 using WebShop.Log;
@@ -17,7 +16,7 @@ namespace WebShop.Web.Controllers
         private readonly IMessageLogger _logger;
         private readonly IMapper _mapper;
 
-        public ProductController(IProductRepository productRepository, WebShopDbContext context, IMessageLogger logger, IMapper mapper, IUnitOfWork unitOfWork)
+        public ProductController(IMessageLogger logger, IMapper mapper, IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
             _logger = logger;
@@ -26,34 +25,6 @@ namespace WebShop.Web.Controllers
 
         public ViewResult List(string category)
         {
-            //string _category = category;
-            //IEnumerable<Product> products;
-            //string currentCategory = string.Empty;
-
-            //if (string.IsNullOrEmpty(category))
-            //{
-            //    products = _productRepository.Products.OrderBy(p => p.ProductID);
-            //    currentCategory = "All products";
-            //}
-            //else
-            //{
-            //    if (string.Equals("Clothes", _category, StringComparison.OrdinalIgnoreCase))
-            //        products = _productRepository.Products.Where(p => p.Category.CategoryName.Equals("Clothes")).OrderBy(p => p.Category);
-            //    else if 
-            //        (string.Equals("Furniture", _category, StringComparison.OrdinalIgnoreCase))
-            //        products = _productRepository.Products.Where(p => p.Category.CategoryName.Equals("Furniture")).OrderBy(p => p.Category);
-            //    else
-            //        products = _productRepository.Products.Where(p => p.Category.CategoryName.Equals("Electronics")).OrderBy(p => p.Category);
-
-            //    currentCategory = _category;
-            //}
-
-            //var productListViewModel = new ProductListViewModel
-            //{
-            //    Products = products,
-            //    CurrentCategory = currentCategory
-            //};
-
             IEnumerable<Product> products = null;
             if (string.IsNullOrEmpty(category))
             {
@@ -92,7 +63,7 @@ namespace WebShop.Web.Controllers
             }
 
             var product = _unitOfWork.Product.Find(p => p.ProductID == id).FirstOrDefault();
-                //.FirstOrDefaultAsync(m => m.ProductID == id);
+                
             if (product == null)
             {
                 return NotFound();

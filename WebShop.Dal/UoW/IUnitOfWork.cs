@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore;
+using WebShop.Bo;
 using WebShop.Dal.Interfaces;
 
 namespace WebShop.Dal.UoW
@@ -7,9 +9,8 @@ namespace WebShop.Dal.UoW
     {
         IProductRepository Product { get; }
         IOrderRepository Order { get; }
+        DbSet<ShoppingCartItem> ShoppingCart { get; }
 
-        ShoppingCart ShoppingCart { get; set; }
-        
         int Complete();
     }
 }

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using WebShop.Avarda.Api;
 using WebShop.Avarda.Api.Avarda;
 using WebShop.Bo;
-using WebShop.Dal;
 using WebShop.Dal.UoW;
 using WebShop.Models;
 using WebShop.Web.Models;
@@ -16,7 +15,7 @@ namespace WebShop.Web.Controllers
         private IUnitOfWork _unitOfWork;
         private ConnectionHandler _getCustomer;
 
-        public OrderController(ShoppingCart shoppingCart, IUnitOfWork unitOfWork)
+        public OrderController(IUnitOfWork unitOfWork, ShoppingCart shoppingCart)
         {
             _shoppingCart = shoppingCart;
             _unitOfWork = unitOfWork;
@@ -41,32 +40,9 @@ namespace WebShop.Web.Controllers
         [HttpPost] //send authorization to web api
         public IActionResult AuthorizeInvoice(InvoiceRequest request, Order order)
         {
-            //var total = _shoppingCart.GetShoppingCartTotal();
-            //order.OrderTotal = total;
-
-            //try
-            //{
-            //    var response = _getCustomer.AuthorizeInvoice(request, order);
-
-            //    if (total < response.Result.CreditLimit)//In tests the creditLimit is not fixed, which means that the if-statement is unnecessary but we will keep it for fun.
-            //    {
-            //        //Save order and take customer to final page
-            //        order.OrderDetails = _context.Order.CreateOrder(order);
-            //        _shoppingCart.ClearCart();//Clears cart after "Complete order"
-            //        return View("CheckoutComplete", order);
-            //    }
-            //    else
-            //    {
-            //        return View("Error", new ErrorViewModel { ErrorMessage = $"Your credit score is too low" });
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    return View("Error", new ErrorViewModel { ErrorMessage = $"Couldn't get credit score. Error Message: {ex.Message}" });
-            //}
             order.OrderPlaced = DateTime.Now;
-            order.OrderTotal = _unitOfWork.ShoppingCart.GetShoppingCartTotal();
-            order.OrderDetails = _unitOfWork.ShoppingCart.GetOrderDetailList(order.OrderId);
+            order.OrderTotal = _shoppingCart.GetShoppingCartTotal();
+            order.OrderDetails = _shoppingCart.GetOrderDetailList(order.OrderId);
             try
             {
                 var response = _getCustomer.AuthorizeInvoice(request, order);
@@ -74,7 +50,7 @@ namespace WebShop.Web.Controllers
                 if (order.OrderTotal < response.Result.CreditLimit)
                 {
                     _unitOfWork.Order.Add(order);
-                    _unitOfWork.ShoppingCart.ClearCart();
+                    _shoppingCart.ClearCart();
                     _unitOfWork.Complete();
                     return View("CheckoutComplete", order);
                 }
@@ -91,8 +67,6 @@ namespace WebShop.Web.Controllers
             var items = _shoppingCart.GetShoppingCartItems();
             _shoppingCart.ShoppingCartItems = items;
 
-            //_context.ShoppingCart.ShoppingCartItems = _context.ShoppingCart.GetShoppingCartItems();
-            
             if (_shoppingCart.ShoppingCartItems.Count == 0)//Check to see if the shopping cart contains any items.
             {
                 return View("Error", new ErrorViewModel { ErrorMessage = "Your cart is empty, add some products first" }); //Error message shown if you try to check out order without any items in the cart.

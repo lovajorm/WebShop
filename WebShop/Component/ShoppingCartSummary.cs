@@ -8,12 +8,10 @@ namespace WebShop.Web.Component
     public class ShoppingCartSummary : ViewComponent
     {
         private readonly ShoppingCart _shoppingCart;
-        private WebShopDbContext _context;
 
         public ShoppingCartSummary(ShoppingCart shoppingCart)
         {
             _shoppingCart = shoppingCart;
-            //_context = new UnitOfWork(context);
         }
         
         public IViewComponentResult Invoke()

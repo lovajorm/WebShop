@@ -9,9 +9,9 @@ using WebShop.Dal;
 
 namespace WebShop.Dal.Migrations
 {
-    [DbContext(typeof(IWebShopDbContext))]
-    [Migration("20190131082437_addednewDataToProductsAndCategories")]
-    partial class addednewDataToProductsAndCategories
+    [DbContext(typeof(WebShopDbContext))]
+    [Migration("20190213145345_refreshing")]
+    partial class refreshing
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,15 +48,17 @@ namespace WebShop.Dal.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Adress")
+                    b.Property<string>("Address1")
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("Address2")
+                        .HasMaxLength(100);
 
-                    b.Property<string>("Email")
+                    b.Property<string>("City")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("Country")
                         .IsRequired()
                         .HasMaxLength(50);
 
@@ -72,12 +74,7 @@ namespace WebShop.Dal.Migrations
 
                     b.Property<float>("OrderTotal");
 
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasMaxLength(25);
-
-                    b.Property<string>("State")
-                        .HasMaxLength(10);
+                    b.Property<string>("Ssn");
 
                     b.Property<string>("ZipCode")
                         .IsRequired()
@@ -134,15 +131,17 @@ namespace WebShop.Dal.Migrations
                     b.ToTable("Products");
 
                     b.HasData(
-                        new { ProductID = 1, CategoryId = 1, Description = "Knitted mens sweater", ImageUrl = "~/images/svart.jpg", Price = 100f, Title = "Sweater" },
-                        new { ProductID = 2, CategoryId = 1, Description = "Black womens pants", ImageUrl = "~/images/byx.jpg", Price = 200f, Title = "Pants" },
-                        new { ProductID = 3, CategoryId = 1, Description = "Black hoodie", ImageUrl = "~/images/hoodie.jpg", Price = 359f, Title = "Hoodie" },
-                        new { ProductID = 4, CategoryId = 1, Description = "Leopard skirt", ImageUrl = "~/images/kjol.jpg", Price = 349f, Title = "Skirt" },
-                        new { ProductID = 5, CategoryId = 1, Description = "Grey cardigan", ImageUrl = "~/images/kofta.jpg", Price = 500f, Title = "Cardigan" },
-                        new { ProductID = 6, CategoryId = 1, Description = "Blue jeans", ImageUrl = "~/images/jeans.jpg", Price = 599f, Title = "Jeans" },
-                        new { ProductID = 7, CategoryId = 1, Description = "Mens T-shirt", ImageUrl = "~/images/tshirt.jpg", Price = 99f, Title = "T-shirt" },
-                        new { ProductID = 8, CategoryId = 1, Description = "Womens blouse", ImageUrl = "~/images/blus.jpg", Price = 449f, Title = "Blouse" },
-                        new { ProductID = 9, CategoryId = 1, Description = "Blue shorts", ImageUrl = "~/images/shorts.jpg", Price = 249f, Title = "Shorts" }
+                        new { ProductID = 1, CategoryId = 1, Description = "Knitted mens sweater", ImageUrl = "~/images/Clothes/svart.jpg", Price = 100f, Title = "Sweater" },
+                        new { ProductID = 2, CategoryId = 1, Description = "Black womens pants", ImageUrl = "~/images/Clothes/byx.jpg", Price = 200f, Title = "Pants" },
+                        new { ProductID = 3, CategoryId = 1, Description = "Black hoodie", ImageUrl = "~/images/Clothes/hoodie.jpg", Price = 359f, Title = "Hoodie" },
+                        new { ProductID = 4, CategoryId = 1, Description = "Leopard skirt", ImageUrl = "~/images/Clothes/kjol.jpg", Price = 349f, Title = "Skirt" },
+                        new { ProductID = 5, CategoryId = 1, Description = "Grey cardigan", ImageUrl = "~/images/Clothes/kofta.jpg", Price = 500f, Title = "Cardigan" },
+                        new { ProductID = 6, CategoryId = 1, Description = "Blue jeans", ImageUrl = "~/images/Clothes/jeans.jfif", Price = 599f, Title = "Jeans" },
+                        new { ProductID = 7, CategoryId = 1, Description = "Mens T-shirt", ImageUrl = "~/images/Clothes/tshirt.jpg", Price = 99f, Title = "T-shirt" },
+                        new { ProductID = 8, CategoryId = 1, Description = "Womens blouse", ImageUrl = "~/images/Clothes/blus.jpg", Price = 449f, Title = "Blouse" },
+                        new { ProductID = 9, CategoryId = 1, Description = "Blue shorts", ImageUrl = "~/images/Clothes/shorts.jpg", Price = 249f, Title = "Shorts" },
+                        new { ProductID = 10, CategoryId = 3, Description = "Laptop from HP", ImageUrl = "~/images/Electronics/laptop.jfif", Price = 10000f, Title = "Laptop" },
+                        new { ProductID = 11, CategoryId = 2, Description = "Dinner table", ImageUrl = "~/images/Furniture/table.jpg", Price = 2000f, Title = "Table" }
                     );
                 });
 
@@ -162,13 +161,13 @@ namespace WebShop.Dal.Migrations
 
                     b.HasIndex("ProductID");
 
-                    b.ToTable("ShoppingCartItems");
+                    b.ToTable("ShoppingCartItem");
                 });
 
             modelBuilder.Entity("WebShop.Bo.OrderDetail", b =>
                 {
                     b.HasOne("WebShop.Bo.Order", "Order")
-                        .WithMany("OrderLines")
+                        .WithMany("OrderDetails")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade);
 

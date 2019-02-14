@@ -24,6 +24,8 @@ namespace WebShop.Dal.Repositories
                 OrderId = orderId,
                 Price = product.Price
             };
+            WebShopDbContext.OrderDetails.Add(orderDetail);
+            WebShopDbContext.Complete();
             return orderDetail;
         }
     }

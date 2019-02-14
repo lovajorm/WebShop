@@ -12,5 +12,7 @@ namespace WebShop.Avarda.Api.Avarda
             get; set;
         }
 
+        public string OrderReference { get; set; }
+
     }
 }

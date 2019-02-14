@@ -34,6 +34,7 @@ namespace WebShop.Web.Controllers
         {
             request.Price = _shoppingCart.GetShoppingCartTotal();
             request.Items = ConvertShoppingCartItemToItem();
+            request.OrderReference = "4444";
 
             try
             {
@@ -62,7 +63,7 @@ namespace WebShop.Web.Controllers
             return itemList;
         }
 
- 
+
         public IActionResult Done(string purchaseId, Order order)
         {
             var response = _connectionHandler.GetPaymentStatus(purchaseId);
@@ -71,6 +72,7 @@ namespace WebShop.Web.Controllers
 
             var purchaseViewModel = new ExtraPurchaseViewModel
             {
+                Product = product,
                 ProductId = 5,
                 PurchaseId = purchaseId
             };
@@ -78,7 +80,8 @@ namespace WebShop.Web.Controllers
             if (response.State == 2)
             {
                 var shoppingCartItems = _shoppingCart.GetShoppingCartItems();
-               _unitOfWork.Order.CreateOrder(order, response, shoppingCartItems);
+                _unitOfWork.Order.CreateOrder(order, response, shoppingCartItems);
+
                 switch (response.PaymentMethod)
                 {
                     case PaymentMethodEnum.Invocie:
@@ -101,13 +104,13 @@ namespace WebShop.Web.Controllers
 
             request.ExternalId = purchaseViewModel.PurchaseId;
             request.Items = ConvertShoppingCartItemToItem();
-
+            
             var order = _unitOfWork.Order.Find(o => o.PurchaseId == purchaseViewModel.PurchaseId).FirstOrDefault();                      //search for purchaseId in order.repositoriy
+
+            request.OrderReference = order.OrderId;
 
             var orderDetail = _unitOfWork.Product.ConvertProductToOrderDetail(product, order.OrderId);
 
-            order.OrderDetails.Add(orderDetail);
-            _unitOfWork.Order.Add(order);
             _connectionHandler.PurchaseOrder(request);
 
             return View("CheckoutComplete" /*Add order*/);

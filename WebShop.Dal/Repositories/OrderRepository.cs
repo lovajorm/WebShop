@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
 using WebShop.Avarda.Api.Avarda;
 using WebShop.Bo;
 using WebShop.Dal.Interfaces;
@@ -35,6 +32,7 @@ namespace WebShop.Dal.Repositories
             order.PurchaseId = response.PurchaseId;
 
             WebShopDbContext.Orders.Add(order);
+            
 
             List<OrderDetail> Details = new List<OrderDetail>();
 
@@ -55,5 +53,7 @@ namespace WebShop.Dal.Repositories
 
             return Details;
         }
+
+        
     }
 }

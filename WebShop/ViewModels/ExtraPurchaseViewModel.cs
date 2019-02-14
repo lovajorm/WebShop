@@ -2,10 +2,9 @@
 
 namespace WebShop.Web.ViewModels
 {
-    public class ExtraPurchaseViewModel : Product
+    public class ExtraPurchaseViewModel
     {
-        public Product Product { get; set; }
-        public string PurchaseId { get; set; }
         public int ProductId { get; set; }
+        public string PurchaseId { get; set; }
     }
 }

@@ -15,5 +15,16 @@ namespace WebShop.Dal.Repositories
         {
             return WebShopDbContext.Products.Include(c => c.Category);
         }
+        public OrderDetail ConvertProductToOrderDetail(Product product, int orderId)
+        {
+            var orderDetail = new OrderDetail()
+            {
+                Amount = 1,
+                ProductID = product.ProductID,
+                OrderId = orderId,
+                Price = product.Price
+            };
+            return orderDetail;
+        }
     }
 }

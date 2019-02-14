@@ -53,8 +53,6 @@ namespace WebShop.Dal.Repositories
             order.OrderDetails = Details;
             WebShopDbContext.Complete();
 
-            
-
             return Details;
         }
     }

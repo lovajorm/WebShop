@@ -12,7 +12,7 @@ namespace WebShop.Dal
         DbSet<OrderDetail> OrderDetails { get; set; }
         DbSet<Order> Orders { get; set; }
         DbSet<Product> Products { get; set; }
-        DbSet<ShoppingCartItem> ShoppingCartItem { get; set; }
+        DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         int Complete();
         void Dispose();

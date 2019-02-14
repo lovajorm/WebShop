@@ -6,5 +6,7 @@ namespace WebShop.Dal.Interfaces
     public interface IProductRepository : IRepository<Product>
     {
         IIncludableQueryable<Product, Category> GetProducts();
+
+        OrderDetail ConvertProductToOrderDetail(Product product, int orderId);
     }
 }

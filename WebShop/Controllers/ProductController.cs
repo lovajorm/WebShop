@@ -1,78 +1,69 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using log4net.Core;
-using log4net.Repository.Hierarchy;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using WebShop.Bo;
-using WebShop.Dal;
+using WebShop.Dal.Interfaces;
+using WebShop.Dal.UoW;
 using WebShop.Log;
-using WebShop.Web.Interfaces;
 using WebShop.Web.ViewModels;
-using ILogger = Microsoft.Extensions.Logging.ILogger;
-using ILoggerFactory = Microsoft.Extensions.Logging.ILoggerFactory;
 
 namespace WebShop.Web.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly WebShopDbContext _context;
+        private IUnitOfWork _unitOfWork;
         private readonly IMessageLogger _logger;
-        private readonly ICategoryRepository _categoryRepository;
-        private readonly IProductRepository _productRepository;
+        private readonly IMapper _mapper;
 
-        public ProductController(ICategoryRepository categoryRepository, IProductRepository productRepository, WebShopDbContext context, IMessageLogger logger)
+        public ProductController(IMessageLogger logger, IMapper mapper, IUnitOfWork unitOfWork)
         {
-            _categoryRepository = categoryRepository;
-            _productRepository = productRepository;
-            _context = context;
+            _unitOfWork = unitOfWork;
             _logger = logger;
+            _mapper = mapper;
         }
 
         public ViewResult List(string category)
         {
-            string _category = category;
-            IEnumerable<Product> products;
-            string currentCategory = string.Empty;
-
+            IEnumerable<Product> products = null;
             if (string.IsNullOrEmpty(category))
             {
-                products = _productRepository.Products.OrderBy(p => p.ProductID);
-                currentCategory = "All products";
+                products = _unitOfWork.Product.GetProducts();
             }
             else
             {
-                if (string.Equals("Clothes", _category, StringComparison.OrdinalIgnoreCase))
-                    products = _productRepository.Products.Where(p => p.Category.CategoryName.Equals("Clothes")).OrderBy(p => p.Category);
-                else if 
-                    (string.Equals("Furniture", _category, StringComparison.OrdinalIgnoreCase))
-                    products = _productRepository.Products.Where(p => p.Category.CategoryName.Equals("Furniture")).OrderBy(p => p.Category);
-                else
-                    products = _productRepository.Products.Where(p => p.Category.CategoryName.Equals("Electronics")).OrderBy(p => p.Category);
-
-                currentCategory = _category;
+                switch (category)
+                {
+                    case "Clothes":
+                        products = _unitOfWork.Product.Find(p => p.Category.CategoryName == category);
+                        break;
+                    case "Furniture":
+                        products = _unitOfWork.Product.Find(p => p.Category.CategoryName == category);
+                        break;
+                    case "Electronics":
+                        products = _unitOfWork.Product.Find(p => p.Category.CategoryName == category);
+                        break;
+                }
             }
 
             var productListViewModel = new ProductListViewModel
             {
                 Products = products,
-                CurrentCategory = currentCategory
             };
+
             return View(productListViewModel);
         }
 
         // GET: WebShop/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var product = await _context.Products
-                .FirstOrDefaultAsync(m => m.ProductID == id);
+            var product = _unitOfWork.Product.Find(p => p.ProductID == id).FirstOrDefault();
+                
             if (product == null)
             {
                 return NotFound();

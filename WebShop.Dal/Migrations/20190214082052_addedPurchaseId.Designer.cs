@@ -10,8 +10,8 @@ using WebShop.Dal;
 namespace WebShop.Dal.Migrations
 {
     [DbContext(typeof(WebShopDbContext))]
-    [Migration("20190131103826_addedSsnToOrder")]
-    partial class addedSsnToOrder
+    [Migration("20190214082052_addedPurchaseId")]
+    partial class addedPurchaseId
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,42 +48,29 @@ namespace WebShop.Dal.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Adress")
-                        .IsRequired()
-                        .HasMaxLength(100);
+                    b.Property<string>("Address1");
 
-                    b.Property<string>("City")
-                        .HasMaxLength(10);
+                    b.Property<string>("Address2");
 
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("City");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("Country");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("Email");
 
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
 
                     b.Property<DateTime>("OrderPlaced");
 
                     b.Property<float>("OrderTotal");
 
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasMaxLength(25);
+                    b.Property<string>("PurchaseId");
 
                     b.Property<string>("Ssn");
 
-                    b.Property<string>("ZipCode")
-                        .IsRequired()
-                        .HasMaxLength(10);
+                    b.Property<string>("ZipCode");
 
                     b.HasKey("OrderId");
 
@@ -166,13 +153,13 @@ namespace WebShop.Dal.Migrations
 
                     b.HasIndex("ProductID");
 
-                    b.ToTable("ShoppingCartItems");
+                    b.ToTable("ShoppingCartItem");
                 });
 
             modelBuilder.Entity("WebShop.Bo.OrderDetail", b =>
                 {
                     b.HasOne("WebShop.Bo.Order", "Order")
-                        .WithMany("OrderLines")
+                        .WithMany("OrderDetails")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade);
 

@@ -1,5 +1,5 @@
-﻿using WebShop.Web.Models;
-using WebShop.Bo;
+﻿using WebShop.Bo;
+using WebShop.Web.Models;
 
 namespace WebShop.Web.ViewModels
 {

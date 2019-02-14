@@ -2,28 +2,31 @@
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Avarda.Api;
 using WebShop.Avarda.Api.Avarda;
+using WebShop.Bo;
+using WebShop.Dal.UoW;
 using WebShop.Models;
-using WebShop.Web.Interfaces;
 using WebShop.Web.Models;
 using WebShop.Common;
 using System.Collections.Generic;
+using System.Linq;
+using WebShop.Web.ViewModels;
 
 namespace WebShop.Web.Controllers
 {
     public class OrderController : Controller
     {
-        private readonly IOrderRepository _orderRepository;
         private readonly ShoppingCart _shoppingCart;
+        private IUnitOfWork _unitOfWork;
+        private ConnectionHandler _getCustomer;
         private readonly IEmailHandler _emailHandler;
         private ConnectionHandler _connectionHandler;
 
-        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart, IEmailHandler emailHandler)
+        public OrderController(IUnitOfWork unitOfWork, ShoppingCart shoppingCart, IEmailHandler emailHandler)
         {
-            _orderRepository = orderRepository;
             _shoppingCart = shoppingCart;
             _emailHandler = emailHandler;
-
             _connectionHandler = new ConnectionHandler();
+            _unitOfWork = unitOfWork;
         }
 
         [HttpGet]
@@ -59,25 +62,55 @@ namespace WebShop.Web.Controllers
             return itemList;
         }
 
+ 
         public IActionResult Done(string purchaseId, Order order)
         {
             var response = _connectionHandler.GetPaymentStatus(purchaseId);
 
+            var product = _unitOfWork.Product.Get(5);
+
+            var purchaseViewModel = new ExtraPurchaseViewModel
+            {
+                ProductId = 5,
+                PurchaseId = purchaseId
+            };
+
             if (response.State == 2)
             {
-
-               _orderRepository.CreateOrder(order, response);
+                var shoppingCartItems = _shoppingCart.GetShoppingCartItems();
+               _unitOfWork.Order.CreateOrder(order, response, shoppingCartItems);
                 switch (response.PaymentMethod)
                 {
                     case PaymentMethodEnum.Invocie:
-                    case PaymentMethodEnum.Loan:
+                    case PaymentMethodEnum.Swish:
                         ViewData["description"] = purchaseId;
-                        return View();
+                        return View(purchaseViewModel);
                     default:
-                        return View("CheckoutComplete");
+                        return View("CheckoutComplete", order);
                 }
             }
+            _shoppingCart.ClearCart();
             return View("Error", new ErrorViewModel { ErrorMessage = $"Payment failed." });
+        }
+
+        public IActionResult PurchaseOrder(ExtraPurchaseViewModel purchaseViewModel)
+        {
+            var product = _unitOfWork.Product.Get(purchaseViewModel.ProductId);
+
+            var request = new PurchaseOrderRequest();
+
+            request.ExternalId = purchaseViewModel.PurchaseId;
+            request.Items = ConvertShoppingCartItemToItem();
+
+            var order = _unitOfWork.Order.Find(o => o.PurchaseId == purchaseViewModel.PurchaseId).FirstOrDefault();                      //search for purchaseId in order.repositoriy
+
+            var orderDetail = _unitOfWork.Product.ConvertProductToOrderDetail(product, order.OrderId);
+
+            order.OrderDetails.Add(orderDetail);
+            _unitOfWork.Order.Add(order);
+            _connectionHandler.PurchaseOrder(request);
+
+            return View("CheckoutComplete" /*Add order*/);
         }
     }
 }

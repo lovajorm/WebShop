@@ -8,6 +8,10 @@ using WebShop.Models;
 using WebShop.Web.Models;
 using WebShop.Common;
 using System.Collections.Generic;
+using System.Linq;
+using WebShop.Dal.Migrations;
+using WebShop.Web.Repositories;
+using WebShop.Web.ViewModels;
 
 namespace WebShop.Web.Controllers
 {
@@ -18,12 +22,12 @@ namespace WebShop.Web.Controllers
         private ConnectionHandler _getCustomer;
         private readonly IEmailHandler _emailHandler;
         private ConnectionHandler _connectionHandler;
+        private readonly IProductRepository _productRepository;
 
         public OrderController(IUnitOfWork unitOfWork, ShoppingCart shoppingCart, IEmailHandler emailHandler)
         {
             _shoppingCart = shoppingCart;
             _emailHandler = emailHandler;
-
             _connectionHandler = new ConnectionHandler();
             _unitOfWork = unitOfWork;
             
@@ -62,9 +66,19 @@ namespace WebShop.Web.Controllers
             return itemList;
         }
 
-        public IActionResult Done(string purchaseId, Order order)
+ 
+        public IActionResult Done(string purchaseId, Order order, Product product)
         {
             var response = _connectionHandler.GetPaymentStatus(purchaseId);
+
+            product = _productRepository.Products.FirstOrDefault(p => p.ProductID.Equals(5));
+
+            var purchaseViewModel = new ExtraPurchaseViewModel
+            {
+                Product = product,
+                PurchaseId = purchaseId,
+                ProductId = product.ProductID
+            };
 
             if (response.State == 2)
             {
@@ -73,14 +87,27 @@ namespace WebShop.Web.Controllers
                 switch (response.PaymentMethod)
                 {
                     case PaymentMethodEnum.Invocie:
-                    case PaymentMethodEnum.Loan:
+                    case PaymentMethodEnum.Swish:
                         ViewData["description"] = purchaseId;
-                        return View();
+                        return View(purchaseViewModel);
                     default:
-                        return View("CheckoutComplete");
+                        return View("CheckoutComplete", order);
                 }
             }
+            _shoppingCart.ClearCart();
             return View("Error", new ErrorViewModel { ErrorMessage = $"Payment failed." });
+        }
+
+        public IActionResult PurchaseOrder(ExtraPurchaseViewModel purchaseViewModel)
+        {
+            var request = new PurchaseOrderRequest();
+
+            request.ExternalId = purchaseViewModel.PurchaseId;
+            request.Items = ConvertShoppingCartItemToItem();
+
+            _connectionHandler.PurchaseOrder(request);
+
+            return View("CheckoutComplete" /*Add order*/);
         }
     }
 }

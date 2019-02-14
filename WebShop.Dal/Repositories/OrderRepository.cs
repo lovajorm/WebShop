@@ -50,7 +50,10 @@ namespace WebShop.Dal.Repositories
                 WebShopDbContext.OrderDetails.Add(orderDetail);
                 Details.Add(orderDetail);
             }
+            order.OrderDetails = Details;
             WebShopDbContext.Complete();
+
+            
 
             return Details;
         }

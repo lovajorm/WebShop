@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebShop.Dal;
 using WebShop.Web.Models;
 using WebShop.Web.ViewModels;
 
-namespace WebShop.Web.Components
+namespace WebShop.Web.Component
 {
     public class ShoppingCartSummary : ViewComponent
     {
@@ -12,7 +13,7 @@ namespace WebShop.Web.Components
         {
             _shoppingCart = shoppingCart;
         }
-
+        
         public IViewComponentResult Invoke()
         {
             var items = _shoppingCart.GetShoppingCartItems();

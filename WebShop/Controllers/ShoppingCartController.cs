@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using WebShop.Dal.UoW;
 using WebShop.Web.Models;
 using WebShop.Web.Interfaces;
 using WebShop.Web.ViewModels;
@@ -8,13 +9,13 @@ namespace WebShop.Web.Controllers
 {
     public class ShoppingCartController : Controller
     {
-        private readonly IProductRepository _productRepository;
         private readonly ShoppingCart _shoppingCart;
+        private IUnitOfWork _unitOfWork;
 
-        public ShoppingCartController(IProductRepository productRepository, ShoppingCart shoppingCart)
+        public ShoppingCartController(IUnitOfWork unitOfWork, ShoppingCart shoppingCart)
         {
-            _productRepository = productRepository;
             _shoppingCart = shoppingCart;
+            _unitOfWork = unitOfWork;
         }
 
         public ViewResult Index()
@@ -31,7 +32,7 @@ namespace WebShop.Web.Controllers
 
         public RedirectToActionResult AddToShoppingCart(int productId)
         {
-            var selectedProduct = _productRepository.Products.FirstOrDefault(p => p.ProductID == productId);
+            var selectedProduct = _unitOfWork.Product.GetProducts().FirstOrDefault(p => p.ProductID == productId);
 
             if (selectedProduct != null)
             {
@@ -43,7 +44,7 @@ namespace WebShop.Web.Controllers
 
         public RedirectToActionResult RemoveFromShoppingCart(int productId)
         {
-            var selectedProduct = _productRepository.Products.FirstOrDefault(p => p.ProductID == productId);
+            var selectedProduct = _unitOfWork.Product.GetProducts().FirstOrDefault(p => p.ProductID == productId);
 
             if (selectedProduct != null)
             {

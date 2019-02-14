@@ -8,9 +8,9 @@ using log4net.Repository;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Logging;
 using Moq;
 using WebShop.Dal;
+using WebShop.Dal.Interfaces;
 using WebShop.Log;
 using WebShop.Web.Controllers;
-using WebShop.Web.Interfaces;
 using Xunit;
 
 namespace WebShop.Tests
@@ -19,11 +19,9 @@ namespace WebShop.Tests
     {
         private readonly WebShopDbContext _context;
         private readonly Log.IMessageLogger _logger;
-        private readonly Mock<ICategoryRepository> _categoryRepository;
         private readonly Mock<IProductRepository> _productRepository;
         public LoggerTests()
         {
-            _categoryRepository = new Mock<ICategoryRepository>();
             _productRepository = new Mock<IProductRepository>();
         }
 

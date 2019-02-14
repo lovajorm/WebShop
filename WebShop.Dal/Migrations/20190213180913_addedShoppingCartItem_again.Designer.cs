@@ -10,8 +10,8 @@ using WebShop.Dal;
 namespace WebShop.Dal.Migrations
 {
     [DbContext(typeof(WebShopDbContext))]
-    [Migration("20190205101426_addressline2")]
-    partial class addressline2
+    [Migration("20190213180913_addedShoppingCartItem_again")]
+    partial class addedShoppingCartItem_again
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -161,13 +161,13 @@ namespace WebShop.Dal.Migrations
 
                     b.HasIndex("ProductID");
 
-                    b.ToTable("ShoppingCartItems");
+                    b.ToTable("ShoppingCartItem");
                 });
 
             modelBuilder.Entity("WebShop.Bo.OrderDetail", b =>
                 {
                     b.HasOne("WebShop.Bo.Order", "Order")
-                        .WithMany("OrderLines")
+                        .WithMany("OrderDetails")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade);
 

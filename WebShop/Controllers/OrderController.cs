@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using WebShop.Avarda.Api;
 using WebShop.Avarda.Api.Avarda;
 using WebShop.Bo;
+using WebShop.Dal.UoW;
 using WebShop.Models;
-using WebShop.Web.Interfaces;
 using WebShop.Web.Models;
 using WebShop.Common;
 using System.Collections.Generic;
@@ -13,18 +13,20 @@ namespace WebShop.Web.Controllers
 {
     public class OrderController : Controller
     {
-        private readonly IOrderRepository _orderRepository;
         private readonly ShoppingCart _shoppingCart;
+        private IUnitOfWork _unitOfWork;
+        private ConnectionHandler _getCustomer;
         private readonly IEmailHandler _emailHandler;
         private ConnectionHandler _connectionHandler;
 
-        public OrderController(IOrderRepository orderRepository, ShoppingCart shoppingCart, IEmailHandler emailHandler)
+        public OrderController(IUnitOfWork unitOfWork, ShoppingCart shoppingCart, IEmailHandler emailHandler)
         {
-            _orderRepository = orderRepository;
             _shoppingCart = shoppingCart;
             _emailHandler = emailHandler;
 
             _connectionHandler = new ConnectionHandler();
+            _unitOfWork = unitOfWork;
+            
         }
 
         [HttpGet]

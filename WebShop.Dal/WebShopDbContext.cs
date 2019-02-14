@@ -1,19 +1,21 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 using WebShop.Bo;
 
 namespace WebShop.Dal
 {
-    public class WebShopDbContext : DbContext
+    public class WebShopDbContext : DbContext, IWebShopDbContext
     {
-        public DbSet<Product> Products { get; set; }
-        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+        public virtual DbSet<Product> Products { get; set; }   //virtual can be overridden in derived class eg. overridden by any class that inherits from it.
+        public DbSet<ShoppingCartItem> ShoppingCartItem { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail > OrderDetails { get; set; }
 
-        public WebShopDbContext(DbContextOptions<WebShopDbContext> context) : base(context)
-        {
-        }
+        public WebShopDbContext(DbContextOptions<WebShopDbContext> context) : base(context) {}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -138,6 +140,43 @@ namespace WebShop.Dal
                     ImageUrl = "~/images/Furniture/table.jpg",
                     CategoryId = 2
                 });
+            modelBuilder.Entity<ShoppingCartItem>().ToTable("ShoppingCartItem");
+        }
+
+        public int Complete()
+        {
+            return base.SaveChanges();
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+        }
+
+        void IWebShopDbContext.Add<T>(T entity)
+        {
+            base.Add<T>(entity);
+        }
+
+        void IWebShopDbContext.Remove<T>(T entity)
+        {
+            base.Remove<T>(entity);
+        }
+
+        IEnumerable<T> IWebShopDbContext.Find<T>(Expression<Func<T, bool>> expression)
+        {
+            //yield return base.Find<T>(expression);
+            return base.Set<T>().Where(expression);
+        }
+
+        IEnumerable<T> IWebShopDbContext.GetAll<T>()
+        {
+            return base.Set<T>().ToList();
+        }
+
+        T IWebShopDbContext.Get<T>(int id)
+        {
+            return base.Find<T>(id);
         }
     }
 }

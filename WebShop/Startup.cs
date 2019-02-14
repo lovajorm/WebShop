@@ -46,7 +46,7 @@ namespace WebShop
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => ShoppingCart.GetCart(sp));                                                         //Loads the shopping cart function.  
-            services.AddTransient<IEmailHandler, EmailHandler>()
+            services.AddTransient<IEmailHandler, EmailHandler>();
             //services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             //services.AddTransient<IProductRepository, ProductRepository>();

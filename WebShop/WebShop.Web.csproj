@@ -28,6 +28,8 @@
 
   <ItemGroup>
     <Folder Include="AutoMapper\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Repositories\" />
     <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
 

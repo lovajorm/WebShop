@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Dal.UoW;
 using WebShop.Web.Models;
-using WebShop.Web.Interfaces;
 using WebShop.Web.ViewModels;
 
 namespace WebShop.Web.Controllers

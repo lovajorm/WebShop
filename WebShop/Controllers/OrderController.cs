@@ -68,8 +68,8 @@ namespace WebShop.Web.Controllers
 
             if (response.State == 2)
             {
-
-               _orderRepository.CreateOrder(order, response);
+                var shoppingCartItems = _shoppingCart.GetShoppingCartItems();
+               _unitOfWork.Order.CreateOrder(order, response, shoppingCartItems);
                 switch (response.PaymentMethod)
                 {
                     case PaymentMethodEnum.Invocie:

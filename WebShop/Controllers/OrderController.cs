@@ -17,7 +17,6 @@ namespace WebShop.Web.Controllers
     {
         private readonly ShoppingCart _shoppingCart;
         private IUnitOfWork _unitOfWork;
-        private ConnectionHandler _getCustomer;
         private readonly IEmailHandler _emailHandler;
         private ConnectionHandler _connectionHandler;
 
@@ -30,11 +29,14 @@ namespace WebShop.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult InitializePayment(PaymentRequest request)
+        public IActionResult InitializePayment(int? purchaseId)
         {
-            request.Price = _shoppingCart.GetShoppingCartTotal();
-            request.Items = ConvertShoppingCartItemToItem();
-            request.OrderReference = "4444";
+            var request = new PaymentRequest()
+            {
+                Price = _shoppingCart.GetShoppingCartTotal(),
+                Items = ConvertShoppingCartItemToItem()
+            };
+            //request.OrderReference = "4444";
 
             try
             {

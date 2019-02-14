@@ -9,8 +9,6 @@ using WebShop.Web.Models;
 using WebShop.Common;
 using System.Collections.Generic;
 using System.Linq;
-using WebShop.Dal.Migrations;
-using WebShop.Web.Repositories;
 using WebShop.Web.ViewModels;
 
 namespace WebShop.Web.Controllers
@@ -22,7 +20,6 @@ namespace WebShop.Web.Controllers
         private ConnectionHandler _getCustomer;
         private readonly IEmailHandler _emailHandler;
         private ConnectionHandler _connectionHandler;
-        private readonly IProductRepository _productRepository;
 
         public OrderController(IUnitOfWork unitOfWork, ShoppingCart shoppingCart, IEmailHandler emailHandler)
         {
@@ -30,7 +27,6 @@ namespace WebShop.Web.Controllers
             _emailHandler = emailHandler;
             _connectionHandler = new ConnectionHandler();
             _unitOfWork = unitOfWork;
-            
         }
 
         [HttpGet]
@@ -38,6 +34,7 @@ namespace WebShop.Web.Controllers
         {
             request.Price = _shoppingCart.GetShoppingCartTotal();
             request.Items = ConvertShoppingCartItemToItem();
+            request.OrderReference = "4444";
 
             try
             {
@@ -66,24 +63,25 @@ namespace WebShop.Web.Controllers
             return itemList;
         }
 
- 
-        public IActionResult Done(string purchaseId, Order order, Product product)
+
+        public IActionResult Done(string purchaseId, Order order)
         {
             var response = _connectionHandler.GetPaymentStatus(purchaseId);
 
-            product = _productRepository.Products.FirstOrDefault(p => p.ProductID.Equals(5));
+            var product = _unitOfWork.Product.Get(5);
 
             var purchaseViewModel = new ExtraPurchaseViewModel
             {
                 Product = product,
-                PurchaseId = purchaseId,
-                ProductId = product.ProductID
+                ProductId = 5,
+                PurchaseId = purchaseId
             };
 
             if (response.State == 2)
             {
                 var shoppingCartItems = _shoppingCart.GetShoppingCartItems();
-               _unitOfWork.Order.CreateOrder(order, response, shoppingCartItems);
+                _unitOfWork.Order.CreateOrder(order, response, shoppingCartItems);
+
                 switch (response.PaymentMethod)
                 {
                     case PaymentMethodEnum.Invocie:
@@ -100,10 +98,18 @@ namespace WebShop.Web.Controllers
 
         public IActionResult PurchaseOrder(ExtraPurchaseViewModel purchaseViewModel)
         {
+            var product = _unitOfWork.Product.Get(purchaseViewModel.ProductId);
+
             var request = new PurchaseOrderRequest();
 
             request.ExternalId = purchaseViewModel.PurchaseId;
             request.Items = ConvertShoppingCartItemToItem();
+            
+            var order = _unitOfWork.Order.Find(o => o.PurchaseId == purchaseViewModel.PurchaseId).FirstOrDefault();                      //search for purchaseId in order.repositoriy
+
+            request.OrderReference = order.OrderId;
+
+            var orderDetail = _unitOfWork.Product.ConvertProductToOrderDetail(product, order.OrderId);
 
             _connectionHandler.PurchaseOrder(request);
 

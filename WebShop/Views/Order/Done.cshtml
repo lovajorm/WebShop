@@ -1,4 +1,5 @@
-﻿@model WebShop.Web.ViewModels.ExtraPurchaseViewModel
+﻿@using WebShop.Bo
+@model WebShop.Web.ViewModels.ExtraPurchaseViewModel
 
 @{
     ViewData["Title"] = "Done";
@@ -9,19 +10,24 @@
 <h3>You can add the following item to your purchase</h3>
 
 <div class="col-sm-6">
-    <img height="200px" src="@Url.Content(Model.ImageUrl)" />
+    <img height="200px" src="@Url.Content(Model.Product.ImageUrl)" />
     <div class="caption">
-        <h3>Price: @Model.Price.ToString("c")</h3>
-        <h3>@Model.Title</h3>
-        <p>@Model.Description</p>
+        <h3>Price: @Model.Product.Price.ToString("c")</h3>
+        <h3>@Model.Product.Title</h3>
+        <p>@Model.Product.Description</p>
     </div>
     <div>
-        <a class="btn" id="cartButton"
+        @*<a class="btn" id="cartButton"
            asp-controller="Order"
            asp-action="PurchaseOrder"
-           asp-route-productId="@Model.ProductID">
+           asp-route-purchaseId="@Model.PurchaseId"
+           >
+            
             Add to Order
-        </a>
+        </a>*@
+        
+        <input type="button" class="btn" value="Add to order" onclick="location.href='@Url.Action("PurchaseOrder", @Model)'" />
+
     </div>
 </div>
 

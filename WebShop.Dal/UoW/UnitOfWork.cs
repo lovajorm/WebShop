@@ -17,7 +17,7 @@ namespace WebShop.Dal.UoW
             _context = context;
             Product = new ProductRepository(context);
             Order = new OrderRepository(context);
-            ShoppingCart = context.ShoppingCartItem;
+            ShoppingCart = context.ShoppingCartItems;
         }
 
         public int Complete()

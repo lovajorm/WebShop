@@ -94,9 +94,9 @@ namespace WebShop.Web.Models
         {
             var cartItems = _unitOfWork.ShoppingCart
                 .Where(cart => cart.ShoppingCartId == ShoppingCartId);
-
+            
             _unitOfWork.ShoppingCart.RemoveRange(cartItems);
-
+            ShoppingCartItems = null;
             _unitOfWork.Complete();
         }
 

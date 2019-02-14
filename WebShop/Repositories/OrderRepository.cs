@@ -56,6 +56,8 @@ namespace WebShop.Web.Repositories
                 _context.OrderDetails.Add(orderDetail);
                 Details.Add(orderDetail);
             }
+
+            order.OrderDetails = Details;
             _context.SaveChanges();
 
             return Details;

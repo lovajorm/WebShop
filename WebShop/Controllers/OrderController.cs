@@ -59,12 +59,14 @@ namespace WebShop.Web.Controllers
             return itemList;
         }
 
-        public IActionResult Done(string purchaseId)
+        public IActionResult Done(string purchaseId, Order order)
         {
             var response = _connectionHandler.GetPaymentStatus(purchaseId);
 
             if (response.State == 2)
             {
+
+               _orderRepository.CreateOrder(order, response);
                 switch (response.PaymentMethod)
                 {
                     case PaymentMethodEnum.Invocie:

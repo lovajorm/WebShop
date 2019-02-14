@@ -5,14 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20190131104300_changedCityStringLength.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="2.2.10" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WebShop.Avarda.Api\WebShop.Avarda.Api.csproj" />
     <ProjectReference Include="..\WebShop.Bo\WebShop.Bo.csproj" />
   </ItemGroup>
 

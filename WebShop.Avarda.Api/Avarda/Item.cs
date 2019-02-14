@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WebShop.Avarda.Api.Avarda
+﻿namespace WebShop.Avarda.Api.Avarda
 {
     public class Item
     {

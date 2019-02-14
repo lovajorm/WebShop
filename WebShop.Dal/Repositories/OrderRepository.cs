@@ -1,28 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.EntityFrameworkCore;
 using WebShop.Avarda.Api.Avarda;
 using WebShop.Bo;
-using WebShop.Dal;
-using WebShop.Web.Interfaces;
-using WebShop.Web.Models;
+using WebShop.Dal.Interfaces;
 
-namespace WebShop.Web.Repositories
+namespace WebShop.Dal.Repositories
 {
-    public class OrderRepository : IOrderRepository
+    public class OrderRepository : Repository<Order>, IOrderRepository
     {
-        private readonly WebShopDbContext _context;
-        private readonly ShoppingCart _shoppingCart;
-
-        public OrderRepository(WebShopDbContext context, ShoppingCart shoppingCart)
-        {
-            _context = context;
-            _shoppingCart = shoppingCart;
-        }
-        
+        public IWebShopDbContext WebShopDbContext => Context as IWebShopDbContext;
+        public OrderRepository(IWebShopDbContext context) : base(context){}
         //Happens on "Complete checkout"
-        public List<OrderDetail> CreateOrder(Order order, PaymentStatus response)                        //Method which creates and saves order when payment is authorized.
+        public List<OrderDetail> CreateOrder(Order order, PaymentStatus response, List<ShoppingCartItem> items)                        //Method which creates and saves order when payment is authorized.
         {
-            var shoppingCartItems = _shoppingCart.GetShoppingCartItems();
+            //var shoppingCartItems = _shoppingCart.GetShoppingCartItems();
             order.OrderPlaced = DateTime.Now;
 
             //var total = _shoppingCart.GetShoppingCartTotal();
@@ -40,11 +34,11 @@ namespace WebShop.Web.Repositories
             order.Country = response.CountryCode;
             order.PurchaseId = response.PurchaseId;
 
-            _context.Orders.Add(order);
+            WebShopDbContext.Orders.Add(order);
 
-            List<OrderDetail> Details = new List<OrderDetail>(); 
-            
-            foreach (var item in shoppingCartItems)
+            List<OrderDetail> Details = new List<OrderDetail>();
+
+            foreach (var item in items)
             {
                 var orderDetail = new OrderDetail()
                 {
@@ -53,10 +47,13 @@ namespace WebShop.Web.Repositories
                     OrderId = order.OrderId,
                     Price = item.Product.Price
                 };
-                _context.OrderDetails.Add(orderDetail);
+                WebShopDbContext.OrderDetails.Add(orderDetail);
                 Details.Add(orderDetail);
             }
-            _context.SaveChanges();
+            order.OrderDetails = Details;
+            WebShopDbContext.Complete();
+
+            
 
             return Details;
         }

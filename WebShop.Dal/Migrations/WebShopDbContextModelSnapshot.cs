@@ -151,7 +151,7 @@ namespace WebShop.Dal.Migrations
 
                     b.HasIndex("ProductID");
 
-                    b.ToTable("ShoppingCartItems");
+                    b.ToTable("ShoppingCartItem");
                 });
 
             modelBuilder.Entity("WebShop.Bo.OrderDetail", b =>

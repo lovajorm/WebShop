@@ -21,6 +21,35 @@ namespace WebShop.Avarda.Api
             };
         }
 
+        public void PurchaseOrder(PurchaseOrderRequest request)
+        {
+            using (var handler = new WebRequestHandler())
+            {
+                using (var client = new HttpClient(handler))
+                {
+                    var bytearray = Encoding.ASCII.GetBytes(_connectionDetails.ToString());  
+
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray));
+
+                    client.BaseAddress = new Uri($"https://stage.avarda.org/");
+
+                    var body = JsonConvert.SerializeObject(request);
+                    var requestBody = new StringContent(body, Encoding.UTF8, "application/json");
+                    var result = client.PostAsync("checkout2/CheckOut2Api/Commerce/PurchaseOrder", requestBody).Result;
+
+                    if (!result.IsSuccessStatusCode)
+                    {
+                        throw new Exception(result.Content.ReadAsStringAsync().Result);
+                    }
+
+                    //if (result.IsSuccessStatusCode)
+                    //{
+                    //    response = JsonConvert.DeserializeObject<PaymentStatus>(result.Content.ReadAsStringAsync().Result);
+                    //}
+                }
+            }
+        }
+
         public PaymentStatus GetPaymentStatus(string paymentId)
         {
             PaymentStatus response = null;

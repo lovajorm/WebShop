@@ -22,5 +22,7 @@ namespace WebShop.Web.Repositories
         }
 
         public Product GetProductById(int productId) => _context.Products.FirstOrDefault(p => p.ProductID == productId);
+
+        public Product GetOneProduct(int productId) => _context.Products.FirstOrDefault(p => p.ProductID == productId);
     }
 }

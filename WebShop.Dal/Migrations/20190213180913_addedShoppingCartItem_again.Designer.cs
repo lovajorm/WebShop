@@ -10,8 +10,8 @@ using WebShop.Dal;
 namespace WebShop.Dal.Migrations
 {
     [DbContext(typeof(WebShopDbContext))]
-    [Migration("20190131103826_addedSsnToOrder")]
-    partial class addedSsnToOrder
+    [Migration("20190213180913_addedShoppingCartItem_again")]
+    partial class addedShoppingCartItem_again
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,18 +48,17 @@ namespace WebShop.Dal.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Adress")
+                    b.Property<string>("Address1")
                         .IsRequired()
                         .HasMaxLength(100);
 
+                    b.Property<string>("Address2")
+                        .HasMaxLength(100);
+
                     b.Property<string>("City")
-                        .HasMaxLength(10);
+                        .HasMaxLength(20);
 
                     b.Property<string>("Country")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(50);
 
@@ -74,10 +73,6 @@ namespace WebShop.Dal.Migrations
                     b.Property<DateTime>("OrderPlaced");
 
                     b.Property<float>("OrderTotal");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasMaxLength(25);
 
                     b.Property<string>("Ssn");
 
@@ -166,13 +161,13 @@ namespace WebShop.Dal.Migrations
 
                     b.HasIndex("ProductID");
 
-                    b.ToTable("ShoppingCartItems");
+                    b.ToTable("ShoppingCartItem");
                 });
 
             modelBuilder.Entity("WebShop.Bo.OrderDetail", b =>
                 {
                     b.HasOne("WebShop.Bo.Order", "Order")
-                        .WithMany("OrderLines")
+                        .WithMany("OrderDetails")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade);
 

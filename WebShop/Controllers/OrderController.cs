@@ -81,18 +81,20 @@ namespace WebShop.Web.Controllers
             {
                 var shoppingCartItems = _shoppingCart.GetShoppingCartItems();
                 _unitOfWork.Order.CreateOrder(order, response, shoppingCartItems);
-
+                
                 switch (response.PaymentMethod)
                 {
                     case PaymentMethodEnum.Invocie:
-                    case PaymentMethodEnum.Swish:
+                    //case PaymentMethodEnum.Swish:
                         ViewData["description"] = purchaseId;
+
                         return View(purchaseViewModel);
+                        
                     default:
+                        _shoppingCart.ClearCart();
                         return View("CheckoutComplete", order);
                 }
             }
-            _shoppingCart.ClearCart();
             return View("Error", new ErrorViewModel { ErrorMessage = $"Payment failed." });
         }
 
@@ -104,7 +106,9 @@ namespace WebShop.Web.Controllers
 
             request.ExternalId = purchaseViewModel.PurchaseId;
             request.Items = ConvertShoppingCartItemToItem();
-            
+
+            _shoppingCart.ClearCart();
+
             var order = _unitOfWork.Order.Find(o => o.PurchaseId == purchaseViewModel.PurchaseId).FirstOrDefault();                      //search for purchaseId in order.repositoriy
 
             request.OrderReference = order.OrderId;
@@ -113,7 +117,7 @@ namespace WebShop.Web.Controllers
 
             _connectionHandler.PurchaseOrder(request);
 
-            return View("CheckoutComplete" /*Add order*/);
+            return View("CheckoutComplete", order);
         }
     }
 }

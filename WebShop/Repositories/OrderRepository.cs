@@ -19,7 +19,7 @@ namespace WebShop.Web.Repositories
             _shoppingCart = shoppingCart;
         }
         
-        //Happens on "Complete checkout"
+        
         public List<OrderDetail> CreateOrder(Order order, PaymentStatus response)                        //Method which creates and saves order when payment is authorized.
         {
             var shoppingCartItems = _shoppingCart.GetShoppingCartItems();

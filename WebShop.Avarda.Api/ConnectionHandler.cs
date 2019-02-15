@@ -41,11 +41,6 @@ namespace WebShop.Avarda.Api
                     {
                         throw new Exception(result.Content.ReadAsStringAsync().Result);
                     }
-
-                    //if (result.IsSuccessStatusCode)
-                    //{
-                    //    response = JsonConvert.DeserializeObject<PaymentStatus>(result.Content.ReadAsStringAsync().Result);
-                    //}
                 }
             }
         }

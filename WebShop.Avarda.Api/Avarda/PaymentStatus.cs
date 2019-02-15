@@ -21,5 +21,6 @@ namespace WebShop.Avarda.Api.Avarda
         public string InvoicingCity { get; set; }
         public PaymentMethodEnum PaymentMethod { get; set; }
         public string CustomerToken { get; set; }
+        public string OrderReference { get; set; }
     }
 }

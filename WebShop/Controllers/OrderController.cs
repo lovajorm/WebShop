@@ -1,14 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Avarda.Api;
 using WebShop.Avarda.Api.Avarda;
 using WebShop.Bo;
+using WebShop.Common;
 using WebShop.Dal.UoW;
 using WebShop.Models;
 using WebShop.Web.Models;
-using WebShop.Common;
-using System.Collections.Generic;
-using System.Linq;
 using WebShop.Web.ViewModels;
 
 namespace WebShop.Web.Controllers
@@ -16,10 +16,9 @@ namespace WebShop.Web.Controllers
     public class OrderController : Controller
     {
         private readonly ShoppingCart _shoppingCart;
-        private IUnitOfWork _unitOfWork;
-        private ConnectionHandler _getCustomer;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IEmailHandler _emailHandler;
-        private ConnectionHandler _connectionHandler;
+        private readonly ConnectionHandler _connectionHandler;
 
         public OrderController(IUnitOfWork unitOfWork, ShoppingCart shoppingCart, IEmailHandler emailHandler)
         {
@@ -30,13 +29,47 @@ namespace WebShop.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult InitializePayment(PaymentRequest request)
+        public IActionResult InitializePayment(string purchaseId, string callback, string paymentStatus)
         {
-            request.Price = _shoppingCart.GetShoppingCartTotal();
-            request.Items = ConvertShoppingCartItemToItem();
+            var purchaseIdentification = new PaymentResponse
+            {
+                PurchaseId = purchaseId
+            };
 
+            if (!string.IsNullOrWhiteSpace(callback) && (callback.Equals("1") || callback.Equals("2")))
+            {
+                //Load iframe with original purchaseid submitted in the Querystring
+                //no initializePurchase should be called
+                //Callback == 1 then the call back is due to card payment
+                //Callback == 2 then the call back is due to session cookie setting for safari
+                return View("Avarda", purchaseIdentification);
+            }
+
+            if (!string.IsNullOrWhiteSpace(paymentStatus) && !string.IsNullOrWhiteSpace(purchaseId))
+            {
+                if (paymentStatus.Equals("Success"))
+                {
+                    //successfull direct bank payment detected - redirect to done page.
+                    return RedirectToAction("Done", new {purchaseid = purchaseId});
+                }
+
+                //unsuccessfull direct bank payment -
+                //Load iframe with original purchaseid submitted in querystring
+                //no intializePurchase should be called
+                return View("Avarda", purchaseIdentification);
+            }
+
+            //no callback detected - treat the request as new purchase.
+            //call initializePurchase and get purchaseid
             try
             {
+                var request = new PaymentRequest
+                {
+                    Price = _shoppingCart.GetShoppingCartTotal(),
+                    Items = ConvertShoppingCartItemToItem()
+                };
+                //request.OrderReference = "4444";
+
                 var response = _connectionHandler.InitializePayment(request);
 
                 return View("Avarda", response);
@@ -62,7 +95,7 @@ namespace WebShop.Web.Controllers
             return itemList;
         }
 
- 
+
         public IActionResult Done(string purchaseId, Order order)
         {
             var response = _connectionHandler.GetPaymentStatus(purchaseId);
@@ -71,6 +104,7 @@ namespace WebShop.Web.Controllers
 
             var purchaseViewModel = new ExtraPurchaseViewModel
             {
+                Product = product,
                 ProductId = 5,
                 PurchaseId = purchaseId
             };
@@ -78,18 +112,21 @@ namespace WebShop.Web.Controllers
             if (response.State == 2)
             {
                 var shoppingCartItems = _shoppingCart.GetShoppingCartItems();
-               _unitOfWork.Order.CreateOrder(order, response, shoppingCartItems);
+                _unitOfWork.Order.CreateOrder(order, response, shoppingCartItems);
+                
                 switch (response.PaymentMethod)
                 {
                     case PaymentMethodEnum.Invocie:
-                    case PaymentMethodEnum.Swish:
+                    //case PaymentMethodEnum.Swish:
                         ViewData["description"] = purchaseId;
+
                         return View(purchaseViewModel);
+                        
                     default:
+                        _shoppingCart.ClearCart();
                         return View("CheckoutComplete", order);
                 }
             }
-            _shoppingCart.ClearCart();
             return View("Error", new ErrorViewModel { ErrorMessage = $"Payment failed." });
         }
 
@@ -102,15 +139,17 @@ namespace WebShop.Web.Controllers
             request.ExternalId = purchaseViewModel.PurchaseId;
             request.Items = ConvertShoppingCartItemToItem();
 
+            _shoppingCart.ClearCart();
+
             var order = _unitOfWork.Order.Find(o => o.PurchaseId == purchaseViewModel.PurchaseId).FirstOrDefault();                      //search for purchaseId in order.repositoriy
+
+            request.OrderReference = order.OrderId;
 
             var orderDetail = _unitOfWork.Product.ConvertProductToOrderDetail(product, order.OrderId);
 
-            order.OrderDetails.Add(orderDetail);
-            _unitOfWork.Order.Add(order);
             _connectionHandler.PurchaseOrder(request);
 
-            return View("CheckoutComplete" /*Add order*/);
+            return View("CheckoutComplete", order);
         }
     }
 }

@@ -8,6 +8,7 @@
 <div id="checkOutDiv"></div>
 
 <script type="text/javascript">
+    var url = "http://localhost:64874/Order/InitializePayment?purchaseId=@Html.Raw(Model.PurchaseId)"
     var options = {
         // ID of the <div> inside which to render the form
         divId: "checkOutDiv",
@@ -18,7 +19,7 @@
             window.location.href = "/Order/Done?purchaseId=" + purchaseId;
         },
         // Where to return if we have to redirect the customer out of your website temporarily
-        callbackUrl: "https://my-shop.com/checkout.php?purchaseId=489ea341e23941089e6d0378c708512a&callback=1"
+        callbackUrl: url
     }
     AvardaCheckOutClient.init(options);
 </script>

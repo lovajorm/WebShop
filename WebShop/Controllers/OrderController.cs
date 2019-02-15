@@ -49,7 +49,7 @@ namespace WebShop.Web.Controllers
             {
                 if (paymentStatus.Equals("Success"))
                 {
-                    //succsessfull direct bank payment detected - redirect to done page.
+                    //successfull direct bank payment detected - redirect to done page.
                     return RedirectToAction("Done", new {purchaseid = purchaseId});
                 }
 

@@ -10,6 +10,7 @@ namespace WebShop.Dal.UoW
         IProductRepository Product { get; }
         IOrderRepository Order { get; }
         DbSet<ShoppingCartItem> ShoppingCart { get; }
+        IOrderDetailRepository OrderDetail { get; }
 
         int Complete();
     }

@@ -17,7 +17,6 @@ namespace WebShop.Web.Controllers
     {
         private readonly ShoppingCart _shoppingCart;
         private IUnitOfWork _unitOfWork;
-        private ConnectionHandler _getCustomer;
         private readonly IEmailHandler _emailHandler;
         private ConnectionHandler _connectionHandler;
 
@@ -105,15 +104,19 @@ namespace WebShop.Web.Controllers
             var request = new PurchaseOrderRequest();
 
             request.ExternalId = purchaseViewModel.PurchaseId;
-            request.Items = ConvertShoppingCartItemToItem();
+
+            var order = _unitOfWork.Order.Find(o => o.PurchaseId == purchaseViewModel.PurchaseId).FirstOrDefault();                      //search for purchaseId in order.repositoriy
+            var orderDetail = _unitOfWork.OrderDetail.ConvertProductToOrderDetail(product, order.OrderId);
+            
+            _unitOfWork.OrderDetail.Add(orderDetail);
+            _unitOfWork.Complete();
+            request.Items = _unitOfWork.Order.GetItemsFromOrder(order.OrderId);
 
             _shoppingCart.ClearCart();
 
-            var order = _unitOfWork.Order.Find(o => o.PurchaseId == purchaseViewModel.PurchaseId).FirstOrDefault();                      //search for purchaseId in order.repositoriy
+            //request.OrderReference = order.OrderId;
 
-            request.OrderReference = order.OrderId;
-
-            var orderDetail = _unitOfWork.Product.ConvertProductToOrderDetail(product, order.OrderId);
+            //_unitOfWork.Order.(o => o.)
 
             _connectionHandler.PurchaseOrder(request);
 

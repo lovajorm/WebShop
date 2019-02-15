@@ -11,6 +11,7 @@ namespace WebShop.Dal.UoW
         public IProductRepository Product { get; }
         public IOrderRepository Order { get; }
         public DbSet<ShoppingCartItem> ShoppingCart { get; }
+        public IOrderDetailRepository OrderDetail { get; }
 
         public UnitOfWork(WebShopDbContext context)
         {
@@ -18,6 +19,7 @@ namespace WebShop.Dal.UoW
             Product = new ProductRepository(context);
             Order = new OrderRepository(context);
             ShoppingCart = context.ShoppingCartItems;
+            OrderDetail = new OrderDetailRepository(context);
         }
 
         public int Complete()

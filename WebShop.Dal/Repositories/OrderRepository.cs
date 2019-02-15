@@ -10,7 +10,6 @@ namespace WebShop.Dal.Repositories
     {
         public IWebShopDbContext WebShopDbContext => Context as IWebShopDbContext;
         public OrderRepository(IWebShopDbContext context) : base(context){}
-        //Happens on "Complete checkout"
         public List<OrderDetail> CreateOrder(Order order, PaymentStatus response, List<ShoppingCartItem> items)                        //Method which creates and saves order when payment is authorized.
         {
             //var shoppingCartItems = _shoppingCart.GetShoppingCartItems();
@@ -53,7 +52,5 @@ namespace WebShop.Dal.Repositories
 
             return Details;
         }
-
-        
     }
 }

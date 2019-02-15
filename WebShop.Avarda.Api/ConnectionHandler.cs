@@ -39,11 +39,6 @@ namespace WebShop.Avarda.Api
                     {
                         throw new Exception(result.Content.ReadAsStringAsync().Result);
                     }
-
-                    //if (result.IsSuccessStatusCode)
-                    //{
-                    //    response = JsonConvert.DeserializeObject<PaymentStatus>(result.Content.ReadAsStringAsync().Result);
-                    //}
                 }
             }
         }
@@ -59,26 +54,21 @@ namespace WebShop.Avarda.Api
             {
                 using (var client = new HttpClient(handler))
                 {
-                    var bytearray = Encoding.ASCII.GetBytes(_connectionDetails.ToString());               //Authentication
-
-                    //sets authentication header.
-                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray));
+                    var bytearray = Encoding.ASCII.GetBytes(_connectionDetails.ToString());                                                                              //Authentication.
+                    
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray)); //Sets authentication header.
 
                     client.BaseAddress = new Uri($"https://stage.avarda.org/");
-
-                    //Serializes the class to json
                     
-                    var body = JsonConvert.SerializeObject(request);
+                    var body = JsonConvert.SerializeObject(request);                                                                                   //Serializes the class to json.
                     var requestBody = new StringContent(body, Encoding.UTF8, "application/json");
-                    var result = client.PostAsync("CheckOut2/CheckOut2Api/GetPaymentStatus", requestBody).Result;                                          //Calling Avarda API and sending the json
+                    var result = client.PostAsync("CheckOut2/CheckOut2Api/GetPaymentStatus", requestBody).Result;                                          //Calling Avarda API and sending the json.
 
                     if (!result.IsSuccessStatusCode)
                     {
                         throw new Exception(result.Content.ReadAsStringAsync().Result);
                     }
-
-                    //response.PurchaseId = result.Content.ReadAsStringAsync().Result;
-
+                    
                     if (result.IsSuccessStatusCode)
                     {
                         response = JsonConvert.DeserializeObject<PaymentStatus>(result.Content.ReadAsStringAsync().Result);
@@ -90,23 +80,21 @@ namespace WebShop.Avarda.Api
 
         public PaymentResponse InitializePayment(PaymentRequest request)
         {
-            //var request = new PaymentRequest();
             var response = new PaymentResponse();
 
             using (var handler = new WebRequestHandler())
             {
                 using (var client = new HttpClient(handler))
                 {
-                    var bytearray = Encoding.ASCII.GetBytes(_connectionDetails.ToString());               //Authentication
-
-                    //sets authentication header.
-                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray));
+                    var bytearray = Encoding.ASCII.GetBytes(_connectionDetails.ToString());                                       //Authentication.
+                    
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(bytearray));     //Sets authentication header.
 
                     client.BaseAddress = new Uri($"https://stage.avarda.org/");
                     
-                    //Serializes the class to json
-                    var body = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
-                    var result = client.PostAsync("CheckOut2/CheckOut2Api/InitializePayment", body).Result;                                          //Calling Avarda API and sending the json
+                    
+                    var body = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");                           //Serializes the class to json.
+                    var result = client.PostAsync("CheckOut2/CheckOut2Api/InitializePayment", body).Result;                                          //Calling Avarda API and sending the json.
 
                     if (!result.IsSuccessStatusCode)
                     {

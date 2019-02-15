@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using AutoMapper;
+﻿using AutoMapper;
 using WebShop.Bo;
 using WebShop.Web.ViewModels;
 

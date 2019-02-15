@@ -10,6 +10,12 @@ namespace WebShop.Avarda.Api.Avarda
         Loan = 1,
         Card = 2,
         DirectPayment = 3,
-        Swish = 5
+        PartPayment = 4,
+        Swish = 5,
+        HighLoanAmount = 6,
+        PayPal = 7,
+        PayOnDelivery = 8,
+        B2BInvoice = 9,
+        Unknown = 99
     }
 }

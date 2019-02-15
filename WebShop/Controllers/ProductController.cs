@@ -3,7 +3,6 @@ using System.Linq;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Bo;
-using WebShop.Dal.Interfaces;
 using WebShop.Dal.UoW;
 using WebShop.Log;
 using WebShop.Web.ViewModels;

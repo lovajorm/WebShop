@@ -30,7 +30,6 @@ namespace WebShop.Common
             {
                 //MessageBox.Show(ex.ToString());
             }
-
         }
     }
 }

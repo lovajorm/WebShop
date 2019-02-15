@@ -56,7 +56,7 @@ namespace WebShop.Web.Models
             _unitOfWork.Complete();
         }
 
-        public int RemoveFromCart(Product product) //Method which allows user to remove items when in shopping cart.
+        public int RemoveFromCart(Product product)                                                  //Method which allows user to remove items when in shopping cart.
         {
             var shoppingCartItem = _unitOfWork.ShoppingCart.SingleOrDefault(
                 s => s.Product.ProductID == product.ProductID && s.ShoppingCartId == ShoppingCartId);
@@ -90,7 +90,7 @@ namespace WebShop.Web.Models
                        .ToList());
         }
 
-        public void ClearCart() //Clears the cart after "Complete Order".
+        public void ClearCart()                                                             //Clears the cart after "Complete Order".
         {
             var cartItems = _unitOfWork.ShoppingCart
                 .Where(cart => cart.ShoppingCartId == ShoppingCartId);
@@ -100,7 +100,7 @@ namespace WebShop.Web.Models
             _unitOfWork.Complete();
         }
 
-        public float GetShoppingCartTotal() //Counts the total price of the cart.
+        public float GetShoppingCartTotal()                                                 //Counts the total price of the cart.
         {
             var total = _unitOfWork.ShoppingCart.Where(c => c.ShoppingCartId == ShoppingCartId)
                 .Select(c => c.Product.Price * c.Amount).Sum();

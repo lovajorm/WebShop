@@ -1,9 +1,5 @@
 ﻿using System;
-using System.IO;
-using System.Reflection;
 using AutoMapper;
-using log4net;
-using log4net.Config;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -13,11 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebShop.Common;
 using WebShop.Dal;
-using WebShop.Dal.Interfaces;
-using WebShop.Dal.Repositories;
 using WebShop.Dal.UoW;
 using WebShop.Log;
-using WebShop.Web.Middleware;
 using WebShop.Web.Models;
 
 

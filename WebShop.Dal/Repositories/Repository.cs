@@ -7,7 +7,7 @@ namespace WebShop.Dal.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        protected readonly IWebShopDbContext Context;  //derived class access because inheritance
+        protected readonly IWebShopDbContext Context;                                    //Derived class access because inheritance.
 
         public Repository(IWebShopDbContext context)
         {

@@ -1,4 +1,5 @@
 using System;
+using Moq;
 using Xunit;
 
 namespace WebShop.Tests
@@ -8,7 +9,7 @@ namespace WebShop.Tests
         [Fact]
         public void Test1()
         {
-
+            
         }
     }
 }

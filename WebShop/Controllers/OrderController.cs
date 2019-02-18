@@ -149,8 +149,6 @@ namespace WebShop.Web.Controllers
 
             //request.OrderReference = order.OrderId;
 
-            //_unitOfWork.Order.(o => o.)
-
             _connectionHandler.PurchaseOrder(request);
 
             return View("CheckoutComplete", order);

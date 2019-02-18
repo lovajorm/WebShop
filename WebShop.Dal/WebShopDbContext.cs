@@ -178,5 +178,10 @@ namespace WebShop.Dal
         {
             return base.Find<T>(id);
         }
+
+        void IWebShopDbContext.Update<T>(T entity)
+        {
+            base.Update<T>(entity);
+        }
     }
 }

@@ -11,5 +11,6 @@ namespace WebShop.Dal.Interfaces
         List<OrderDetail> CreateOrder(Order order, PaymentStatus response, List<ShoppingCartItem> items);
 
         List<Item> GetItemsFromOrder(int orderId);
+        void Update(Order order);
     }
 }

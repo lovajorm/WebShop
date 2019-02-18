@@ -71,7 +71,7 @@ namespace WebShop.Web.Controllers
                 //request.OrderReference = "4444";
 
                 var response = _connectionHandler.InitializePayment(request);
-
+                
                 return View("Avarda", response);
             }
             catch (Exception ex)
@@ -144,30 +144,25 @@ namespace WebShop.Web.Controllers
             
             _connectionHandler.PurchaseOrder(request);
 
-
             return View("CheckoutComplete", order);
         }
 
         public IActionResult AddUpSaleToOrder(ExtraPurchaseViewModel purchaseViewModel)
         {
             var order = _unitOfWork.Order.Find(o => o.PurchaseId == purchaseViewModel.PurchaseId).FirstOrDefault();
-            //hämta produkt 
+            //get product
             var product = _unitOfWork.Product.Get(purchaseViewModel.ProductId);
 
-            //konvertera produkt till orderedetail
+            //convert product to orderdetail
             var orderDetail = _unitOfWork.OrderDetail.ConvertProductToOrderDetail(product, order.OrderId);
 
-            //lä'gg till orderdetail i db 
+            //add orderdetail in db
             _unitOfWork.OrderDetail.Add(orderDetail);
-
-            //uppdatera totalbelopp i order
-            //_unitOfWork.Order.Remove(order);
             _unitOfWork.Complete();
-
-            //hämta orderdetails, summera price, uppdatera db
-            order.OrderTotal = _unitOfWork.OrderDetail.Find(d => d.OrderId == order.OrderId).Sum(i => i.Price);
+            
+            //get orderdetails, sum price, update db
+            order.OrderTotal = _unitOfWork.OrderDetail.Find(d => d.OrderId == order.OrderId).Sum(i => i.Price * i.Amount);
             _unitOfWork.Order.Update(order);
-            //_unitOfWork.Order.Add(order);
             _unitOfWork.Complete();
 
             return RedirectToAction("PurchaseOrder", purchaseViewModel);

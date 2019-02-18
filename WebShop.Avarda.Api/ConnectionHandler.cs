@@ -3,6 +3,7 @@ using WebShop.Avarda.Api.Avarda;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Newtonsoft.Json;
 using WebShop.Bo;
 
@@ -17,7 +18,7 @@ namespace WebShop.Avarda.Api
             _connectionDetails = new ConnectionDetails()
             {
                 Password = "test1",
-                UserName = "TestSweden1"
+                UserName = "TestSweden1",
             };
         }
 
@@ -52,6 +53,7 @@ namespace WebShop.Avarda.Api
             {
                 PurchaseId = paymentId
             };
+
             using (var handler = new WebRequestHandler())
             {
                 using (var client = new HttpClient(handler))
@@ -87,6 +89,7 @@ namespace WebShop.Avarda.Api
 
         public PaymentResponse InitializePayment(PaymentRequest request)
         {
+            
             //var request = new PaymentRequest();
             var response = new PaymentResponse();
 

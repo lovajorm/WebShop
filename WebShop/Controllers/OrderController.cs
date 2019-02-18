@@ -71,7 +71,7 @@ namespace WebShop.Web.Controllers
                 //request.OrderReference = "4444";
 
                 var response = _connectionHandler.InitializePayment(request);
-
+                
                 return View("Avarda", response);
             }
             catch (Exception ex)
@@ -99,13 +99,13 @@ namespace WebShop.Web.Controllers
         public IActionResult Done(string purchaseId, Order order)
         {
             var response = _connectionHandler.GetPaymentStatus(purchaseId);
-
-            var product = _unitOfWork.Product.Get(5);
+            var prodId = 7;
+            var product = _unitOfWork.Product.Get(prodId);
 
             var purchaseViewModel = new ExtraPurchaseViewModel
             {
                 Product = product,
-                ProductId = 5,
+                ProductId = prodId,
                 PurchaseId = purchaseId
             };
 
@@ -116,8 +116,8 @@ namespace WebShop.Web.Controllers
                 
                 switch (response.PaymentMethod)
                 {
-                    case PaymentMethodEnum.Invocie:
-                    //case PaymentMethodEnum.Swish:
+                    case PaymentMethodEnum.Invoice:
+                    case PaymentMethodEnum.Swish:
                         ViewData["description"] = purchaseId;
 
                         return View(purchaseViewModel);
@@ -132,24 +132,40 @@ namespace WebShop.Web.Controllers
 
         public IActionResult PurchaseOrder(ExtraPurchaseViewModel purchaseViewModel)
         {
-            var product = _unitOfWork.Product.Get(purchaseViewModel.ProductId);
-
-            var request = new PurchaseOrderRequest();
-
-            request.ExternalId = purchaseViewModel.PurchaseId;
-            request.Items = ConvertShoppingCartItemToItem();
+            var order = _unitOfWork.Order.Find(o => o.PurchaseId == purchaseViewModel.PurchaseId).FirstOrDefault();
+            
+            var request = new PurchaseOrderRequest()
+            {
+                ExternalId = purchaseViewModel.PurchaseId,
+                Items = _unitOfWork.Order.GetItemsFromOrder(order.OrderId)
+            };
 
             _shoppingCart.ClearCart();
-
-            var order = _unitOfWork.Order.Find(o => o.PurchaseId == purchaseViewModel.PurchaseId).FirstOrDefault();                      //search for purchaseId in order.repositoriy
-
-            request.OrderReference = order.OrderId;
-
-            var orderDetail = _unitOfWork.Product.ConvertProductToOrderDetail(product, order.OrderId);
-
+            
             _connectionHandler.PurchaseOrder(request);
 
             return View("CheckoutComplete", order);
+        }
+
+        public IActionResult AddUpSaleToOrder(ExtraPurchaseViewModel purchaseViewModel)
+        {
+            var order = _unitOfWork.Order.Find(o => o.PurchaseId == purchaseViewModel.PurchaseId).FirstOrDefault();
+            //get product
+            var product = _unitOfWork.Product.Get(purchaseViewModel.ProductId);
+
+            //convert product to orderdetail
+            var orderDetail = _unitOfWork.OrderDetail.ConvertProductToOrderDetail(product, order.OrderId);
+
+            //add orderdetail in db
+            _unitOfWork.OrderDetail.Add(orderDetail);
+            _unitOfWork.Complete();
+            
+            //get orderdetails, sum price, update db
+            order.OrderTotal = _unitOfWork.OrderDetail.Find(d => d.OrderId == order.OrderId).Sum(i => i.Price * i.Amount);
+            _unitOfWork.Order.Update(order);
+            _unitOfWork.Complete();
+
+            return RedirectToAction("PurchaseOrder", purchaseViewModel);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace WebShop.Dal
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
         public DbSet<Category> Categories { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
-        public DbSet<OrderDetail > OrderDetails { get; set; }
+        public virtual DbSet<OrderDetail > OrderDetails { get; set; }
 
         public WebShopDbContext(DbContextOptions<WebShopDbContext> context) : base(context) {}
 
@@ -177,6 +177,11 @@ namespace WebShop.Dal
         T IWebShopDbContext.Get<T>(int id)
         {
             return base.Find<T>(id);
+        }
+
+        void IWebShopDbContext.Update<T>(T entity)
+        {
+            base.Update<T>(entity);
         }
     }
 }

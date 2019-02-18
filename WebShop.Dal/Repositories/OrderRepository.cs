@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using WebShop.Avarda.Api.Avarda;
 using WebShop.Bo;
 using WebShop.Dal.Interfaces;
@@ -54,6 +56,24 @@ namespace WebShop.Dal.Repositories
             return Details;
         }
 
-        
+        public List<Item> GetItemsFromOrder(int orderId)
+        {
+            var itemList = new List<Item>();
+            var temp = WebShopDbContext.OrderDetails.Where(d => d.OrderId == orderId).Include(d => d.Product).ToList();
+            foreach (var item in temp)
+            {
+                itemList.Add(new Item()
+                {
+                    Amount = (int)item.Price,
+                    Description = item.Product.Description
+                });
+            }
+            return itemList;
+        }
+
+        public void Update(Order order)
+        {
+            WebShopDbContext.Update(order);
+        }
     }
 }

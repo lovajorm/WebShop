@@ -21,5 +21,6 @@ namespace WebShop.Dal
         IEnumerable<T> Find<T>(Expression<Func<T, bool>> expression) where T : class;
         IEnumerable<T> GetAll<T>() where T : class;
         T Get<T>(int id) where T : class;
+        void Update<T>(T entity) where T : class;
     }
 }

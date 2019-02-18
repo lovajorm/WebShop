@@ -26,11 +26,12 @@
             Add to Order
         </a>*@
         
-        <input type="button" class="btn" value="Add to order" onclick="location.href='@Url.Action("PurchaseOrder", @Model)'" />
+        <input type="button" class="btn" value="Add to order" onclick="location.href='@Url.Action("AddUpSaleToOrder", @Model)'" /> @*/PurchaseOrder?purchaseId=324235324526?orderId=131432*@
+        @Url.Action()
 
     </div>
 </div>
-
-@ViewData["description"]
-
-
+<div class="col-sm-6">
+    @ViewData["description"]
+    <input type="button" class="btn" value="Complete" onclick="location.href='@Url.Action("PurchaseOrder", @Model)'" />
+</div>

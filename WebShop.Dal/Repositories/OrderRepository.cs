@@ -70,6 +70,10 @@ namespace WebShop.Dal.Repositories
             }
             return itemList;
         }
-        
+
+        public void Update(Order order)
+        {
+            WebShopDbContext.Update(order);
+        }
     }
 }

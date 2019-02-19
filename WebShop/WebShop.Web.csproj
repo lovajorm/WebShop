@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Interfaces\**" />
+    <Compile Remove="Repositories\**" />
+    <Content Remove="Interfaces\**" />
+    <Content Remove="Repositories\**" />
+    <EmbeddedResource Remove="Interfaces\**" />
+    <EmbeddedResource Remove="Repositories\**" />
+    <None Remove="Interfaces\**" />
+    <None Remove="Repositories\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="log4net.config" />
   </ItemGroup>
 
@@ -28,8 +39,6 @@
 
   <ItemGroup>
     <Folder Include="AutoMapper\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Repositories\" />
     <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
 

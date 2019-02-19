@@ -96,32 +96,42 @@ namespace WebShop.Web.Controllers
         }
 
 
-        public IActionResult Done(string purchaseId, Order order)
+        public IActionResult Done(string purchaseId)
         {
+            //call getPaymentStatus
             var response = _connectionHandler.GetPaymentStatus(purchaseId);
-            var prodId = 7;
-            var product = _unitOfWork.Product.Get(prodId);
-
-            var purchaseViewModel = new ExtraPurchaseViewModel
-            {
-                Product = product,
-                ProductId = prodId,
-                PurchaseId = purchaseId
-            };
 
             if (response.State == 2)
             {
+                //find all products with a price lower than 25% of totalOrder
+                var product = _unitOfWork.Product.GetExtraPurchaseProduct(response.Price);
+
                 var shoppingCartItems = _shoppingCart.GetShoppingCartItems();
-                _unitOfWork.Order.CreateOrder(order, response, shoppingCartItems);
-                
+
+                //creaating order
+                var order = _unitOfWork.Order.CreateOrder(response);
+                order.OrderDetails = _unitOfWork.Order.AddDetailsToOrder(shoppingCartItems, order.OrderId);
+                _unitOfWork.Complete();
+
                 switch (response.PaymentMethod)
                 {
                     case PaymentMethodEnum.Invoice:
-                    case PaymentMethodEnum.Swish:
+                    case PaymentMethodEnum.Loan:
                         ViewData["description"] = purchaseId;
 
-                        return View(purchaseViewModel);
+                        if (product != null)
+                        {
+                            var purchaseViewModel = new ExtraPurchaseViewModel
+                            {
+                                Product = product,
+                                ProductId = product.ProductID,
+                                PurchaseId = purchaseId
+                            };
+                            return View(purchaseViewModel);
+                        }
                         
+                        _shoppingCart.ClearCart();
+                        return View("CheckoutComplete", order); 
                     default:
                         _shoppingCart.ClearCart();
                         return View("CheckoutComplete", order);
@@ -136,6 +146,7 @@ namespace WebShop.Web.Controllers
             
             var request = new PurchaseOrderRequest()
             {
+                OrderReference = order.OrderId,
                 ExternalId = purchaseViewModel.PurchaseId,
                 Items = _unitOfWork.Order.GetItemsFromOrder(order.OrderId)
             };

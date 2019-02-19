@@ -8,9 +8,10 @@ namespace WebShop.Dal.Interfaces
 {
     public interface IOrderRepository : IRepository<Order>
     {
-        List<OrderDetail> CreateOrder(Order order, PaymentStatus response, List<ShoppingCartItem> items);
+        Order CreateOrder(PaymentStatus response);
 
         List<Item> GetItemsFromOrder(int orderId);
         void Update(Order order);
+        List<OrderDetail> AddDetailsToOrder(List<ShoppingCartItem> shoppingCartItems, int orderId);
     }
 }

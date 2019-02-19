@@ -131,7 +131,8 @@ namespace WebShop.Dal.Migrations
                         new { ProductID = 8, CategoryId = 1, Description = "Womens blouse", ImageUrl = "~/images/Clothes/blus.jpg", Price = 449f, Title = "Blouse" },
                         new { ProductID = 9, CategoryId = 1, Description = "Blue shorts", ImageUrl = "~/images/Clothes/shorts.jpg", Price = 249f, Title = "Shorts" },
                         new { ProductID = 10, CategoryId = 3, Description = "Laptop from HP", ImageUrl = "~/images/Electronics/laptop.jfif", Price = 10000f, Title = "Laptop" },
-                        new { ProductID = 11, CategoryId = 2, Description = "Dinner table", ImageUrl = "~/images/Furniture/table.jpg", Price = 2000f, Title = "Table" }
+                        new { ProductID = 11, CategoryId = 2, Description = "Dinner table", ImageUrl = "~/images/Furniture/table.jpg", Price = 2000f, Title = "Table" },
+                        new { ProductID = 12, CategoryId = 1, Description = "Super Mario Socks", ImageUrl = "~/images/Clothes/strump.jpg", Price = 4f, Title = "Socks" }
                     );
                 });
 

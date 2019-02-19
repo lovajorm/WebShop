@@ -10,7 +10,7 @@ using WebShop.Dal;
 namespace WebShop.Dal.Migrations
 {
     [DbContext(typeof(WebShopDbContext))]
-    [Migration("20190213180913_addedShoppingCartItem_again")]
+    [Migration("20190208145720_firstMigration")]
     partial class addedShoppingCartItem_again
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

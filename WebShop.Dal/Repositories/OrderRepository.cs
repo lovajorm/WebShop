@@ -12,15 +12,14 @@ namespace WebShop.Dal.Repositories
     {
         public IWebShopDbContext WebShopDbContext => Context as IWebShopDbContext;
         public OrderRepository(IWebShopDbContext context) : base(context){}
+        
         //Happens on "Complete checkout"
-        public List<OrderDetail> CreateOrder(Order order, PaymentStatus response, List<ShoppingCartItem> items)                        //Method which creates and saves order when payment is authorized.
+
+        public Order CreateOrder(PaymentStatus response) //Method which creates and saves order when payment is authorized.
         {
-            //var shoppingCartItems = _shoppingCart.GetShoppingCartItems();
+            var order = new Order();
+
             order.OrderPlaced = DateTime.Now;
-
-            //var total = _shoppingCart.GetShoppingCartTotal();
-            //order.OrderTotal = total;
-
             order.Ssn = response.AccountNumber;
             order.OrderTotal = response.Price;
             order.Email = response.Mail;
@@ -33,10 +32,14 @@ namespace WebShop.Dal.Repositories
             order.Country = response.CountryCode;
             order.PurchaseId = response.PurchaseId;
 
-            WebShopDbContext.Orders.Add(order);
-            
+            WebShopDbContext.Add(order);
 
-            List<OrderDetail> Details = new List<OrderDetail>();
+            return order;
+        }
+
+        public List<OrderDetail> AddDetailsToOrder(List<ShoppingCartItem> items, int orderId)
+        { 
+        List<OrderDetail> Details = new List<OrderDetail>();
 
             foreach (var item in items)
             {
@@ -44,15 +47,12 @@ namespace WebShop.Dal.Repositories
                 {
                     Amount = item.Amount,
                     ProductID = item.Product.ProductID,
-                    OrderId = order.OrderId,
+                    OrderId = orderId,
                     Price = item.Product.Price
                 };
-                WebShopDbContext.OrderDetails.Add(orderDetail);
                 Details.Add(orderDetail);
+                WebShopDbContext.OrderDetails.Add(orderDetail);
             }
-            order.OrderDetails = Details;
-            WebShopDbContext.Complete();
-
             return Details;
         }
 

@@ -63,13 +63,13 @@ namespace WebShop.Web.Controllers
             }
 
             var product = _unitOfWork.Product.Find(p => p.ProductID == id).FirstOrDefault();
-                
+
             if (product == null)
             {
                 return NotFound();
             }
 
-            return View(product);
+            return View("Details", product);
         }
     }
 }

@@ -17,17 +17,8 @@
         <p>@Model.Product.Description</p>
     </div>
     <div>
-        @*<a class="btn" id="cartButton"
-           asp-controller="Order"
-           asp-action="PurchaseOrder"
-           asp-route-purchaseId="@Model.PurchaseId"
-           >
-            
-            Add to Order
-        </a>*@
         
         <input type="button" class="btn" value="Add to order" onclick="location.href='@Url.Action("AddUpSaleToOrder", @Model)'" /> @*/PurchaseOrder?purchaseId=324235324526?orderId=131432*@
-        @Url.Action()
 
     </div>
 </div>

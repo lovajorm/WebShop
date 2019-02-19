@@ -123,17 +123,17 @@ namespace WebShop.Dal.Migrations
                     b.ToTable("Products");
 
                     b.HasData(
-                        new { ProductID = 1, CategoryId = 1, Description = "Knitted mens sweater", ImageUrl = "~/images/Clothes/svart.jpg", Price = 100f, Title = "Sweater" },
-                        new { ProductID = 2, CategoryId = 1, Description = "Black womens pants", ImageUrl = "~/images/Clothes/byx.jpg", Price = 200f, Title = "Pants" },
-                        new { ProductID = 3, CategoryId = 1, Description = "Black hoodie", ImageUrl = "~/images/Clothes/hoodie.jpg", Price = 359f, Title = "Hoodie" },
-                        new { ProductID = 4, CategoryId = 1, Description = "Leopard skirt", ImageUrl = "~/images/Clothes/kjol.jpg", Price = 349f, Title = "Skirt" },
-                        new { ProductID = 5, CategoryId = 1, Description = "Grey cardigan", ImageUrl = "~/images/Clothes/kofta.jpg", Price = 500f, Title = "Cardigan" },
-                        new { ProductID = 6, CategoryId = 1, Description = "Blue jeans", ImageUrl = "~/images/Clothes/jeans.jfif", Price = 599f, Title = "Jeans" },
-                        new { ProductID = 7, CategoryId = 1, Description = "Mens T-shirt", ImageUrl = "~/images/Clothes/tshirt.jpg", Price = 99f, Title = "T-shirt" },
-                        new { ProductID = 8, CategoryId = 1, Description = "Womens blouse", ImageUrl = "~/images/Clothes/blus.jpg", Price = 449f, Title = "Blouse" },
-                        new { ProductID = 9, CategoryId = 1, Description = "Blue shorts", ImageUrl = "~/images/Clothes/shorts.jpg", Price = 249f, Title = "Shorts" },
-                        new { ProductID = 10, CategoryId = 3, Description = "Laptop from HP", ImageUrl = "~/images/Electronics/laptop.jfif", Price = 10000f, Title = "Laptop" },
-                        new { ProductID = 11, CategoryId = 2, Description = "Dinner table", ImageUrl = "~/images/Furniture/table.jpg", Price = 2000f, Title = "Table" }
+                        new { ProductID = 1, CategoryId = 1, Description = "Knitted mens sweater", ImageUrl = "~/images/Clothes/svart.jpg", Price = 10f, Title = "Sweater" },
+                        new { ProductID = 2, CategoryId = 1, Description = "Black womens pants", ImageUrl = "~/images/Clothes/byx.jpg", Price = 20f, Title = "Pants" },
+                        new { ProductID = 3, CategoryId = 1, Description = "Black hoodie", ImageUrl = "~/images/Clothes/hoodie.jpg", Price = 35f, Title = "Hoodie" },
+                        new { ProductID = 4, CategoryId = 1, Description = "Leopard skirt", ImageUrl = "~/images/Clothes/kjol.jpg", Price = 34f, Title = "Skirt" },
+                        new { ProductID = 5, CategoryId = 1, Description = "Grey cardigan", ImageUrl = "~/images/Clothes/kofta.jpg", Price = 50f, Title = "Cardigan" },
+                        new { ProductID = 6, CategoryId = 1, Description = "Blue jeans", ImageUrl = "~/images/Clothes/jeans.jfif", Price = 59f, Title = "Jeans" },
+                        new { ProductID = 7, CategoryId = 1, Description = "Mens T-shirt", ImageUrl = "~/images/Clothes/tshirt.jpg", Price = 9f, Title = "T-shirt" },
+                        new { ProductID = 8, CategoryId = 1, Description = "Womens blouse", ImageUrl = "~/images/Clothes/blus.jpg", Price = 44f, Title = "Blouse" },
+                        new { ProductID = 9, CategoryId = 1, Description = "Blue shorts", ImageUrl = "~/images/Clothes/shorts.jpg", Price = 24f, Title = "Shorts" },
+                        new { ProductID = 10, CategoryId = 3, Description = "Laptop from HP", ImageUrl = "~/images/Electronics/laptop.jfif", Price = 100f, Title = "Laptop" },
+                        new { ProductID = 11, CategoryId = 2, Description = "Dinner table", ImageUrl = "~/images/Furniture/table.jpg", Price = 200f, Title = "Table" }
                     );
                 });
 
